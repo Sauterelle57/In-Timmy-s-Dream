@@ -31,6 +31,9 @@ IWHITE  = $ \x1b[47m
 CFLAGS = -g -I./headers
 
 SRC	=	src/main.c	\
+		src/moove_sprite.c	\
+		src/create_struct.c	\
+		src/create_attributs.c	\
 \
 		src/combat/main_combat.c	\
 \
@@ -39,7 +42,6 @@ SRC	=	src/main.c	\
 		src/game/main_game.c	\
 \
 		src/menu/main_menu.c	\
-
 
 OBJ =	$(SRC:.c=.o)
 
