@@ -8,7 +8,7 @@
 #ifndef PROTOTYPES_H_
     #define PROTOTYPES_H_
 
-timer_t create_timer(void);
+timing_t create_timer(void);
 object_t create_object(char *text, int pv, int pa, int type);
 body_t create_body(char *text, sfIntRect rect, sfVector2f pos);
 interest_t create_interest(char *text, sfIntRect rect, sfVector2f pos,

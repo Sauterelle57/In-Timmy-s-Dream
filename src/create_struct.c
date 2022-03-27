@@ -6,10 +6,6 @@
 */
 
 #include "includes.h"
-#include "struct.h"
-#include "define.h"
-#include "category.h"
-#include "create_prototypes.h"
 
 body_t create_body(char *text, sfIntRect rect, sfVector2f pos)
 {
@@ -49,7 +45,7 @@ game_t create_game(void)
 {
     sfRenderWindow *window = create_window(1920, 1080);
     sfEvent event;
-    timer_t t = create_timer();
+    timing_t t = create_timer();
     body_t cursor = create_body("asset/cursor.png", (sfIntRect)
     {0, 0, 100, 100}, (sfVector2f){sfMouse_getPosition((sfWindow *)window).x,
     sfMouse_getPosition((sfWindow *)window).y});
@@ -59,16 +55,3 @@ game_t create_game(void)
     return (game);
 }
 
-scene_t create_scene(game_t *g)
-{
-    button_t *buttons = init_button_of_my_scene(g->window);
-    int nb_button = 2;
-    body_t *elem = init_elem_of_my_scene(g->window);
-    int nb_elem = 2;
-    interest_t *interest = init_interest_of_my_scene(g->window);
-    int nb_interest = 2;
-    scene_t scene = {buttons, nb_button, elem, nb_elem, interest,
-    nb_interest};
-
-    return (scene);
-}

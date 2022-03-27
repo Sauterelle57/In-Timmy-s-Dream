@@ -5,8 +5,7 @@
 ** fonctions_game
 */
 
-#include "struct.h"
-#include "define.h"
+#include "includes.h"
 
 void draw_game(game_t *g)
 {

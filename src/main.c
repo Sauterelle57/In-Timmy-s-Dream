@@ -6,19 +6,10 @@
 */
 
 #include "includes.h"
-#include "struct.h"
-#include "define.h"
-#include "create_prototypes.h"
-#include "game.h"
-
-int main(void)
-{
-    game_t game = create_game();
-    scene_t s_game = init_game(&game);
-    game.scene[0] = s_game;
-    game_loop(&game, 0);
-    return (0);
-}
+#include "game.h" //scene 0
+#include "menu.h" //scene 1
+#include "dialogue.h" //scene 2
+#include "combat.h" //scene 3
 
 void game_loop(game_t *g, int i)
 {
@@ -31,4 +22,13 @@ void game_loop(game_t *g, int i)
             g->scene[i].event(g, i);;
         sfRenderWindow_display(g->window);
     }
+}
+
+int main(void)
+{
+    game_t game = create_game();
+    scene_t s_game = init_game(&game);
+    game.scene[0] = s_game;
+    game_loop(&game, 0);
+    return (0);
 }
