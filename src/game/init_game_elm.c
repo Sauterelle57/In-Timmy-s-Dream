@@ -5,9 +5,8 @@
 ** init_game_elm
 */
 
-#include "struct.h"
-#include "define.h"
-#include "create_prototypes.h"
+#include "includes.h"
+#include "game.h"
 
 static void fonction(void)
 {
@@ -50,9 +49,9 @@ button_t *init_game_elem(sfRenderWindow *window)
     sfVector2u size = sfRenderWindow_getSize(window);
     body_t *elem = malloc(sizeof(body_t) * 2);
 
-    elem[0] = create_body("map/city.png", (sfIntRect){0, 0, 1920, 1080},
+    elem[0] = create_body("map/test.webp", (sfIntRect){0, 0, 1920, 1080},
     (sfVector2f){size.x * 0, size.y * 0});
-    elem[0] = create_body("map/firecamp.png", (sfIntRect){0, 0, 50, 50},
+    elem[0] = create_body(NPC[0], (sfIntRect){0, 0, 100, 100},
     (sfVector2f){size.x * 500, size.x * 600});
     return (elem);
 }

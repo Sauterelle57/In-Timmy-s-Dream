@@ -33,7 +33,7 @@ CFLAGS = -g -I./headers
 SRC	=	src/main.c	\
 		src/moove_sprite.c	\
 		src/create_struct.c	\
-		src/create_attributs.c	\
+		src/create_attributes.c	\
 \
 		src/combat/main_combat.c	\
 \

@@ -18,4 +18,9 @@
 // LIB
     #include "../lib/my/includes/my.h"
 
+    #include "struct.h"
+    #include "define.h"
+    #include "create_prototypes.h"
+    #include "category.h"
+
 #endif /* !INCLUDES_H_ */

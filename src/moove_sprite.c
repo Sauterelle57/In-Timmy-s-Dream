@@ -2,15 +2,19 @@
 ** EPITECH PROJECT, 2022
 ** RPG
 ** File description:
-** usefull
+** moove_sprite2
 */
 
 #include "includes.h"
-#include "struct.h"
-#include "define.h"
-#include "category.h"
 
-void move_sprite(body_t *sprite, sfVector2f pos, int speed)
+static int absolute(int nb)
+{
+    if (nb == 0)
+        return (0);
+    return (nb < 0 ? -1 : 1);
+}
+
+void moove_sprite(body_t *sprite, sfVector2f pos, int speed)
 {
     int velocity_x = pos.x - sprite->pos.x;
     int velocity_y = pos.y - sprite->pos.y;

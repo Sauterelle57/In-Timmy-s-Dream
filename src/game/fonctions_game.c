@@ -5,8 +5,7 @@
 ** fonctions_game
 */
 
-#include "struct.h"
-#include "define.h"
+#include "includes.h"
 
 void draw_game(game_t *g)
 {
@@ -20,10 +19,10 @@ void draw_game(game_t *g)
 
 void event_game(game_t *g)
 {
-    if (Key_Pressed(sfKeyLeft))
-        my_printf("Key Left pressed\n");
-    else if (Key_Pressed(sfKeyRight))
+    if (Key_Pressed(sfKeyRight))
         my_printf("Key Right pressed\n");
+    else if (Key_Pressed(sfKeyLeft))
+        my_printf("Key Left pressed\n");
 }
 
 void anim_game(game_t *g)

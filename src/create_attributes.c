@@ -6,9 +6,6 @@
 */
 
 #include "includes.h"
-#include "struct.h"
-#include "define.h"
-#include "create_prototypes.h"
 
 sfRenderWindow *create_window(int x, int y)
 {
@@ -20,10 +17,10 @@ sfRenderWindow *create_window(int x, int y)
     return (window);
 }
 
-timer_t create_timer(void)
+timing_t create_timer(void)
 {
     sfClock *clock = sfClock_create();
-    timer_t t = {clock, 0.0};
+    timing_t t = {clock, 0.0};
 
     return (t);
 }
