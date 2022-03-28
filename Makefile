@@ -31,17 +31,27 @@ IWHITE  = $ \x1b[47m
 CFLAGS = -g -I./headers
 
 SRC	=	src/main.c	\
+		src/create_text.c	\
 		src/moove_sprite.c	\
 		src/create_struct.c	\
 		src/create_attributes.c	\
 \
 		src/combat/main_combat.c	\
+		src/combat/init_combat_elm.c	\
+		src/combat/fonctions_combat.c	\
 \
 		src/dialogue/main_dialogue.c	\
+		src/dialogue/init_dialogue_elm.c	\
+		src/dialogue/fonctions_dialogue.c	\
 \
 		src/game/main_game.c	\
+		src/game/init_game_elm.c	\
+		src/game/fonctions_game.c	\
+		src/game/player_movements.c \
 \
 		src/menu/main_menu.c	\
+		src/menu/init_menu_elm.c	\
+		src/menu/fonctions_menu.c	\
 
 OBJ =	$(SRC:.c=.o)
 

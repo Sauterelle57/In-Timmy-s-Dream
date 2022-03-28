@@ -20,9 +20,11 @@ void draw_dialogue(game_t *g)
 
 void event_dialogue(game_t *g)
 {
+    if (g->event.type == sfEvtClosed || sfKeyboard_isKeyPressed(sfKeyEscape))
+        sfRenderWindow_close(g->window);
     if (Key_Pressed(sfKeyLeft))
         my_printf("Key Left pressed\n");
-    else if (Key_Pressed(sfKeyRight))
+    if (Key_Pressed(sfKeyRight))
         my_printf("Key Right pressed\n");
 }
 
