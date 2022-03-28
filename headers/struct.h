@@ -25,7 +25,7 @@ typedef struct object_s {
 
 typedef struct player_s {
     body_t body;
-    object_t inventory[25];
+    object_t inventory[1];
     int pv;
     int pa;
     int orient;
@@ -56,14 +56,15 @@ typedef struct scene_s {
     int nb_elem;
     interest_t *interest;
     int nb_interest;
+    void (*draw)();
     void (*event)();
     void (*anim)();
-    void (*draw)();
 } scene_t;
 
 typedef struct timing_s {
     sfClock *clock;
     float sec;
+    float anim;
 } timing_t;
 
 typedef struct game_s {
@@ -73,7 +74,8 @@ typedef struct game_s {
     //music_t *m;
     body_t cursor;
     player_t player;
-    scene_t scene[1];
+    scene_t scene[2];
+    int curent_scene;
 } game_t;
 
 #endif /* !RPG_H */
