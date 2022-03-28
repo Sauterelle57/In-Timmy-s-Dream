@@ -6,16 +6,16 @@
 */
 
 #include "includes.h"
-#include "menu.h"
+#include "main_menu.h"
 
 scene_t init_menu(game_t *g)
 {
     button_t *buttons = init_menu_button(g->window);
-    int nb_button = 2;
+    int nb_button = 0;
     body_t *elem = init_menu_elem(g->window);
     int nb_elem = 2;
     interest_t *interest = init_menu_interest(g->window);
-    int nb_interest = 2;
+    int nb_interest = 0;
     scene_t game = {buttons, nb_button, elem, nb_elem, interest,
     nb_interest};
 

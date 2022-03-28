@@ -8,7 +8,7 @@
 #include "includes.h"
 #include "game.h"
 
-static void fonction(void)
+static void fonction(game_t *g)
 {
     my_printf("Button clicked !!\n");
 }
@@ -18,40 +18,46 @@ button_t *init_game_button(sfRenderWindow *window)
     sfVector2u size = sfRenderWindow_getSize(window);
     button_t *buttons = malloc(sizeof(button_t) * 2);
 
-    buttons[0] = create_button("asset/button.png",
+    buttons[0] = create_button("other/test.png",
     (sfVector2f){size.x * 0.21, size.y * 0.42},
-    create_text(50, (sfVector2f){100, 100}, "BUTTON"), &fonction);
-    buttons[1] = create_square_button("asset/square_button.png",
+    create_text(50, (sfVector2f){100, 100}, "BUTTON"), fonction);
+    buttons[1] = create_square_button("other/test.png",
     (sfVector2f){size.x * 0.84, size.y * 0.66},
-    create_text(50, (sfVector2f){200, 200}, "BUTTON"), &fonction);
+    create_text(50, (sfVector2f){200, 200}, "BUTTON"), fonction);
     return (buttons);
 }
 
-static void action(void)
+static void action(game_t *g)
 {
-    my_printf("Go for combat/dialogue !!\n");
+    my_printf("Go for combat/dialogue/entry !!\n");
 }
 
-button_t *init_game_interest(sfRenderWindow *window)
+interest_t *init_game_interest(sfRenderWindow *window)
 {
     sfVector2u size = sfRenderWindow_getSize(window);
     interest_t *interest = malloc(sizeof(interest_t) * 2);
 
-    interest[0] = create_interest("asset/king.png", (sfIntRect)
-    {0, 0, 50, 50}, (sfVector2f){size.x * 0.21, size.y * 0.42}, &action);
-    interest[1] = create_interest("asset/bat.png", (sfIntRect)
-    {0, 0, 50, 50}, (sfVector2f){size.x * 0.16, size.y * 0.70}, &action);
+    interest[0] = create_interest("other/test.png", (sfIntRect)
+    {0, 0, 50, 50}, (sfVector2f){size.x * 0.21, size.y * 0.42}, action);
+    interest[1] = create_interest("other/test.png", (sfIntRect)
+    {0, 0, 50, 50}, (sfVector2f){size.x * 0.16, size.y * 0.70}, action);
     return (interest);
 }
 
-button_t *init_game_elem(sfRenderWindow *window)
+body_t *init_game_elem(sfRenderWindow *window)
 {
     sfVector2u size = sfRenderWindow_getSize(window);
     body_t *elem = malloc(sizeof(body_t) * 2);
 
-    elem[0] = create_body("map/test.webp", (sfIntRect){0, 0, 1920, 1080},
+    elem[0] = create_body("map/test5.png", (sfIntRect){3840, 2160, 1920, 1080},
     (sfVector2f){size.x * 0, size.y * 0});
-    elem[0] = create_body(NPC[0], (sfIntRect){0, 0, 100, 100},
-    (sfVector2f){size.x * 500, size.x * 600});
+    elem[1] = create_body(NPC[0], (sfIntRect){0, 0, 32, 50},
+    (sfVector2f){size.x * 0.25, size.y * 0.25});
+    elem[2] = create_body(NPC[2], (sfIntRect){0, 0, 32, 50},
+    (sfVector2f){size.x * 0.75, size.y * 0.75});
+    elem[3] = create_body(NPC[4], (sfIntRect){0, 0, 32, 50},
+    (sfVector2f){size.x * 1.75, size.y * 1.25});
+    elem[4] = create_body(NPC[6], (sfIntRect){0, 0, 32, 50},
+    (sfVector2f){size.x * -0.75, size.y * -0.25});
     return (elem);
 }
