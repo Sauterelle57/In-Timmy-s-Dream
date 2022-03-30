@@ -64,7 +64,6 @@ typedef struct scene_s {
 typedef struct timing_s {
     sfClock *clock;
     float sec;
-    float anim;
 } timing_t;
 
 typedef struct game_s {

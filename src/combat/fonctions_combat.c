@@ -31,7 +31,7 @@ void event_combat(game_t *g)
 void anim_combat(game_t *g)
 {
     static float tmp = 0.0;
-    static int vector[2] = {0, 0};
+    static int vector[4] = {0, 0, 0, 0};
 
     g->t.sec = Get_Time(g->t.clock);
     if (g->t.sec - tmp > 0.05) {
