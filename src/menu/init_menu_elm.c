@@ -49,7 +49,7 @@ body_t *init_menu_elem(sfRenderWindow *window)
     sfVector2u size = sfRenderWindow_getSize(window);
     body_t *elem = malloc(sizeof(body_t) * 2);
 
-    elem[0] = create_body("map/test4.png", (sfIntRect){0, 0, 1920, 1080},
+    elem[0] = create_body("map/test3.png", (sfIntRect){0, 0, 1920, 1080},
     (sfVector2f){size.x * 0, size.y * 0});
     elem[1] = create_body(NPC[4], (sfIntRect){0, 0, 32, 50},
     (sfVector2f){size.x * 0.5, size.y * 0.5});

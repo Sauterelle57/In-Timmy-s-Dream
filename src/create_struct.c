@@ -20,7 +20,7 @@ body_t create_body(char *text, sfIntRect rect, sfVector2f pos)
 }
 
 interest_t create_interest(char *text, sfIntRect rect, sfVector2f pos,
-void (*action)(game_t *g))
+void (*action)(game_t *))
 {
     body_t body = create_body(text, rect, pos);
     interest_t interest = {body, action};

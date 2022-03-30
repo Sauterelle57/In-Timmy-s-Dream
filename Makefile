@@ -32,7 +32,7 @@ CFLAGS = -g -I./headers
 
 SRC	=	src/main.c	\
 		src/create_text.c	\
-		src/moove_sprite.c	\
+		src/move_sprite.c	\
 		src/create_struct.c	\
 		src/create_attributes.c	\
 \
@@ -45,8 +45,10 @@ SRC	=	src/main.c	\
 		src/dialogue/fonctions_dialogue.c	\
 \
 		src/game/main_game.c	\
+		src/game/draw_game.c	\
+		src/game/anim_game.c	\
+		src/game/event_game.c	\
 		src/game/init_game_elm.c	\
-		src/game/fonctions_game.c	\
 		src/game/player_movements.c \
 \
 		src/menu/main_menu.c	\
