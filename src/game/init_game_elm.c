@@ -47,17 +47,13 @@ interest_t *init_game_interest(sfRenderWindow *window)
 body_t *init_game_elem(sfRenderWindow *window)
 {
     sfVector2u size = sfRenderWindow_getSize(window);
-    body_t *elem = malloc(sizeof(body_t) * 5);
+    body_t *elem = malloc(sizeof(body_t) * 3);
 
     elem[0] = create_body("map/test5.png", (sfIntRect){3840, 2160, 1920, 1080},
     (sfVector2f){size.x * 0, size.y * 0});
-    elem[1] = create_body(NPC[0], (sfIntRect){0, 0, 32, 50},
+    elem[1] = create_body("other/block.png", (sfIntRect){0, 0, 100, 100},
     (sfVector2f){size.x * 0.25, size.y * 0.25});
-    elem[2] = create_body(NPC[2], (sfIntRect){0, 0, 32, 50},
-    (sfVector2f){size.x * 0.75, size.y * 0.75});
-    elem[3] = create_body(NPC[4], (sfIntRect){0, 0, 32, 50},
-    (sfVector2f){size.x * 1.75, size.y * 1.25});
-    elem[4] = create_body(NPC[6], (sfIntRect){0, 0, 32, 50},
-    (sfVector2f){size.x * -0.75, size.y * -0.25});
+    elem[2] = create_body("other/block.png", (sfIntRect){0, 0, 120, 130},
+    (sfVector2f){size.x * 0.75, size.y * 0.30});
     return (elem);
 }

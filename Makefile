@@ -50,6 +50,7 @@ SRC	=	src/main.c	\
 		src/game/event_game.c	\
 		src/game/init_game_elm.c	\
 		src/game/player_movements.c \
+		src/game/player_collision.c	\
 \
 		src/menu/main_menu.c	\
 		src/menu/init_menu_elm.c	\
