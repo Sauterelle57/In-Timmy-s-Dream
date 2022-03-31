@@ -40,8 +40,11 @@
 
     #define Get_Window_size(void) sfRenderWindow_getSize(g->window)
 
-    #define Rect_Intersect(pos, size, other_rect) sfIntRect_intersects\
-    (&(sfIntRect){pos.x, pos.y, size.x, size.y}, &other_rect, NULL)
+    #define Get_bounds(sprite) sfSprite_getGlobalBounds(sprite)
+
+    #define Rect_Intersect(body_1, FloatRect_2) sfFloatRect_intersects(\
+    &(sfFloatRect){body_1.pos.x, body_1.pos.y, body_1.rect.width,\
+    body_1.rect.height}, FloatRect_2, NULL)
 
     #define Rect_Contains(pos, size, a, b) sfIntRect_contains(&(sfIntRect)\
     {pos.x, pos.y, size.x, size.y}, a * (1920.0 / sfRenderWindow_getSize\

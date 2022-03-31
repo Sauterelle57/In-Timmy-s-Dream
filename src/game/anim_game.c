@@ -23,16 +23,9 @@ static void anim_interest(game_t *g)
 void anim_game(game_t *g)
 {
     static float tmp = 0.0;
-    static int vector[10] = {0, 0, 96, 32, 96, 32, 96, 32, 96, 32};
 
     g->t.sec = Get_Time(g->t.clock);
     if (g->t.sec - tmp >= 0.15) {
-        for (int i = 0; i < g->scene[0].nb_elem; i++) {
-            g->scene[0].elem[i].rect.left += g->scene[0].elem[i].rect.left >=
-            vector[i * 2] ? -vector[i * 2] : vector[i * 2 + 1];
-            Set_Texture_Rect(g->scene[0].elem[i].sprite,
-            g->scene[0].elem[i].rect);
-        }
         anim_interest(g);
         g->player.body.rect.left += g->player.body.rect.left >= 96 ? -96 : 32;
         Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
