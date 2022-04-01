@@ -9,7 +9,12 @@
     #define CATEGORY_H_
 
     static char *OBJ[2] = {
-        "object/grenadine_flask.png", "0"
+        "object/DamagePotion.png",
+        "object/Pillow.png",
+    };
+
+    static char *BUTTON[3] = {
+        "button/Pause1.png", "button/Pause2.png", "button/Pause3.png"
     };
 
     static char *NPC[18] = {
@@ -25,54 +30,56 @@
     };
 
     static char *BAT[9] = {
-        "enemy/Bat 01_idle.png", "enemy/Bat 01_fly.png",\
-        "enemy/Bat 01_die.png"\
-        "enemy/Bat 02_idle.png", "enemy/Bat 02_fly.png",\
-        "enemy/Bat 02_die.png"\
-        "enemy/Bat 03_idle.png", "enemy/Bat 03_fly.png",\
-        "enemy/Bat 03_die.png"\
+        "enemies/Bat 01_idle.png", "enemies/Bat 01_fly.png",\
+        "enemies/Bat 01_die.png"\
+        "enemies/Bat 02_idle.png", "enemies/Bat 02_fly.png",\
+        "enemies/Bat 02_die.png"\
+        "enemies/Bat 03_idle.png", "enemies/Bat 03_fly.png",\
+        "enemies/Bat 03_die.png"\
     };
 
     static char *GHOST[9] = {
-        "enemy/Ghost 01_idle.png", "enemy/Ghost 01_move.png",\
-        "enemy/Ghost 01_die.png",\
-        "enemy/Ghost 02_idle.png", "enemy/Ghost 02_move.png",\
-        "enemy/Ghost 02_die.png"\
-        "enemy/Ghost 03_idle.png", "enemy/Ghost 03_move.png",\
-        "enemy/Ghost 03_die.png"\
+        "enemies/Ghost 01_idle.png", "enemies/Ghost 01_move.png",\
+        "enemies/Ghost 01_die.png",\
+        "enemies/Ghost 02_idle.png", "enemies/Ghost 02_move.png",\
+        "enemies/Ghost 02_die.png"\
+        "enemies/Ghost 03_idle.png", "enemies/Ghost 03_move.png",\
+        "enemies/Ghost 03_die.png"\
     };
 
     static char *SKELETON[9] = {
-        "enemy/Skeleton 01_idle.png", "enemy/Skeleton 01_walk.png",\
-        "enemy/Skeleton 01_die.png"\
-        "enemy/Skeleton 02_idle.png", "enemy/Skeleton 02_walk.png",\
-        "enemy/Skeleton 02_die.png"\
-        "enemy/Skeleton 03_idle.png", "enemy/Skeleton 03_walk.png",\
-        "enemy/Skeleton 03_die.png"\
+        "enemies/Skeleton 01_idle.png", "enemies/Skeleton 01_walk.png",\
+        "enemies/Skeleton 01_die.png"\
+        "enemies/Skeleton 02_idle.png", "enemies/Skeleton 02_walk.png",\
+        "enemies/Skeleton 02_die.png"\
+        "enemies/Skeleton 03_idle.png", "enemies/Skeleton 03_walk.png",\
+        "enemies/Skeleton 03_die.png"\
     };
 
     static char *ZOMBIE[9] = {
-        "enemy/Zombie 01_idle.png", "enemy/Zombie 01_walk.png",\
-        "enemy/Zombie 01_die.png"\
-        "enemy/Zombie 02_idle.png", "enemy/Zombie 02_walk.png",\
-        "enemy/Zombie 02_die.png"\
-        "enemy/Zombie 03_idle.png", "enemy/Zombie 03_walk.png",\
-        "enemy/Zombie 03_die.png"\
+        "enemies/Zombie 01_idle.png", "enemies/Zombie 01_walk.png",\
+        "enemies/Zombie 01_die.png"\
+        "enemies/Zombie 02_idle.png", "enemies/Zombie 02_walk.png",\
+        "enemies/Zombie 02_die.png"\
+        "enemies/Zombie 03_idle.png", "enemies/Zombie 03_walk.png",\
+        "enemies/Zombie 03_die.png"\
     };
 
     static char *VAMPIRE[6] = {
-        "enemy/Vampire 01_idle.png", "enemy/Vampire 01_walk.png",\
-        "enemy/Vampire 01_die.png"\
-        "enemy/Vampire 02_idle.png", "enemy/Vampire 02_walk.png",\
-        "enemy/Vampire 02_die.png"\
+        "enemies/Vampire 01_idle.png", "enemies/Vampire 01_walk.png",\
+        "enemies/Vampire 01_die.png"\
+        "enemies/Vampire 02_idle.png", "enemies/Vampire 02_walk.png",\
+        "enemies/Vampire 02_die.png"\
     };
 
     static char *WITCH[3] = {
-        "enemy/Witch_idle.png", "enemy/Witch_move.png", "enemy/Witch_die.png"\
+        "enemies/Witch_idle.png", "enemies/Witch_move.png",
+        "enemies/Witch_die.png"\
     };
 
     static char *CLOWN[3] = {
-        "enemy/Clown_idle.png", "enemy/Clown_walk.png", "enemy/Clown_die.png"\
+        "enemies/Clown_idle.png", "enemies/Clown_walk.png",
+        "enemies/Clown_die.png"\
     };
 
 #endif /* !CATEGORY_H_ */
