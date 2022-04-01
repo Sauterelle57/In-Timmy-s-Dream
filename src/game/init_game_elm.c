@@ -16,14 +16,10 @@ void fonction(game_t *g)
 button_t *init_game_button(sfRenderWindow *window)
 {
     sfVector2u size = sfRenderWindow_getSize(window);
-    button_t *buttons = malloc(sizeof(button_t) * 0);
+    button_t *buttons = malloc(sizeof(button_t) * 1);
 
-    //buttons[0] = create_button("other/test.png",
-    //(sfVector2f){size.x * 0.21, size.y * 0.42},
-    //create_text(50, (sfVector2f){100, 100}, "BUTTON"), &fonction);
-    //buttons[1] = create_square_button("other/test.png",
-    //(sfVector2f){size.x * 0.84, size.y * 0.66},
-    //create_text(50, (sfVector2f){200, 200}, "BUTTON"), &fonction);
+    buttons[0] = create_square_button(0, (sfVector2f){size.x * 0.95, size.y *
+    0.03}, create_text(50, (sfVector2f){100, 100}, ""), &fonction);
     return (buttons);
 }
 
@@ -51,9 +47,9 @@ body_t *init_game_elem(sfRenderWindow *window)
 
     elem[0] = create_body("map/test5.png", (sfIntRect){3840, 2160, 1920, 1080},
     (sfVector2f){size.x * 0, size.y * 0});
-    elem[1] = create_body("other/block.png", (sfIntRect){0, 0, 100, 100},
+    elem[1] = create_body("other/block.png", (sfIntRect){0, 0, 500, 100},
     (sfVector2f){size.x * 0.25, size.y * 0.25});
-    elem[2] = create_body("other/block.png", (sfIntRect){0, 0, 120, 130},
-    (sfVector2f){size.x * 0.75, size.y * 0.30});
+    elem[2] = create_body("other/block.png", (sfIntRect){0, 0, 120, 250},
+    (sfVector2f){size.x * 0.70, size.y * 0.60});
     return (elem);
 }

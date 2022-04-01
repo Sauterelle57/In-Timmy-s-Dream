@@ -9,7 +9,12 @@
     #define CATEGORY_H_
 
     static char *OBJ[2] = {
-        "object/grenadine_flask.png", "0"
+        "object/DamagePotion.png",
+        "object/Pillow.png",
+    };
+
+    static char *BUTTON[3] = {
+        "button/Pause1.png", "button/Pause2.png", "button/Pause3.png"
     };
 
     static char *NPC[18] = {
@@ -68,11 +73,13 @@
     };
 
     static char *WITCH[3] = {
-        "enemies/Witch_idle.png", "enemies/Witch_move.png", "enemies/Witch_die.png"\
+        "enemies/Witch_idle.png", "enemies/Witch_move.png",
+        "enemies/Witch_die.png"\
     };
 
     static char *CLOWN[3] = {
-        "enemies/Clown_idle.png", "enemies/Clown_walk.png", "enemies/Clown_die.png"\
+        "enemies/Clown_idle.png", "enemies/Clown_walk.png",
+        "enemies/Clown_die.png"\
     };
 
 #endif /* !CATEGORY_H_ */
