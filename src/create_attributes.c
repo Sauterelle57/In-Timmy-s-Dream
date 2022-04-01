@@ -34,22 +34,22 @@ object_t create_object(char *text, int pv, int pa, int type)
     return (obj);
 }
 
-button_t create_button(char *texture, sfVector2f pos, sfText *text,
+button_t create_button(int texture, sfVector2f pos, sfText *text,
 void (*fonction)(game_t *))
 {
-    button_t button = {create_body(texture, (sfIntRect){0, 0, 35, 10}, pos),
-    (sfVector2f){400, 200}, text, fonction};
+    button_t button = {create_body(BUTTON[texture], (sfIntRect){0, 0, 35, 10},
+    pos), (sfVector2f){400, 200}, text, texture, fonction};
 
     sfSprite_setScale(button.body.sprite, (sfVector2f){10, 10});
     return (button);
 }
 
-button_t create_square_button(char *texture, sfVector2f pos, sfText *text,
+button_t create_square_button(int texture, sfVector2f pos, sfText *text,
 void (*fonction)(game_t *))
 {
-    button_t button = {create_body(texture, (sfIntRect){0, 0, 16, 16}, pos),
-    (sfVector2f){100, 100}, text, fonction};
+    button_t button = {create_body(BUTTON[texture], (sfIntRect){0, 0, 20, 20},
+    pos), (sfVector2f){60, 60}, text, texture, fonction};
 
-    sfSprite_setScale(button.body.sprite, (sfVector2f){7, 7});
+    sfSprite_setScale(button.body.sprite, (sfVector2f){3, 3});
     return (button);
 }

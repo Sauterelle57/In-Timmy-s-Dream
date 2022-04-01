@@ -32,11 +32,15 @@ player_t create_player(void)
 {
     body_t body = create_body(NPC[16], (sfIntRect)
     {0, 0, 32, 48}, (sfVector2f){940, 540});
-    object_t inventory[1];
+    body_t pv_bar = create_body("other/pv_bar.png", (sfIntRect)
+    {0, 0, 126, 24}, (sfVector2f){50, 50});
+    body_t pa_bar = create_body("other/pa_bar.png", (sfIntRect)
+    {0, 0, 126, 24}, (sfVector2f){50, 100});
+    object_t *inventory = malloc(sizeof(object_t) * 2);
 
-    for (int i = 0; i < 1; i++)
-        inventory[i] = create_object(OBJ[i], my_getnbr(OBJ[i + 1]), 0, 0);
-    player_t player = {body, inventory, 50, 50, 0};
+    for (int i = 0; i < 2; i++)
+        inventory[i] = create_object(OBJ[i], 0, 0, 0);
+    player_t player = {body, inventory, pv_bar, pa_bar, 100, 50};
     return (player);
 }
 
