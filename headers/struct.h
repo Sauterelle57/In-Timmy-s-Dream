@@ -25,10 +25,11 @@ typedef struct object_s {
 
 typedef struct player_s {
     body_t body;
-    object_t inventory[1];
+    object_t *inventory;
+    body_t pv_bar;
+    body_t pa_bar;
     int pv;
     int pa;
-    int orient;
 } player_t;
 
 typedef struct interest_s {
@@ -46,6 +47,7 @@ typedef struct button_s {
     body_t body;
     sfVector2f size;
     sfText *text;
+    int png;
     void (*on_click)();
 } button_t;
 
@@ -64,7 +66,6 @@ typedef struct scene_s {
 typedef struct timing_s {
     sfClock *clock;
     float sec;
-    float anim;
 } timing_t;
 
 typedef struct game_s {
