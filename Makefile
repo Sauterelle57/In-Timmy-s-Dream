@@ -39,9 +39,11 @@ SRC	=	src/main.c	\
 \
 		src/combat/create_maze.c	\
 		src/combat/main_combat.c	\
+		src/combat/event_combat.c	\
 		src/combat/init_combat_elm.c	\
 		src/combat/fonctions_combat.c	\
-		src/combat/event_combat.c			\
+		src/combat/player_combat_movements.c	\
+		src/combat/player_combat_collision.c	\
 		src/combat/maze_generator/sources/init.c	\
 		src/combat/maze_generator/sources/main.c	\
 		src/combat/maze_generator/sources/neighbors.c	\
@@ -57,6 +59,7 @@ SRC	=	src/main.c	\
 		src/game/draw_game.c	\
 		src/game/anim_game.c	\
 		src/game/event_game.c	\
+		src/game/create_block.c	\
 		src/game/init_game_elm.c	\
 		src/game/player_movements.c \
 		src/game/player_collision.c	\
