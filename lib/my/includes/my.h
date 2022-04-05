@@ -20,6 +20,7 @@
     void my_putchar(char);
     char *my_revstr(char *);
     char *my_int_to_str(int);
+    void my_free_tab(char **);
     int result(long, int, int);
     void my_swap(int *, int *);
     int my_find_prime_sup(int);

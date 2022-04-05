@@ -50,6 +50,7 @@ SRC	=	my_swap.c	\
 		my_put_nbr.c	\
 		my_strncmp.c	\
 		my_is_prime.c	\
+		my_free_tab.c	\
 		my_str_isnum.c	\
 		my_strupcase.c	\
 		my_int_to_str.c	\

@@ -8,13 +8,6 @@
 #include "includes.h"
 #include "game.h"
 
-static void draw_player(game_t * g)
-{
-    Draw_Sprite(g->player.pv_bar.sprite);
-    //Draw_Sprite(g->player.pa_bar.sprite);
-    Draw_Sprite(g->player.body.sprite);
-}
-
 void draw_game(game_t *g)
 {
     for (int i = 0; i < g->scene[0].nb_elem; i++)
