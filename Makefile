@@ -35,10 +35,18 @@ SRC	=	src/main.c	\
 		src/move_sprite.c	\
 		src/create_struct.c	\
 		src/create_attributes.c	\
+		src/draw_player.c	\
 \
+		src/combat/create_maze.c	\
 		src/combat/main_combat.c	\
 		src/combat/init_combat_elm.c	\
 		src/combat/fonctions_combat.c	\
+		src/combat/maze_generator/sources/init.c	\
+		src/combat/maze_generator/sources/main.c	\
+		src/combat/maze_generator/sources/neighbors.c	\
+		src/combat/maze_generator/sources/create_file.c	\
+		src/combat/maze_generator/sources/linked_list.c	\
+		src/combat/maze_generator/sources/it_backtracking.c	\
 \
 		src/dialogue/main_dialogue.c	\
 		src/dialogue/init_dialogue_elm.c	\

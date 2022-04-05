@@ -13,6 +13,7 @@
 void game_loop(game_t *g)
 {
     sfVector2u size;
+
     while (sfRenderWindow_isOpen(g->window)) {
         size = Get_Window_size();
         sfRenderWindow_clear(g->window, sfBlack);
@@ -32,8 +33,10 @@ int main(void)
     game_t game = create_game();
     scene_t s_game = init_game(&game);
     scene_t s_menu = init_menu(&game);
+    scene_t s_combat = init_combat(&game);
     game.scene[0] = s_game;
     game.scene[1] = s_menu;
+    game.scene[2] = s_combat;
     game.curent_scene = 0;
     game_loop(&game);
     return (0);
