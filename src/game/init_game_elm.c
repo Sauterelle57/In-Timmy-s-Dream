@@ -15,7 +15,9 @@ void fonction(game_t *g)
 
 void go_combat(game_t *g)
 {
-    Set_Pos(g->player.body.sprite, 200, 140);
+    g->player.body.pos.x = 260;
+    g->player.body.pos.y = 140;
+    Set_Pos(g->player.body.sprite, 260, 140);
     g->curent_scene = 2;
 }
 
@@ -51,11 +53,8 @@ body_t *init_game_elem(sfRenderWindow *window)
     sfVector2u size = sfRenderWindow_getSize(window);
     body_t *elem = malloc(sizeof(body_t) * 3);
 
-    elem[0] = create_body("map/test5.png", (sfIntRect){3840, 2160, 1920, 1080},
-    (sfVector2f){size.x * 0, size.y * 0});
-    elem[1] = create_body("other/block.png", (sfIntRect){0, 0, 500, 100},
-    (sfVector2f){size.x * 0.25, size.y * 0.25});
-    elem[2] = create_body("other/block.png", (sfIntRect){0, 0, 120, 250},
-    (sfVector2f){size.x * 0.70, size.y * 0.60});
+    elem[0] = create_body("map/main.png", (sfIntRect){-600, 2940, 1920, 1080},
+    (sfVector2f){0, 0});
+    elem = create_block(elem);
     return (elem);
 }

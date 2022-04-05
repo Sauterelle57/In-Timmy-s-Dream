@@ -23,7 +23,7 @@ void event_combat(game_t *g)
     check_button(g, Get_Mouse_Pos(), Get_Window_size());
     if (Key_Pressed(sfKeyUp) || Key_Pressed(sfKeyDown) ||
     Key_Pressed(sfKeyRight) || Key_Pressed(sfKeyLeft))
-        movement(g);
+        combat_movement(g);
     else
         Set_Texture(g->player.body.sprite, NPC[16]);
 }

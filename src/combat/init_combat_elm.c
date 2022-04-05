@@ -41,12 +41,3 @@ interest_t *init_combat_interest(sfRenderWindow *window)
     //{0, 0, 50, 50}, (sfVector2f){size.x * 0.16, size.y * 0.70}, action);
     return (interest);
 }
-
-body_t *init_combat_elem(sfRenderWindow *window)
-{
-    sfVector2u size = sfRenderWindow_getSize(window);
-    body_t *elem = malloc(sizeof(body_t) * 390);
-
-    elem = create_maze(elem);
-    return (elem);
-}
