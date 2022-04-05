@@ -17,5 +17,7 @@ int maze_generation(int width, int height);
 body_t *init_combat_elem(sfRenderWindow *window);
 button_t *init_combat_button(sfRenderWindow *window);
 interest_t *init_combat_interest(sfRenderWindow *window);
+void check_action(game_t *g);
+void check_button(game_t *g, sfVector2i pos, sfVector2u size);
 
 #endif /* !COMBAT_H_ */

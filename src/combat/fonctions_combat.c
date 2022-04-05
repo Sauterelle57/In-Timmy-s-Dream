@@ -19,16 +19,6 @@ void draw_combat(game_t *g)
     draw_player(g);
 }
 
-void event_combat(game_t *g)
-{
-    if (g->event.type == sfEvtClosed || Key_Pressed(sfKeyEscape))
-        sfRenderWindow_close(g->window);
-    if (Key_Pressed(sfKeyLeft))
-        pass();//my_printf("Key Left pressed\n");
-    if (Key_Pressed(sfKeyRight))
-        pass();//my_printf("Key Right pressed\n");
-}
-
 void anim_combat(game_t *g)
 {
     static float tmp = 0.0;
