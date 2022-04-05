@@ -41,6 +41,7 @@ SRC	=	src/main.c	\
 		src/combat/main_combat.c	\
 		src/combat/init_combat_elm.c	\
 		src/combat/fonctions_combat.c	\
+		src/combat/event_combat.c			\
 		src/combat/maze_generator/sources/init.c	\
 		src/combat/maze_generator/sources/main.c	\
 		src/combat/maze_generator/sources/neighbors.c	\
