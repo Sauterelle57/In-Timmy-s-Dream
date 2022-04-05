@@ -13,6 +13,12 @@ void fonction(game_t *g)
     my_printf("Button clicked !!\n");
 }
 
+void go_combat(game_t *g)
+{
+    Set_Pos(g->player.body.sprite, 200, 140);
+    g->curent_scene = 2;
+}
+
 button_t *init_game_button(sfRenderWindow *window)
 {
     sfVector2u size = sfRenderWindow_getSize(window);
@@ -34,7 +40,7 @@ interest_t *init_game_interest(sfRenderWindow *window)
     interest_t *interest = malloc(sizeof(interest_t) * 2);
 
     interest[0] = create_interest(BAT[0], (sfIntRect)
-    {0, 0, 32, 32}, (sfVector2f){size.x * 0.21, size.y * 0.42}, &action);
+    {0, 0, 32, 32}, (sfVector2f){size.x * 0.45, size.y * 0.42}, &go_combat);
     interest[1] = create_interest(VAMPIRE[0], (sfIntRect)
     {0, 0, 32, 50}, (sfVector2f){size.x * 0.16, size.y * 0.70}, &action);
     return (interest);

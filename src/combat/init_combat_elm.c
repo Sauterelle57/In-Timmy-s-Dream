@@ -16,12 +16,12 @@ static void fonction(game_t *g)
 button_t *init_combat_button(sfRenderWindow *window)
 {
     sfVector2u size = sfRenderWindow_getSize(window);
-    button_t *buttons = malloc(sizeof(button_t) * 2);
+    button_t *buttons = malloc(sizeof(button_t) * 0);
 
-    buttons[0] = create_button(0, (sfVector2f){size.x * 0.21, size.y * 0.42},
-    create_text(50, (sfVector2f){100, 100}, "BUTTON"), fonction);
-    buttons[1] = create_square_button(0, (sfVector2f){size.x * 0.84, size.y *
-    0.66}, create_text(50, (sfVector2f){200, 200}, "BUTTON"), fonction);
+    //buttons[0] = create_button(0, (sfVector2f){size.x * 0.21, size.y * 0.42},
+    //create_text(50, (sfVector2f){100, 100}, "BUTTON"), fonction);
+    //buttons[1] = create_square_button(0, (sfVector2f){size.x * 0.84, size.y *
+    //0.66}, create_text(50, (sfVector2f){200, 200}, "BUTTON"), fonction);
     return (buttons);
 }
 
@@ -33,23 +33,20 @@ static void action(game_t *g)
 interest_t *init_combat_interest(sfRenderWindow *window)
 {
     sfVector2u size = sfRenderWindow_getSize(window);
-    interest_t *interest = malloc(sizeof(interest_t) * 2);
+    interest_t *interest = malloc(sizeof(interest_t) * 0);
 
-    interest[0] = create_interest("other/test.png", (sfIntRect)
-    {0, 0, 50, 50}, (sfVector2f){size.x * 0.21, size.y * 0.42}, action);
-    interest[1] = create_interest("other/test.png", (sfIntRect)
-    {0, 0, 50, 50}, (sfVector2f){size.x * 0.16, size.y * 0.70}, action);
+    //interest[0] = create_interest("other/test.png", (sfIntRect)
+    //{0, 0, 50, 50}, (sfVector2f){size.x * 0.21, size.y * 0.42}, action);
+    //interest[1] = create_interest("other/test.png", (sfIntRect)
+    //{0, 0, 50, 50}, (sfVector2f){size.x * 0.16, size.y * 0.70}, action);
     return (interest);
 }
 
 body_t *init_combat_elem(sfRenderWindow *window)
 {
     sfVector2u size = sfRenderWindow_getSize(window);
-    body_t *elem = malloc(sizeof(body_t) * 2);
+    body_t *elem = malloc(sizeof(body_t) * 390);
 
-    elem[0] = create_body("other/test.png", (sfIntRect){0, 0, 1920, 1080},
-    (sfVector2f){size.x * 0, size.y * 0});
-    elem[1] = create_body("other/test.png", (sfIntRect){0, 0, 50, 50},
-    (sfVector2f){size.x * 500, size.y * 600});
+    elem = create_maze(elem);
     return (elem);
 }

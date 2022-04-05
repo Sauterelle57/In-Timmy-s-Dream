@@ -11,14 +11,14 @@
 scene_t init_combat(game_t *g)
 {
     button_t *buttons = init_combat_button(g->window);
-    int nb_button = 2;
+    int nb_button = 0;
     body_t *elem = init_combat_elem(g->window);
-    int nb_elem = 2;
+    int nb_elem = 346;
     interest_t *interest = init_combat_interest(g->window);
-    int nb_interest = 2;
-    scene_t game = {buttons, nb_button, elem, nb_elem, interest,
-    nb_interest};
+    int nb_interest = 0;
+    scene_t game = {buttons, nb_button, elem, nb_elem, interest, nb_interest};
 
+    maze_generation(23, 15);
     game.draw = &draw_combat;
     game.event = &event_combat;
     game.anim = &anim_combat;
