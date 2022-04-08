@@ -31,7 +31,7 @@ void (*action)(game_t *))
 player_t create_player(void)
 {
     body_t body = create_body(NPC[16], (sfIntRect)
-    {0, 0, 32, 48}, (sfVector2f){940, 540});
+    {0, 0, 32, 32}, (sfVector2f){940, 540});
     body_t pv_bar = create_body("other/pv_bar.png", (sfIntRect)
     {0, 0, 126, 24}, (sfVector2f){50, 50});
     body_t pa_bar = create_body("other/pa_bar.png", (sfIntRect)
@@ -40,7 +40,7 @@ player_t create_player(void)
 
     for (int i = 0; i < 2; i++)
         inventory[i] = create_object(OBJ[i], 0, 0, 0);
-    Set_Scale(body.sprite, 1.25, 1.25);
+    Set_Scale(body.sprite, 1.5, 1.5);
     player_t player = {body, inventory, pv_bar, pa_bar, 100, 50};
     return (player);
 }

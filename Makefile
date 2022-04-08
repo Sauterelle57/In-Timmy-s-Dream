@@ -61,8 +61,12 @@ SRC	=	src/main.c	\
 		src/game/event_game.c	\
 		src/game/create_block.c	\
 		src/game/init_game_elm.c	\
+		src/game/create_block_2.c	\
+		src/game/create_block_3.c	\
+		src/game/create_interest.c	\
 		src/game/player_movements.c \
 		src/game/player_collision.c	\
+		src/game/interest_fonction.c	\
 \
 		src/menu/main_menu.c	\
 		src/menu/init_menu_elm.c	\
