@@ -8,7 +8,7 @@
 #include "includes.h"
 #include "game.h"
 
-static void check_action(game_t *g)
+void check_action(game_t *g)
 {
     sfVector2f size = {32, 50};
     sfFloatRect player = Get_bounds(g->player.body.sprite);
@@ -18,7 +18,7 @@ static void check_action(game_t *g)
             g->scene[0].interest[i].on_click(g);
 }
 
-static void check_button(game_t *g, sfVector2i pos, sfVector2u size)
+void check_button(game_t *g, sfVector2i pos, sfVector2u size)
 {
     static float tmp = 0.0;
     button_t button;

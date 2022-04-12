@@ -23,4 +23,7 @@
     #include "create_prototypes.h"
     #include "category.h"
 
+void draw_player(game_t * g);
+void move_sprite(body_t *sprite, sfVector2f pos, int speed);
+
 #endif /* !INCLUDES_H_ */

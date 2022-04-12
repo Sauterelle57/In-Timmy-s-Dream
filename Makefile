@@ -35,10 +35,21 @@ SRC	=	src/main.c	\
 		src/move_sprite.c	\
 		src/create_struct.c	\
 		src/create_attributes.c	\
+		src/draw_player.c	\
 \
+		src/combat/create_maze.c	\
 		src/combat/main_combat.c	\
+		src/combat/event_combat.c	\
 		src/combat/init_combat_elm.c	\
 		src/combat/fonctions_combat.c	\
+		src/combat/player_combat_movements.c	\
+		src/combat/player_combat_collision.c	\
+		src/combat/maze_generator/sources/init.c	\
+		src/combat/maze_generator/sources/main.c	\
+		src/combat/maze_generator/sources/neighbors.c	\
+		src/combat/maze_generator/sources/create_file.c	\
+		src/combat/maze_generator/sources/linked_list.c	\
+		src/combat/maze_generator/sources/it_backtracking.c	\
 \
 		src/dialogue/main_dialogue.c	\
 		src/dialogue/init_dialogue_elm.c	\
@@ -48,9 +59,14 @@ SRC	=	src/main.c	\
 		src/game/draw_game.c	\
 		src/game/anim_game.c	\
 		src/game/event_game.c	\
+		src/game/create_block.c	\
 		src/game/init_game_elm.c	\
+		src/game/create_block_2.c	\
+		src/game/create_block_3.c	\
+		src/game/create_interest.c	\
 		src/game/player_movements.c \
 		src/game/player_collision.c	\
+		src/game/interest_fonction.c	\
 \
 		src/menu/main_menu.c	\
 		src/menu/init_menu_elm.c	\
