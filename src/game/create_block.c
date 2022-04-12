@@ -85,7 +85,7 @@ static body_t *create_block_2(body_t *elem)
     elem[11] = create_body("other/block.png", (sfIntRect){0, 0, 310, 150},
     (sfVector2f){1920, 1290});
     elem[12] = create_body("other/block.png", (sfIntRect){0, 0, 1465, 1000},
-    (sfVector2f){2235, 695});
+    (sfVector2f){2235, 685});
     elem[13] = create_body("other/block.png", (sfIntRect){0, 0, 900, 280},
     (sfVector2f){2550, 20});
     elem[14] = create_body("other/block.png", (sfIntRect){0, 0, 900, 350},
