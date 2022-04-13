@@ -9,6 +9,9 @@
 #include "game.h" //scene 0
 #include "main_menu.h" //scene 1
 #include "combat.h" //scene 2
+#include "vampire.h" //scene 3
+#include "ghost.h" //scene 4
+#include "forest.h" //scene 5
 
 void game_loop(game_t *g)
 {
@@ -34,10 +37,16 @@ int main(void)
     scene_t s_game = init_game(&game);
     scene_t s_menu = init_menu(&game);
     scene_t s_combat = init_combat(&game);
+    scene_t s_vampire = init_vampire(&game);
+    scene_t s_ghost = init_ghost(&game);
+    scene_t s_forest = init_forest(&game);
     game.scene[0] = s_game;
     game.scene[1] = s_menu;
     game.scene[2] = s_combat;
-    game.curent_scene = 0;
+    game.scene[3] = s_vampire;
+    game.scene[4] = s_ghost;
+    game.scene[5] = s_forest;
+    game.curent_scene = 5;
     game_loop(&game);
     return (0);
 }

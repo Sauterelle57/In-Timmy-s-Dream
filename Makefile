@@ -71,6 +71,36 @@ SRC	=	src/main.c	\
 		src/menu/main_menu.c	\
 		src/menu/init_menu_elm.c	\
 		src/menu/fonctions_menu.c	\
+\
+		src/vampire/anim_vampire.c	\
+		src/vampire/draw_vampire.c	\
+		src/vampire/event_vampire.c	\
+		src/vampire/init_vampire.c	\
+		src/vampire/init_elem_vampire.c	\
+		src/vampire/vampire_collisions.c	\
+		src/vampire/init_button_vampire.c	\
+		src/vampire/init_interest_vampire.c	\
+		src/vampire/player_vampire_movements.c	\
+\
+		src/ghost/anim_ghost.c	\
+		src/ghost/draw_ghost.c	\
+		src/ghost/event_ghost.c	\
+		src/ghost/init_ghost.c	\
+		src/ghost/init_elem_ghost.c	\
+		src/ghost/ghost_collisions.c	\
+		src/ghost/init_button_ghost.c	\
+		src/ghost/init_interest_ghost.c	\
+		src/ghost/player_ghost_movements.c	\
+\
+		src/forest/anim_forest.c	\
+		src/forest/draw_forest.c	\
+		src/forest/event_forest.c	\
+		src/forest/init_forest.c	\
+		src/forest/init_elem_forest.c	\
+		src/forest/forest_collisions.c	\
+		src/forest/init_button_forest.c	\
+		src/forest/init_interest_forest.c	\
+		src/forest/player_forest_movements.c
 
 OBJ =	$(SRC:.c=.o)
 

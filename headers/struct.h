@@ -75,7 +75,7 @@ typedef struct game_s {
     //music_t *m;
     body_t cursor;
     player_t player;
-    scene_t scene[3];
+    scene_t scene[6];
     int curent_scene;
 } game_t;
 
