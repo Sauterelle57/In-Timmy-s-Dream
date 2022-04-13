@@ -96,10 +96,10 @@ static body_t *create_block_2(body_t *elem)
     (sfVector2f){3450, 10});
     elem[17] = create_body("other/block.png", (sfIntRect){0, 0, 50, 485},
     (sfVector2f){4050, 10});
-    elem[18] = create_body("other/block.png", (sfIntRect){0, 0, 280, 50},
+    elem[18] = create_body("other/block.png", (sfIntRect){0, 0, 275, 30},
     (sfVector2f){3450, 450});
-    elem[19] = create_body("other/block.png", (sfIntRect){0, 0, 280, 50},
-    (sfVector2f){3830, 450});
+    elem[19] = create_body("other/block.png", (sfIntRect){0, 0, 280, 30},
+    (sfVector2f){3835, 450});
     elem = create_block_3(elem);
     return (elem);
 }
@@ -117,7 +117,7 @@ body_t *create_block(body_t *elem)
     elem[6] = create_body("other/block.png", (sfIntRect){0, 0, 370, 350},
     (sfVector2f){1620, 180});
     elem[7] = create_body("other/block.png", (sfIntRect){0, 0, 100, 365},
-    (sfVector2f){1980, 150});
+    (sfVector2f){1980, 170});
     elem[8] = create_body("other/block.png", (sfIntRect){0, 0, 80, 350},
     (sfVector2f){2060, 180});
     elem[9] = create_body("other/block.png", (sfIntRect){0, 0, 390, 350},

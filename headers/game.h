@@ -10,10 +10,13 @@
 
 void example(game_t *g);
 void movement(game_t *g);
+void go_ghost(game_t *g);
+void go_forest(game_t *g);
 void go_combat(game_t *g);
 void draw_game(game_t *g);
 void anim_game(game_t *g);
 void event_game(game_t *g);
+void go_vampire(game_t *g);
 scene_t init_game(game_t *g);
 body_t *create_block(body_t *elem);
 body_t *create_block_6(body_t *elem);

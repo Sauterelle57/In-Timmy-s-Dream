@@ -1,0 +1,27 @@
+/*
+** EPITECH PROJECT, 2022
+** RPG
+** File description:
+** init_forest
+*/
+
+#include "includes.h"
+#include "forest.h"
+
+scene_t init_forest(game_t *g)
+{
+    int nb_button = 1;
+    button_t *buttons = init_forest_button(g->window, nb_button);
+    int nb_elem = 2;
+    body_t *elem = init_forest_elem(g->window, nb_elem);
+    int nb_interest = 4;
+    interest_t *interest = init_forest_interest(g->window, nb_interest);
+    scene_t forest = {buttons, nb_button, elem, nb_elem, interest,
+    nb_interest};
+
+    forest.draw = &draw_forest;
+    forest.event = &event_forest;
+    forest.anim = &anim_forest;
+    return (forest);
+}
+
