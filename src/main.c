@@ -34,19 +34,19 @@ void game_loop(game_t *g)
 int main(void)
 {
     game_t game = create_game();
-    scene_t s_game = init_game(&game);
-    scene_t s_menu = init_menu(&game);
-    scene_t s_combat = init_combat(&game);
+    //scene_t s_game = init_game(&game);
+    //scene_t s_menu = init_menu(&game);
+    //scene_t s_combat = init_combat(&game);
     scene_t s_vampire = init_vampire(&game);
-    scene_t s_ghost = init_ghost(&game);
-    scene_t s_forest = init_forest(&game);
-    game.scene[0] = s_game;
-    game.scene[1] = s_menu;
-    game.scene[2] = s_combat;
+    //scene_t s_ghost = init_ghost(&game);
+    //scene_t s_forest = init_forest(&game);
+    //game.scene[0] = s_game;
+    //game.scene[1] = s_menu;
+    //game.scene[2] = s_combat;
     game.scene[3] = s_vampire;
-    game.scene[4] = s_ghost;
-    game.scene[5] = s_forest;
-    game.curent_scene = 5;
+    //game.scene[4] = s_ghost;
+    //game.scene[5] = s_forest;
+    game.curent_scene = 3;
     game_loop(&game);
     return (0);
 }
