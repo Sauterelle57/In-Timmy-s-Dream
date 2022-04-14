@@ -8,13 +8,25 @@
 #ifndef CATEGORY_H_
     #define CATEGORY_H_
 
-    static char *OBJ[2] = {
+    static char *OBJ[11] = {
         "object/DamagePotion.png",
         "object/Pillow.png",
+        "object/Pickaxe.png",
+        "object/LighterOn.png",
+        "object/Lintern.png",
+        "object/LinternOld.png",
+        "object/Potato.png",
+        "object/SniperRifle.png",
+        "object/NormalSword.png",
+        "object/Coin.png",
+        "object/Pistol.png"
     };
 
-    static char *BUTTON[3] = {
-        "button/Pause1.png", "button/Pause2.png", "button/Pause3.png"
+    static char *BUTTON[9] = {
+        "button/Pause1.png", "button/Pause2.png", "button/Pause3.png",
+        "button/Inventory1.png", "button/Inventory2.png",
+        "button/Inventory3.png",
+        "button/Close1.png", "button/Close2.png", "button/Close3.png",
     };
 
     static char *NPC[18] = {

@@ -21,7 +21,7 @@ scene_t init_game(game_t *g);
 body_t *create_block(body_t *elem);
 body_t *create_block_6(body_t *elem);
 body_t *create_block_11(body_t *elem);
-button_t *init_game_button(sfRenderWindow *window);
+button_t *init_game_button(sfRenderWindow *window, int nb_button);
 interest_t *create_all_interests(interest_t *interest);
 body_t *init_game_elem(sfRenderWindow *window, int nb_elem);
 int collision(body_t player, body_t elem, sfVector2i new_pos);

@@ -36,9 +36,9 @@ player_t create_player(void)
     {0, 0, 126, 24}, (sfVector2f){50, 50});
     body_t pa_bar = create_body("other/pa_bar.png", (sfIntRect)
     {0, 0, 126, 24}, (sfVector2f){50, 100});
-    object_t *inventory = malloc(sizeof(object_t) * 2);
+    object_t *inventory = malloc(sizeof(object_t) * 11);
 
-    for (int i = 0; i < 2; i++)
+    for (int i = 0; i < 11; i++)
         inventory[i] = create_object(OBJ[i], 0, 0, 0);
     player_t player = {body, inventory, pv_bar, pa_bar, 100, 50};
     return (player);
@@ -55,5 +55,6 @@ game_t create_game(void)
     player_t player = create_player();
     game_t game = {window, event, t, cursor, player};
 
+    game.cooldown = 0.0;
     return (game);
 }

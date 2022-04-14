@@ -12,12 +12,14 @@
 #include "vampire.h" //scene 3
 #include "ghost.h" //scene 4
 #include "forest.h" //scene 5
+#include "inventory.h" //scene 6
 
 void game_loop(game_t *g)
 {
     sfVector2u size;
 
     while (sfRenderWindow_isOpen(g->window)) {
+        //printf("scene: %d\tprevious: %d\n", g->curent_scene, g->previous_scene);
         size = Get_Window_size();
         sfRenderWindow_clear(g->window, sfBlack);
         g->scene[g->curent_scene].anim(g);
@@ -34,19 +36,22 @@ void game_loop(game_t *g)
 int main(void)
 {
     game_t game = create_game();
-    //scene_t s_game = init_game(&game);
-    //scene_t s_menu = init_menu(&game);
-    //scene_t s_combat = init_combat(&game);
+    scene_t s_game = init_game(&game);
+    scene_t s_menu = init_menu(&game);
+    scene_t s_combat = init_combat(&game);
     scene_t s_vampire = init_vampire(&game);
-    //scene_t s_ghost = init_ghost(&game);
-    //scene_t s_forest = init_forest(&game);
-    //game.scene[0] = s_game;
-    //game.scene[1] = s_menu;
-    //game.scene[2] = s_combat;
+    scene_t s_ghost = init_ghost(&game);
+    scene_t s_forest = init_forest(&game);
+    scene_t s_inventory = init_inventory(&game);
+    game.scene[0] = s_game;
+    game.scene[1] = s_menu;
+    game.scene[2] = s_combat;
     game.scene[3] = s_vampire;
-    //game.scene[4] = s_ghost;
-    //game.scene[5] = s_forest;
-    game.curent_scene = 3;
+    game.scene[4] = s_ghost;
+    game.scene[5] = s_forest;
+    game.scene[6] = s_inventory;
+    game.previous_scene = 0;
+    game.curent_scene = 0;
     game_loop(&game);
     return (0);
 }

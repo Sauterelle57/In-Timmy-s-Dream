@@ -100,7 +100,16 @@ SRC	=	src/main.c	\
 		src/forest/forest_collisions.c	\
 		src/forest/init_button_forest.c	\
 		src/forest/init_interest_forest.c	\
-		src/forest/player_forest_movements.c
+		src/forest/player_forest_movements.c	\
+\
+		src/inventory/anim_inventory.c	\
+		src/inventory/draw_inventory.c	\
+		src/inventory/event_inventory.c	\
+		src/inventory/init_inventory.c	\
+		src/inventory/init_elem_inventory.c	\
+		src/inventory/init_button_inventory.c	\
+		src/inventory/init_interest_inventory.c	\
+		src/inventory/player_inventory_movements.c
 
 OBJ =	$(SRC:.c=.o)
 

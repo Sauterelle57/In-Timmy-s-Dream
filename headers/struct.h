@@ -75,8 +75,10 @@ typedef struct game_s {
     //music_t *m;
     body_t cursor;
     player_t player;
-    scene_t scene[6];
+    scene_t scene[7];
+    int previous_scene;
     int curent_scene;
+    float cooldown;
 } game_t;
 
 #endif /* !RPG_H */
