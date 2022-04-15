@@ -16,7 +16,7 @@ scene_t init_inventory(game_t *g)
     body_t *elem = init_inventory_elem(g->window, nb_elem);
     int nb_interest = 0;
     interest_t *interest = init_inventory_interest(g->window, nb_interest);
-    scene_t inventory = {buttons, nb_button, elem, nb_elem, interest,
+    scene_t inventory = {0, buttons, nb_button, elem, nb_elem, interest,
     nb_interest};
 
     inventory.draw = &draw_inventory;

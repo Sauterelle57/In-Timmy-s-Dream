@@ -16,7 +16,7 @@ scene_t init_vampire(game_t *g)
     body_t *elem = init_vampire_elem(g->window, nb_elem);
     int nb_interest = 5;
     interest_t *interest = init_vampire_interest(g->window, nb_interest);
-    scene_t vampire = {buttons, nb_button, elem, nb_elem, interest,
+    scene_t vampire = {0, buttons, nb_button, elem, nb_elem, interest,
     nb_interest};
 
     vampire.draw = &draw_vampire;

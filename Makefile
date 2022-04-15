@@ -31,11 +31,13 @@ IWHITE  = $ \x1b[47m
 CFLAGS = -g -I./headers
 
 SRC	=	src/main.c	\
+		src/quit_game.c	\
 		src/create_text.c	\
 		src/move_sprite.c	\
+		src/create_music.c	\
 		src/create_struct.c	\
 		src/create_attributes.c	\
-		src/draw_player.c	\
+		src/draw_cursor_and_player.c	\
 \
 		src/combat/create_maze.c	\
 		src/combat/main_combat.c	\
@@ -50,10 +52,6 @@ SRC	=	src/main.c	\
 		src/combat/maze_generator/sources/create_file.c	\
 		src/combat/maze_generator/sources/linked_list.c	\
 		src/combat/maze_generator/sources/it_backtracking.c	\
-\
-		src/dialogue/main_dialogue.c	\
-		src/dialogue/init_dialogue_elm.c	\
-		src/dialogue/fonctions_dialogue.c	\
 \
 		src/game/main_game.c	\
 		src/game/draw_game.c	\
