@@ -19,27 +19,15 @@ void draw_combat(game_t *g)
     draw_player(g);
 }
 
-void event_combat(game_t *g)
-{
-    if (g->event.type == sfEvtClosed || Key_Pressed(sfKeyEscape))
-        sfRenderWindow_close(g->window);
-    if (Key_Pressed(sfKeyLeft))
-        pass();//my_printf("Key Left pressed\n");
-    if (Key_Pressed(sfKeyRight))
-        pass();//my_printf("Key Right pressed\n");
-}
-
 void anim_combat(game_t *g)
 {
     static float tmp = 0.0;
 
     g->t.sec = Get_Time(g->t.clock);
-    if (g->t.sec - tmp > 0.05) {
-        for (int i = 0; i < g->scene[2].nb_elem; i++) {
-            g->scene[2].elem[i].rect.left += 0;
-            Set_Texture_Rect(g->scene[2].elem[i].sprite,
-            g->scene[2].elem[i].rect);
-        }
+    if (g->t.sec - tmp > 0.11) {
+        g->player.body.rect.left += g->player.body.rect.left >= 144 ? -144 :
+        48;
+        Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
         tmp = g->t.sec;
     }
 }

@@ -20,7 +20,7 @@ void draw_menu(game_t *g)
 void event_menu(game_t *g)
 {
     if (g->event.type == sfEvtClosed || Key_Pressed(sfKeyEscape))
-        sfRenderWindow_close(g->window);
+        quit_game(g);
     if (Key_Pressed(sfKeyLeft))
         my_printf("Key Left pressed\n");
     if (Key_Pressed(sfKeyRight))

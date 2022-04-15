@@ -11,11 +11,14 @@
 void draw_combat(game_t *g);
 void anim_combat(game_t *g);
 void event_combat(game_t *g);
+void check_action(game_t *g);
 scene_t init_combat(game_t *g);
+void combat_movement(game_t *g);
 body_t *create_maze(body_t *elem);
 int maze_generation(int width, int height);
-body_t *init_combat_elem(sfRenderWindow *window);
 button_t *init_combat_button(sfRenderWindow *window);
 interest_t *init_combat_interest(sfRenderWindow *window);
+void check_button(game_t *g, sfVector2i pos, sfVector2u size);
+int combat_collision(body_t player, body_t elem, sfVector2i new_pos);
 
 #endif /* !COMBAT_H_ */

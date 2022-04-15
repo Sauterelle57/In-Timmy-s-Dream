@@ -8,7 +8,7 @@
 #include "includes.h"
 #include "game.h"
 
-static void check_action(game_t *g)
+void check_action(game_t *g)
 {
     sfVector2f size = {32, 50};
     sfFloatRect player = Get_bounds(g->player.body.sprite);
@@ -18,7 +18,7 @@ static void check_action(game_t *g)
             g->scene[0].interest[i].on_click(g);
 }
 
-static void check_button(game_t *g, sfVector2i pos, sfVector2u size)
+void check_button(game_t *g, sfVector2i pos, sfVector2u size)
 {
     static float tmp = 0.0;
     button_t button;
@@ -44,15 +44,13 @@ static void check_button(game_t *g, sfVector2i pos, sfVector2u size)
 
 void event_game(game_t *g)
 {
-    static float cooldown = 0.0;
-
     g->t.sec = Get_Time(g->t.clock);
     if (g->event.type == sfEvtClosed || Key_Pressed(sfKeyEscape))
-        sfRenderWindow_close(g->window);
+        quit_game(g);
     g->t.sec = Get_Time(g->t.clock);
-    if (Key_Pressed(sfKeySpace) && g->t.sec - cooldown > 0.5) {
+    if (Key_Pressed(sfKeySpace) && g->t.sec - g->cooldown > 0.5) {
         check_action(g);
-        cooldown = g->t.sec;
+        g->cooldown = g->t.sec;
     }
     check_button(g, Get_Mouse_Pos(), Get_Window_size());
     if (Key_Pressed(sfKeyUp) || Key_Pressed(sfKeyDown) ||
