@@ -25,7 +25,8 @@ void anim_combat(game_t *g)
 
     g->t.sec = Get_Time(g->t.clock);
     if (g->t.sec - tmp > 0.11) {
-        g->player.body.rect.left += g->player.body.rect.left >= 96 ? -96 : 32;
+        g->player.body.rect.left += g->player.body.rect.left >= 144 ? -144 :
+        48;
         Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
         tmp = g->t.sec;
     }

@@ -18,7 +18,7 @@
 
 static void go_right(game_t *g)
 {
-    g->player.body.rect.top = 64;
+    g->player.body.rect.top = 96;
     for (int i = 168; i < g->scene[2].nb_elem; i++)
         if (combat_collision(g->player.body, g->scene[2].elem[i],
         (sfVector2i){10, 0}))
@@ -29,7 +29,7 @@ static void go_right(game_t *g)
 
 static void go_left(game_t *g)
 {
-    g->player.body.rect.top = 32;
+    g->player.body.rect.top = 48;
     for (int i = 168; i < g->scene[2].nb_elem; i++)
         if (combat_collision(g->player.body, g->scene[2].elem[i],
         (sfVector2i){-10, 0}))
@@ -40,7 +40,7 @@ static void go_left(game_t *g)
 
 static void go_up(game_t *g)
 {
-    g->player.body.rect.top = 96;
+    g->player.body.rect.top = 144;
     for (int i = 168; i < g->scene[2].nb_elem; i++)
         if (combat_collision(g->player.body, g->scene[2].elem[i],
         (sfVector2i){0, -10}))
