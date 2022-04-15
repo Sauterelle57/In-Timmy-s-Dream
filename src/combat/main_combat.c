@@ -16,7 +16,7 @@ scene_t init_combat(game_t *g)
     int nb_elem = 376;
     interest_t *interest = init_combat_interest(g->window);
     int nb_interest = 0;
-    scene_t combat = {buttons, nb_button, elem, nb_elem, interest,
+    scene_t combat = {0, buttons, nb_button, elem, nb_elem, interest,
     nb_interest};
 
     maze_generation(23, 15);

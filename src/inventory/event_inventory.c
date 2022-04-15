@@ -44,7 +44,7 @@ static void check_button(game_t *g, sfVector2i pos, sfVector2u size)
 void event_inventory(game_t *g)
 {
     if (g->event.type == sfEvtClosed || Key_Pressed(sfKeyEscape))
-        sfRenderWindow_close(g->window);
+        quit_game(g);
     check_button(g, Get_Mouse_Pos(), Get_Window_size());
     if (Key_Pressed(sfKeyUp) || Key_Pressed(sfKeyDown) ||
     Key_Pressed(sfKeyRight) || Key_Pressed(sfKeyLeft))

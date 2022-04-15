@@ -16,7 +16,7 @@ scene_t init_ghost(game_t *g)
     body_t *elem = init_ghost_elem(g->window, nb_elem);
     int nb_interest = 4;
     interest_t *interest = init_ghost_interest(g->window, nb_interest);
-    scene_t ghost = {buttons, nb_button, elem, nb_elem, interest,
+    scene_t ghost = {0, buttons, nb_button, elem, nb_elem, interest,
     nb_interest};
 
     ghost.draw = &draw_ghost;
