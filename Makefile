@@ -32,6 +32,7 @@ CFLAGS = -g -I./headers
 
 SRC	=	src/main.c	\
 		src/quit_game.c	\
+		src/pause_game.c	\
 		src/create_text.c	\
 		src/move_sprite.c	\
 		src/create_music.c	\

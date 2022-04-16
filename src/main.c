@@ -14,14 +14,13 @@
 #include "forest.h" //scene 5
 #include "inventory.h" //scene 6
 
-void game_loop(game_t *g)
+void game_loop(game_t *g, scene_t (*init_scene[7])(game_t *g))
 {
-    scene_t (*init_scene[7])(game_t *g) = {&init_game, &init_menu, &init_combat,
-    &init_vampire, &init_ghost, &init_forest, &init_inventory};
-
     while (sfRenderWindow_isOpen(g->window)) {
         if (g->scene[g->curent_scene].charged == 0) {
             g->scene[g->curent_scene] = init_scene[g->curent_scene](g);
+            sfMusic_pause(g->scene[g->previous_scene].scene_music);
+            sfMusic_play(g->scene[g->curent_scene].scene_music);
             g->scene[g->curent_scene].charged = 1;
         }
         sfRenderWindow_clear(g->window, sfBlack);
@@ -36,9 +35,12 @@ void game_loop(game_t *g)
 
 int main(void)
 {
+    scene_t (*init_scene[7])(game_t *g) = {&init_game, &init_menu, &init_combat
+    , &init_vampire, &init_ghost, &init_forest, &init_inventory};
     game_t game = create_game();
+
     game.previous_scene = 0;
     game.curent_scene = 0;
-    game_loop(&game);
+    game_loop(&game, init_scene);
     return (0);
 }

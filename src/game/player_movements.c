@@ -11,8 +11,6 @@
 static void go_right(game_t *g)
 {
     g->player.body.rect.top = 96;
-    if (g->scene[0].elem[0].rect.left >= 7680)
-        return;
     for (int i = 2; i < g->scene[0].nb_elem; i++)
         if (collision(g->player.body, g->scene[0].elem[i],
         (sfVector2i){10, 0}))
@@ -34,8 +32,6 @@ static void go_right(game_t *g)
 static void go_left(game_t *g)
 {
     g->player.body.rect.top = 48;
-    if (g->scene[0].elem[0].rect.left <= -960)
-        return;
     for (int i = 2; i < g->scene[0].nb_elem; i++)
         if (collision(g->player.body, g->scene[0].elem[i],
         (sfVector2i){-10, 0}))
@@ -57,8 +53,6 @@ static void go_left(game_t *g)
 static void go_up(game_t *g)
 {
     g->player.body.rect.top = 144;
-    if (g->scene[0].elem[0].rect.top >= 4320)
-        return;
     for (int i = 2; i < g->scene[0].nb_elem; i++)
         if (collision(g->player.body, g->scene[0].elem[i],
         (sfVector2i){0, -10}))
@@ -80,8 +74,6 @@ static void go_up(game_t *g)
 static void go_down(game_t *g)
 {
     g->player.body.rect.top = 0;
-    if (g->scene[0].elem[0].rect.top <= -540)
-        return;
     for (int i = 2; i < g->scene[0].nb_elem; i++)
         if (collision(g->player.body, g->scene[0].elem[i],
         (sfVector2i){0, 10}))

@@ -9,6 +9,7 @@
     #define INTEREST_H_
 
 void example(game_t *g);
+void go_game(game_t *g);
 void go_back(game_t *g);
 void go_ghost(game_t *g);
 void go_forest(game_t *g);
