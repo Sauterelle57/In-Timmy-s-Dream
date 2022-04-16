@@ -20,6 +20,6 @@ interest_t *init_ghost_interest(sfRenderWindow *window, int nb_interest)
     interest[2] = create_interest(GHOST[0], (sfIntRect) //ghost chambre
     {0, 0, 48, 70}, (sfVector2f){420, -500}, &example);
     interest[3] = create_interest("other/block.png", (sfIntRect){0, 0, 120, 40}, //entrée / sortie
-    (sfVector2f){900, 560}, &go_back);
+    (sfVector2f){900, 560}, &go_game);
     return (interest);
 }

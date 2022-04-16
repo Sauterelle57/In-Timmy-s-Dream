@@ -45,12 +45,28 @@ void print_result(maze_t *maze, int *cell_neigh)
     free_nodes(maze->stack);
 }
 
+static unsigned int get_random(void)
+{
+    char buffer[100];
+    int fd = open("/dev/urandom", S_IRUSR);
+    unsigned int result = 0;
+
+    if (fd == -1)
+        return (15623);
+    if (read(fd, buffer, 100) == -1)
+        return (45865);
+    for (int i = 0; i < 100; ++i)
+        result += buffer[i];
+    close(fd);
+    return (result);
+}
+
 int maze_generation(int width, int height)
 {
     maze_t maze;
     stack_t *my_stack = NULL;
 
-    srand(time(NULL));
+    srand(get_random());
     maze.width = width;
     maze.height = height;
     maze.map = malloc_map(maze.width, maze.height);
