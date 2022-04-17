@@ -16,6 +16,7 @@ void draw_inventory(game_t *g)
     for (int i = 0; i < g->scene[6].nb_button; i++)
         Draw_Sprite(g->scene[6].button[i].body.sprite);
     draw_player(g);
-    for (int i = 1; i < g->scene[6].nb_elem; i++) //affichage box collisions
-        Draw_Sprite(g->scene[6].elem[i].sprite);
+    for (int i = 1; i < g->scene[6].nb_elem; i++) //affichage objets du joueur
+        if (g->player.inventory[i - 1].own == 1)
+            Draw_Sprite(g->scene[6].elem[i].sprite);
 }
