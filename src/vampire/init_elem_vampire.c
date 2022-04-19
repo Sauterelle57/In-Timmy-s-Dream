@@ -72,11 +72,11 @@ body_t *init_vampire_elem(sfRenderWindow *window, int nb_elem)
     (sfVector2f){70, 380});
     elem[29] = create_body("other/block.png", (sfIntRect){0, 0, 50, 50},
     (sfVector2f){175, 470});
-    elem[30] = create_body("other/block.png", (sfIntRect){0, 0, 100, 100},
+    elem[30] = create_body("other/green_block.png", (sfIntRect){0, 0, 170, 100},
     (sfVector2f){-10, 440});
-    elem[31] = create_body("other/green_block.png", (sfIntRect){0, 0, 110, 100},
+    elem[31] = create_body("other/block.png", (sfIntRect){0, 0, 110, 100},
     (sfVector2f){40, -490});
-    elem[32] = create_body("other/green_block.png", (sfIntRect){0, 0, 50, 100},
+    elem[32] = create_body("other/block.png", (sfIntRect){0, 0, 50, 100},
     (sfVector2f){200, -440});
     return (elem);
 }
