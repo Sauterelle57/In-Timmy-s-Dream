@@ -21,7 +21,7 @@ sfRenderWindow *create_window(int x, int y)
 timing_t create_timer(void)
 {
     sfClock *clock = sfClock_create();
-    timing_t t = {clock, 0.0};
+    timing_t t = {clock, 0.0, 0.0};
 
     return (t);
 }

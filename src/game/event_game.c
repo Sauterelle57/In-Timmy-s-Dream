@@ -44,16 +44,15 @@ void check_button(game_t *g, sfVector2i pos, sfVector2u size)
 
 void event_game(game_t *g)
 {
-    static float cooldown = 0.0;
-
     g->t.sec = Get_Time(g->t.clock);
     if (g->event.type == sfEvtClosed || Key_Pressed(sfKeyEscape))
-        sfRenderWindow_close(g->window);
-    g->t.sec = Get_Time(g->t.clock);
-    if (Key_Pressed(sfKeySpace) && g->t.sec - cooldown > 0.5) {
+        quit_game(g);
+    if (Key_Pressed(sfKeySpace) && g->t.sec - g->cooldown > 0.3) {
         check_action(g);
-        cooldown = g->t.sec;
+        g->cooldown = g->t.sec;
     }
+    if (sfKeyboard_isKeyPressed(sfKeyP) && g->t.sec - g->t.pause > 0.3)
+        pause_game(g);
     check_button(g, Get_Mouse_Pos(), Get_Window_size());
     if (Key_Pressed(sfKeyUp) || Key_Pressed(sfKeyDown) ||
     Key_Pressed(sfKeyRight) || Key_Pressed(sfKeyLeft))

@@ -24,10 +24,12 @@ typedef struct object_s {
 } object_t;
 
 typedef struct player_s {
+    sfText *name;
     body_t body;
     object_t *inventory;
     body_t pv_bar;
-    body_t pa_bar;
+    body_t picture;
+    sfView *cam;
     int pv;
     int pa;
 } player_t;
@@ -38,9 +40,9 @@ typedef struct interest_s {
 } interest_t;
 
 typedef struct music_s {
-    sfMusic *example_music;
-    sfSoundBuffer *example_sounbuffer;
-    sfSound *example_sound;
+    sfMusic *back;
+    sfSoundBuffer *soundbuffer;
+    sfSound *click;
 } music_t;
 
 typedef struct button_s {
@@ -52,12 +54,14 @@ typedef struct button_s {
 } button_t;
 
 typedef struct scene_s {
+    int charged;
     button_t *button;
     int nb_button;
     body_t *elem;
     int nb_elem;
     interest_t *interest;
     int nb_interest;
+    sfMusic *scene_music;
     void (*draw)();
     void (*event)();
     void (*anim)();
@@ -65,6 +69,7 @@ typedef struct scene_s {
 
 typedef struct timing_s {
     sfClock *clock;
+    float pause;
     float sec;
 } timing_t;
 
@@ -72,11 +77,14 @@ typedef struct game_s {
     sfRenderWindow *window;
     sfEvent event;
     timing_t t;
-    //music_t *m;
+    music_t m;
     body_t cursor;
     player_t player;
-    scene_t scene[6];
+    int pause;
+    scene_t scene[8];
+    int previous_scene;
     int curent_scene;
+    float cooldown;
 } game_t;
 
 #endif /* !RPG_H */

@@ -19,9 +19,9 @@ button_t *init_menu_button(sfRenderWindow *window)
     button_t *buttons = malloc(sizeof(button_t) * 0);
 
     //buttons[0] = create_button(0, (sfVector2f){size.x * 0.21, size.y * 0.42},
-    //create_text(50, (sfVector2f){100, 100}, "BUTTON"), fonction);
+    //create_button_text(50, (sfVector2f){100, 100}, "BUTTON"), fonction);
     //buttons[1] = create_square_button(0, (sfVector2f){size.x * 0.84, size.y *
-    //0.66}, /create_text(50, (sfVector2f){200, 200}, "BUTTON"), fonction);
+    //0.66}, create_button_text(50, (sfVector2f){200, 200}, "BUTTON"), fonction);
     return (buttons);
 }
 

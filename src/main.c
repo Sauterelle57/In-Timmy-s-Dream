@@ -12,41 +12,37 @@
 #include "vampire.h" //scene 3
 #include "ghost.h" //scene 4
 #include "forest.h" //scene 5
+#include "inventory.h" //scene 6
+#include "my_loading.h" //scene 7
 
-void game_loop(game_t *g)
+int game_loop(game_t *g, scene_t (*init_scene[8])(game_t *g))
 {
-    sfVector2u size;
-
     while (sfRenderWindow_isOpen(g->window)) {
-        size = Get_Window_size();
+        if (!g->scene[g->curent_scene].charged) {
+            g->scene[g->curent_scene] = init_scene[g->curent_scene](g);
+            sfMusic_pause(g->scene[g->previous_scene].scene_music);
+            sfMusic_play(g->scene[g->curent_scene].scene_music);
+            g->scene[g->curent_scene].charged = 1;
+        }
         sfRenderWindow_clear(g->window, sfBlack);
         g->scene[g->curent_scene].anim(g);
         g->scene[g->curent_scene].draw(g);
-        Set_Pos(g->cursor.sprite, Get_Mouse_Pos().x * (1920.0 / size.x),
-        Get_Mouse_Pos().y * (1080.0 / size.y));
-        Draw_Sprite(g->cursor.sprite);
+        draw_cursor(g);
+        sfRenderWindow_display(g->window);
         if (sfRenderWindow_pollEvent(g->window, &g->event))
             g->scene[g->curent_scene].event(g);
-        sfRenderWindow_display(g->window);
     }
+    return (0);
 }
 
 int main(void)
 {
     game_t game = create_game();
-    //scene_t s_game = init_game(&game);
-    //scene_t s_menu = init_menu(&game);
-    //scene_t s_combat = init_combat(&game);
-    scene_t s_vampire = init_vampire(&game);
-    //scene_t s_ghost = init_ghost(&game);
-    //scene_t s_forest = init_forest(&game);
-    //game.scene[0] = s_game;
-    //game.scene[1] = s_menu;
-    //game.scene[2] = s_combat;
-    game.scene[3] = s_vampire;
-    //game.scene[4] = s_ghost;
-    //game.scene[5] = s_forest;
-    game.curent_scene = 3;
-    game_loop(&game);
-    return (0);
+    scene_t (*init_scene[8])(game_t *g) = {&init_game, &init_menu, &init_combat
+    , &init_vampire, &init_ghost, &init_forest, &init_inventory, &init_loading};
+
+    game.previous_scene = 7;
+    game.curent_scene = 7;
+    game.scene[7] = init_loading(&game);
+    return (game_loop(&game, init_scene));
 }

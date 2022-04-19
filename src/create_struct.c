@@ -30,17 +30,23 @@ void (*action)(game_t *))
 
 player_t create_player(void)
 {
-    body_t body = create_body(NPC[16], (sfIntRect)
-    {0, 0, 48, 48}, (sfVector2f){940, 540});
+    sfText *name = create_text(50, (sfVector2f){200, 40}, "Timmy",
+    "other/button.ttf");
+    body_t body = create_body(NPC[16], (sfIntRect) {0, 0, 48, 48},
+    (sfVector2f){940, 540});
+    object_t *inventory = malloc(sizeof(object_t) * 11);
     body_t pv_bar = create_body("other/pv_bar.png", (sfIntRect)
-    {0, 0, 126, 24}, (sfVector2f){50, 50});
-    body_t pa_bar = create_body("other/pa_bar.png", (sfIntRect)
-    {0, 0, 126, 24}, (sfVector2f){50, 100});
-    object_t *inventory = malloc(sizeof(object_t) * 2);
+    {0, 0, 126, 24}, (sfVector2f){200, 110});
+    Set_Scale(pv_bar.sprite, 2, 2);
+    body_t picture = create_body("other/picture.png", (sfIntRect)
+    {0, 0, 2048, 2048}, (sfVector2f){30, 25});
+    sfView *cam = sfView_create();
 
-    for (int i = 0; i < 2; i++)
+    for (int i = 0; i < 11; i++)
         inventory[i] = create_object(OBJ[i], 0, 0, 0);
-    player_t player = {body, inventory, pv_bar, pa_bar, 100, 50};
+    Set_Scale(picture.sprite, 0.07, 0.07);
+    sfView_setCenter(cam, (sfVector2f){960, 540});
+    player_t player = {name, body, inventory, pv_bar, picture, cam, 100, 50};
     return (player);
 }
 
@@ -49,11 +55,13 @@ game_t create_game(void)
     sfRenderWindow *window = create_window(1920, 1080);
     sfEvent event;
     timing_t t = create_timer();
+    music_t m = create_music();
     body_t cursor = create_body("cursor/pointer003.png", (sfIntRect)
     {0, 0, 100, 100}, (sfVector2f){sfMouse_getPosition((sfWindow *)window).x,
     sfMouse_getPosition((sfWindow *)window).y});
     player_t player = create_player();
-    game_t game = {window, event, t, cursor, player};
+    game_t game = {window, event, t, m, cursor, player, 0};
 
+    game.cooldown = 0.0;
     return (game);
 }

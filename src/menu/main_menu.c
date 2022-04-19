@@ -16,8 +16,9 @@ scene_t init_menu(game_t *g)
     int nb_elem = 2;
     interest_t *interest = init_menu_interest(g->window);
     int nb_interest = 0;
-    scene_t game = {buttons, nb_button, elem, nb_elem, interest,
-    nb_interest};
+    sfMusic *scene_music = sfMusic_createFromFile("music/back.ogg");
+    scene_t game = {0, buttons, nb_button, elem, nb_elem, interest,
+    nb_interest, scene_music};
 
     game.draw = &draw_menu;
     game.event = &event_menu;
