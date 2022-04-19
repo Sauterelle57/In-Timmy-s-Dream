@@ -12,7 +12,6 @@ void draw_black(game_t *g, body_t *elem)
 {
     Set_Pos(g->scene[2].elem[376].sprite, -1980 + g->player.body.pos.x,
     -1480 + g->player.body.pos.y);
-    printf("Pos %f\n", g->player.body.pos.x);
 }
 
 void draw_combat(game_t *g, body_t *elem)
