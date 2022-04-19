@@ -32,6 +32,7 @@ CFLAGS = -g -I./headers
 
 SRC	=	src/main.c	\
 		src/quit_game.c	\
+		src/pause_game.c	\
 		src/create_text.c	\
 		src/move_sprite.c	\
 		src/create_music.c	\
@@ -107,7 +108,11 @@ SRC	=	src/main.c	\
 		src/inventory/init_elem_inventory.c	\
 		src/inventory/init_button_inventory.c	\
 		src/inventory/init_interest_inventory.c	\
-		src/inventory/player_inventory_movements.c
+		src/inventory/player_inventory_movements.c	\
+\
+		src/loading/fonctions_loading.c	\
+		src/loading/init_loading_elm.c	\
+		src/loading/main_loading.c
 
 OBJ =	$(SRC:.c=.o)
 

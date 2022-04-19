@@ -16,12 +16,14 @@ scene_t init_combat(game_t *g)
     int nb_elem = 376;
     interest_t *interest = init_combat_interest(g->window);
     int nb_interest = 0;
+    sfMusic *scene_music = sfMusic_createFromFile("music/back.ogg");
     scene_t combat = {0, buttons, nb_button, elem, nb_elem, interest,
-    nb_interest};
+    nb_interest, scene_music};
 
     maze_generation(23, 15);
     combat.draw = &draw_combat;
     combat.event = &event_combat;
     combat.anim = &anim_combat;
+    sfMusic_setLoop(combat.scene_music, sfTrue);
     return (combat);
 }

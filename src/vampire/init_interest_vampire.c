@@ -22,6 +22,6 @@ interest_t *init_vampire_interest(sfRenderWindow *window, int nb_interest)
     interest[3] = create_interest(BAT[0], (sfIntRect){0, 0, 48, 48}, //chauve souris
     (sfVector2f){320, 150}, &go_combat);
     interest[4] = create_interest("other/block.png", (sfIntRect){0, 0, 120, 40}, //entrée / sortie
-    (sfVector2f){900, 560}, &go_back);
+    (sfVector2f){900, 560}, &go_game);
     return (interest);
 }
