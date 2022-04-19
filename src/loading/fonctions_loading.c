@@ -9,17 +9,17 @@
 #include "interest.h"
 scene_t init_game(game_t *g);
 
-static void draw_transition(game_t *g)
+static void draw_transition(game_t *g, int sens)
 {
     float tmp = 0.0;
-    int a = 255;
+    int a = sens == 1 ? 255 : 0;
     sfRectangleShape *rect = sfRectangleShape_create();
 
     sfRectangleShape_setSize(rect, (sfVector2f){1920, 1080});
-    while (a > 0) {
+    while ((sens == 1 && a > 0) || (sens == 0 && a < 255)) {
         g->t.sec = Get_Time(g->t.clock);
         if (g->t.sec - tmp >= 0.05) {
-            a -= 5;
+            a = sens == 1 ? a - 5 : a + 10;
             tmp = g->t.sec;
         }
         sfRenderWindow_clear(g->window, sfBlack);
@@ -35,10 +35,9 @@ void draw_loading(game_t *g)
     static int transition = 0;
 
     if (transition == 0) {
-        draw_transition(g);
+        draw_transition(g, 1);
         transition = 1;
     }
-    Draw_Sprite(g->scene[7].elem[0].sprite);
 }
 
 void event_loading(game_t *g)
@@ -54,8 +53,10 @@ void event_loading(game_t *g)
         g->scene[0] = init_game(g);
         g->scene[0].charged = 1;
     }
-    if (g->scene[0].charged == 1 && g->t.sec - tmp >= 1)
+    if (g->scene[0].charged == 1 && g->t.sec - tmp >= 1) {
+        draw_transition(g, 0);
         go_game(g);
+    }
 }
 
 void anim_loading(game_t *g)
