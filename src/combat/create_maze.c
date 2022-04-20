@@ -43,7 +43,14 @@ static body_t *create_maze_wall(body_t *elem, char *buffer, int k)
     return (elem);
 }
 
-body_t *create_maze(body_t *elem)
+int create_view(body_t *elem, int k, game_t *g)
+{
+    elem[376] = create_body("other/font_invisible.png", (sfIntRect){0, 0, 4032, 3024},
+    (sfVector2f){-1700 - 0, -1300});
+    return (k);
+}
+
+body_t *create_maze(body_t *elem, game_t *g)
 {
     int k = 0;
     char *buffer = read_file("./maze.txt");
@@ -59,5 +66,6 @@ body_t *create_maze(body_t *elem)
         x = buffer[i] == '\n' ? 200 : x;
         y += buffer[i] == '\n' ? 60 : 0;
     }
+    k = create_view(elem, k, g);
     return (create_maze_wall(elem, buffer, k));
 }

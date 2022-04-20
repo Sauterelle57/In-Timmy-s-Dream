@@ -46,15 +46,16 @@ void event_forest(game_t *g)
     g->t.sec = Get_Time(g->t.clock);
     if (g->event.type == sfEvtClosed || Key_Pressed(sfKeyEscape))
         quit_game(g);
-    g->t.sec = Get_Time(g->t.clock);
     if (Key_Pressed(sfKeySpace) && g->t.sec - g->cooldown > 0.5) {
         check_action(g);
         g->cooldown = g->t.sec;
     }
+    if (sfKeyboard_isKeyPressed(sfKeyP) && g->t.sec - g->t.pause > 0.3)
+        pause_game(g);
     check_button(g, Get_Mouse_Pos(), Get_Window_size());
-    if (Key_Pressed(sfKeyUp) || Key_Pressed(sfKeyDown) ||
-    Key_Pressed(sfKeyRight) || Key_Pressed(sfKeyLeft))
-        forest_movement(g);
-    else
-        Set_Texture(g->player.body.sprite, NPC[16]);
+    //if (Key_Pressed(sfKeyUp) || Key_Pressed(sfKeyDown) ||
+    //Key_Pressed(sfKeyRight) || Key_Pressed(sfKeyLeft))
+    //    forest_movement(g);
+    //else
+    //    Set_Texture(g->player.body.sprite, NPC[16]);
 }

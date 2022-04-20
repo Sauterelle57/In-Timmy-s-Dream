@@ -60,6 +60,7 @@ typedef struct scene_s {
     int nb_elem;
     interest_t *interest;
     int nb_interest;
+    sfMusic *scene_music;
     void (*draw)();
     void (*event)();
     void (*anim)();
@@ -67,6 +68,7 @@ typedef struct scene_s {
 
 typedef struct timing_s {
     sfClock *clock;
+    float pause;
     float sec;
 } timing_t;
 
@@ -77,10 +79,11 @@ typedef struct game_s {
     music_t m;
     body_t cursor;
     player_t player;
-    scene_t scene[7];
+    int pause;
+    float cooldown;
+    scene_t scene[8];
     int previous_scene;
     int curent_scene;
-    float cooldown;
 } game_t;
 
 #endif /* !RPG_H */
