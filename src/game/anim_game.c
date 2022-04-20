@@ -24,7 +24,6 @@ void anim_game(game_t *g)
 {
     static float tmp = 0.0;
 
-    g->t.sec = Get_Time(g->t.clock);
     if (g->t.sec - tmp >= 0.15) {
         anim_interest(g);
         g->player.body.rect.left += g->player.body.rect.left >= 144 ? -144 : 48;

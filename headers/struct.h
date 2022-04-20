@@ -29,7 +29,6 @@ typedef struct player_s {
     object_t *inventory;
     body_t pv_bar;
     body_t picture;
-    sfView *cam;
     int pv;
     int pa;
 } player_t;
@@ -81,10 +80,10 @@ typedef struct game_s {
     body_t cursor;
     player_t player;
     int pause;
+    float cooldown;
     scene_t scene[8];
     int previous_scene;
     int curent_scene;
-    float cooldown;
 } game_t;
 
 #endif /* !RPG_H */

@@ -22,6 +22,9 @@
     #define Set_Scale(sprite, x, y) sfSprite_setScale(sprite,\
     (sfVector2f){x, y});
 
+    #define Sprite_Move(sprite, x, y) sfSprite_move(sprite,\
+    (sfVector2f){x, y});
+
     #define Set_Cursor(texture_file) sfSprite_setTexture(g->cursor.sprite,\
     sfTexture_createFromFile(texture_file, 0), sfFalse);
 
