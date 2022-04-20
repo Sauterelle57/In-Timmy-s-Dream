@@ -23,7 +23,6 @@ void check_button(game_t *g, sfVector2i pos, sfVector2u size)
     static float tmp = 0.0;
     button_t button;
 
-    g->t.sec = Get_Time(g->t.clock);
     for (int i = 0; i < g->scene[0].nb_button; i++) {
         button = g->scene[0].button[i];
         if (Mouse_Pressed(sfMouseLeft) && g->t.sec - tmp > 0.5 &&
@@ -44,7 +43,8 @@ void check_button(game_t *g, sfVector2i pos, sfVector2u size)
 
 void event_game(game_t *g)
 {
-    g->t.sec = Get_Time(g->t.clock);
+    static float tmp = 0.0;
+
     if (g->event.type == sfEvtClosed || Key_Pressed(sfKeyEscape))
         quit_game(g);
     if (Key_Pressed(sfKeySpace) && g->t.sec - g->cooldown > 0.3) {
@@ -54,9 +54,4 @@ void event_game(game_t *g)
     if (sfKeyboard_isKeyPressed(sfKeyP) && g->t.sec - g->t.pause > 0.3)
         pause_game(g);
     check_button(g, Get_Mouse_Pos(), Get_Window_size());
-    if (Key_Pressed(sfKeyUp) || Key_Pressed(sfKeyDown) ||
-    Key_Pressed(sfKeyRight) || Key_Pressed(sfKeyLeft))
-        movement(g);
-    else
-        Set_Texture(g->player.body.sprite, NPC[16]);
 }

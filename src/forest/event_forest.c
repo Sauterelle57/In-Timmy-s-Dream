@@ -53,9 +53,9 @@ void event_forest(game_t *g)
     if (sfKeyboard_isKeyPressed(sfKeyP) && g->t.sec - g->t.pause > 0.3)
         pause_game(g);
     check_button(g, Get_Mouse_Pos(), Get_Window_size());
-    if (Key_Pressed(sfKeyUp) || Key_Pressed(sfKeyDown) ||
-    Key_Pressed(sfKeyRight) || Key_Pressed(sfKeyLeft))
-        forest_movement(g);
-    else
-        Set_Texture(g->player.body.sprite, NPC[16]);
+    //if (Key_Pressed(sfKeyUp) || Key_Pressed(sfKeyDown) ||
+    //Key_Pressed(sfKeyRight) || Key_Pressed(sfKeyLeft))
+    //    forest_movement(g);
+    //else
+    //    Set_Texture(g->player.body.sprite, NPC[16]);
 }
