@@ -25,12 +25,18 @@ int game_loop(game_t *g, scene_t (*init_scene[8])(game_t *g))
             g->scene[g->curent_scene].charged = 1;
         }
         sfRenderWindow_clear(g->window, sfBlack);
+        g->t.sec = Get_Time(g->t.clock);
         g->scene[g->curent_scene].anim(g);
         g->scene[g->curent_scene].draw(g);
         draw_cursor(g);
-        sfRenderWindow_display(g->window);
         if (sfRenderWindow_pollEvent(g->window, &g->event))
             g->scene[g->curent_scene].event(g);
+        if (Key_Pressed(sfKeyUp) || Key_Pressed(sfKeyDown) ||
+        Key_Pressed(sfKeyRight) || Key_Pressed(sfKeyLeft))
+            g->curent_scene == 2 ? combat_movement(g) : movement(g);
+        else
+            Set_Texture(g->player.body.sprite, NPC[16]);
+        sfRenderWindow_display(g->window);
     }
     return (0);
 }
@@ -43,6 +49,5 @@ int main(void)
 
     game.previous_scene = 7;
     game.curent_scene = 7;
-    game.scene[7] = init_loading(&game);
     return (game_loop(&game, init_scene));
 }
