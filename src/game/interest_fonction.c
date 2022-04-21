@@ -82,10 +82,20 @@ void go_game(game_t *g)
     sfMusic_pause(g->scene[g->previous_scene].scene_music);
     g->player.body.rect.top = 0;
     Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
-    g->curent_scene = 0;
     if (g->scene[0].charged == 1)
         sfMusic_play(g->scene[0].scene_music);
     g->curent_scene = 0;
+}
+
+void go_cimetery(game_t *g)
+{
+    g->previous_scene = g->curent_scene;
+    sfMusic_pause(g->scene[g->previous_scene].scene_music);
+    g->player.body.rect.top = 144;
+    Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
+    if (g->scene[8].charged == 1)
+        sfMusic_play(g->scene[8].scene_music);
+    g->curent_scene = 8;
 }
 
 void go_back(game_t *g)

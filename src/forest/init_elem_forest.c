@@ -26,5 +26,7 @@ body_t *init_forest_elem(sfRenderWindow *window, int nb_elem)
     (sfVector2f){50, -350});
     elem[6] = create_body("other/blue_block.png", (sfIntRect){0, 0, 420, 100},
     (sfVector2f){-670, -350});
+    elem[7] = create_body("other/blue_block.png", (sfIntRect){0, 0, 420, 100},
+    (sfVector2f){-670, -350});
     return (elem);
 }
