@@ -14,8 +14,9 @@
 #include "forest.h" //scene 5
 #include "inventory.h" //scene 6
 #include "my_loading.h" //scene 7
+#include "cimetery.h" //scene 8
 
-int game_loop(game_t *g, scene_t (*init_scene[8])(game_t *g))
+int game_loop(game_t *g, scene_t (*init_scene[9])(game_t *g))
 {
     while (sfRenderWindow_isOpen(g->window)) {
         if (!g->scene[g->curent_scene].charged) {
@@ -44,8 +45,9 @@ int game_loop(game_t *g, scene_t (*init_scene[8])(game_t *g))
 int main(void)
 {
     game_t game = create_game();
-    scene_t (*init_scene[8])(game_t *g) = {&init_game, &init_menu, &init_combat
-    , &init_vampire, &init_ghost, &init_forest, &init_inventory, &init_loading};
+    scene_t (*init_scene[9])(game_t *g) = {&init_game, &init_menu, &init_combat
+    , &init_vampire, &init_ghost, &init_forest, &init_inventory, &init_loading,
+    &init_cimetery};
 
     game.previous_scene = 7;
     game.curent_scene = 7;

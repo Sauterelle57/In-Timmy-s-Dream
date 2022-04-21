@@ -14,8 +14,7 @@ body_t *init_cimetery_elem(sfRenderWindow *window, int nb_elem)
 
     elem[0] = create_body("map/cimetery.png", (sfIntRect){0, 0, 1920, 1080},
     (sfVector2f){0, 0});
-    elem[1] = create_body("map/cimetery3d.png", (sfIntRect){0, 0, 1920, 1080},
+    elem[1] = create_body("map/cimetery.png", (sfIntRect){0, 0, 1920, 1080},
     (sfVector2f){0, 0});
-    elem = init_cimetery_elem_2(elem);
     return (elem);
 }
