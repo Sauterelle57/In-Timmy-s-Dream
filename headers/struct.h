@@ -81,7 +81,7 @@ typedef struct game_s {
     player_t player;
     int pause;
     float cooldown;
-    scene_t scene[8];
+    scene_t scene[9];
     int previous_scene;
     int curent_scene;
 } game_t;

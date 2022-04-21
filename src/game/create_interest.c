@@ -43,6 +43,6 @@ interest_t *create_all_interests(interest_t *interest)
     interest[15] = create_interest("other/blue_block.png", (sfIntRect) //entrée grotte foret
     {0, 0, 60, 70}, (sfVector2f){6480, -1280}, &go_forest);
     interest[16] = create_interest("other/blue_block.png", (sfIntRect) //cercueil niveau final
-    {0, 0, 80, 110}, (sfVector2f){5630, -2310}, &example);
+    {0, 0, 80, 110}, (sfVector2f){5630, -2310}, &go_cimetery);
     return (interest);
 }

@@ -12,7 +12,7 @@ scene_t init_ghost(game_t *g)
 {
     int nb_button = 2;
     button_t *buttons = init_ghost_button(g->window, nb_button);
-    int nb_elem = 25;
+    int nb_elem = 26;
     body_t *elem = init_ghost_elem(g->window, nb_elem);
     int nb_interest = 4;
     interest_t *interest = init_ghost_interest(g->window, nb_interest);
