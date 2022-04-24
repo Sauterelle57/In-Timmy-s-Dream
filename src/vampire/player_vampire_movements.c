@@ -13,11 +13,11 @@ static void go_right(game_t *g)
     g->player.body.rect.top = 96;
     if (g->scene[3].elem[0].rect.left >= 7680)
         return;
-    for (int i = 1; i < g->scene[3].nb_elem; i++)
+    for (int i = 2; i < g->scene[3].nb_elem; i++)
         if (vampire_collision(g->player.body, g->scene[3].elem[i],
         (sfVector2i){10, 0}))
             return;
-    for (int i = 1; i < g->scene[3].nb_elem; i++) {
+    for (int i = 2; i < g->scene[3].nb_elem; i++) {
         g->scene[3].elem[i].pos.x -= 10;
         Set_Pos(g->scene[3].elem[i].sprite, g->scene[3].elem[i].pos.x,
         g->scene[3].elem[i].pos.y);
@@ -35,11 +35,11 @@ static void go_left(game_t *g)
     g->player.body.rect.top = 48;
     if (g->scene[3].elem[0].rect.left <= -960)
         return;
-    for (int i = 1; i < g->scene[3].nb_elem; i++)
+    for (int i = 2; i < g->scene[3].nb_elem; i++)
         if (vampire_collision(g->player.body, g->scene[3].elem[i],
         (sfVector2i){-10, 0}))
             return;
-    for (int i = 1; i < g->scene[3].nb_elem; i++) {
+    for (int i = 2; i < g->scene[3].nb_elem; i++) {
         g->scene[3].elem[i].pos.x += 10;
         Set_Pos(g->scene[3].elem[i].sprite, g->scene[3].elem[i].pos.x,
         g->scene[3].elem[i].pos.y);
@@ -57,11 +57,11 @@ static void go_up(game_t *g)
     g->player.body.rect.top = 144;
     if (g->scene[3].elem[0].rect.top >= 4320)
         return;
-    for (int i = 1; i < g->scene[3].nb_elem; i++)
+    for (int i = 2; i < g->scene[3].nb_elem; i++)
         if (vampire_collision(g->player.body, g->scene[3].elem[i],
         (sfVector2i){0, -10}))
             return;
-    for (int i = 1; i < g->scene[3].nb_elem; i++) {
+    for (int i = 2; i < g->scene[3].nb_elem; i++) {
         g->scene[3].elem[i].pos.y += 10;
         Set_Pos(g->scene[3].elem[i].sprite, g->scene[3].elem[i].pos.x,
         g->scene[3].elem[i].pos.y);
@@ -79,11 +79,11 @@ static void go_down(game_t *g)
     g->player.body.rect.top = 0;
     if (g->scene[3].elem[0].rect.top <= -540)
         return;
-    for (int i = 1; i < g->scene[3].nb_elem; i++)
+    for (int i = 2; i < g->scene[3].nb_elem; i++)
         if (vampire_collision(g->player.body, g->scene[3].elem[i],
         (sfVector2i){0, 10}))
             return;
-    for (int i = 1; i < g->scene[3].nb_elem; i++) {
+    for (int i = 2; i < g->scene[3].nb_elem; i++) {
         g->scene[3].elem[i].pos.y -= 10;
         Set_Pos(g->scene[3].elem[i].sprite, g->scene[3].elem[i].pos.x,
         g->scene[3].elem[i].pos.y);

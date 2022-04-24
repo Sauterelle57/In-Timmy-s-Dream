@@ -79,7 +79,6 @@ SRC	=	src/main.c	\
 		src/vampire/vampire_collisions.c	\
 		src/vampire/init_button_vampire.c	\
 		src/vampire/init_interest_vampire.c	\
-		src/vampire/player_vampire_movements.c	\
 \
 		src/ghost/anim_ghost.c	\
 		src/ghost/draw_ghost.c	\
@@ -89,7 +88,6 @@ SRC	=	src/main.c	\
 		src/ghost/ghost_collisions.c	\
 		src/ghost/init_button_ghost.c	\
 		src/ghost/init_interest_ghost.c	\
-		src/ghost/player_ghost_movements.c	\
 \
 		src/forest/anim_forest.c	\
 		src/forest/draw_forest.c	\
@@ -99,7 +97,6 @@ SRC	=	src/main.c	\
 		src/forest/forest_collisions.c	\
 		src/forest/init_button_forest.c	\
 		src/forest/init_interest_forest.c	\
-		src/forest/player_forest_movements.c	\
 \
 		src/inventory/anim_inventory.c	\
 		src/inventory/draw_inventory.c	\
@@ -108,7 +105,20 @@ SRC	=	src/main.c	\
 		src/inventory/init_elem_inventory.c	\
 		src/inventory/init_button_inventory.c	\
 		src/inventory/init_interest_inventory.c	\
-		src/inventory/player_inventory_movements.c
+		src/inventory/player_inventory_movements.c	\
+\
+		src/loading/fonctions_loading.c	\
+		src/loading/init_loading_elm.c	\
+		src/loading/main_loading.c	\
+\
+		src/cimetery/anim_cimetery.c	\
+		src/cimetery/draw_cimetery.c	\
+		src/cimetery/event_cimetery.c	\
+		src/cimetery/init_cimetery.c	\
+		src/cimetery/init_elem_cimetery.c	\
+		src/cimetery/cimetery_collisions.c	\
+		src/cimetery/init_button_cimetery.c	\
+		src/cimetery/init_interest_cimetery.c
 
 OBJ =	$(SRC:.c=.o)
 

@@ -86,10 +86,10 @@ static body_t *create_block_2(body_t *elem)
     (sfVector2f){1920, 1290});
     elem[12] = create_body("other/block.png", (sfIntRect){0, 0, 1465, 1000},
     (sfVector2f){2235, 685});
-    elem[13] = create_body("other/block.png", (sfIntRect){0, 0, 900, 280},
-    (sfVector2f){2550, 20});
-    elem[14] = create_body("other/block.png", (sfIntRect){0, 0, 900, 350},
-    (sfVector2f){2600, 20});
+    elem[13] = create_body("other/block.png", (sfIntRect){0, 0, 50, 10},
+    (sfVector2f){2570, 270});
+    elem[14] = create_body("other/block.png", (sfIntRect){0, 0, 60, 10},
+    (sfVector2f){2630, 350});
     elem[15] = create_body("other/block.png", (sfIntRect){0, 0, 50, 485},
     (sfVector2f){3450, 10});
     elem[16] = create_body("other/block.png", (sfIntRect){0, 0, 800, 350},
@@ -106,14 +106,14 @@ static body_t *create_block_2(body_t *elem)
 
 body_t *create_block(body_t *elem)
 {
-    elem[2] = create_body("other/block.png", (sfIntRect){0, 0, 1025, 250},
-    (sfVector2f){600, 180});
-    elem[3] = create_body("other/block.png", (sfIntRect){0, 0, 1200, 300},
-    (sfVector2f){600, 670});
-    elem[4] = create_body("other/block.png", (sfIntRect){0, 0, 220, 490},
-    (sfVector2f){600, 200});
-    elem[5] = create_body("other/block.png", (sfIntRect){0, 0, 500, 115},
-    (sfVector2f){1120, 420});
+    elem[2] = create_body("other/block.png", (sfIntRect){0, 0, 1025, 50},
+    (sfVector2f){600, 220});
+    elem[3] = create_body("other/block.png", (sfIntRect){0, 0, 1200, 50},
+    (sfVector2f){600, 940});
+    elem[4] = create_body("other/block.png", (sfIntRect){0, 0, 50, 800},
+    (sfVector2f){550, 200});
+    elem[5] = create_body("other/block.png", (sfIntRect){0, 0, 60, 10},
+    (sfVector2f){1160, 520});
     elem[6] = create_body("other/block.png", (sfIntRect){0, 0, 370, 350},
     (sfVector2f){1620, 180});
     elem[7] = create_body("other/block.png", (sfIntRect){0, 0, 100, 365},
