@@ -6,6 +6,7 @@
 */
 
 #include "includes.h"
+#include "player.h"
 
 body_t create_body(char *text, sfIntRect rect, sfVector2f pos)
 {
@@ -30,7 +31,7 @@ void (*action)(game_t *))
 
 player_t create_player(void)
 {
-    sfText *name = create_text(50, (sfVector2f){200, 40}, "Timmy",
+    sfText *name = create_text(50, (sfVector2f){200, 40}, NAME,
     "other/button.ttf");
     body_t body = create_body(NPC[16], (sfIntRect) {0, 0, 48, 48},
     (sfVector2f){940, 540});
@@ -44,7 +45,7 @@ player_t create_player(void)
     for (int i = 0; i < 11; i++)
         inventory[i] = create_object(OBJ[i], 0, 0, 0);
     Set_Scale(picture.sprite, 0.07, 0.07);
-    player_t player = {name, body, inventory, pv_bar, picture, 100, 50};
+    player_t player = {name, body, inventory, pv_bar, picture, SPEED, PV, 50};
     return (player);
 }
 

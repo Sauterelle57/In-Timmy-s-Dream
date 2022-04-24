@@ -29,6 +29,7 @@ typedef struct player_s {
     object_t *inventory;
     body_t pv_bar;
     body_t picture;
+    int speed;
     int pv;
     int pa;
 } player_t;
