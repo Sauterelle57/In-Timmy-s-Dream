@@ -24,6 +24,7 @@ scene_t init_cimetery(game_t *g)
     cimetery.event = &event_cimetery;
     cimetery.anim = &anim_cimetery;
     sfMusic_setLoop(cimetery.scene_music, sfTrue);
+    sfMusic_setVolume(cimetery.scene_music, 0);
     return (cimetery);
 }
 

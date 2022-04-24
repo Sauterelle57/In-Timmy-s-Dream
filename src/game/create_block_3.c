@@ -8,6 +8,65 @@
 #include "includes.h"
 #include "game.h"
 
+static body_t *create_block_14(body_t *elem)
+{
+    elem[116] = create_body("other/block.png", (sfIntRect){0, 0, 60, 10},
+    (sfVector2f){2870, 350});
+    elem[117] = create_body("other/block.png", (sfIntRect){0, 0, 60, 10},
+    (sfVector2f){2990, 350});
+    elem[118] = create_body("other/block.png", (sfIntRect){0, 0, 60, 10},
+    (sfVector2f){3110, 350});
+    elem[119] = create_body("other/block.png", (sfIntRect){0, 0, 60, 10},
+    (sfVector2f){3220, 350});
+    elem[120] = create_body("other/block.png", (sfIntRect){0, 0, 60, 10},
+    (sfVector2f){3340, 350});
+    return (elem);
+}
+
+static body_t *create_block_13(body_t *elem)
+{
+    elem[107] = create_body("other/block.png", (sfIntRect){0, 0, 60, 10},
+    (sfVector2f){860, 900});
+    elem[108] = create_body("other/block.png", (sfIntRect){0, 0, 60, 10},
+    (sfVector2f){980, 900});
+    elem[109] = create_body("other/block.png", (sfIntRect){0, 0, 60, 10},
+    (sfVector2f){1080, 900});
+    elem[110] = create_body("other/block.png", (sfIntRect){0, 0, 60, 10},
+    (sfVector2f){1200, 900});
+    elem[111] = create_body("other/block.png", (sfIntRect){0, 0, 60, 10},
+    (sfVector2f){1320, 895});
+    elem[112] = create_body("other/block.png", (sfIntRect){0, 0, 60, 10},
+    (sfVector2f){1450, 890});
+    elem[113] = create_body("other/block.png", (sfIntRect){0, 0, 60, 10},
+    (sfVector2f){1560, 890});
+    elem[114] = create_body("other/block.png", (sfIntRect){0, 0, 60, 10},
+    (sfVector2f){1690, 890});
+    elem[115] = create_body("other/block.png", (sfIntRect){0, 0, 60, 10},
+    (sfVector2f){2760, 350});
+    elem = create_block_14(elem);
+    return (elem);
+}
+
+static body_t *create_block_12(body_t *elem)
+{
+    elem[100] = create_body("other/block.png", (sfIntRect){0, 0, 60, 10},
+    (sfVector2f){1280, 520});
+    elem[101] = create_body("other/block.png", (sfIntRect){0, 0, 50, 10},
+    (sfVector2f){1400, 520});
+    elem[102] = create_body("other/block.png", (sfIntRect){0, 0, 60, 10},
+    (sfVector2f){1520, 520});
+    elem[103] = create_body("other/block.png", (sfIntRect){0, 0, 60, 10},
+    (sfVector2f){840, 440});
+    elem[104] = create_body("other/block.png", (sfIntRect){0, 0, 60, 10},
+    (sfVector2f){960, 440});
+    elem[105] = create_body("other/block.png", (sfIntRect){0, 0, 60, 10},
+    (sfVector2f){620, 900});
+    elem[106] = create_body("other/block.png", (sfIntRect){0, 0, 60, 10},
+    (sfVector2f){740, 900});
+    elem = create_block_13(elem);
+    return (elem);
+}
+
 body_t *create_block_11(body_t *elem)
 {
     elem[92] = create_body("other/block.png", (sfIntRect){0, 0, 25, 2},
@@ -26,6 +85,6 @@ body_t *create_block_11(body_t *elem)
     (sfVector2f){4113, 830});
     elem[99] = create_body("other/block.png", (sfIntRect){0, 0, 50, 20},
     (sfVector2f){4265, 780});
+    elem = create_block_12(elem);
     return (elem);
 }
-

@@ -12,7 +12,7 @@ scene_t init_game(game_t *g)
 {
     int nb_button = 2;
     button_t *buttons = init_game_button(g->window, nb_button);
-    int nb_elem = 100;
+    int nb_elem = 121;
     body_t *elem = init_game_elem(g->window, nb_elem);
     int nb_interest = 17;
     interest_t *interest = init_game_interest(g->window, nb_interest);
@@ -24,5 +24,6 @@ scene_t init_game(game_t *g)
     game.event = &event_game;
     game.anim = &anim_game;
     sfMusic_setLoop(game.scene_music, sfTrue);
+    sfMusic_setVolume(game.scene_music, 0);
     return (game);
 }
