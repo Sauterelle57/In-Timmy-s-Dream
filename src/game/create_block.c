@@ -106,10 +106,10 @@ static body_t *create_block_2(body_t *elem)
 
 body_t *create_block(body_t *elem)
 {
-    elem[2] = create_body("other/block.png", (sfIntRect){0, 0, 1025, 250},
+    elem[2] = create_body("other/blue_block.png", (sfIntRect){0, 0, 1025, 260},
     (sfVector2f){600, 180});
-    elem[3] = create_body("other/block.png", (sfIntRect){0, 0, 1200, 300},
-    (sfVector2f){600, 670});
+    elem[3] = create_body("other/green_block.png", (sfIntRect){0, 0, 1200, 300},
+    (sfVector2f){600, 770});
     elem[4] = create_body("other/block.png", (sfIntRect){0, 0, 220, 490},
     (sfVector2f){600, 200});
     elem[5] = create_body("other/block.png", (sfIntRect){0, 0, 500, 115},

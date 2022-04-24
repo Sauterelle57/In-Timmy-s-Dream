@@ -40,7 +40,7 @@ body_t *init_game_elem(sfRenderWindow *window, int nb_elem)
 
     elem[0] = create_body("map/main.png", (sfIntRect){220, 2940, 1920, 1080},
     (sfVector2f){0, 0});
-    elem[1] = create_body("map/3dmap.png", (sfIntRect){-600, 2940, 1920, 1080},
+    elem[1] = create_body("map/3dmap.png", (sfIntRect){220, 2940, 1920, 1080},
     (sfVector2f){0, 0});
     elem = create_block(elem);
     return (elem);
