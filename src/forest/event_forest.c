@@ -7,6 +7,7 @@
 
 #include "includes.h"
 #include "forest.h"
+#include "player.h"
 
 static void check_action(game_t *g)
 {
@@ -53,9 +54,8 @@ void event_forest(game_t *g)
     if (sfKeyboard_isKeyPressed(sfKeyP) && g->t.sec - g->t.pause > 0.3)
         pause_game(g);
     check_button(g, Get_Mouse_Pos(), Get_Window_size());
-    //if (Key_Pressed(sfKeyUp) || Key_Pressed(sfKeyDown) ||
-    //Key_Pressed(sfKeyRight) || Key_Pressed(sfKeyLeft))
-    //    forest_movement(g);
-    //else
-    //    Set_Texture(g->player.body.sprite, NPC[16]);
+    if (Key_Pressed(sfKeyA) && g->t.sec - g->cooldown >= 0.15) {
+        g->player.speed = g->player.speed == SPEED ? SPEED + 5 : SPEED;
+        g->cooldown = g->t.sec;
+    }
 }
