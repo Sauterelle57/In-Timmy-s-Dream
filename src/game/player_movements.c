@@ -97,13 +97,13 @@ void movement(game_t *g)
 {
     int s = g->curent_scene;
 
-    if (Key_Pressed(sfKeyRight))
+    if (Key_Pressed(sfKeyRight) || Key_Pressed(sfKeyD))
         go_right(g, s);
-    if (Key_Pressed(sfKeyLeft))
+    if (Key_Pressed(sfKeyLeft) || Key_Pressed(sfKeyQ))
         go_left(g, s);
-    if (Key_Pressed(sfKeyUp))
+    if (Key_Pressed(sfKeyUp) || Key_Pressed(sfKeyZ))
         go_up(g, s);
-    if (Key_Pressed(sfKeyDown))
+    if (Key_Pressed(sfKeyDown) || Key_Pressed(sfKeyS))
         go_down(g, s);
     Set_Texture(g->player.body.sprite, NPC[17]);
     Set_Texture_Rect(g->scene[s].elem[0].sprite, g->scene[s].elem[0].rect);

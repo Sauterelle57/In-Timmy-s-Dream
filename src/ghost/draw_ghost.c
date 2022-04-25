@@ -11,7 +11,7 @@
 void draw_ghost(game_t *g)
 {
     Draw_Sprite(g->scene[4].elem[0].sprite);
-    for (int i = 0; i < 3; i++) //affichage interest point
+    for (int i = 0; i < 3; i++)
         Draw_Sprite(g->scene[4].interest[i].body.sprite);
     draw_player(g);
     for (int i = 0; i < g->scene[4].nb_button; i++)

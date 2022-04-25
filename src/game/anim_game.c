@@ -24,7 +24,7 @@ void anim_game(game_t *g)
 {
     static float tmp = 0.0;
     static float tmp2 = 0.0;
-    float delay_player = g->player.speed == 10 ? 0.15 : 0.10;
+    float delay_player = g->player.speed == 10 ? 0.15 : 0.08;
 
     if (g->t.sec - tmp >= 0.15) {
         anim_interest(g);
