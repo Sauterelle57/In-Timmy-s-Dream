@@ -8,6 +8,39 @@
 #include "includes.h"
 #include "game.h"
 
+static body_t *create_block_15(body_t *elem)
+{
+    elem[121] = create_body("other/blue_block.png", (sfIntRect){0, 0, 50, 10},
+    (sfVector2f){5480, -180});
+    elem[122] = create_body("other/blue_block.png", (sfIntRect){0, 0, 50, 10},
+    (sfVector2f){5680, -180});
+    elem[123] = create_body("other/blue_block.png", (sfIntRect){0, 0, 50, 10},
+    (sfVector2f){5870, -175});
+    elem[124] = create_body("other/blue_block.png", (sfIntRect){0, 0, 50, 10},
+    (sfVector2f){5780, -110});
+    elem[125] = create_body("other/blue_block.png", (sfIntRect){0, 0, 50, 10},
+    (sfVector2f){5580, -110});
+
+    elem[126] = create_body("other/blue_block.png", (sfIntRect){0, 0, 50, 10},
+    (sfVector2f){5670, 125});
+    elem[127] = create_body("other/blue_block.png", (sfIntRect){0, 0, 50, 10},
+    (sfVector2f){5760, 110});
+    elem[128] = create_body("other/blue_block.png", (sfIntRect){0, 0, 50, 10},
+    (sfVector2f){5850, 140});
+    elem[129] = create_body("other/blue_block.png", (sfIntRect){0, 0, 50, 10},
+    (sfVector2f){5930, 110});
+
+    elem[130] = create_body("other/blue_block.png", (sfIntRect){0, 0, 50, 80},
+    (sfVector2f){2490, 40});
+    elem[131] = create_body("other/blue_block.png", (sfIntRect){0, 0, 990, 20},
+    (sfVector2f){2490, 10});
+    elem[132] = create_body("other/blue_block.png", (sfIntRect){0, 0, 50, 10},
+    (sfVector2f){2070, 110});
+    elem[133] = create_body("other/blue_block.png", (sfIntRect){0, 0, 50, 10},
+    (sfVector2f){2070, 110});
+    return (elem);
+}
+
 static body_t *create_block_14(body_t *elem)
 {
     elem[116] = create_body("other/block.png", (sfIntRect){0, 0, 60, 10},
@@ -20,6 +53,7 @@ static body_t *create_block_14(body_t *elem)
     (sfVector2f){3220, 350});
     elem[120] = create_body("other/block.png", (sfIntRect){0, 0, 60, 10},
     (sfVector2f){3340, 350});
+    elem = create_block_15(elem);
     return (elem);
 }
 
