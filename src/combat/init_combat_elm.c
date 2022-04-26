@@ -40,5 +40,11 @@ interest_t *init_combat_interest(int nb_interest, body_t *elem)
     interest[1] = create_interest("deco/Door_4.png", (sfIntRect)
     {0, 0, 70, 70}, (sfVector2f){1700, 600}, action);
     Set_Scale(interest[1].body.sprite, 1.5, -1.5);
+    int k = rand() % 190;
+    interest[2] = create_interest(CLOWN[1], (sfIntRect)
+    {0, 0, 48, 70}, (sfVector2f){elem[k].pos.x,
+    elem[k].pos.y}, action);
+    //interest[1] = create_interest("other/test.png", (sfIntRect)
+    //{0, 0, 50, 50}, (sfVector2f){size.x * 0.16, size.y * 0.70}, action);
     return (interest);
 }
