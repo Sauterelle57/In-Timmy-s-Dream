@@ -30,14 +30,15 @@ static void action(game_t *g)
     my_printf("Go for combat/combat !!\n");
 }
 
-interest_t *init_combat_interest(sfRenderWindow *window)
+interest_t *init_combat_interest(int nb_interest, body_t *elem)
 {
-    sfVector2u size = sfRenderWindow_getSize(window);
-    interest_t *interest = malloc(sizeof(interest_t) * 0);
+    interest_t *interest = malloc(sizeof(interest_t) * nb_interest);
 
-    //interest[0] = create_interest("other/test.png", (sfIntRect)
-    //{0, 0, 50, 50}, (sfVector2f){size.x * 0.21, size.y * 0.42}, action);
-    //interest[1] = create_interest("other/test.png", (sfIntRect)
-    //{0, 0, 50, 50}, (sfVector2f){size.x * 0.16, size.y * 0.70}, action);
+    interest[0] = create_interest("deco/Door_4 (open).png", (sfIntRect)
+    {0, 0, 70, 70}, (sfVector2f){215, 60}, action);
+    Set_Scale(interest[0].body.sprite, 1.5, 1.5);
+    interest[1] = create_interest("deco/Door_4.png", (sfIntRect)
+    {0, 0, 70, 70}, (sfVector2f){1700, 600}, action);
+    Set_Scale(interest[1].body.sprite, 1.5, -1.5);
     return (interest);
 }

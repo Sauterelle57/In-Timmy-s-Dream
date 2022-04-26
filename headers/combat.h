@@ -18,8 +18,8 @@ void combat_movement(game_t *g);
 body_t *create_maze(body_t *elem, game_t *g);
 int maze_generation(int width, int height);
 button_t *init_combat_button(sfRenderWindow *window);
-interest_t *init_combat_interest(sfRenderWindow *window);
 void check_button(game_t *g, sfVector2i pos, sfVector2u size);
+interest_t *init_combat_interest(int nb_interest, body_t *elem);
 int combat_collision(body_t player, body_t elem, sfVector2i new_pos);
 
 #endif /* !COMBAT_H_ */
