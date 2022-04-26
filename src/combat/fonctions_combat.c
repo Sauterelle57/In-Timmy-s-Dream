@@ -55,6 +55,5 @@ void anim_enemy(game_t *g)
         g->scene[2].interest[i].body.rect);
         tmp = g->t.sec;
         }
-        i = 3;
     }
 }

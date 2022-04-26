@@ -8,6 +8,14 @@
 #ifndef COMBAT_H_
     #define COMBAT_H_
 
+     static char *CHOICE[5] = {
+        "enemies/Clown_idle.png",
+        "enemies/Witch_idle.png",
+        "enemies/Vampire 01_idle.png",
+        "enemies/Zombie 01_idle.png",
+        "enemies/Bat 01_idle.png"
+    };
+
 void draw_combat(game_t *g, body_t *elem);
 void draw_black(game_t *g, body_t *elem);
 void anim_combat(game_t *g);
