@@ -7,6 +7,7 @@
 
 #include "includes.h"
 #include "vampire.h"
+#include "player.h"
 
 static void check_action(game_t *g)
 {
@@ -46,16 +47,16 @@ void event_vampire(game_t *g)
     g->t.sec = Get_Time(g->t.clock);
     if (g->event.type == sfEvtClosed || Key_Pressed(sfKeyEscape))
         quit_game(g);
-    if (Key_Pressed(sfKeySpace) && g->t.sec - g->cooldown > 0.5) {
+    if ((Key_Pressed(sfKeySpace) || Key_Pressed(sfKeyE)) && g->t.sec -
+    g->cooldown > 0.5) {
         check_action(g);
         g->cooldown = g->t.sec;
     }
     if (sfKeyboard_isKeyPressed(sfKeyP) && g->t.sec - g->t.pause > 0.3)
         pause_game(g);
     check_button(g, Get_Mouse_Pos(), Get_Window_size());
-    //if (Key_Pressed(sfKeyUp) || Key_Pressed(sfKeyDown) ||
-    //Key_Pressed(sfKeyRight) || Key_Pressed(sfKeyLeft))
-    //    vampire_movement(g);
-    //else
-    //    Set_Texture(g->player.body.sprite, NPC[16]);
+    if (Key_Pressed(sfKeyA) && g->t.sec - g->cooldown >= 0.15) {
+        g->player.speed = g->player.speed == SPEED ? SPEED + 5 : SPEED;
+        g->cooldown = g->t.sec;
+    }
 }

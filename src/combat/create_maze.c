@@ -45,7 +45,7 @@ static body_t *create_maze_wall(body_t *elem, char *buffer, int k)
 
 int create_view(body_t *elem, int k, game_t *g)
 {
-    elem[376] = create_body("other/font_invisible.png", (sfIntRect){0, 0, 4032, 3024},
+    elem[377] = create_body("other/font_invisible.png", (sfIntRect){0, 0, 4032, 3024},
     (sfVector2f){-1700 - 0, -1300});
     return (k);
 }
@@ -57,6 +57,8 @@ body_t *create_maze(body_t *elem, game_t *g)
 
     elem = malloc(sizeof(body_t) * (my_strlen(buffer) + 31));
     elem[k++] = create_body("map/maze_bg.png", (sfIntRect){0, 0, 1920, 1080},
+    (sfVector2f){0, 0});
+    elem[k++] = create_body("other/blank.png", (sfIntRect){0, 0, 0, 0},
     (sfVector2f){0, 0});
     for (int i = 0, x = 200, y = 80; buffer[i]; i++) {
         x += buffer[i] == 'X' ? 60 : 0;

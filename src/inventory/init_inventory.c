@@ -24,5 +24,6 @@ scene_t init_inventory(game_t *g)
     inventory.event = &event_inventory;
     inventory.anim = &anim_inventory;
     sfMusic_setLoop(inventory.scene_music, sfTrue);
+    sfMusic_setVolume(inventory.scene_music, 0);
     return (inventory);
 }
