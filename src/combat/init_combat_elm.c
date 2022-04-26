@@ -39,9 +39,17 @@ interest_t *init_combat_interest(int nb_interest, body_t *elem)
     sfSprite_setRotation(interest[1].body.sprite, -90.0);
     interest[2] = create_interest("other/blank.png", (sfIntRect)
     {0, 0, 50, 200}, (sfVector2f){1600, 860}, &go_game);
-    int k = rand() % 190;
-    interest[3] = create_interest(CLOWN[1], (sfIntRect)
-    {0, 0, 48, 70}, (sfVector2f){elem[k].pos.x,
-    elem[k].pos.y}, &example);
+    spawn_enemy(nb_interest, elem, interest);
+    return (interest);
+}
+
+interest_t *spawn_enemy(int nb_interest, body_t *elem, interest_t *interest)
+{
+    for (int i = 3; i < nb_interest; i++) {
+        int k = rand() % 200;
+        interest[i] = create_interest(CLOWN[1], (sfIntRect)
+        {0, 0, 48, 70}, (sfVector2f){elem[k].pos.x,
+        elem[k].pos.y}, &example);
+    }
     return (interest);
 }
