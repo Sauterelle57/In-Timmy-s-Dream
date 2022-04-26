@@ -16,15 +16,24 @@
 #include "my_loading.h" //scene 7
 #include "cimetery.h" //scene 8
 
-int game_loop(game_t *g, scene_t (*init_scene[9])(game_t *g))
+void charge_scene(game_t *g)
+{
+    scene_t (*init_scene[9])(game_t *g) = {&init_game, &init_menu, &init_combat
+    , &init_vampire, &init_ghost, &init_forest, &init_inventory, &init_loading,
+    &init_cimetery};
+
+    if (!g->scene[g->curent_scene].charged) {
+        g->scene[g->curent_scene] = init_scene[g->curent_scene](g);
+        sfMusic_pause(g->scene[g->previous_scene].scene_music);
+        sfMusic_play(g->scene[g->curent_scene].scene_music);
+        g->scene[g->curent_scene].charged = 1;
+    }
+}
+
+int game_loop(game_t *g)
 {
     while (sfRenderWindow_isOpen(g->window)) {
-        if (!g->scene[g->curent_scene].charged) {
-            g->scene[g->curent_scene] = init_scene[g->curent_scene](g);
-            sfMusic_pause(g->scene[g->previous_scene].scene_music);
-            sfMusic_play(g->scene[g->curent_scene].scene_music);
-            g->scene[g->curent_scene].charged = 1;
-        }
+        charge_scene(g);
         sfRenderWindow_clear(g->window, sfBlack);
         g->t.sec = Get_Time(g->t.clock);
         g->scene[g->curent_scene].anim(g);
@@ -46,11 +55,8 @@ int game_loop(game_t *g, scene_t (*init_scene[9])(game_t *g))
 int main(void)
 {
     game_t game = create_game();
-    scene_t (*init_scene[9])(game_t *g) = {&init_game, &init_menu, &init_combat
-    , &init_vampire, &init_ghost, &init_forest, &init_inventory, &init_loading,
-    &init_cimetery};
 
     game.previous_scene = 7;
     game.curent_scene = 7;
-    return (game_loop(&game, init_scene));
+    return (game_loop(&game));
 }
