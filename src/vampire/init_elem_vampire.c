@@ -83,7 +83,7 @@ body_t *init_vampire_elem(sfRenderWindow *window, int nb_elem)
 
     elem[0] = create_body("map/interiors_vamp.png", (sfIntRect){1185, 1220,
     4950, 3170}, (sfVector2f){0, 0});
-    elem[1] = create_body("map/interiors_vamp.png", (sfIntRect){1185, 1220,
+    elem[1] = create_body("other/blank.png", (sfIntRect){1185, 1220,
     3840, 2160}, (sfVector2f){0, 0});
     elem[2] = create_body("other/block.png", (sfIntRect){0, 0, 50, 700},
     (sfVector2f){1210, -50});
