@@ -24,6 +24,7 @@ void go_combat(game_t *g)
     Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
     if (g->scene[2].charged == 1)
         sfMusic_play(g->scene[2].scene_music);
+    charge_scene(g);
     g->curent_scene = 2;
 }
 
@@ -35,6 +36,7 @@ void go_vampire(game_t *g)
     Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
     if (g->scene[3].charged == 1)
         sfMusic_play(g->scene[3].scene_music);
+    charge_scene(g);
     g->curent_scene = 3;
 }
 
@@ -46,6 +48,7 @@ void go_ghost(game_t *g)
     Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
     if (g->scene[4].charged == 1)
         sfMusic_play(g->scene[4].scene_music);
+    charge_scene(g);
     g->curent_scene = 4;
 }
 
@@ -58,6 +61,7 @@ void go_forest(game_t *g)
     g->curent_scene = 5;
     if (g->scene[5].charged == 1)
         sfMusic_play(g->scene[5].scene_music);
+    charge_scene(g);
     g->curent_scene = 5;
 }
 
@@ -73,6 +77,7 @@ void go_inventory(game_t *g)
     Set_Scale(g->player.body.sprite, 6, 6);
     if (g->scene[6].charged == 1)
         sfMusic_play(g->scene[6].scene_music);
+    charge_scene(g);
     g->curent_scene = 6;
 }
 
@@ -84,6 +89,7 @@ void go_game(game_t *g)
     Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
     if (g->scene[0].charged == 1)
         sfMusic_play(g->scene[0].scene_music);
+    charge_scene(g);
     g->curent_scene = 0;
 }
 
@@ -95,6 +101,7 @@ void go_cimetery(game_t *g)
     Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
     if (g->scene[8].charged == 1)
         sfMusic_play(g->scene[8].scene_music);
+    charge_scene(g);
     g->curent_scene = 8;
 }
 
@@ -111,5 +118,6 @@ void go_back(game_t *g)
     g->player.body.pos.y = 540;
     Set_Pos(g->player.body.sprite, 960, 540);
     Set_Scale(g->player.body.sprite, 1, 1);
+    charge_scene(g);
     g->curent_scene = tmp;
 }

@@ -5,8 +5,8 @@
 ** init_dialogue
 */
 
-#include "../../headers/dialogue.h"
-#include "../../headers/includes.h"
+#include "dialogue.h"
+#include "includes.h"
 
 char* open_text()
 {
