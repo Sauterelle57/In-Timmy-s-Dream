@@ -38,8 +38,8 @@ int game_loop(game_t *g)
         g->scene[g->curent_scene].anim(g);
         g->scene[g->curent_scene].draw(g);
         draw_cursor(g);
-        if (sfRenderWindow_pollEvent(g->window, &g->event))
-            g->scene[g->curent_scene].event(g);
+        //if (sfRenderWindow_pollEvent(g->window, &g->event))
+        g->scene[g->curent_scene].event(g);
         if (Key_Pressed(sfKeyUp) || Key_Pressed(sfKeyDown) ||
         Key_Pressed(sfKeyRight) || Key_Pressed(sfKeyLeft) || Key_Pressed(sfKeyZ
         ) || Key_Pressed(sfKeyS) || Key_Pressed(sfKeyD) || Key_Pressed(sfKeyQ))
