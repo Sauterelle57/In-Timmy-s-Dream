@@ -12,7 +12,6 @@ void draw_combat(game_t *g, body_t *elem);
 void draw_black(game_t *g, body_t *elem);
 void anim_combat(game_t *g);
 void event_combat(game_t *g);
-void check_action(game_t *g);
 scene_t init_combat(game_t *g);
 void combat_movement(game_t *g);
 body_t *create_maze(body_t *elem, game_t *g);

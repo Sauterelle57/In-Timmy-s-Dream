@@ -11,7 +11,6 @@
 
 void check_action(game_t *g)
 {
-    sfVector2f size = {32, 50};
     sfFloatRect player = Get_bounds(g->player.body.sprite);
 
     for (int i = 0; i < g->scene[0].nb_interest; i++)
