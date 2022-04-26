@@ -8,72 +8,43 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-char *my_strncpy(char *, char const *, int);
-
-void my_putchar(char);
-
-static int my_tablen(char **tab)
+static int count_sep(char *str, char c)
 {
-    int i = 0;
-    while (tab[i] != 0)
-        i++;
-    return (i);
+    int count = 0;
+
+    for (int i = 0; str[i]; i++)
+        count += str[i] == c ? 1 : 0;
+    return (count + 1);
 }
 
-static int is_alphanum(char c)
+int count_m(char *str, char sep)
 {
-    if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-        return (1);
-    else if (c >= '0' && c <= '9')
-        return (1);
-    else
-        return (0);
+    int count = 0;
+
+    for (; str[count] != sep && str[count] != '\0'; count++);
+    return (count + 1);
 }
 
-static char *create_string(char const *str, int i, char *string)
+char **my_str_to_word_array(char *str, char sep)
 {
-    int begin = i;
+    int counter = count_sep(str, sep);
+    char **res = malloc(sizeof(char *) * (counter + 1));
+    int line = 0;
 
-    while (is_alphanum(str[i]) == 1 && str[i] != '\0')
-        i++;
-    string = malloc(sizeof(char) * (i - begin + 1));
-    my_strncpy(string, &str[begin], i - begin);
-    return (string);
-}
-
-static char **my_str_to_word_array2(int count_w, char const *str)
-{
-    int cut = 1;
-    char *string = 0;
-    char **tab = 0;
-    int index = 0;
-
-    tab = malloc(sizeof(char *) * (count_w + 1));
-    for (int i = 0; str[i] != '\0'; i++) {
-        if (is_alphanum(str[i]) == 0) {
-            cut = 1;
-        } else if (is_alphanum(str[i]) == 1 && cut == 1) {
-            string = create_string(str, i, string);
-            tab[index] = string;
-            index++;
-            cut = 0;
+    res[0] = malloc(sizeof(char) * count_m(str, sep) + 1);
+    if (res[0] == NULL)
+        return (NULL);
+    for (int i = 0, col = 0; str[i]; i++, col++) {
+        if (str[i] == sep) {
+            res[++line] = malloc(sizeof(char) * count_m(&str[i + 1], sep));
+            if (res[line] == NULL)
+                return (NULL);
+            col = -1;
+        } else {
+            res[line][col] = str[i];
+            res[line][col + 1] = '\0';
         }
     }
-    return (tab);
-}
-
-char **my_str_to_word_array(char const *str)
-{
-    int cut = 1;
-    int count_w = 0;
-
-    for (int i = 0; str[i] != '\0'; i++) {
-        if (is_alphanum(str[i]) == 0) {
-            cut = 1;
-        } else if (is_alphanum(str[i]) == 1 && cut == 1) {
-            count_w += 1;
-            cut = 0;
-        }
-    }
-    return (my_str_to_word_array2(count_w, str));
+    res[line + 1] = NULL;
+    return (res);
 }
