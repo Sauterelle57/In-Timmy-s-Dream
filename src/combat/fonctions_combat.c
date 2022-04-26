@@ -23,8 +23,8 @@ void draw_combat(game_t *g, body_t *elem)
         Draw_Sprite(g->scene[2].interest[i].body.sprite);
     for (int i = 0; i < g->scene[2].nb_button; i++)
         Draw_Sprite(g->scene[2].button[i].body.sprite);
-    draw_player(g);
     draw_black(g, elem);
+    draw_player(g);
 }
 
 void anim_combat(game_t *g)

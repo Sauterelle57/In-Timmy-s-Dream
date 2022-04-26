@@ -16,7 +16,7 @@ scene_t init_menu(game_t *g)
     int nb_elem = 2;
     interest_t *interest = init_menu_interest(g->window);
     int nb_interest = 0;
-    sfMusic *scene_music = sfMusic_createFromFile("music/back.ogg");
+    sfMusic *scene_music = sfMusic_createFromFile("music/The_Abyss.ogg");
     scene_t game = {0, buttons, nb_button, elem, nb_elem, interest,
     nb_interest, scene_music};
 
