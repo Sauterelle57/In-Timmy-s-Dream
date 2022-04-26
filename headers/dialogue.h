@@ -8,12 +8,15 @@
 #ifndef DIALOGUE_H_
     #define DIALOGUE_H_
 
-scene_t init_dialogue(game_t *g);
-void draw_dialogue(game_t *g);
-void event_dialogue(game_t *g);
-void anim_dialogue(game_t *g);
-button_t *init_dialogue_button(sfRenderWindow *window);
-interest_t *init_dialogue_interest(sfRenderWindow *window);
-body_t *init_dialogue_elem(sfRenderWindow *window);
+typedef struct dialogue_s {
+    sfVector2f dialogue_pos;
+    sfFont *font;
+    sfText *text;
+    char* text_str;
+    char** tab_text;
+    int is_showing;
+    int is_passed;
+    char* temp;
+} dialogue_t;
 
 #endif /* !DIALOGUE_H_ */
