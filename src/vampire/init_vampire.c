@@ -24,5 +24,6 @@ scene_t init_vampire(game_t *g)
     vampire.event = &event_vampire;
     vampire.anim = &anim_vampire;
     sfMusic_setLoop(vampire.scene_music, sfTrue);
+    sfMusic_setVolume(vampire.scene_music, 0);
     return (vampire);
 }

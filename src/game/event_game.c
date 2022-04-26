@@ -48,7 +48,8 @@ void event_game(game_t *g)
 
     if (g->event.type == sfEvtClosed || Key_Pressed(sfKeyEscape))
         quit_game(g);
-    if (Key_Pressed(sfKeySpace) && g->t.sec - g->cooldown >= 0.15) {
+    if ((Key_Pressed(sfKeySpace) || Key_Pressed(sfKeyE)) && g->t.sec -
+    g->cooldown > 0.5) {
         check_action(g);
         g->cooldown = g->t.sec;
     }

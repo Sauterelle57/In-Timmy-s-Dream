@@ -33,7 +33,8 @@ int game_loop(game_t *g, scene_t (*init_scene[9])(game_t *g))
         if (sfRenderWindow_pollEvent(g->window, &g->event))
             g->scene[g->curent_scene].event(g);
         if (Key_Pressed(sfKeyUp) || Key_Pressed(sfKeyDown) ||
-        Key_Pressed(sfKeyRight) || Key_Pressed(sfKeyLeft))
+        Key_Pressed(sfKeyRight) || Key_Pressed(sfKeyLeft) || Key_Pressed(sfKeyZ
+        ) || Key_Pressed(sfKeyS) || Key_Pressed(sfKeyD) || Key_Pressed(sfKeyQ))
             g->curent_scene == 2 ? combat_movement(g) : movement(g);
         else
             Set_Texture(g->player.body.sprite, NPC[16]);
