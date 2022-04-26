@@ -59,7 +59,7 @@ body_t *init_ghost_elem(sfRenderWindow *window, int nb_elem)
 
     elem[0] = create_body("map/maisonent.png", (sfIntRect){980, 1350, 3840,
     2160}, (sfVector2f){0, 0});
-    elem[1] = create_body("map/maisonent.png", (sfIntRect){980, 1350, 3840,
+    elem[1] = create_body("other/blank.png", (sfIntRect){980, 1350, 3840,
     2160}, (sfVector2f){0, 0});
     elem[2] = create_body("other/block.png", (sfIntRect){0, 0, 200, 50},
     (sfVector2f){850, 605});

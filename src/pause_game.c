@@ -24,7 +24,12 @@ void pause_game(game_t *g)
         sfMusic_pause(g->scene[g->curent_scene].scene_music);
     else
         sfMusic_play(g->scene[g->curent_scene].scene_music);
-    while (g->pause == 1)
+    while (g->pause == 1) {
+        sfRenderWindow_clear(g->window, sfBlack);
+        g->scene[g->curent_scene].draw(g);
+        draw_cursor(g);
         if (sfRenderWindow_pollEvent(g->window, &event))
             pause_event(g);
+        sfRenderWindow_display(g->window);
+    }
 }

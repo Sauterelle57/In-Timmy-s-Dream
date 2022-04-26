@@ -10,7 +10,7 @@
 
 void draw_black(game_t *g, body_t *elem)
 {
-    Set_Pos(g->scene[2].elem[376].sprite, -1980 + g->player.body.pos.x,
+    Set_Pos(g->scene[2].elem[377].sprite, -1980 + g->player.body.pos.x,
     -1480 + g->player.body.pos.y);
 }
 
