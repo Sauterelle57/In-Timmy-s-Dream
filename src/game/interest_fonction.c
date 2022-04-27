@@ -18,10 +18,12 @@ void go_game(game_t *g)
     g->previous_scene = g->curent_scene;
     sfMusic_pause(g->scene[g->previous_scene].scene_music);
     g->player.body.rect.top = 0;
+    g->player.body.pos.x = 940;
+    g->player.body.pos.y = 540;
+    Set_Pos(g->player.body.sprite, 940, 540);
     Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
     if (g->scene[0].charged == 1)
         sfMusic_play(g->scene[0].scene_music);
-    charge_scene(g, 0);
     g->curent_scene = 0;
 }
 

@@ -9,7 +9,7 @@
 
 music_t create_music(void)
 {
-    sfMusic *back = sfMusic_createFromFile("music/back.ogg");
+    sfMusic *back = sfMusic_createFromFile("music/Home.ogg");
     music_t m = {back};
 
     sfMusic_setLoop(m.back, sfTrue);
