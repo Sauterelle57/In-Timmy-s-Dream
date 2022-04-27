@@ -16,7 +16,7 @@ scene_t init_vampire(game_t *g)
     body_t *elem = init_vampire_elem(g->window, nb_elem);
     int nb_interest = 5;
     interest_t *interest = init_vampire_interest(g->window, nb_interest);
-    sfMusic *scene_music = sfMusic_createFromFile("music/vamp.ogg");
+    sfMusic *scene_music = sfMusic_createFromFile("music/Nocturne.ogg");
     scene_t vampire = {0, buttons, nb_button, elem, nb_elem, interest,
     nb_interest, scene_music};
 
@@ -24,6 +24,6 @@ scene_t init_vampire(game_t *g)
     vampire.event = &event_vampire;
     vampire.anim = &anim_vampire;
     sfMusic_setLoop(vampire.scene_music, sfTrue);
-    sfMusic_setVolume(vampire.scene_music, 0);
+    sfMusic_setVolume(vampire.scene_music, 100);
     return (vampire);
 }

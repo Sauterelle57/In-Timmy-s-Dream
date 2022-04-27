@@ -16,7 +16,7 @@ scene_t init_inventory(game_t *g)
     body_t *elem = init_inventory_elem(g->window, nb_elem);
     int nb_interest = 0;
     interest_t *interest = init_inventory_interest(g->window, nb_interest);
-    sfMusic *scene_music = sfMusic_createFromFile("music/back.ogg");
+    sfMusic *scene_music = sfMusic_createFromFile("music/The_Abyss.ogg");
     scene_t inventory = {0, buttons, nb_button, elem, nb_elem, interest,
     nb_interest, scene_music};
 

@@ -12,6 +12,7 @@ void draw_black(game_t *g, body_t *elem)
 {
     Set_Pos(g->scene[2].elem[377].sprite, -1980 + g->player.body.pos.x,
     -1480 + g->player.body.pos.y);
+    Draw_Sprite(g->scene[2].elem[377].sprite);
 }
 
 void draw_combat(game_t *g, body_t *elem)
@@ -22,8 +23,8 @@ void draw_combat(game_t *g, body_t *elem)
         Draw_Sprite(g->scene[2].interest[i].body.sprite);
     for (int i = 0; i < g->scene[2].nb_button; i++)
         Draw_Sprite(g->scene[2].button[i].body.sprite);
-    draw_player(g);
     draw_black(g, elem);
+    draw_player(g);
 }
 
 void anim_combat(game_t *g)
@@ -36,5 +37,23 @@ void anim_combat(game_t *g)
         48;
         Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
         tmp = g->t.sec;
+    }
+    anim_enemy(g);
+}
+
+void anim_enemy(game_t *g)
+{
+    static float tmp = 0.0;
+    int i;
+    g->t.sec = Get_Time(g->t.clock);
+
+    if (g->t.sec - tmp > 0.2) {
+        for (i = 3; i < 5; i++) {
+        g->scene[2].interest[i].body.rect.left +=
+        g->scene[2].interest[i].body.rect.left >= 144 ? -144 : 48;
+        Set_Texture_Rect(g->scene[2].interest[i].body.sprite,
+        g->scene[2].interest[i].body.rect);
+        tmp = g->t.sec;
+        }
     }
 }
