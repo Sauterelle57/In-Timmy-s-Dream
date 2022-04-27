@@ -43,7 +43,7 @@ player_t create_player(void)
     {0, 0, 2048, 2048}, (sfVector2f){30, 25});
 
     Set_Scale(picture.sprite, 0.6, 0.6);
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < NB_OBJ; i++)
         inventory[i] = create_object(OBJ[i], 0, 0, 0);
     player_t player = {name, body, inventory, pv_bar, picture, SPEED, PV, 50};
     return (player);

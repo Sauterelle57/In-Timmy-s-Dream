@@ -7,6 +7,7 @@
 
 #include "includes.h"
 #include "inventory.h"
+#include "player.h"
 
 static void check_action(game_t *g)
 {
@@ -41,11 +42,28 @@ static void check_button(game_t *g, sfVector2i pos, sfVector2u size)
     }
 }
 
+static void check_object(game_t *g, sfVector2i pos, sfVector2u size)
+{
+    static object_t object;
+
+    for (int i = 0; i < NB_OBJ; i++) {
+        object = g->player.inventory[i];
+        if (sfIntRect_contains(&(sfIntRect){object.body.pos.x - 64,
+        object.body.pos.y, 64, 64}, pos.x * (1920.0 / size.x), pos.y * (1080.0
+        / size.y))) {
+            sfText *description = create_text(25, (sfVector2f){pos.x + 50,
+            pos.y - 10}, CHAR_OBJ[i], "other/button.ttf");
+            Draw_Text(description);
+        }
+    }
+}
+
 void event_inventory(game_t *g)
 {
     if (g->event.type == sfEvtClosed || Key_Pressed(sfKeyEscape))
         quit_game(g);
     check_button(g, Get_Mouse_Pos(), Get_Window_size());
+    check_object(g, Get_Mouse_Pos(), Get_Window_size());
     if (Key_Pressed(sfKeyUp) || Key_Pressed(sfKeyDown) ||
     Key_Pressed(sfKeyRight) || Key_Pressed(sfKeyLeft))
         inventory_movement(g);
