@@ -39,12 +39,12 @@ player_t create_player(void)
     body_t pv_bar = create_body("other/pv_bar.png", (sfIntRect)
     {0, 0, 126, 24}, (sfVector2f){200, 110});
     Set_Scale(pv_bar.sprite, 2, 2);
-    body_t picture = create_body("other/picture.png", (sfIntRect)
+    body_t picture = create_body("other/pp_timmy.png", (sfIntRect)
     {0, 0, 2048, 2048}, (sfVector2f){30, 25});
 
     for (int i = 0; i < 11; i++)
         inventory[i] = create_object(OBJ[i], 0, 0, 0);
-    Set_Scale(picture.sprite, 0.07, 0.07);
+    Set_Scale(picture.sprite, 0.6, 0.6);
     player_t player = {name, body, inventory, pv_bar, picture, SPEED, PV, 50};
     return (player);
 }
