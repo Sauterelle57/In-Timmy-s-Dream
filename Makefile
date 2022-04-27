@@ -31,6 +31,7 @@ IWHITE  = $ \x1b[47m
 CFLAGS = -g -I./headers
 
 SRC	=	src/main.c	\
+		src/random.c	\
 		src/quit_game.c	\
 		src/pause_game.c	\
 		src/create_text.c	\
@@ -76,7 +77,6 @@ SRC	=	src/main.c	\
 		src/vampire/event_vampire.c	\
 		src/vampire/init_vampire.c	\
 		src/vampire/init_elem_vampire.c	\
-		src/vampire/vampire_collisions.c	\
 		src/vampire/init_button_vampire.c	\
 		src/vampire/init_interest_vampire.c	\
 \

@@ -8,7 +8,7 @@
 #ifndef CATEGORY_H_
     #define CATEGORY_H_
 
-    static char *OBJ[11] = {
+    static char *OBJ[10] = {
         "object/DamagePotion.png",
         "object/Pillow.png",
         "object/Pickaxe.png",
@@ -17,7 +17,6 @@
         "object/LinternOld.png",
         "object/Potato.png",
         "object/SniperRifle.png",
-        "object/NormalSword.png",
         "object/Coin.png",
         "object/Pistol.png"
     };
@@ -43,9 +42,9 @@
 
     static char *BAT[9] = {
         "enemies/Bat 01_idle.png", "enemies/Bat 01_fly.png",\
-        "enemies/Bat 01_die.png"\
+        "enemies/Bat 01_die.png",\
         "enemies/Bat 02_idle.png", "enemies/Bat 02_fly.png",\
-        "enemies/Bat 02_die.png"\
+        "enemies/Bat 02_die.png",\
         "enemies/Bat 03_idle.png", "enemies/Bat 03_fly.png",\
         "enemies/Bat 03_die.png"\
     };
@@ -54,32 +53,32 @@
         "enemies/Ghost 01_idle.png", "enemies/Ghost 01_move.png",\
         "enemies/Ghost 01_die.png",\
         "enemies/Ghost 02_idle.png", "enemies/Ghost 02_move.png",\
-        "enemies/Ghost 02_die.png"\
+        "enemies/Ghost 02_die.png",\
         "enemies/Ghost 03_idle.png", "enemies/Ghost 03_move.png",\
         "enemies/Ghost 03_die.png"\
     };
 
     static char *SKELETON[9] = {
         "enemies/Skeleton 01_idle.png", "enemies/Skeleton 01_walk.png",\
-        "enemies/Skeleton 01_die.png"\
+        "enemies/Skeleton 01_die.png",\
         "enemies/Skeleton 02_idle.png", "enemies/Skeleton 02_walk.png",\
-        "enemies/Skeleton 02_die.png"\
+        "enemies/Skeleton 02_die.png",\
         "enemies/Skeleton 03_idle.png", "enemies/Skeleton 03_walk.png",\
         "enemies/Skeleton 03_die.png"\
     };
 
     static char *ZOMBIE[9] = {
         "enemies/Zombie 01_idle.png", "enemies/Zombie 01_walk.png",\
-        "enemies/Zombie 01_die.png"\
+        "enemies/Zombie 01_die.png",\
         "enemies/Zombie 02_idle.png", "enemies/Zombie 02_walk.png",\
-        "enemies/Zombie 02_die.png"\
+        "enemies/Zombie 02_die.png",\
         "enemies/Zombie 03_idle.png", "enemies/Zombie 03_walk.png",\
         "enemies/Zombie 03_die.png"\
     };
 
     static char *VAMPIRE[6] = {
         "enemies/Vampire 01_idle.png", "enemies/Vampire 01_walk.png",\
-        "enemies/Vampire 01_die.png"\
+        "enemies/Vampire 01_die.png",\
         "enemies/Vampire 02_idle.png", "enemies/Vampire 02_walk.png",\
         "enemies/Vampire 02_die.png"\
     };

@@ -53,6 +53,7 @@ int game_loop(game_t *g)
 
 int main(void)
 {
+    srand(get_random());
     game_t game = create_game();
 
     game.previous_scene = 7;
