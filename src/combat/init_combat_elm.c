@@ -46,9 +46,9 @@ interest_t *init_combat_interest(int nb_interest, body_t *elem)
 interest_t *spawn_enemy(int nb_interest, body_t *elem, interest_t *interest)
 {
     for (int i = 3; i < nb_interest; i++) {
-        int k = rand() % 191;
+        int k = rand() % 150;
         int a = rand() % 5;
-        printf("%d\n%d\n", k, a);
+        printf("%d & %d\n", k, a);
         interest[i] = create_interest(CHOICE[a], (sfIntRect)
         {0, 0, 48, 70}, (sfVector2f){elem[k].pos.x + 5,
         elem[k].pos.y + 30}, &example);
