@@ -12,7 +12,7 @@ scene_t init_cimetery(game_t *g)
 {
     int nb_button = 2;
     button_t *buttons = init_cimetery_button(g->window, nb_button);
-    int nb_elem = 2;
+    int nb_elem = 32;
     body_t *elem = init_cimetery_elem(g->window, nb_elem);
     int nb_interest = 5;
     interest_t *interest = init_cimetery_interest(g->window, nb_interest);
