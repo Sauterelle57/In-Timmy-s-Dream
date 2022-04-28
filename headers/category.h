@@ -20,25 +20,25 @@
     };
 
     static char *CHAR_OBJ[8] = {
-        "lorem ipsum un",
-        "lorem ipsum deux",
-        "lorem ipsum trois",
-        "lorem ipsum quatre",
-        "lorem ipsum cinq",
-        "lorem ipsum six",
-        "lorem ipsum sept",
-        "lorem ipsum huit"
+        "Potion rouge",
+        "Drap doux",
+        "Petite pioche",
+        "Briquet",
+        "Lampe-torche",
+        "Lanterne",
+        "Patate pourrie",
+        "Piece en or"
     };
 
     static char *STAT_OBJ[8] = {
-        "other/block.png",
-        "other/test.png",
-        "other/green_block.png",
-        "other/blue_block.png",
-        "other/test.png",
-        "other/block.png",
-        "other/blue_block.png",
-        "other/green_block.png"
+        "other/stat_potion.png",
+        "other/stat_drap.png",
+        "other/stat_pioche.png",
+        "other/stat_briquet.png",
+        "other/stat_lampe-torche.png",
+        "other/stat_lanterne.png",
+        "other/stat_patate.png",
+        "other/stat_piece.png"
     };
 
     static char *BUTTON[9] = {
