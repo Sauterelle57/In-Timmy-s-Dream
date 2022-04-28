@@ -20,18 +20,17 @@ void check_action(game_t *g)
 
 void check_button(game_t *g, sfVector2i pos, sfVector2u size)
 {
-    static float tmp = 0.0;
     button_t button;
 
     for (int i = 0; i < g->scene[0].nb_button; i++) {
         button = g->scene[0].button[i];
-        if (Mouse_Pressed(sfMouseLeft) && g->t.sec - tmp > 0.5 &&
+        if (Mouse_Pressed(sfMouseLeft) && g->t.sec - g->cooldown > 0.5 &&
         sfIntRect_contains(&(sfIntRect){button.body.pos.x, button.body.pos.y,
         button.size.x, button.size.y}, pos.x * (1920.0 / size.x), pos.y *
         (1080.0 / size.y))) {
             Set_Texture(button.body.sprite, BUTTON[button.png + 2]);
             button.on_click(g);
-            tmp = g->t.sec;
+            g->cooldown = g->t.sec;
         } else if (sfIntRect_contains(&(sfIntRect){button.body.pos.x,
         button.body.pos.y, button.size.x, button.size.y}, pos.x * (1920.0 /
         size.x), pos.y * (1080.0 / size.y))) {

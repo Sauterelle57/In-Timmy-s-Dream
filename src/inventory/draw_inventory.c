@@ -21,6 +21,16 @@ object_t *init_object_inventory(object_t *inventory)
     }
 }
 
+static void draw_player_inventory(game_t *g)
+{
+    //Draw_Sprite(g->player.picture.sprite);
+    //Draw_Sprite(g->player.pv_bar.sprite);
+    Draw_Sprite(g->player.body.sprite);
+    sfText_setPosition(g->player.name, (sfVector2f){557, 750});
+    Draw_Text(g->player.name);
+    Draw_Sprite(g->scene[g->curent_scene].elem[1].sprite);
+}
+
 void draw_inventory(game_t *g)
 {
     Draw_Sprite(g->scene[6].elem[0].sprite);
@@ -32,5 +42,5 @@ void draw_inventory(game_t *g)
     for (int i = 0; i < NB_OBJ; i++) //affichage objets du joueur
         if (g->player.inventory[i].own == 1)
             Draw_Sprite(g->player.inventory[i].body.sprite);
-    draw_player(g);
+    draw_player_inventory(g);
 }

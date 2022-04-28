@@ -30,6 +30,17 @@
         "lorem ipsum huit"
     };
 
+    static char *STAT_OBJ[8] = {
+        "other/block.png",
+        "other/test.png",
+        "other/green_block.png",
+        "other/blue_block.png",
+        "other/test.png",
+        "other/block.png",
+        "other/blue_block.png",
+        "other/green_block.png"
+    };
+
     static char *BUTTON[9] = {
         "button/Pause1.png", "button/Pause2.png", "button/Pause3.png",
         "button/Inventory1.png", "button/Inventory2.png",
