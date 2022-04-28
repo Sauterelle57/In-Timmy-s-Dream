@@ -17,6 +17,13 @@
         "enemies/Zombie 01_idle.png"
     };
 
+    static char *CHOICE_LIGHTS[4] = {
+        "other/font_invisible.png",
+        "other/font_invisible_small.png",
+        "other/font_invisible_no.png",
+        "other/font_invisible_lamp.png"
+    };
+
 void draw_combat(game_t *g, body_t *elem);
 void draw_black(game_t *g, body_t *elem);
 void anim_combat(game_t *g);
