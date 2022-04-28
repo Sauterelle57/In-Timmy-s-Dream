@@ -45,11 +45,11 @@
     char *my_strcat(char *, char const *);
     char *my_strstr(char *, char const *);
     char *my_strcpy(char *, char const *);
-    void my_str_to_word_array(char const *);
     int my_strcmp(char const *, char const *);
     char *my_strncpy(char *, char const *, int);
     char *my_strncat(char *, char const *, int);
     int my_strncmp(char const *, char const *, int);
+    char **my_str_to_word_array(char *str, char sep);
 
     typedef struct flag_s {
         int s;
