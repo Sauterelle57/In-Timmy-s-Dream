@@ -27,10 +27,10 @@ char* open_text()
     return (buffer);
 }
 
-void init_dialogue(dialogue_t *tt, sfRenderWindow *window, game_t *gt)
+void init_dialogue(dialogue_t *tt, game_t *gt)
 {
     gt->t.clock = sfClock_create();
-    tt->font = sfFont_createFromFile("font.ttf");
+    tt->font = sfFont_createFromFile("other/dialogue.ttf");
     tt->text = sfText_create();
     tt->dialogue_pos = (sfVector2f){400, 250};
     sfText_setFont(tt->text, tt->font);
