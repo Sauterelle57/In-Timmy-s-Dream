@@ -15,7 +15,7 @@ void check_action(game_t *g)
 
     for (int i = 0; i < g->scene[0].nb_interest; i++)
         if (Rect_Intersect(g->scene[0].interest[i].body, &player))
-            g->scene[0].interest[i].on_click(g);
+            g->scene[0].interest[i].on_click(g, g->scene[0].interest[i].line);
 }
 
 void check_button(game_t *g, sfVector2i pos, sfVector2u size)
