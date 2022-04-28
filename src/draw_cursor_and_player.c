@@ -12,6 +12,7 @@ void draw_player(game_t *g)
     Draw_Sprite(g->player.body.sprite);
     Draw_Sprite(g->scene[g->curent_scene].elem[1].sprite);
     Draw_Sprite(g->player.picture.sprite);
+    sfText_setPosition(g->player.name, (sfVector2f){200, 40});
     Draw_Text(g->player.name);
     Draw_Sprite(g->player.pv_bar.sprite);
 }

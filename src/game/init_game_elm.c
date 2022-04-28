@@ -11,7 +11,7 @@
 
 void fonction(game_t *g)
 {
-    my_printf("Button clicked !!\n");
+    my_printf("Button clicked XD\n");
 }
 
 button_t *init_game_button(sfRenderWindow *window, int nb_button)

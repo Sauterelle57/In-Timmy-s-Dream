@@ -35,6 +35,7 @@ void quit_game(game_t *g);
 void pause_game(game_t *g);
 void draw_cursor(game_t *g);
 void draw_player(game_t * g);
+unsigned int get_random(void);
 void move_sprite(body_t *sprite, sfVector2f pos, int speed);
 
 #endif /* !INCLUDES_H_ */
