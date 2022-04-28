@@ -16,12 +16,25 @@ char* add_chr_to_str(char *str, char c)
 
     for (; str[i] != '\0'; ++i)
         string[i] = str[i];
-    string[i] = c;
+    if (c == '#')
+        string[i] = '\n';
+    else
+        string[i] = c;
     string[i + 1] = '\0';
     return (string);
 }
 
-void func_text(dialogue_t *tt, sfRenderWindow *window, game_t *gt, int chose)
+char* pass_dialogue(char* temp, dialogue_t *tt, int chose)
+{
+    temp = malloc(sizeof(char) * (my_strlen(tt->tab_text[chose]) + 1));
+    for (int i = 0; i < my_strlen(tt->tab_text[chose]); ++i)
+        temp[i] = '\0';
+    temp[my_strlen(tt->tab_text[chose])] = '\0';
+    tt->is_passed = 1;
+    return (temp);
+}
+
+void func_text(dialogue_t *tt, game_t *gt, int chose)
 {
     static float time = 0;
     static int i = 0;
@@ -36,7 +49,7 @@ void func_text(dialogue_t *tt, sfRenderWindow *window, game_t *gt, int chose)
         time -= 0.10;
     }
     sfText_setString(tt->text, tt->text_str);
-    sfRenderWindow_drawText(window, tt->text, NULL);
+    sfRenderWindow_drawText(gt->window, tt->text, NULL);
     if (my_strlen(tt->temp) == my_strlen(tt->tab_text[chose])) {
         tt->is_showing = 1;
     }

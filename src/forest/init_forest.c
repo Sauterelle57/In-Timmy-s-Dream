@@ -12,7 +12,7 @@ scene_t init_forest(game_t *g)
 {
     int nb_button = 2;
     button_t *buttons = init_forest_button(g->window, nb_button);
-    int nb_elem = 8;
+    int nb_elem = 37;
     body_t *elem = init_forest_elem(g->window, nb_elem);
     int nb_interest = 5;
     interest_t *interest = init_forest_interest(g->window, nb_interest);

@@ -22,10 +22,14 @@
     #include "define.h"
     #include "create_prototypes.h"
     #include "category.h"
+
 // OPEN
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
+    #include <sys/types.h>
+    #include <sys/stat.h>
+    #include <fcntl.h>
+
+// DIALOGUE
+    #include <unistd.h>
 
 void quit_game(game_t *g);
 void pause_game(game_t *g);
