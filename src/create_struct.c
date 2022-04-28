@@ -7,6 +7,7 @@
 
 #include "includes.h"
 #include "player.h"
+#include "dialogue.h"
 
 body_t create_body(char *text, sfIntRect rect, sfVector2f pos)
 {
@@ -24,7 +25,7 @@ interest_t create_interest(char *text, sfIntRect rect, sfVector2f pos,
 void (*action)(game_t *))
 {
     body_t body = create_body(text, rect, pos);
-    interest_t interest = {body, action};
+    interest_t interest = {body, action, 0};
 
     return (interest);
 }

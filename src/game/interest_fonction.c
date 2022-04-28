@@ -8,12 +8,12 @@
 #include "includes.h"
 #include "game.h"
 
-void example(game_t *g)
+void example(game_t *g, int i)
 {
     my_printf("Action !\n");
 }
 
-void go_game(game_t *g)
+void go_game(game_t *g, int i)
 {
     g->previous_scene = g->curent_scene;
     sfMusic_pause(g->scene[g->previous_scene].scene_music);
@@ -27,7 +27,7 @@ void go_game(game_t *g)
     g->curent_scene = 0;
 }
 
-void go_combat(game_t *g)
+void go_combat(game_t *g, int i)
 {
     g->previous_scene = g->curent_scene;
     sfMusic_pause(g->scene[g->previous_scene].scene_music);
@@ -42,7 +42,7 @@ void go_combat(game_t *g)
     g->curent_scene = 2;
 }
 
-void go_vampire(game_t *g)
+void go_vampire(game_t *g, int i)
 {
     g->previous_scene = g->curent_scene;
     sfMusic_pause(g->scene[g->previous_scene].scene_music);
@@ -54,7 +54,7 @@ void go_vampire(game_t *g)
     g->curent_scene = 3;
 }
 
-void go_ghost(game_t *g)
+void go_ghost(game_t *g, int i)
 {
     g->previous_scene = g->curent_scene;
     sfMusic_pause(g->scene[g->previous_scene].scene_music);
@@ -66,7 +66,7 @@ void go_ghost(game_t *g)
     g->curent_scene = 4;
 }
 
-void go_forest(game_t *g)
+void go_forest(game_t *g, int i)
 {
     g->previous_scene = g->curent_scene;
     sfMusic_pause(g->scene[g->previous_scene].scene_music);
@@ -79,7 +79,7 @@ void go_forest(game_t *g)
     g->curent_scene = 5;
 }
 
-void go_inventory(game_t *g)
+void go_inventory(game_t *g, int i)
 {
     g->previous_scene = g->curent_scene;
     sfMusic_pause(g->scene[g->previous_scene].scene_music);
@@ -95,7 +95,7 @@ void go_inventory(game_t *g)
     g->curent_scene = 6;
 }
 
-void go_cimetery(game_t *g)
+void go_cimetery(game_t *g, int i)
 {
     g->previous_scene = g->curent_scene;
     sfMusic_pause(g->scene[g->previous_scene].scene_music);
@@ -107,7 +107,7 @@ void go_cimetery(game_t *g)
     g->curent_scene = 8;
 }
 
-void go_back(game_t *g)
+void go_back(game_t *g, int i)
 {
     int tmp = g->previous_scene;
 

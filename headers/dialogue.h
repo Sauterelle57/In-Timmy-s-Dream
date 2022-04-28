@@ -19,4 +19,6 @@ typedef struct dialogue_s {
     char* temp;
 } dialogue_t;
 
+void init_dialogue(dialogue_t *tt, game_t *gt);
+
 #endif /* !DIALOGUE_H_ */

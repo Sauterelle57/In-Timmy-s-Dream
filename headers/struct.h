@@ -37,6 +37,7 @@ typedef struct player_s {
 typedef struct interest_s {
     body_t body;
     void (*on_click)();
+    int line;
 } interest_t;
 
 typedef struct music_s {
@@ -80,6 +81,7 @@ typedef struct game_s {
     music_t m;
     body_t cursor;
     player_t player;
+    dialogue_t dialogue;
     int pause;
     float cooldown;
     scene_t scene[9];
