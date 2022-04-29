@@ -18,6 +18,8 @@ body_t *init_inventory_elem(sfRenderWindow *window, int nb_elem)
     sfSprite_setTexture(elem[0].sprite, elem[0].text, sfTrue);
     sfSprite_setTextureRect(elem[0].sprite, elem[0].rect);
     elem[1] = create_body("other/blank.png", (sfIntRect)
-    {0, 0, 600, 200}, (sfVector2f){1000, 700});
+    {0, 0, 600, 200}, (sfVector2f){980, 770});
+    elem[2] = create_body("other/inventory.png", (sfIntRect)
+    {0, 0, 750, 500}, (sfVector2f){900, 200});
     return (elem);
 }
