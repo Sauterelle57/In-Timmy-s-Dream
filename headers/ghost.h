@@ -8,8 +8,6 @@
 #ifndef ghost_H_
     #define ghost_H_
 
-void example(game_t *g);
-void fonction(game_t *g);
 void draw_ghost(game_t *g);
 void anim_ghost(game_t *g);
 void event_ghost(game_t *g);

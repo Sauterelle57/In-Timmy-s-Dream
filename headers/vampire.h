@@ -8,8 +8,6 @@
 #ifndef VAMPIRE_H_
     #define VAMPIRE_H_
 
-void example(game_t *g);
-void fonction(game_t *g);
 void draw_vampire(game_t *g);
 void anim_vampire(game_t *g);
 void event_vampire(game_t *g);
