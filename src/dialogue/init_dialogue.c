@@ -5,7 +5,7 @@
 ** init_dialogue
 */
 
-#include "dialogue.h"
+#include "forest.h"
 #include "includes.h"
 
 char* open_text()
@@ -27,17 +27,16 @@ char* open_text()
     return (buffer);
 }
 
-void init_dialogue(dialogue_t *tt, game_t *gt)
+void init_dialogue(game_t *gt)
 {
-    gt->t.clock = sfClock_create();
-    tt->font = sfFont_createFromFile("other/dialogue.ttf");
-    tt->text = sfText_create();
-    tt->dialogue_pos = (sfVector2f){400, 250};
-    sfText_setFont(tt->text, tt->font);
-    sfText_setCharacterSize(tt->text, 35);
-    sfText_setFillColor(tt->text, sfRed);
-    sfText_setPosition(tt->text, tt->dialogue_pos);
-    tt->tab_text = my_str_to_word_array(open_text(), '\n');
-    tt->is_showing = 0;
-    tt->is_passed = 0;
+    gt->dialogue.font = sfFont_createFromFile("other/dialogue.ttf");
+    gt->dialogue.text = sfText_create();
+    gt->dialogue.dialogue_pos = (sfVector2f){400, 250};
+    sfText_setFont(gt->dialogue.text, gt->dialogue.font);
+    sfText_setCharacterSize(gt->dialogue.text, 35);
+    sfText_setFillColor(gt->dialogue.text, sfRed);
+    sfText_setPosition(gt->dialogue.text, gt->dialogue.dialogue_pos);
+    gt->dialogue.tab_text = my_str_to_word_array(open_text(), '\n');
+    gt->dialogue.is_showing = 0;
+    gt->dialogue.is_passed = 0;
 }

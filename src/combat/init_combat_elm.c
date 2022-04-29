@@ -9,7 +9,7 @@
 #include "combat.h"
 #include "interest.h"
 
-static void fonction(game_t *g)
+static void fonction(game_t *g, int i)
 {
     my_printf("Button clicked !!\n");
 }

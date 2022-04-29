@@ -8,6 +8,23 @@
 #ifndef STRUCT_H
     #define STRUCT_H
 
+    #include <SFML/Audio.h>
+    #include <SFML/Config.h>
+    #include <SFML/System.h>
+    #include <SFML/Graphics.h>
+    #include <SFML/Window/Export.h>
+
+typedef struct dialogue_s {
+    sfVector2f dialogue_pos;
+    sfFont *font;
+    sfText *text;
+    char* text_str;
+    char** tab_text;
+    int is_showing;
+    int is_passed;
+    char* temp;
+} dialogue_t;
+
 typedef struct body_s {
     sfTexture *text;
     sfSprite *sprite;

@@ -8,7 +8,7 @@
 #include "includes.h"
 #include "menu.h"
 
-static void fonction(game_t *g)
+static void fonction(game_t *g, int i)
 {
     my_printf("Button clicked !!\n");
 }
@@ -25,7 +25,7 @@ button_t *init_menu_button(sfRenderWindow *window)
     return (buttons);
 }
 
-static void action(game_t *g)
+static void action(game_t *g, int i)
 {
     my_printf("Go for combat/dialogue/entry !!\n");
 }

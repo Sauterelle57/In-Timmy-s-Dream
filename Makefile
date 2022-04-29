@@ -117,7 +117,10 @@ SRC	=	src/main.c	\
 		src/cimetery/init_elem_cimetery.c	\
 		src/cimetery/cimetery_collisions.c	\
 		src/cimetery/init_button_cimetery.c	\
-		src/cimetery/init_interest_cimetery.c
+		src/cimetery/init_interest_cimetery.c	\
+\
+		src/dialogue/dialogue.c	\
+		src/dialogue/init_dialogue.c
 
 OBJ =	$(SRC:.c=.o)
 

@@ -8,8 +8,6 @@
 #ifndef cimetery_H_
     #define cimetery_H_
 
-void example(game_t *g);
-void fonction(game_t *g);
 void draw_cimetery(game_t *g);
 void anim_cimetery(game_t *g);
 void event_cimetery(game_t *g);

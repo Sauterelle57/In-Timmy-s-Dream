@@ -55,7 +55,7 @@ void event_loading(game_t *g)
     }
     if (g->scene[0].charged == 1 && g->t.sec - tmp >= 1) {
         draw_transition(g, 0);
-        go_game(g);
+        go_game(g, 0);
     }
 }
 
