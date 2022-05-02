@@ -49,6 +49,7 @@ typedef struct player_s {
     int speed;
     int pv;
     int pa;
+    int lvl;
 } player_t;
 
 typedef struct interest_s {
@@ -101,6 +102,7 @@ typedef struct game_s {
     dialogue_t dialogue;
     int pause;
     float cooldown;
+    char *save_file;
     scene_t scene[9];
     int previous_scene;
     int curent_scene;
