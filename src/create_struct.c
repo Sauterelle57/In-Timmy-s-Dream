@@ -61,6 +61,6 @@ game_t create_game(void)
     sfMouse_getPosition((sfWindow *)window).y});
     player_t player = create_player();
     dialogue_t dialogue = create_dialogue();
-    game_t game = {window, event, t, m, cursor, player, dialogue, 0, 0.0};
+    game_t game = {window, event, t, m, cursor, player, dialogue, 0, 0.0, 0};
     return (game);
 }
