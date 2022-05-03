@@ -39,6 +39,7 @@ int game_loop(game_t *g)
         g->scene[g->curent_scene].anim(g);
         g->scene[g->curent_scene].draw(g);
         draw_cursor(g);
+        check_dialogue(g, g->dialogue.chose);
         if (sfRenderWindow_pollEvent(g->window, &g->event))
             g->scene[g->curent_scene].event(g);
         if ((Key_Pressed(sfKeyUp) || Key_Pressed(sfKeyDown) ||

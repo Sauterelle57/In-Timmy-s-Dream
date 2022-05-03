@@ -29,6 +29,8 @@ typedef struct dialogue_s {
     int is_showing;
     int is_passed;
     char* temp;
+    int chose;
+    int check;
 } dialogue_t;
 
 typedef struct body_s {
