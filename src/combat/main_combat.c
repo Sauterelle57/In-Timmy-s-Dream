@@ -14,8 +14,8 @@ scene_t init_combat(game_t *g)
     int nb_button = 0;
     body_t *elem = create_maze(elem, g);
     int nb_elem = 378;
-    sfMusic *scene_music = sfMusic_createFromFile("music/back.ogg");
-    int nb_interest = 5;
+    sfMusic *scene_music = sfMusic_createFromFile("music/disney.ogg");
+    int nb_interest = nb_inter;
     interest_t *interest = init_combat_interest(nb_interest, elem);
     scene_t combat = {0, buttons, nb_button, elem, nb_elem, interest,
     nb_interest, scene_music};
