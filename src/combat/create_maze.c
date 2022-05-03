@@ -45,7 +45,8 @@ static body_t *create_maze_wall(body_t *elem, char *buffer, int k)
 
 int create_view(body_t *elem, int k, game_t *g)
 {
-    elem[377] = create_body("other/font_invisible.png", (sfIntRect){0, 0, 4032, 3024},
+    elem[377] = create_body(CHOICE_LIGHTS[3],
+    (sfIntRect){0, 0, 5032, 3774},
     (sfVector2f){-1700 - 0, -1300});
     return (k);
 }
