@@ -14,6 +14,12 @@
     #include <SFML/Graphics.h>
     #include <SFML/Window/Export.h>
 
+typedef struct particule_s {
+    sfVertexArray *pixels;
+    int height;
+    int width;
+} particule_t;
+
 typedef struct dialogue_s {
     sfVector2f dialogue_pos;
     sfFont *font;
@@ -81,6 +87,7 @@ typedef struct scene_s {
     interest_t *interest;
     int nb_interest;
     sfMusic *scene_music;
+    sfVertexArray *array;
     void (*draw)();
     void (*event)();
     void (*anim)();
