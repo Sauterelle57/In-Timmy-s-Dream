@@ -7,7 +7,6 @@
 
 #include "includes.h"
 #include "interest.h"
-scene_t init_game(game_t *g);
 
 static void draw_transition(game_t *g, int sens)
 {
@@ -50,12 +49,11 @@ void event_loading(game_t *g)
     g->t.sec = Get_Time(g->t.clock);
     if (loading_game == 0) {
         loading_game = 1;
-        g->scene[0] = init_game(g);
-        g->scene[0].charged = 1;
+        charge_scene(g, 0);
     }
     if (g->scene[0].charged == 1 && g->t.sec - tmp >= 1) {
         draw_transition(g, 0);
-        go_game(g);
+        g->curent_scene = 0;
     }
 }
 

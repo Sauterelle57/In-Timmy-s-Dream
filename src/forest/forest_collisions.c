@@ -6,6 +6,7 @@
 */
 
 #include "includes.h"
+#include "forest.h"
 
 static body_t bodydup(body_t body)
 {

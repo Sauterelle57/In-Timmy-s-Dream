@@ -8,15 +8,7 @@
 #ifndef DIALOGUE_H_
     #define DIALOGUE_H_
 
-typedef struct dialogue_s {
-    sfVector2f dialogue_pos;
-    sfFont *font;
-    sfText *text;
-    char* text_str;
-    char** tab_text;
-    int is_showing;
-    int is_passed;
-    char* temp;
-} dialogue_t;
+void init_dialogue(game_t *gt);
+char* open_text();
 
 #endif /* !DIALOGUE_H_ */

@@ -31,8 +31,10 @@ IWHITE  = $ \x1b[47m
 CFLAGS = -g -I./headers
 
 SRC	=	src/main.c	\
+		src/random.c	\
 		src/quit_game.c	\
 		src/pause_game.c	\
+		src/particules.c	\
 		src/create_text.c	\
 		src/move_sprite.c	\
 		src/create_music.c	\
@@ -76,7 +78,6 @@ SRC	=	src/main.c	\
 		src/vampire/event_vampire.c	\
 		src/vampire/init_vampire.c	\
 		src/vampire/init_elem_vampire.c	\
-		src/vampire/vampire_collisions.c	\
 		src/vampire/init_button_vampire.c	\
 		src/vampire/init_interest_vampire.c	\
 \
@@ -105,7 +106,6 @@ SRC	=	src/main.c	\
 		src/inventory/init_elem_inventory.c	\
 		src/inventory/init_button_inventory.c	\
 		src/inventory/init_interest_inventory.c	\
-		src/inventory/player_inventory_movements.c	\
 \
 		src/loading/fonctions_loading.c	\
 		src/loading/init_loading_elm.c	\
@@ -118,7 +118,10 @@ SRC	=	src/main.c	\
 		src/cimetery/init_elem_cimetery.c	\
 		src/cimetery/cimetery_collisions.c	\
 		src/cimetery/init_button_cimetery.c	\
-		src/cimetery/init_interest_cimetery.c
+		src/cimetery/init_interest_cimetery.c	\
+\
+		src/dialogue/dialogue.c	\
+		src/dialogue/init_dialogue.c
 
 OBJ =	$(SRC:.c=.o)
 

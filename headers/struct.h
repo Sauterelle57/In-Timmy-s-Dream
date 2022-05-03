@@ -8,6 +8,29 @@
 #ifndef STRUCT_H
     #define STRUCT_H
 
+    #include <SFML/Audio.h>
+    #include <SFML/Config.h>
+    #include <SFML/System.h>
+    #include <SFML/Graphics.h>
+    #include <SFML/Window/Export.h>
+
+typedef struct particule_s {
+    sfVertexArray *pixels;
+    int height;
+    int width;
+} particule_t;
+
+typedef struct dialogue_s {
+    sfVector2f dialogue_pos;
+    sfFont *font;
+    sfText *text;
+    char* text_str;
+    char** tab_text;
+    int is_showing;
+    int is_passed;
+    char* temp;
+} dialogue_t;
+
 typedef struct body_s {
     sfTexture *text;
     sfSprite *sprite;
@@ -32,11 +55,13 @@ typedef struct player_s {
     int speed;
     int pv;
     int pa;
+    int lvl;
 } player_t;
 
 typedef struct interest_s {
     body_t body;
     void (*on_click)();
+    int line;
 } interest_t;
 
 typedef struct music_s {
@@ -62,6 +87,7 @@ typedef struct scene_s {
     interest_t *interest;
     int nb_interest;
     sfMusic *scene_music;
+    sfVertexArray *array;
     void (*draw)();
     void (*event)();
     void (*anim)();
@@ -80,8 +106,10 @@ typedef struct game_s {
     music_t m;
     body_t cursor;
     player_t player;
+    dialogue_t dialogue;
     int pause;
     float cooldown;
+    char *save_file;
     scene_t scene[9];
     int previous_scene;
     int curent_scene;

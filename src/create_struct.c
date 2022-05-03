@@ -7,6 +7,7 @@
 
 #include "includes.h"
 #include "player.h"
+#include "dialogue.h"
 
 body_t create_body(char *text, sfIntRect rect, sfVector2f pos)
 {
@@ -21,10 +22,10 @@ body_t create_body(char *text, sfIntRect rect, sfVector2f pos)
 }
 
 interest_t create_interest(char *text, sfIntRect rect, sfVector2f pos,
-void (*action)(game_t *))
+void (*action)(game_t *, int))
 {
     body_t body = create_body(text, rect, pos);
-    interest_t interest = {body, action};
+    interest_t interest = {body, action, 0};
 
     return (interest);
 }
@@ -42,10 +43,11 @@ player_t create_player(void)
     body_t picture = create_body("other/pp_timmy.png", (sfIntRect)
     {0, 0, 2048, 2048}, (sfVector2f){30, 25});
 
-    for (int i = 0; i < 11; i++)
-        inventory[i] = create_object(OBJ[i], 0, 0, 0);
     Set_Scale(picture.sprite, 0.6, 0.6);
-    player_t player = {name, body, inventory, pv_bar, picture, SPEED, PV, 50};
+    for (int i = 0; i < NB_OBJ; i++)
+        inventory[i] = create_object(OBJ[i], 0, 0, 0);
+    player_t player = {name, body, inventory, pv_bar, picture, SPEED, PV, 50,
+    0};
     return (player);
 }
 
@@ -59,6 +61,8 @@ game_t create_game(void)
     {0, 0, 100, 100}, (sfVector2f){sfMouse_getPosition((sfWindow *)window).x,
     sfMouse_getPosition((sfWindow *)window).y});
     player_t player = create_player();
-    game_t game = {window, event, t, m, cursor, player, 0, 0.0};
+    dialogue_t dialogue = create_dialogue();
+    game_t game = {window, event, t, m, cursor, player, dialogue, 0, 0.0,
+    "new.txt"};
     return (game);
 }

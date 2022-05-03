@@ -9,9 +9,9 @@
 #include "game.h"
 #include "interest.h"
 
-void fonction(game_t *g)
+void fonction(game_t *g, int i)
 {
-    my_printf("Button clicked !!\n");
+    my_printf("Button clicked XD\n");
 }
 
 button_t *init_game_button(sfRenderWindow *window, int nb_button)

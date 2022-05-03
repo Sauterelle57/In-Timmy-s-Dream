@@ -8,7 +8,8 @@
 #ifndef forest_H_
     #define forest_H_
 
-void fonction(game_t *g);
+    #include "struct.h"
+
 void draw_forest(game_t *g);
 void anim_forest(game_t *g);
 void event_forest(game_t *g);

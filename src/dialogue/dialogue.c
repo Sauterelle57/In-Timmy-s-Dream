@@ -5,9 +5,9 @@
 ** main
 */
 
-#include "../../headers/dialogue.h"
-#include "../../headers/includes.h"
-#include "../../headers/struct.h"
+#include "forest.h"
+#include "includes.h"
+#include "struct.h"
 
 char* add_chr_to_str(char *str, char c)
 {
@@ -16,28 +16,43 @@ char* add_chr_to_str(char *str, char c)
 
     for (; str[i] != '\0'; ++i)
         string[i] = str[i];
-    string[i] = c;
+    if (c == '#')
+        string[i] = '\n';
+    else
+        string[i] = c;
     string[i + 1] = '\0';
     return (string);
 }
 
-void func_text(dialogue_t *tt, sfRenderWindow *window, game_t *gt, int chose)
+char* pass_dialogue(char* temp, game_t *gt, int chose)
+{
+    temp = malloc(sizeof(char) * (my_strlen(gt->dialogue.tab_text[chose]) + 1));
+    for (int i = 0; i < my_strlen(gt->dialogue.tab_text[chose]); ++i)
+        temp[i] = '\0';
+    temp[my_strlen(gt->dialogue.tab_text[chose])] = '\0';
+    gt->dialogue.is_passed = 1;
+    return (temp);
+}
+
+void func_text(game_t *gt, int chose)
 {
     static float time = 0;
     static int i = 0;
 
-    if (tt->is_passed == 0)
-        tt->temp = pass_dialogue(tt->temp, tt, chose);
-    time += gt->t.sec;
-    while (time >= 0.10 && tt->is_showing != 1) {
-        tt->temp = add_chr_to_str(tt->temp, tt->tab_text[chose][i]);
-        tt->text_str = tt->temp;
+    if (gt->dialogue.is_passed == 0)
+        gt->dialogue.temp = pass_dialogue(gt->dialogue.temp, gt, chose);
+    gt->t.sec = Get_Time(gt->t.clock);
+    if (gt->t.sec-time < 0.10 /*time >= 0.10 */&& gt->dialogue.is_showing != 1) {
+        gt->dialogue.temp = add_chr_to_str(gt->dialogue.temp,
+        gt->dialogue.tab_text[chose][i]);
+        gt->dialogue.text_str = gt->dialogue.temp;
         ++i;
-        time -= 0.10;
+        //time -= 0.10;
+        time = gt->t.sec;
     }
-    sfText_setString(tt->text, tt->text_str);
-    sfRenderWindow_drawText(window, tt->text, NULL);
-    if (my_strlen(tt->temp) == my_strlen(tt->tab_text[chose])) {
-        tt->is_showing = 1;
+    sfText_setString(gt->dialogue.text, gt->dialogue.text_str);
+    sfRenderWindow_drawText(gt->window, gt->dialogue.text, NULL);
+    if (my_strlen(gt->dialogue.temp) == my_strlen(gt->dialogue.tab_text[chose])) {
+        gt->dialogue.is_showing = 1;
     }
 }
