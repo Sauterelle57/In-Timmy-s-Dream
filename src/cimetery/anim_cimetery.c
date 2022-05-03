@@ -21,6 +21,25 @@ static void anim_interest(game_t *g)
     }
 }
 
+static void anim_particules(sfVertexArray *array)
+{
+    int len_array = sfVertexArray_getVertexCount(array);
+
+    for (int i = 0; i < len_array; i++) {
+        sfVertex *pixel = sfVertexArray_getVertex(array, i);
+        if (pixel->position.x < 0) {
+            pixel->position.x = rand() % 50 + 1870;
+            pixel->position.y = rand() % 1080;
+        } else if (pixel->position.y > 1080) {
+            pixel->position.x = rand() % 1920;
+            pixel->position.y = rand() % 50;
+        } else {
+            pixel->position.x -= rand() % 2;
+            pixel->position.y += rand() % 2;
+        }
+    }
+}
+
 void anim_cimetery(game_t *g)
 {
     static float tmp = 0.0;
@@ -32,6 +51,7 @@ void anim_cimetery(game_t *g)
         anim_interest(g);
         tmp = g->t.sec;
     }
+    anim_particules(g->scene[g->curent_scene].array);
     if (g->t.sec - tmp2 >= delay_player) {
         g->player.body.rect.left += g->player.body.rect.left >= 144 ? -144 :
         48;
