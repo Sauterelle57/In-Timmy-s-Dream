@@ -8,7 +8,7 @@
 #ifndef COMBAT_H_
     #define COMBAT_H_
 
-    static int nb_inter = 30;
+    static int nb_inter = 80;
 
      static char *CHOICE[10] = {
         "enemies/Clown_idle.png",
@@ -34,6 +34,7 @@ void draw_combat(game_t *g, body_t *elem);
 void draw_black(game_t *g, body_t *elem);
 void choose_light(body_t *elem, game_t *g);
 void draw_torch(game_t *g);
+void life_hit(game_t *g);
 void anim_combat(game_t *g);
 void anim_enemy(game_t *g);
 void event_combat(game_t *g);
