@@ -25,7 +25,7 @@ interest_t create_interest(char *text, sfIntRect rect, sfVector2f pos,
 void (*action)(game_t *, int))
 {
     body_t body = create_body(text, rect, pos);
-    interest_t interest = {body, action, 0};
+    interest_t interest = {body, action, 0, 5, 0};
 
     return (interest);
 }

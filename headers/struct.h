@@ -62,6 +62,8 @@ typedef struct interest_s {
     body_t body;
     void (*on_click)();
     int line;
+    int pv;
+    int random;
 } interest_t;
 
 typedef struct music_s {

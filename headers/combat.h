@@ -8,13 +8,19 @@
 #ifndef COMBAT_H_
     #define COMBAT_H_
 
-    static int nb_inter = 10;
+    static int nb_inter = 80;
 
-     static char *CHOICE[4] = {
+     static char *CHOICE[10] = {
         "enemies/Clown_idle.png",
         "enemies/Witch_idle.png",
         "enemies/Vampire 01_idle.png",
-        "enemies/Zombie 01_idle.png"
+        "enemies/Zombie 01_idle.png",
+        "enemies/Ghost 01_idle.png",
+        "enemies/Clown_die.png",
+        "enemies/Witch_die.png",
+        "enemies/Vampire 01_die.png",
+        "enemies/Zombie 01_die.png",
+        "enemies/Ghost 01_die.png"
     };
 
     static char *CHOICE_LIGHTS[4] = {
