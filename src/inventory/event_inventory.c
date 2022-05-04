@@ -80,7 +80,7 @@ static void check_object(game_t *g, sfVector2i pos, sfVector2u size)
 static void manage_pixels(game_t *g, sfVector2i pos)
 {
     sfVertexArray_clear(g->scene[g->curent_scene].array);
-    for (int i = 0; i < NB_PARTICULES; i++)
+    for (int i = 0; i < NB_PIXELS; i++)
         add_pixel(g->scene[g->curent_scene].array, (sfVector2f){pos.x,
         pos.y}, (sfColor){255, 255, 10, 255});
 }

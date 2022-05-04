@@ -115,8 +115,8 @@ typedef struct game_s {
     int *params; //0 = difficulty, 1 = framerate, 2 = volume
     int pause;
     float cooldown;
-    scene_t scene[10];
     char *save_file;
+    scene_t scene[10];
     int previous_scene;
     int curent_scene;
 } game_t;

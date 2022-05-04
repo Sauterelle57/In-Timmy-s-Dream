@@ -45,12 +45,8 @@ static void check_button(game_t *g, sfVector2i pos, sfVector2u size)
 
 void event_settings(game_t *g)
 {
-    if (g->event.type == sfEvtClosed || Key_Pressed(sfKeyEscape))
+    if (g->event.type == sfEvtClosed)
         quit_game(g, 0);
-    if (Key_Pressed(sfKeyLeft))
-        my_printf("Key Left pressed\n");
-    if (Key_Pressed(sfKeyRight))
-        my_printf("Key Right pressed\n");
     check_button(g, Get_Mouse_Pos(), Get_Window_size());
 }
 
