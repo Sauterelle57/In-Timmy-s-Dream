@@ -68,9 +68,13 @@ SRC	=	src/main.c	\
 		src/game/player_collision.c	\
 		src/game/interest_fonction.c	\
 \
-		src/menu/main_menu.c	\
-		src/menu/init_menu_elm.c	\
-		src/menu/fonctions_menu.c	\
+		src/main_menu/main_menu.c	\
+		src/main_menu/init_menu_elm.c	\
+		src/main_menu/fonctions_menu.c	\
+\
+		src/settings/fonctions_settings.c	\
+		src/settings/init_settings_elm.c	\
+		src/settings/settings.c				\
 \
 		src/vampire/anim_vampire.c	\
 		src/vampire/draw_vampire.c	\

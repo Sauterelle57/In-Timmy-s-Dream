@@ -31,7 +31,7 @@
 // DIALOGUE
     #include <unistd.h>
 
-void quit_game(game_t *g);
+void quit_game(game_t *g, int i);
 void pause_game(game_t *g);
 void draw_cursor(game_t *g);
 void draw_player(game_t * g);

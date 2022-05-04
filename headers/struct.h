@@ -101,7 +101,7 @@ typedef struct game_s {
     dialogue_t dialogue;
     int pause;
     float cooldown;
-    scene_t scene[9];
+    scene_t scene[10];
     int previous_scene;
     int curent_scene;
 } game_t;

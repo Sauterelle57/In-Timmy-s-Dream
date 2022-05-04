@@ -7,7 +7,7 @@
 
 #include "includes.h"
 
-void quit_game(game_t *g)
+void quit_game(game_t *g, int i)
 {
     sfMusic_destroy(g->m.back);
     sfRenderWindow_close(g->window);
