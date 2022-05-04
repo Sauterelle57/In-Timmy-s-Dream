@@ -28,7 +28,7 @@ static void anim_pixels(game_t *g)
     sfVertex *pixel = sfVertexArray_getVertex(g->scene[g->curent_scene].array,
     0);
 
-    for (int i = 0; i < NB_PARTICULES; i++) {
+    for (int i = 0; i < NB_PIXELS; i++) {
         pixel = sfVertexArray_getVertex(g->scene[g->curent_scene].array, i);
         pixel->color.a -= 8;
         pixel->position.x += vector_x[i % 8];

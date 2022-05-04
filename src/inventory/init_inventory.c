@@ -22,7 +22,7 @@ scene_t init_inventory(game_t *g)
     scene_t inventory = {0, buttons, nb_button, elem, nb_elem, interest,
     nb_interest, scene_music, array};
 
-    for (int i = 0; i < NB_PARTICULES; i++)
+    for (int i = 0; i < NB_PIXELS; i++)
         add_pixel(inventory.array, (sfVector2f){0, 0}, (sfColor){0, 0, 0, 0});
     inventory.draw = &draw_inventory;
     inventory.event = &event_inventory;

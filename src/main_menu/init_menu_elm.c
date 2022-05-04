@@ -9,9 +9,12 @@
 #include "main_menu.h"
 #include "settings.h"
 
-static void fonction(game_t *g, int i)
+void load_game(game_t *g, int i)
 {
-    my_printf("Button clicked !!\n");
+    if (i == 1)
+        g->save_file = "save.txt";
+    charge_scene(g, 0);
+    g->curent_scene = 0;
 }
 
 button_t *init_menu_button(sfRenderWindow *window, int nb)
@@ -21,10 +24,10 @@ button_t *init_menu_button(sfRenderWindow *window, int nb)
 
     buttons[0] = create_button(9, (sfVector2f){size.x * 0.15, size.y * 0.50},
     create_button_text(50, (sfVector2f){size.x * 0.15 + 100, size.y *
-    0.50 + 20}, "NEW GAME"), fonction);
+    0.50 + 20}, "NEW GAME"), &load_game);
     buttons[1] = create_button(9, (sfVector2f){size.x * 0.15, size.y *
     0.70}, create_button_text(50, (sfVector2f){size.x * 0.15 + 100, size.y *
-    0.70 + 20}, "CONTINUE"), fonction);
+    0.70 + 20}, "CONTINUE"), &load_game);
     buttons[2] = create_button(9, (sfVector2f){size.x * 0.60, size.y *
     0.50}, create_button_text(50, (sfVector2f){size.x * 0.60 + 140, size.y *
     0.50 + 20}, "OPTION"), &go_settings);
