@@ -16,7 +16,6 @@ static void fonction(game_t *g, int i)
 
 void hit(game_t *g, int i)
 {
-    life_hit(g);
     g->scene[g->curent_scene].interest[i].pv--;
     if (g->scene[g->curent_scene].interest[i].pv <= 0) {
         Set_Texture(g->scene[g->curent_scene].interest[i].body.sprite,

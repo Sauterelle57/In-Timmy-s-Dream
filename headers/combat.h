@@ -9,6 +9,7 @@
     #define COMBAT_H_
 
     static int nb_inter = 80;
+    static int time = 0;
 
      static char *CHOICE[10] = {
         "enemies/Clown_idle.png",
