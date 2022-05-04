@@ -25,7 +25,7 @@ static int save_file(game_t *g)
     fclose(file);
 }
 
-void quit_game(game_t *g)
+void quit_game(game_t *g, int i)
 {
     save_file(g);
     sfMusic_destroy(g->m.back);
