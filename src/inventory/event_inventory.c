@@ -8,6 +8,7 @@
 #include "includes.h"
 #include "inventory.h"
 #include "player.h"
+void add_pixel(sfVertexArray *pixels, sfVector2f pos, sfColor color);
 
 static void check_action(game_t *g)
 {
@@ -76,12 +77,22 @@ static void check_object(game_t *g, sfVector2i pos, sfVector2u size)
     }
 }
 
+static void manage_pixels(game_t *g, sfVector2i pos)
+{
+    sfVertexArray_clear(g->scene[g->curent_scene].array);
+    for (int i = 0; i < NB_PARTICULES; i++)
+        add_pixel(g->scene[g->curent_scene].array, (sfVector2f){pos.x,
+        pos.y}, (sfColor){255, 255, 10, 255});
+}
+
 void event_inventory(game_t *g)
 {
     if (g->event.type == sfEvtClosed || Key_Pressed(sfKeyEscape))
         quit_game(g);
     check_button(g, Get_Mouse_Pos(), Get_Window_size());
     check_object(g, Get_Mouse_Pos(), Get_Window_size());
+    if (Mouse_Pressed(sfMouseRight))
+        manage_pixels(g, Get_Mouse_Pos());
     if (Key_Pressed(sfKeyRight) || Key_Pressed(sfKeyD))
         g->player.body.rect.top = 96;
     if (Key_Pressed(sfKeyLeft) || Key_Pressed(sfKeyQ))

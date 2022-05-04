@@ -44,4 +44,5 @@ void draw_inventory(game_t *g)
         if (g->player.inventory[i].own == 1)
             Draw_Sprite(g->player.inventory[i].body.sprite);
     draw_player_inventory(g);
+    sfRenderWindow_drawVertexArray(g->window, g->scene[6].array, 0);
 }
