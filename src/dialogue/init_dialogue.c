@@ -27,16 +27,18 @@ char* open_text()
     return (buffer);
 }
 
-void init_dialogue(game_t *gt)
-{
-    gt->dialogue.font = sfFont_createFromFile("other/dialogue.ttf");
-    gt->dialogue.text = sfText_create();
-    gt->dialogue.dialogue_pos = (sfVector2f){400, 250};
-    sfText_setFont(gt->dialogue.text, gt->dialogue.font);
-    sfText_setCharacterSize(gt->dialogue.text, 35);
-    sfText_setFillColor(gt->dialogue.text, sfRed);
-    sfText_setPosition(gt->dialogue.text, gt->dialogue.dialogue_pos);
-    gt->dialogue.tab_text = my_str_to_word_array(open_text(), '\n');
-    gt->dialogue.is_showing = 0;
-    gt->dialogue.is_passed = 0;
-}
+// void init_dialogue(game_t *gt)
+// {
+//     gt->dialogue.font = sfFont_createFromFile("other/dialogue.ttf");
+//     gt->dialogue.text = sfText_create();
+//     gt->dialogue.dialogue_pos = (sfVector2f){300, 1500};
+//     sfText_setFont(gt->dialogue.text, gt->dialogue.font);
+//     sfText_setCharacterSize(gt->dialogue.text, 20);
+//     sfText_setFillColor(gt->dialogue.text, sfBlack);
+//     sfText_setPosition(gt->dialogue.text, gt->dialogue.dialogue_pos);
+//     gt->dialogue.tab_text = my_str_to_word_array(open_text(), '\n');
+//     gt->dialogue.is_showing = 0;
+//     gt->dialogue.is_passed = 0;
+//     gt->dialogue.chose = 0;
+//     gt->dialogue.check = 0;
+// }

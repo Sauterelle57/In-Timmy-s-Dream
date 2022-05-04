@@ -8,12 +8,20 @@
 #ifndef COMBAT_H_
     #define COMBAT_H_
 
-     static char *CHOICE[5] = {
+    static int nb_inter = 10;
+
+     static char *CHOICE[4] = {
         "enemies/Clown_idle.png",
         "enemies/Witch_idle.png",
         "enemies/Vampire 01_idle.png",
-        "enemies/Zombie 01_idle.png",
-        "enemies/Bat 01_idle.png"
+        "enemies/Zombie 01_idle.png"
+    };
+
+    static char *CHOICE_LIGHTS[4] = {
+        "other/font_invisible.png",
+        "other/font_invisible_small.png",
+        "other/font_invisible_no.png",
+        "other/font_invisible_lamp.png"
     };
 
 void draw_combat(game_t *g, body_t *elem);

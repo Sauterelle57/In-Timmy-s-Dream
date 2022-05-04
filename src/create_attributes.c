@@ -29,7 +29,7 @@ timing_t create_timer(void)
 object_t create_object(char *text, int pv, int pa, int type)
 {
     object_t obj = {create_body(text, (sfIntRect){0, 0, 32, 32},
-    (sfVector2f){0, 0}), 1, pv, pa, type};
+    (sfVector2f){0, 0}), 0, pv, pa, type};
 
     return (obj);
 }

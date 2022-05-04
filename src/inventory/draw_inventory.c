@@ -11,20 +11,22 @@
 
 object_t *init_object_inventory(object_t *inventory)
 {
-    for (int i = 0, x = 1000, y = 450; i < NB_OBJ; i++) {
-        inventory[i].body.pos.x = (x += 74);
+    for (int i = 0, x = 990, y = 275; i < NB_OBJ; i++) {
+        inventory[i].body.pos.x = (x += 170);
         inventory[i].body.pos.y = y;
-        Set_Pos(inventory[i].body.sprite, x - 74, y);
+        Set_Pos(inventory[i].body.sprite, x - 170, y);
         Set_Scale(inventory[i].body.sprite, 4, 4);
-        y += x >= 1280 ? 74 : 0;
-        x = x >= 1280 ? 1000 : x;
+        y += x >= 1600 ? 150 : 0;
+        x = x >= 1600 ? 990 : x;
     }
 }
 
 static void draw_player_inventory(game_t *g)
 {
     Draw_Sprite(g->player.body.sprite);
-    sfText_setPosition(g->player.name, (sfVector2f){557, 750});
+    sfText_setPosition(g->player.name, (sfVector2f){407, 710});
+    Set_Pos(g->player.pv_bar.sprite, 365, 780);
+    Draw_Sprite(g->player.pv_bar.sprite);
     Draw_Text(g->player.name);
     Draw_Sprite(g->scene[g->curent_scene].elem[1].sprite);
 }
@@ -37,8 +39,10 @@ void draw_inventory(game_t *g)
     for (int i = 0; i < g->scene[6].nb_button; i++)
         Draw_Sprite(g->scene[6].button[i].body.sprite);
     init_object_inventory(g->player.inventory);
+    Draw_Sprite(g->scene[6].elem[2].sprite);
     for (int i = 0; i < NB_OBJ; i++) //affichage objets du joueur
         if (g->player.inventory[i].own == 1)
             Draw_Sprite(g->player.inventory[i].body.sprite);
     draw_player_inventory(g);
+    sfRenderWindow_drawVertexArray(g->window, g->scene[6].array, 0);
 }

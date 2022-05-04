@@ -15,8 +15,8 @@ interest_t *create_all_interests(interest_t *interest)
     (sfVector2f){940, 540}, &go_combat);
 
     interest[1] = create_interest(NPC[0], (sfIntRect) //sorciere
-    {0, 0, 48, 70}, (sfVector2f){2000, 500}, &func_text);
-    interest[1].line = 0;
+    {0, 0, 48, 70}, (sfVector2f){2000, 500}, &check_dialogue);
+    interest[1].line = 1;
     interest[2] = create_interest("other/blue_block.png", (sfIntRect) //porte maison vampire
     {0, 0, 60, 70}, (sfVector2f){3750, 320}, &go_vampire);
     interest[3] = create_interest("other/blue_block.png", (sfIntRect) //porte maison haut 1

@@ -8,6 +8,8 @@
 #ifndef inventory_H_
     #define inventory_H_
 
+    #define NB_PARTICULES 16
+
 void fonction(game_t *g);
 void draw_inventory(game_t *g);
 void anim_inventory(game_t *g);

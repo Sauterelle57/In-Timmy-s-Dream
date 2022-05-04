@@ -46,7 +46,8 @@ player_t create_player(void)
     Set_Scale(picture.sprite, 0.6, 0.6);
     for (int i = 0; i < NB_OBJ; i++)
         inventory[i] = create_object(OBJ[i], 0, 0, 0);
-    player_t player = {name, body, inventory, pv_bar, picture, SPEED, PV, 50};
+    player_t player = {name, body, inventory, pv_bar, picture, SPEED, PV, 50,
+    0};
     return (player);
 }
 
@@ -65,7 +66,7 @@ game_t create_game(void)
     sfMouse_getPosition((sfWindow *)window).y});
     player_t player = create_player();
     dialogue_t dialogue = create_dialogue();
-    game_t game = {window, event, t, m, cursor, player, dialogue, params,
-    0, 0.0};
+    game_t game = {window, event, t, m, cursor, player, dialogue, params, 0, 0.0,
+    "new.txt"};
     return (game);
 }

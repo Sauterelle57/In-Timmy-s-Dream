@@ -15,7 +15,7 @@ static void check_action(game_t *g)
     for (int i = 0; i < g->scene[g->curent_scene].nb_interest; i++)
         if (Rect_Intersect(g->scene[g->curent_scene].interest[i].body, &player)
         )
-            g->scene[g->curent_scene].interest[i].on_click(g);
+    g->scene[g->curent_scene].interest[i].on_click(g);
 }
 
 void event_combat(game_t *g)

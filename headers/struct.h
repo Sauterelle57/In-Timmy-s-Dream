@@ -17,6 +17,12 @@
     #define FRAM 1
     #define VOLU 2
 
+typedef struct particule_s {
+    sfVertexArray *pixels;
+    int height;
+    int width;
+} particule_t;
+
 typedef struct dialogue_s {
     sfVector2f dialogue_pos;
     sfFont *font;
@@ -26,6 +32,8 @@ typedef struct dialogue_s {
     int is_showing;
     int is_passed;
     char* temp;
+    int chose;
+    int check;
 } dialogue_t;
 
 typedef struct body_s {
@@ -52,6 +60,7 @@ typedef struct player_s {
     int speed;
     int pv;
     int pa;
+    int lvl;
 } player_t;
 
 typedef struct interest_s {
@@ -83,6 +92,7 @@ typedef struct scene_s {
     interest_t *interest;
     int nb_interest;
     sfMusic *scene_music;
+    sfVertexArray *array;
     void (*draw)();
     void (*event)();
     void (*anim)();
@@ -106,6 +116,7 @@ typedef struct game_s {
     int pause;
     float cooldown;
     scene_t scene[10];
+    char *save_file;
     int previous_scene;
     int curent_scene;
 } game_t;

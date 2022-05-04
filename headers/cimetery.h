@@ -8,6 +8,8 @@
 #ifndef cimetery_H_
     #define cimetery_H_
 
+    #define NB_PARTICULES 70000
+
 void draw_cimetery(game_t *g);
 void anim_cimetery(game_t *g);
 void event_cimetery(game_t *g);

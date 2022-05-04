@@ -7,19 +7,23 @@
 
 #include "includes.h"
 #include "inventory.h"
+void add_pixel(sfVertexArray *pixels, sfVector2f pos, sfColor color);
 
 scene_t init_inventory(game_t *g)
 {
     int nb_button = 1;
     button_t *buttons = init_inventory_button(g->window, nb_button);
-    int nb_elem = 2;
+    int nb_elem = 3;
     body_t *elem = init_inventory_elem(g->window, nb_elem);
     int nb_interest = 0;
     interest_t *interest = init_inventory_interest(g->window, nb_interest);
     sfMusic *scene_music = sfMusic_createFromFile("music/The_Abyss.ogg");
+    sfVertexArray *array = sfVertexArray_create();
     scene_t inventory = {0, buttons, nb_button, elem, nb_elem, interest,
-    nb_interest, scene_music};
+    nb_interest, scene_music, array};
 
+    for (int i = 0; i < NB_PARTICULES; i++)
+        add_pixel(inventory.array, (sfVector2f){0, 0}, (sfColor){0, 0, 0, 0});
     inventory.draw = &draw_inventory;
     inventory.event = &event_inventory;
     inventory.anim = &anim_inventory;

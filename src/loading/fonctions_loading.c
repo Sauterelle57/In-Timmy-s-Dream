@@ -7,7 +7,6 @@
 
 #include "includes.h"
 #include "interest.h"
-scene_t init_game(game_t *g);
 
 static void draw_transition(game_t *g, int sens)
 {
