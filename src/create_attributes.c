@@ -37,10 +37,10 @@ object_t create_object(char *text, int pv, int pa, int type)
 button_t create_button(int texture, sfVector2f pos, sfText *text,
 void (*fonction)(game_t *, int))
 {
-    button_t button = {create_body(BUTTON[texture], (sfIntRect){0, 0, 35, 10},
-    pos), (sfVector2f){400, 200}, text, texture, fonction};
+    button_t button = {create_body(BUTTON[texture], (sfIntRect){0, 0, 60, 20},
+    pos), (sfVector2f){500, 110}, text, texture, fonction};
 
-    sfSprite_setScale(button.body.sprite, (sfVector2f){10, 10});
+    sfSprite_setScale(button.body.sprite, (sfVector2f){8, 6});
     return (button);
 }
 

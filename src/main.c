@@ -16,12 +16,13 @@
 #include "inventory.h" //scene 6
 #include "my_loading.h" //scene 7
 #include "cimetery.h" //scene 8
+#include "settings.h" //scene 9
 
 void charge_scene(game_t *g, int next_scene)
 {
-    scene_t (*init_scene[9])(game_t *g) = {&init_game, &init_menu, &init_combat
+    scene_t (*init_scene[10])(game_t *g) = {&init_game, &init_menu, &init_combat
     , &init_vampire, &init_ghost, &init_forest, &init_inventory, &init_loading,
-    &init_cimetery};
+    &init_cimetery, &init_settings};
 
     if (!g->scene[next_scene].charged) {
         g->scene[next_scene] = init_scene[next_scene](g);

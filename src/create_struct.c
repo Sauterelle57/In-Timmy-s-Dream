@@ -55,6 +55,10 @@ game_t create_game(void)
 {
     sfRenderWindow *window = create_window(1920, 1080);
     sfEvent event;
+    int * params = malloc(sizeof(int) * 3);
+    params[0] = 1;
+    params[1] = 60;
+    params[2] = 55;
     timing_t t = create_timer();
     music_t m = create_music();
     body_t cursor = create_body("cursor/pointer003.png", (sfIntRect)
@@ -62,7 +66,7 @@ game_t create_game(void)
     sfMouse_getPosition((sfWindow *)window).y});
     player_t player = create_player();
     dialogue_t dialogue = create_dialogue();
-    game_t game = {window, event, t, m, cursor, player, dialogue, 0, 0.0,
+    game_t game = {window, event, t, m, cursor, player, dialogue, params, 0, 0.0,
     "new.txt"};
     return (game);
 }

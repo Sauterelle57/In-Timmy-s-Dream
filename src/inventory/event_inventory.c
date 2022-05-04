@@ -88,7 +88,7 @@ static void manage_pixels(game_t *g, sfVector2i pos)
 void event_inventory(game_t *g)
 {
     if (g->event.type == sfEvtClosed || Key_Pressed(sfKeyEscape))
-        quit_game(g);
+        quit_game(g, 0);
     check_button(g, Get_Mouse_Pos(), Get_Window_size());
     check_object(g, Get_Mouse_Pos(), Get_Window_size());
     if (Mouse_Pressed(sfMouseRight))
