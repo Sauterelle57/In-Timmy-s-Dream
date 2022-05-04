@@ -20,24 +20,26 @@ button_t *init_settings_button(sfRenderWindow *window, int nb)
     button_t *buttons = malloc(sizeof(button_t) * nb);
 
     buttons[0] = create_button(9, (sfVector2f){size.x * 0.15, size.y * 0.50},
-    create_button_text(50, (sfVector2f){size.x * 0.15 + 100, size.y *
-    0.50 + 20}, "Setting"), fonction2);
+    create_button_text(50, (sfVector2f){size.x * 0.15 + 130, size.y *
+    0.50 + 20}, "FPS: 60"), &manage_framerate);
 
     buttons[1] = create_button(9, (sfVector2f){size.x * 0.60, size.y *
-    0.50}, create_button_text(50, (sfVector2f){size.x * 0.60 + 140, size.y *
-    0.50 + 20}, "Setting"), fonction2);
+    0.50}, create_button_text(50, (sfVector2f){size.x * 0.60 + 50, size.y *
+    0.50 + 20}, "Difficulty: 1"), &manage_difficulty);
 
     buttons[2] = create_button(9, (sfVector2f){size.x * 0.60, size.y *
     0.70}, create_button_text(50, (sfVector2f){size.x * 0.60 + 100, size.y *
     0.70 + 20}, "Main Menu"), &go_menu);
 
-    buttons[3] = create_square_button(9, (sfVector2f){size.x * 0.8, size.y *
-    0.9}, create_button_text(50, (sfVector2f){size.x * 0.60 + 180, size.y *
-    0.70 + 20}, " "), &quit_game);
+    buttons[3] = create_square_button(12, (sfVector2f){size.x * 0.05, size.y *
+    0.8}, create_button_text(50, (sfVector2f){size.x * 0.60 + 180, size.y *
+    0.70 + 20}, " "), &manage_volume);
 
-    buttons[4] = create_square_button(9, (sfVector2f){size.x * 0.60, size.y *
-    0.9}, create_button_text(50, (sfVector2f){size.x * 0.60 + 180, size.y *
-    0.70 + 20}, " "), &quit_game);
+    //buttons[5] = create_square_button(16, (sfVector2f){size.x * 0.60, size.y *
+    //0.9}, create_button_text(50, (sfVector2f){0, 0}, " "), &quit_game);
+
+    buttons[4] = create_square_button(15, (sfVector2f){size.x * 0.45, size.y *
+    0.8}, create_button_text(50, (sfVector2f){100, 100}, ""), &manage_volume);
 
     return (buttons);
 }
@@ -62,9 +64,11 @@ body_t *init_settings_elem2(sfVector2u size, body_t *elem, int nb)
     (sfVector2f){0, 0});
     elem[7] = create_body("parallax/cloud8.png", (sfIntRect){0, 0, 1920, 1080},
     (sfVector2f){0, 0});
-    elem[8] = create_body("other/sound.png", (sfIntRect){0, 0, 160, 18},
+    elem[8] = create_body("other/sound.png", (sfIntRect){800, 0, 160, 18},
     (sfVector2f){size.x * 0.10, size.y * 0.80});
-    sfSprite_setScale(elem[8].sprite, (sfVector2f){5, 5});
+    sfIntRect amogus = sfSprite_getTextureRect(elem[8].sprite);
+    printf("((left:%d top:%d  height:%d  width:%d))\n", amogus.left, amogus.top, amogus.width, amogus.height);
+    sfSprite_setScale(elem[8].sprite, (sfVector2f){4, 4});
     for (int i = 0; i < 8; i++) {
         sfTexture_setRepeated(elem[i].text, sfTrue);
         sfSprite_setTexture(elem[i].sprite, elem[i].text, sfTrue);

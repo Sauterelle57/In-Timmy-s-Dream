@@ -75,6 +75,7 @@ SRC	=	src/main.c	\
 		src/settings/fonctions_settings.c	\
 		src/settings/init_settings_elm.c	\
 		src/settings/settings.c				\
+		src/settings/button_settings.c	\
 \
 		src/vampire/anim_vampire.c	\
 		src/vampire/draw_vampire.c	\

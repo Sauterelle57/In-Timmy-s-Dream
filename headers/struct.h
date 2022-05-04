@@ -13,6 +13,9 @@
     #include <SFML/System.h>
     #include <SFML/Graphics.h>
     #include <SFML/Window/Export.h>
+    #define DIFF 0
+    #define FRAM 1
+    #define VOLU 2
 
 typedef struct dialogue_s {
     sfVector2f dialogue_pos;
@@ -99,6 +102,7 @@ typedef struct game_s {
     body_t cursor;
     player_t player;
     dialogue_t dialogue;
+    int *params; //0 = difficulty, 1 = framerate, 2 = volume
     int pause;
     float cooldown;
     scene_t scene[10];
