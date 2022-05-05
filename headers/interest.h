@@ -11,6 +11,7 @@
 void example(game_t *g, int i);
 void go_game(game_t *g, int i);
 void go_back(game_t *g, int i);
+void go_menu(game_t *g, int i);
 void go_ghost(game_t *g, int i);
 void go_forest(game_t *g, int i);
 void go_combat(game_t *g, int i);

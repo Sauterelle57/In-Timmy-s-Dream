@@ -2,14 +2,14 @@
 ** EPITECH PROJECT, 2022
 ** RPG
 ** File description:
-** init_button_vampire
+** init_button_win
 */
 
 #include "includes.h"
-#include "menu_lose.h"
+#include "menu_win.h"
 #include "interest.h"
 
-button_t *init_lose_button(sfRenderWindow *window, int nb_button)
+button_t *init_win_button(sfRenderWindow *window, int nb_button)
 {
     sfVector2u size = sfRenderWindow_getSize(window);
     button_t *buttons = malloc(sizeof(button_t) * nb_button);
