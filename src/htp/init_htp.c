@@ -17,9 +17,12 @@ scene_t init_htp(game_t *g)
     int nb_interest = 4;
     interest_t *interest = init_htp_interest(g->window, nb_interest);
     sfMusic *scene_music = sfMusic_createFromFile("music/Stargazer.ogg");
+    sfVertexArray *array = sfVertexArray_create();
     scene_t htp = {0, buttons, nb_button, elem, nb_elem, interest,
-    nb_interest, scene_music};
+    nb_interest, scene_music, array};
 
+    for (int i = 0; i < NB_PIXELS; i++)
+        add_pixel(htp.array, (sfVector2f){0, 0}, (sfColor){0, 0, 0, 0});
     htp.draw = &draw_htp;
     htp.event = &event_htp;
     htp.anim = &anim_htp;

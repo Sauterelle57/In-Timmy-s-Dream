@@ -17,4 +17,5 @@ void draw_htp(game_t *g)
         Draw_Sprite(g->scene[g->curent_scene].interest[i].body.sprite);
     for (int i = 0; i < g->scene[g->curent_scene].nb_button; i++)
         Draw_Sprite(g->scene[g->curent_scene].button[i].body.sprite);
+    sfRenderWindow_drawVertexArray(g->window, g->scene[12].array, 0);
 }

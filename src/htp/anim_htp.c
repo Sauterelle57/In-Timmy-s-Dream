@@ -16,9 +16,9 @@ static void anim_players(game_t *g)
 
     if (g->t.sec - tmp >= delay)
         for (int i = 1; i < 4; i++) {
-            g->scene[10].interest[i].body.rect.left += g->scene[10].interest[i]
+            g->scene[12].interest[i].body.rect.left += g->scene[12].interest[i]
             .body.rect.left >= 144 ? -144 : 48;
-            Set_Texture_Rect(g->scene[10].interest[i].body.sprite, g->scene[10]
+            Set_Texture_Rect(g->scene[12].interest[i].body.sprite, g->scene[12]
             .interest[i].body.rect);
         }
 }
@@ -26,6 +26,7 @@ static void anim_players(game_t *g)
 void anim_htp(game_t *g)
 {
     static float tmp = 0.0;
+    static float tmp2 = 0.0;
 
     g->t.sec = Get_Time(g->t.clock);
     if (g->t.sec - tmp >= 0.11) {
@@ -35,10 +36,15 @@ void anim_htp(game_t *g)
             g->scene[g->curent_scene].elem[i].rect);
         }
         anim_players(g);
-        g->scene[10].interest[0].body.rect.left += g->scene[10].interest[0].
+        g->scene[12].interest[0].body.rect.left += g->scene[12].interest[0].
         body.rect.left >= 144 ? -144 : 48;
-        Set_Texture_Rect(g->scene[10].interest[0].body.sprite, g->scene[10].
+        Set_Texture_Rect(g->scene[12].interest[0].body.sprite, g->scene[12].
         interest[0].body.rect);
         tmp = g->t.sec;
+    }
+    if (sfVertexArray_getVertex(g->scene[g->curent_scene].array, 0)->color.a >
+    7 && g->t.sec - tmp2 >= 0.03) {
+        anim_pixels(g);
+        tmp2 = g->t.sec;
     }
 }

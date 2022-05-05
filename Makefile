@@ -73,6 +73,18 @@ SRC	=	src/main.c	\
 		src/main_menu/init_menu_elm.c	\
 		src/main_menu/fonctions_menu.c	\
 \
+        src/menu_lose/init_lose.c    \
+        src/menu_lose/draw_menu_lose.c    \
+        src/menu_lose/event_menu_lose.c    \
+        src/menu_lose/init_button_lose.c    \
+        src/menu_lose/init_elem_menu_lose.c    \
+\
+        src/menu_win/init_win.c    \
+        src/menu_win/draw_menu_win.c    \
+        src/menu_win/event_menu_win.c    \
+        src/menu_win/init_button_win.c    \
+        src/menu_win/init_elem_menu_win.c    \
+\
 		src/settings/fonctions_settings.c	\
 		src/settings/init_settings_elm.c	\
 		src/settings/settings.c				\

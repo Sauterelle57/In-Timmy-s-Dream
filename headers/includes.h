@@ -33,12 +33,15 @@
 
     #define NB_PIXELS 16
 
-void quit_game(game_t *g, int i);
 void pause_game(game_t *g);
+void anim_pixels(game_t *g);
 void draw_cursor(game_t *g);
 void draw_player(game_t * g);
 unsigned int get_random(void);
+void quit_game(game_t *g, int i);
 void charge_scene(game_t *g, int next_scene);
+void manage_pixels(game_t *g, sfVector2i pos);
 void move_sprite(body_t *sprite, sfVector2f pos, int speed);
+void add_pixel(sfVertexArray *pixels, sfVector2f pos, sfColor color);
 
 #endif /* !INCLUDES_H_ */

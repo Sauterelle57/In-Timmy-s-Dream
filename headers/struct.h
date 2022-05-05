@@ -42,6 +42,7 @@ typedef struct dialogue_s {
     char* temp;
     int chose;
     int check;
+    float speed;
 } dialogue_t;
 
 typedef struct object_s {
@@ -117,7 +118,7 @@ typedef struct game_s {
     int pause;
     float cooldown;
     char *save_file;
-    scene_t scene[11];
+    scene_t scene[13];
     int previous_scene;
     int curent_scene;
 } game_t;
