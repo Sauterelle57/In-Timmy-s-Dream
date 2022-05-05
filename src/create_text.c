@@ -34,12 +34,15 @@ dialogue_t create_dialogue(void)
     sfVector2f dialogue_pos = (sfVector2f){100, 850};
     sfFont *font = sfFont_createFromFile("other/Blokletters-Balpen.ttf");
     sfText *text = sfText_create();
+    body_t box = create_body("other/bubble.png", (sfIntRect){0, 0, 900, 250},
+    (sfVector2f){100, 600});
+    Set_Scale(box.sprite, 1.5, 1.5);
     char** tab_text = my_str_to_word_array(open_text(), '\n');
     sfText_setFont(text, font);
     sfText_setCharacterSize(text, 25);
     sfText_setFillColor(text, sfBlack);
     sfText_setPosition(text, dialogue_pos);
-    dialogue_t dialogue = {dialogue_pos, font, text, NULL, tab_text,
+    dialogue_t dialogue = {dialogue_pos, font, text, box, NULL, tab_text,
     0, 0, NULL, 0, 0, 0.05};
     return (dialogue);
 }

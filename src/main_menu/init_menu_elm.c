@@ -8,6 +8,7 @@
 #include "includes.h"
 #include "main_menu.h"
 #include "settings.h"
+void go_settings(game_t *g, int i);
 
 void load_game(game_t *g, int i)
 {
@@ -44,13 +45,8 @@ static void action(game_t *g, int i)
 
 interest_t *init_menu_interest(sfRenderWindow *window, int nb)
 {
-    sfVector2u size = sfRenderWindow_getSize(window);
     interest_t *interest = malloc(sizeof(interest_t) * nb);
 
-    //interest[0] = create_interest("other/test.png", (sfIntRect)
-    //{0, 0, 50, 50}, (sfVector2f){size.x * 0.21, size.y * 0.42}, action);
-    //interest[1] = create_interest("other/test.png", (sfIntRect)
-    //{0, 0, 50, 50}, (sfVector2f){size.x * 0.16, size.y * 0.70}, action);
     return (interest);
 }
 

@@ -9,9 +9,14 @@
 #include "main_menu.h"
 #include "settings.h"
 
-static void fonction2(game_t *g, int i)
+void go_htp(game_t *g, int i)
 {
-    my_printf("Button clicked !!\n");
+    g->previous_scene = g->curent_scene;
+    sfMusic_pause(g->scene[g->previous_scene].scene_music);
+    if (g->scene[12].charged == 1)
+        sfMusic_play(g->scene[12].scene_music);
+    charge_scene(g, 12);
+    g->curent_scene = 12;
 }
 
 button_t *init_settings_button(sfRenderWindow *window, int nb)
@@ -33,7 +38,9 @@ button_t *init_settings_button(sfRenderWindow *window, int nb)
     0.70 + 20}, " "), &manage_volume);
     buttons[4] = create_square_button(15, (sfVector2f){size.x * 0.45, size.y *
     0.8}, create_button_text(50, (sfVector2f){100, 100}, ""), &manage_volume);
-
+    buttons[5] = create_button(9, (sfVector2f){size.x * 0.60, size.y *
+    0.30}, create_button_text(50, (sfVector2f){size.x * 0.60 + 60, size.y *
+    0.30 + 20}, "How To Play"), &go_htp);
     return (buttons);
 }
 
@@ -42,10 +49,6 @@ interest_t *init_settings_interest(sfRenderWindow *window, int nb)
     sfVector2u size = sfRenderWindow_getSize(window);
     interest_t *interest = malloc(sizeof(interest_t) * nb);
 
-    //interest[0] = create_interest("other/test.png", (sfIntRect)
-    //{0, 0, 50, 50}, (sfVector2f){size.x * 0.21, size.y * 0.42}, action);
-    //interest[1] = create_interest("other/test.png", (sfIntRect)
-    //{0, 0, 50, 50}, (sfVector2f){size.x * 0.16, size.y * 0.70}, action);
     return (interest);
 }
 
@@ -65,8 +68,7 @@ body_t *init_settings_elem2(sfVector2u size, body_t *elem, int nb)
         sfSprite_setTexture(elem[i].sprite, elem[i].text, sfTrue);
         sfSprite_setTextureRect(elem[i].sprite, elem[i].rect);
     }
-    return(elem);
-
+    return (elem);
 }
 
 body_t *init_settings_elem(sfRenderWindow *window, int nb)
@@ -75,7 +77,7 @@ body_t *init_settings_elem(sfRenderWindow *window, int nb)
     body_t *elem = malloc(sizeof(body_t) * nb);
 
     elem[0] = create_body("parallax/cloud1.png", (sfIntRect){0, 0, 1920, 1080},
-    (sfVector2f){size.x * 0, size.y * 0});
+    (sfVector2f){0, 0});
     elem[1] = create_body("parallax/cloud2.png", (sfIntRect){0, 0, 1920, 1080},
     (sfVector2f){0, 0});
     elem[2] = create_body("parallax/cloud3.png", (sfIntRect){0, 0, 1920, 1080},

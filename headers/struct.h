@@ -23,10 +23,18 @@ typedef struct particule_s {
     int width;
 } particule_t;
 
+typedef struct body_s {
+    sfTexture *text;
+    sfSprite *sprite;
+    sfIntRect rect;
+    sfVector2f pos;
+} body_t;
+
 typedef struct dialogue_s {
     sfVector2f dialogue_pos;
     sfFont *font;
     sfText *text;
+    body_t box;
     char* text_str;
     char** tab_text;
     int is_showing;
@@ -36,13 +44,6 @@ typedef struct dialogue_s {
     int check;
     float speed;
 } dialogue_t;
-
-typedef struct body_s {
-    sfTexture *text;
-    sfSprite *sprite;
-    sfIntRect rect;
-    sfVector2f pos;
-} body_t;
 
 typedef struct object_s {
     body_t body;
@@ -117,7 +118,7 @@ typedef struct game_s {
     int pause;
     float cooldown;
     char *save_file;
-    scene_t scene[12];
+    scene_t scene[13];
     int previous_scene;
     int curent_scene;
 } game_t;

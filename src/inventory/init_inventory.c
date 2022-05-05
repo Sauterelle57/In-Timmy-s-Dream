@@ -7,7 +7,6 @@
 
 #include "includes.h"
 #include "inventory.h"
-void add_pixel(sfVertexArray *pixels, sfVector2f pos, sfColor color);
 
 scene_t init_inventory(game_t *g)
 {

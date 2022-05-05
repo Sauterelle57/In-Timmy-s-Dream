@@ -34,13 +34,13 @@ static void draw_player_inventory(game_t *g)
 void draw_inventory(game_t *g)
 {
     Draw_Sprite(g->scene[6].elem[0].sprite);
-    for (int i = 0; i < g->scene[6].nb_interest; i++) //affichage interest point
+    for (int i = 0; i < g->scene[6].nb_interest; i++)
         Draw_Sprite(g->scene[6].interest[i].body.sprite);
     for (int i = 0; i < g->scene[6].nb_button; i++)
         Draw_Sprite(g->scene[6].button[i].body.sprite);
     init_object_inventory(g->player.inventory);
     Draw_Sprite(g->scene[6].elem[2].sprite);
-    for (int i = 0; i < NB_OBJ; i++) //affichage objets du joueur
+    for (int i = 0; i < NB_OBJ; i++)
         if (g->player.inventory[i].own == 1)
             Draw_Sprite(g->player.inventory[i].body.sprite);
     draw_player_inventory(g);

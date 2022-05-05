@@ -7,6 +7,8 @@
 
 #include "includes.h"
 #include "main_menu.h"
+void anim_pixels(game_t *g);
+void manage_pixels(game_t *g, sfVector2i pos);
 
 void draw_settings(game_t *g)
 {
@@ -18,6 +20,7 @@ void draw_settings(game_t *g)
         Draw_Sprite(g->scene[9].button[i].body.sprite);
         sfRenderWindow_drawText(g->window, g->scene[9].button[i].text, NULL);
     }
+    sfRenderWindow_drawVertexArray(g->window, g->scene[9].array, 0);
 }
 
 static void check_button(game_t *g, sfVector2i pos, sfVector2u size)
@@ -27,7 +30,7 @@ static void check_button(game_t *g, sfVector2i pos, sfVector2u size)
     g->t.sec = Get_Time(g->t.clock);
     for (int i = 0; i < g->scene[9].nb_button; i++) {
         button = g->scene[9].button[i];
-        if (Mouse_Pressed(sfMouseLeft) && g->t.sec - g->cooldown > 0.4 &&
+        if (Mouse_Pressed(sfMouseLeft) && g->t.sec - g->cooldown > 0.2 &&
         sfIntRect_contains(&(sfIntRect){button.body.pos.x, button.body.pos.y,
         button.size.x, button.size.y}, pos.x * (1920.0 / size.x), pos.y *
         (1080.0 / size.y))) {
@@ -47,13 +50,15 @@ void event_settings(game_t *g)
 {
     if (g->event.type == sfEvtClosed)
         quit_game(g, 0);
+    if (Mouse_Pressed(sfMouseLeft))
+        manage_pixels(g, Get_Mouse_Pos());
     check_button(g, Get_Mouse_Pos(), Get_Window_size());
 }
 
 void anim_settings(game_t *g)
 {
     static float tmp = 0.0;
-    static int vector[4] = {3840, 1920, 96, 32};
+    static float tmp2 = 0.0;
 
     g->t.sec = Get_Time(g->t.clock);
     if (g->t.sec - tmp >= 0.04) {
@@ -63,5 +68,10 @@ void anim_settings(game_t *g)
             g->scene[9].elem[i].rect);
         }
         tmp = g->t.sec;
+    }
+    if (sfVertexArray_getVertex(g->scene[g->curent_scene].array, 0)->color.a >
+    7 && g->t.sec - tmp2 >= 0.03) {
+        anim_pixels(g);
+        tmp2 = g->t.sec;
     }
 }

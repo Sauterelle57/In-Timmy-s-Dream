@@ -7,6 +7,7 @@
 
 #include "includes.h"
 #include "main_menu.h"
+void add_pixel(sfVertexArray *pixels, sfVector2f pos, sfColor color);
 
 void go_menu(game_t *g, int i)
 {
@@ -27,11 +28,14 @@ scene_t init_menu(game_t *g)
     int nb_interest = 0;
     interest_t *interest = init_menu_interest(g->window, nb_interest);
     sfMusic *scene_music = sfMusic_createFromFile("music/The_Abyss.ogg");
-    scene_t game = {0, buttons, nb_button, elem, nb_elem, interest,
-    nb_interest, scene_music};
+    sfVertexArray *array = sfVertexArray_create();
+    scene_t menu = {0, buttons, nb_button, elem, nb_elem, interest,
+    nb_interest, scene_music, array};
 
-    game.draw = &draw_menu;
-    game.event = &event_menu;
-    game.anim = &anim_menu;
-    return (game);
+    for (int i = 0; i < NB_PIXELS; i++)
+        add_pixel(menu.array, (sfVector2f){0, 0}, (sfColor){0, 0, 0, 0});
+    menu.draw = &draw_menu;
+    menu.event = &event_menu;
+    menu.anim = &anim_menu;
+    return (menu);
 }
