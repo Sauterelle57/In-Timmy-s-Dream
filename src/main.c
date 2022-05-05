@@ -17,12 +17,13 @@
 #include "my_loading.h" //scene 7
 #include "cimetery.h" //scene 8
 #include "settings.h" //scene 9
+#include "how_to_play.h" //scene 10
 
 void charge_scene(game_t *g, int next_scene)
 {
-    scene_t (*init_scene[10])(game_t *g) = {&init_game, &init_menu, &init_combat
+    scene_t (*init_scene[11])(game_t *g) = {&init_game, &init_menu, &init_combat
     , &init_vampire, &init_ghost, &init_forest, &init_inventory, &init_loading,
-    &init_cimetery, &init_settings};
+    &init_cimetery, &init_settings, &init_htp};
 
     if (!g->scene[next_scene].charged) {
         g->scene[next_scene] = init_scene[next_scene](g);
@@ -30,6 +31,14 @@ void charge_scene(game_t *g, int next_scene)
         sfMusic_play(g->scene[next_scene].scene_music);
         g->scene[next_scene].charged = 1;
     }
+}
+
+static void chose_mouvement(game_t *g)
+{
+    if (g->curent_scene == 2)
+        combat_movement(g);
+    else if (g->curent_scene == 10)
+        tuto_movement(g);
 }
 
 int game_loop(game_t *g)
@@ -47,7 +56,8 @@ int game_loop(game_t *g)
         Key_Pressed(sfKeyRight) || Key_Pressed(sfKeyLeft) || Key_Pressed(sfKeyZ
         ) || Key_Pressed(sfKeyS) || Key_Pressed(sfKeyD) || Key_Pressed(sfKeyQ))
         && g->curent_scene != 6)
-            g->curent_scene == 2 ? combat_movement(g) : movement(g);
+            g->curent_scene == 2 || g->curent_scene == 10 ? chose_mouvement(g)
+            : movement(g);
         else
             Set_Texture(g->player.body.sprite, NPC[16]);
         sfRenderWindow_display(g->window);

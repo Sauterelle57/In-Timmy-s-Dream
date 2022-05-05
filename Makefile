@@ -126,7 +126,16 @@ SRC	=	src/main.c	\
 		src/cimetery/init_interest_cimetery.c	\
 \
 		src/dialogue/dialogue.c	\
-		src/dialogue/init_dialogue.c
+		src/dialogue/init_dialogue.c	\
+\
+		src/htp/anim_htp.c	\
+		src/htp/draw_htp.c	\
+		src/htp/event_htp.c	\
+		src/htp/init_htp.c	\
+		src/htp/init_elem_htp.c	\
+		src/htp/tuto_movements.c	\
+		src/htp/init_button_htp.c	\
+		src/htp/init_interest_htp.c	\
 
 OBJ =	$(SRC:.c=.o)
 

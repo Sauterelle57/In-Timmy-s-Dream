@@ -7,6 +7,8 @@
 
 #include "includes.h"
 #include "main_menu.h"
+void anim_pixels(game_t *g);
+void manage_pixels(game_t *g, sfVector2i pos);
 
 void draw_menu(game_t *g)
 {
@@ -18,6 +20,7 @@ void draw_menu(game_t *g)
         Draw_Sprite(g->scene[1].button[i].body.sprite);
         sfRenderWindow_drawText(g->window, g->scene[1].button[i].text, NULL);
     }
+    sfRenderWindow_drawVertexArray(g->window, g->scene[1].array, 0);
 }
 
 static void check_button(game_t *g, sfVector2i pos, sfVector2u size)
@@ -45,18 +48,17 @@ static void check_button(game_t *g, sfVector2i pos, sfVector2u size)
 
 void event_menu(game_t *g)
 {
-    if (g->event.type == sfEvtClosed || Key_Pressed(sfKeyEscape))
+    if (g->event.type == sfEvtClosed)
         quit_game(g, 0);
-    if (Key_Pressed(sfKeyLeft))
-        my_printf("Key Left pressed\n");
-    if (Key_Pressed(sfKeyRight))
-        my_printf("Key Right pressed\n");
+    if (Mouse_Pressed(sfMouseLeft))
+        manage_pixels(g, Get_Mouse_Pos());
     check_button(g, Get_Mouse_Pos(), Get_Window_size());
 }
 
 void anim_menu(game_t *g)
 {
     static float tmp = 0.0;
+    static float tmp2 = 0.0;
     static int vector[4] = {3840, 1920, 96, 32};
 
     g->t.sec = Get_Time(g->t.clock);
@@ -67,5 +69,10 @@ void anim_menu(game_t *g)
             g->scene[1].elem[i].rect);
         }
         tmp = g->t.sec;
+    }
+    if (sfVertexArray_getVertex(g->scene[g->curent_scene].array, 0)->color.a >
+    7 && g->t.sec - tmp2 >= 0.03) {
+        anim_pixels(g);
+        tmp2 = g->t.sec;
     }
 }

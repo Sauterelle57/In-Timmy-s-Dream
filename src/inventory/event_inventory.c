@@ -77,7 +77,7 @@ static void check_object(game_t *g, sfVector2i pos, sfVector2u size)
     }
 }
 
-static void manage_pixels(game_t *g, sfVector2i pos)
+void manage_pixels(game_t *g, sfVector2i pos)
 {
     sfVertexArray_clear(g->scene[g->curent_scene].array);
     for (int i = 0; i < NB_PIXELS; i++)
@@ -87,11 +87,11 @@ static void manage_pixels(game_t *g, sfVector2i pos)
 
 void event_inventory(game_t *g)
 {
-    if (g->event.type == sfEvtClosed || Key_Pressed(sfKeyEscape))
+    if (g->event.type == sfEvtClosed)
         quit_game(g, 0);
     check_button(g, Get_Mouse_Pos(), Get_Window_size());
     check_object(g, Get_Mouse_Pos(), Get_Window_size());
-    if (Mouse_Pressed(sfMouseRight))
+    if (Mouse_Pressed(sfMouseLeft))
         manage_pixels(g, Get_Mouse_Pos());
     if (Key_Pressed(sfKeyRight) || Key_Pressed(sfKeyD))
         g->player.body.rect.top = 96;

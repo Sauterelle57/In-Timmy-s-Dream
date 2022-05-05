@@ -21,7 +21,7 @@ static void anim_interest(game_t *g)
     }
 }
 
-static void anim_pixels(game_t *g)
+void anim_pixels(game_t *g)
 {
     static int vector_x[8] = {0, 1, 2, 1, 0, -1, -2, -1};
     static int vector_y[8] = {-2, -1, 0, 1, 2, 1, 0, -1};
@@ -55,9 +55,8 @@ void anim_inventory(game_t *g)
         tmp2 = g->t.sec;
     }
     if (sfVertexArray_getVertex(g->scene[g->curent_scene].array, 0)->color.a >
-    7 && g->t.sec - tmp3 >= 0.06 && g->t.sec - g->cooldown >= 0.06) {
+    7 && g->t.sec - tmp3 >= 0.03) {
         anim_pixels(g);
         tmp3 = g->t.sec;
-        g->cooldown = g->t.sec;
     }
 }
