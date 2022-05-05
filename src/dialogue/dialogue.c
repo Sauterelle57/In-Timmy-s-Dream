@@ -20,7 +20,7 @@ void reset_dialogue(game_t *gt)
     gt->dialogue.temp = NULL;
     gt->dialogue.check = 0;
     sfText_setFont(gt->dialogue.text, gt->dialogue.font);
-    sfText_setCharacterSize(gt->dialogue.text, 30);
+    sfText_setCharacterSize(gt->dialogue.text, 25);
     sfText_setFillColor(gt->dialogue.text, sfBlack);
     sfText_setPosition(gt->dialogue.text, gt->dialogue.dialogue_pos);
 }
@@ -75,7 +75,7 @@ void func_text(game_t *gt, int chose)
     if (gt->dialogue.is_passed == 0)
         pass_dialogue(&gt->dialogue.temp, gt, chose);
     gt->t.sec = Get_Time(gt->t.clock);
-    while (gt->t.sec-time > 0.10 && gt->dialogue.is_showing == 0) {
+    while (gt->t.sec-time > gt->dialogue.speed && gt->dialogue.is_showing == 0) {
        gt->dialogue.temp = add_chr_to_str(gt->dialogue.temp,
         gt->dialogue.tab_text[chose][gt->dialogue.check]);
         gt->dialogue.check++;

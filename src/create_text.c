@@ -31,15 +31,15 @@ sfText *create_text(int size, sfVector2f pos, char *string, char *font)
 
 dialogue_t create_dialogue(void)
 {
-    sfVector2f dialogue_pos = (sfVector2f){400, 850};
-    sfFont *font = sfFont_createFromFile("other/dialogue.ttf");
+    sfVector2f dialogue_pos = (sfVector2f){100, 850};
+    sfFont *font = sfFont_createFromFile("other/Blokletters-Balpen.ttf");
     sfText *text = sfText_create();
     char** tab_text = my_str_to_word_array(open_text(), '\n');
     sfText_setFont(text, font);
-    sfText_setCharacterSize(text, 30);
+    sfText_setCharacterSize(text, 25);
     sfText_setFillColor(text, sfBlack);
     sfText_setPosition(text, dialogue_pos);
     dialogue_t dialogue = {dialogue_pos, font, text, NULL, tab_text,
-    0, 0, NULL, 0, 0};
+    0, 0, NULL, 0, 0, 0.05};
     return (dialogue);
 }
