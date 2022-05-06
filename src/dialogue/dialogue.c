@@ -88,6 +88,6 @@ void func_text(game_t *gt, int chose)
             gt->dialogue.is_showing = 1;
     }
     sfText_setString(gt->dialogue.text, gt->dialogue.temp);
-    sfRenderWindow_drawSprite(gt ->window, gt->dialogue.box.sprite, 0);
+    sfRenderWindow_drawSprite(gt->window, gt->dialogue.box.sprite, 0);
     sfRenderWindow_drawText(gt->window, gt->dialogue.text, NULL);
 }
