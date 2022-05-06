@@ -11,7 +11,7 @@
 void draw_cimetery(game_t *g)
 {
     Draw_Sprite(g->scene[8].elem[0].sprite);
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < g->scene[8].nb_interest; i++)
         Draw_Sprite(g->scene[8].interest[i].body.sprite);
     Draw_Sprite(g->player.body.sprite);
     Draw_Sprite(g->scene[g->curent_scene].elem[1].sprite);
