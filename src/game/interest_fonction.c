@@ -21,6 +21,7 @@ void go_game(game_t *g, int i)
     g->player.body.pos.x = 940;
     g->player.body.pos.y = 540;
     Set_Pos(g->player.body.sprite, 940, 540);
+    sfSprite_setOrigin(g->player.body.sprite, (sfVector2f){0, 0});
     Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
     if (g->scene[0].charged == 1)
         sfMusic_play(g->scene[0].scene_music);
@@ -32,9 +33,9 @@ void go_combat(game_t *g, int i)
     g->previous_scene = g->curent_scene;
     sfMusic_pause(g->scene[g->previous_scene].scene_music);
     g->player.body.rect.top = 96;
-    g->player.body.pos.x = 260;
+    g->player.body.pos.x = 280;
     g->player.body.pos.y = 140;
-    Set_Pos(g->player.body.sprite, 260, 140);
+    Set_Pos(g->player.body.sprite, 280, 140);
     Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
     if (g->scene[2].charged == 1)
         sfMusic_play(g->scene[2].scene_music);

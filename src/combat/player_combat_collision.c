@@ -33,3 +33,20 @@ int combat_collision(body_t player, body_t elem, sfVector2i new_pos)
         return (1);
     return (0);
 }
+
+static int absolute(int i)
+{
+    if (i > 0)
+        return (i);
+    if (i < 0)
+        return (i * -1);
+    return (0);
+}
+
+int dist(body_t player, body_t obs)
+{
+    if (absolute(player.pos.x - obs.pos.x) < 100 &&
+        absolute(player.pos.y - obs.pos.y) < 100)
+        return (1);
+    return (0);
+}
