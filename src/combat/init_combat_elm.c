@@ -74,7 +74,7 @@ interest_t *spawn_enemy(int nb_interest, body_t *elem, interest_t *interest)
             interest[i].random = a;
         } else {
             interest[i] = create_interest(CHOICE[a], (sfIntRect)
-            {0, 0, 48, 70}, (sfVector2f){0, 0}, &hit);
+            {0, 0, 48, 70}, (sfVector2f){-100, -10}, &hit);
             interest[i].random = a;
         }
     }
