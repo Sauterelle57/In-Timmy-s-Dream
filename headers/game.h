@@ -25,5 +25,6 @@ interest_t *init_game_interest(sfRenderWindow *window, int nb_interest);
 void catch_lighter(game_t *g, int i);
 void catch_lintern(game_t *g, int i);
 void catch_linternOld(game_t *g, int i);
+void catch_pickaxe(game_t *g, int i);
 
 #endif /* !GAME_H_ */

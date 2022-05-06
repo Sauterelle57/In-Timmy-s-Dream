@@ -32,3 +32,11 @@ void catch_linternOld(game_t *g, int i)
     }
     Set_Scale(g->scene[g->curent_scene].interest[4].body.sprite, 0, 0);
 }
+
+void catch_pickaxe(game_t *g, int i)
+{
+    if (g->player.inventory[2].own != 1) {
+        g->player.inventory[2].own = 1;
+    }
+    Set_Scale(g->scene[0].interest[18].body.sprite, 0, 0);
+}

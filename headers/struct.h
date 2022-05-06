@@ -63,6 +63,7 @@ typedef struct player_s {
     int pv;
     int pa;
     int lvl;
+    int time;
 } player_t;
 
 typedef struct interest_s {

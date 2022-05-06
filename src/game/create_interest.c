@@ -26,6 +26,9 @@ interest_t *create_all_interests_3(interest_t *interest)
     interest[17] = create_interest("object/Lighter.png", (sfIntRect) // Lighter
     {0, 0, 16, 16}, (sfVector2f){7300, 1210}, &catch_lighter);
     Set_Scale(interest[17].body.sprite, 2.5, 2.5);
+    interest[18] = create_interest("object/Pickaxe.png", (sfIntRect) // Lighter
+    {0, 0, 16, 16}, (sfVector2f){6228, -2050}, &catch_pickaxe);
+    Set_Scale(interest[18].body.sprite, 2.5, 2.5);
     return (interest);
 }
 
