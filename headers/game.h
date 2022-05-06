@@ -22,5 +22,8 @@ interest_t *create_all_interests(interest_t *interest);
 body_t *init_game_elem(sfRenderWindow *window, int nb_elem);
 int collision(body_t player, body_t elem, sfVector2i new_pos);
 interest_t *init_game_interest(sfRenderWindow *window, int nb_interest);
+void catch_lighter(game_t *g, int i);
+void catch_lintern(game_t *g, int i);
+void catch_linternOld(game_t *g, int i);
 
 #endif /* !GAME_H_ */
