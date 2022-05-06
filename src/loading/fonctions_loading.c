@@ -45,15 +45,16 @@ void event_loading(game_t *g)
     static float tmp = 0.0;
 
     if (g->event.type == sfEvtClosed)
-        quit_game(g);
+        quit_game(g, 0);
     g->t.sec = Get_Time(g->t.clock);
     if (loading_game == 0) {
         loading_game = 1;
         charge_scene(g, 0);
     }
     if (g->scene[0].charged == 1 && g->t.sec - tmp >= 1) {
+        charge_scene(g, 1);
         draw_transition(g, 0);
-        g->curent_scene = 0;
+        g->curent_scene = 1;
     }
 }
 

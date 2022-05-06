@@ -13,6 +13,9 @@
     #include <SFML/System.h>
     #include <SFML/Graphics.h>
     #include <SFML/Window/Export.h>
+    #define DIFF 0
+    #define FRAM 1
+    #define VOLU 2
 
 typedef struct particule_s {
     sfVertexArray *pixels;
@@ -20,23 +23,27 @@ typedef struct particule_s {
     int width;
 } particule_t;
 
-typedef struct dialogue_s {
-    sfVector2f dialogue_pos;
-    sfFont *font;
-    sfText *text;
-    char* text_str;
-    char** tab_text;
-    int is_showing;
-    int is_passed;
-    char* temp;
-} dialogue_t;
-
 typedef struct body_s {
     sfTexture *text;
     sfSprite *sprite;
     sfIntRect rect;
     sfVector2f pos;
 } body_t;
+
+typedef struct dialogue_s {
+    sfVector2f dialogue_pos;
+    sfFont *font;
+    sfText *text;
+    body_t box;
+    char* text_str;
+    char** tab_text;
+    int is_showing;
+    int is_passed;
+    char* temp;
+    int chose;
+    int check;
+    float speed;
+} dialogue_t;
 
 typedef struct object_s {
     body_t body;
@@ -109,10 +116,11 @@ typedef struct game_s {
     body_t cursor;
     player_t player;
     dialogue_t dialogue;
+    int *params; //0 = difficulty, 1 = framerate, 2 = volume
     int pause;
     float cooldown;
     char *save_file;
-    scene_t scene[9];
+    scene_t scene[13];
     int previous_scene;
     int curent_scene;
 } game_t;

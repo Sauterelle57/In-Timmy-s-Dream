@@ -41,11 +41,15 @@
         "other/stat_piece.png"
     };
 
-    static char *BUTTON[9] = {
+    static char *BUTTON[18] = {
         "button/Pause1.png", "button/Pause2.png", "button/Pause3.png",
         "button/Inventory1.png", "button/Inventory2.png",
         "button/Inventory3.png",
-        "button/Close1.png", "button/Close2.png", "button/Close3.png"
+        "button/Close1.png", "button/Close2.png", "button/Close3.png",
+        "button/long_button.png", "button/long_button_idle.png",
+        "button/long_button_pressed.png", "button/minus.png",
+        "button/minus_idle.png", "button/minus_pressed.png",
+        "button/plus.png", "button/plus_idle.png", "button/plus_pressed.png"
     };
 
     static char *NPC[18] = {

@@ -15,11 +15,11 @@ static char *read_file(char *file)
     char *buffer = malloc(sizeof(char) * 361);
 
     if (buffer == NULL)
-        printf("Error malloc\n");
+        my_printf("Error malloc\n");
     if (fd < 0)
-        printf("Error open\n");
+        my_printf("Error open\n");
     if (read(fd, buffer, 360) < 0)
-        printf("Error read\n");
+        my_printf("Error read\n");
     buffer[360] = '\0';
     return (buffer);
 }

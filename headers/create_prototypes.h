@@ -8,7 +8,9 @@
 #ifndef PROTOTYPES_H_
     #define PROTOTYPES_H_
 
+void check_dialogue(game_t *gt, int chose);
 char* open_text();
+
 game_t create_game(void);
 music_t create_music(void);
 timing_t create_timer(void);

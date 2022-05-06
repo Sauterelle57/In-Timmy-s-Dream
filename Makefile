@@ -71,9 +71,26 @@ SRC	=	src/main.c	\
 		src/game/player_collision.c	\
 		src/game/interest_fonction.c	\
 \
-		src/menu/main_menu.c	\
-		src/menu/init_menu_elm.c	\
-		src/menu/fonctions_menu.c	\
+		src/main_menu/main_menu.c	\
+		src/main_menu/init_menu_elm.c	\
+		src/main_menu/fonctions_menu.c	\
+\
+        src/menu_lose/init_lose.c    \
+        src/menu_lose/draw_menu_lose.c    \
+        src/menu_lose/event_menu_lose.c    \
+        src/menu_lose/init_button_lose.c    \
+        src/menu_lose/init_elem_menu_lose.c    \
+\
+        src/menu_win/init_win.c    \
+        src/menu_win/draw_menu_win.c    \
+        src/menu_win/event_menu_win.c    \
+        src/menu_win/init_button_win.c    \
+        src/menu_win/init_elem_menu_win.c    \
+\
+		src/settings/fonctions_settings.c	\
+		src/settings/init_settings_elm.c	\
+		src/settings/settings.c				\
+		src/settings/button_settings.c	\
 \
 		src/vampire/anim_vampire.c	\
 		src/vampire/draw_vampire.c	\
@@ -123,7 +140,16 @@ SRC	=	src/main.c	\
 		src/cimetery/init_interest_cimetery.c	\
 \
 		src/dialogue/dialogue.c	\
-		src/dialogue/init_dialogue.c
+		src/dialogue/init_dialogue.c	\
+\
+		src/htp/anim_htp.c	\
+		src/htp/draw_htp.c	\
+		src/htp/event_htp.c	\
+		src/htp/init_htp.c	\
+		src/htp/init_elem_htp.c	\
+		src/htp/tuto_movements.c	\
+		src/htp/init_button_htp.c	\
+		src/htp/init_interest_htp.c	\
 
 OBJ =	$(SRC:.c=.o)
 

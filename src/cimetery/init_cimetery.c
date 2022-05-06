@@ -7,7 +7,6 @@
 
 #include "includes.h"
 #include "cimetery.h"
-void add_pixel(sfVertexArray *pixels, sfVector2f pos, sfColor color);
 
 scene_t init_cimetery(game_t *g)
 {
@@ -22,7 +21,7 @@ scene_t init_cimetery(game_t *g)
     scene_t cimetery = {0, buttons, nb_button, elem, nb_elem, interest,
     nb_interest, scene_music, array};
 
-    for (int i = 0; i < 70000; i++)
+    for (int i = 0; i < NB_PARTICULES; i++)
         add_pixel(cimetery.array, (sfVector2f){rand() % 1920, rand() %
         1080}, (sfColor){70, 45, 41, 255});
     cimetery.draw = &draw_cimetery;

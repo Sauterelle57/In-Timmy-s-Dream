@@ -24,7 +24,7 @@ static body_t *init_ghost_elem_3(body_t *elem)
     (sfVector2f){1130, 220});
     elem[24] = create_body("other/block.png", (sfIntRect){0, 0, 150, 40},
     (sfVector2f){740, -200});
-    elem[25] = create_body("other/green_block.png", (sfIntRect){0, 0, 90, 60}, //table
+    elem[25] = create_body("other/block.png", (sfIntRect){0, 0, 90, 60},
     (sfVector2f){760, -110});
     return (elem);
 }

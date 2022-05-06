@@ -13,7 +13,5 @@ interest_t *init_inventory_interest(sfRenderWindow *window, int nb_interest)
 {
     interest_t *interest = malloc(sizeof(interest_t) * nb_interest);
 
-    //interest[0] = create_interest(ZOMBIE[0], (sfIntRect) //zombie
-    //{0, 0, 48, 70}, (sfVector2f){40, 440}, &go_combat);
     return (interest);
 }
