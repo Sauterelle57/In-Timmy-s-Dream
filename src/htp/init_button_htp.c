@@ -12,7 +12,8 @@
 static void draw_inv(game_t *g, int i)
 {
     g->scene[g->curent_scene].elem[14] = create_body("other/inv.png",
-    (sfIntRect){0, 0, 1917, 1076}, (sfVector2f){400, 500});
+    (sfIntRect){0, 0, 1917, 1076}, (sfVector2f){650, 400});
+    Set_Scale(g->scene[g->curent_scene].elem[14].sprite, 0.4, 0.4);
 }
 
 button_t *init_htp_button(sfRenderWindow *window, int nb_button)
