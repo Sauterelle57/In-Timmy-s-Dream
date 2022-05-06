@@ -8,7 +8,7 @@
 #ifndef COMBAT_H_
     #define COMBAT_H_
 
-    static int nb_inter = 80;
+    static int nb_inter = 15;
     static int time = 0;
 
      static char *CHOICE[10] = {
