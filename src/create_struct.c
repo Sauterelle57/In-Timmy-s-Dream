@@ -47,7 +47,7 @@ player_t create_player(void)
     for (int i = 0; i < NB_OBJ; i++)
         inventory[i] = create_object(OBJ[i], 0, 0, 0);
     player_t player = {name, body, inventory, pv_bar, picture, SPEED, PV, 50,
-    0, 0};
+    1, 0};
     return (player);
 }
 

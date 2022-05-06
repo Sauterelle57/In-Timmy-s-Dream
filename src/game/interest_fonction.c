@@ -8,7 +8,7 @@
 #include "includes.h"
 #include "game.h"
 #include "player.h"
-scene_t re_init_combat(game_t *g);
+scene_t init_combat(game_t *g);
 
 void load_game(game_t *g, int i)
 {
@@ -55,9 +55,10 @@ void go_combat(game_t *g, int i)
     Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
     g->player.body.pos = (sfVector2f){260, 140};
     Set_Pos(g->player.body.sprite, 260, 140);
-    if (g->scene[2].charged == 1)
+    if (g->scene[2].charged == 1) {
         sfMusic_play(g->scene[2].scene_music);
-    g->scene[2] = re_init_combat(g);
+        g->scene[2] = init_combat(g);
+    }
     charge_scene(g, 2);
     g->curent_scene = 2;
 }

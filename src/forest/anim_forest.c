@@ -8,6 +8,7 @@
 #include "includes.h"
 #include "forest.h"
 #include "player.h"
+void go_combat(game_t *g, int i);
 
 static void anim_interest(game_t *g)
 {
@@ -19,6 +20,11 @@ static void anim_interest(game_t *g)
         Set_Texture_Rect(g->scene[5].interest[i].body.sprite,
         g->scene[5].interest[i].body.rect);
     }
+    if (g->player.lvl == 5) {
+        g->scene[5].interest[1].line = rand() % 2 + 10;
+        g->scene[5].interest[1].on_click = &check_dialogue;
+    } else if (g->player.lvl == 4)
+        g->scene[5].interest[1].on_click = &go_combat;
 }
 
 static void anim_particules(sfVertexArray *array)
