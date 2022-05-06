@@ -8,6 +8,7 @@
 #include "includes.h"
 #include "ghost.h"
 #include "player.h"
+void go_combat(game_t *g, int i);
 
 static void anim_interest(game_t *g)
 {
@@ -19,6 +20,11 @@ static void anim_interest(game_t *g)
         Set_Texture_Rect(g->scene[4].interest[i].body.sprite,
         g->scene[4].interest[i].body.rect);
     }
+    if (g->player.lvl == 4) {
+        g->scene[4].interest[0].line = 8;
+        g->scene[4].interest[0].on_click = &check_dialogue;
+    } else if (g->player.lvl == 3)
+        g->scene[4].interest[0].on_click = &go_combat;
 }
 
 void anim_ghost(game_t *g)
