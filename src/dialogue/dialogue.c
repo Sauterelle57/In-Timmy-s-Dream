@@ -73,9 +73,12 @@ char* pass_dialogue(char** temp, game_t *gt, int chose)
 void func_text(game_t *gt, int chose)
 {
     static float time = 0;
+    static int tab[] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
 
-    if (gt->dialogue.is_passed == 0)
+    if (gt->dialogue.is_passed == 0) {
         pass_dialogue(&gt->dialogue.temp, gt, chose);
+        gt->player.lvl += tab[chose];
+    }
     gt->t.sec = Get_Time(gt->t.clock);
     while (gt->t.sec-time > gt->dialogue.speed &&
     gt->dialogue.is_showing == 0) {
