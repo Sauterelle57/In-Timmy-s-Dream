@@ -1,19 +1,19 @@
 
-La porte est fermee a clef.
-Ah ! Te voila enfin reveille... Enfin ''reveille'' c'est un bien grand mot gnehihi... #Pourquoi me regardes-tu comme ca ? Ne t'en fais pas ! #Le meilleur moyen pour sortir de ce genre de reve, c'est une bonne frousse ! #Prend ca et va voir le vampire plus loin sur ce chemin, il t'aidera surement !
-Oh ! j'ai failli oublier ! Heureusement que tu as eu la presence d'esprit de revenir! Si jamais tu etait poursuivi par quelque chose et coince dans un endroit sombre, cherche une porte ouverte le plus vite possible, ou il se pourrais que tu reste ici pour toujours...
-Prrrivet ! Arrrrghh ! Vas t'en petit homme, va donc rrretourrrner pleurrrer dans jupes sorrrcierrre avant venirrr me voirrr ! Arrrrghh ! Ou je vais boirrre ton sang et je vais te kasser genoux! Arrrrghh !
-AAAAHHHHH, Enfin ma cherrre et tendrrre grrrenadine, ma kolerrre et ma trrristesse s'evanouissent alorrrs que elixirrr pourrrprrre et sucrrre koule dans mon gosier.
-Qu'est ce qu'il ne faut pas ouïr, ici tu risque le pire, d'abord tu dois parler au vampire !
-Bataillon ! Tous a vos polochons ! Attaquons ces peons ! Sous nos coups ils periront!
-J'Ai fAim MaNgEeERrR... MaAaaAnnNGEeeERrR
-HeE CEtTE PaTaTE, Je L'AVais LaiSSe ToMBer PAr TErrE!
-UnE pOmME dE TeRre !!!!  CoMmE CeLLe qUe m'OfFrAis mOn toNtOn SteEve ! GeNiAl !
-Hey !! les arbres de cette foret sont magnifique n'est-ce pas ???
-RAAAAAAAAAAAAAHHH VAAAAAAS T'EEEEEEENNNNNN
-Qu'est ce qu'on s'ennui devant ces autels... tu crois que je pourrais me reveiller a ta place ? tu auras ce que tu veux !
-J'aime bien ne plus avoir a dormir comme toi, c me laisse plus de temps pour observer les etoiles !
-Desole, je suis a la fete !
-Personne ne repond...
-Quelle est la difference entre un fantôme ?
-Never gonna give you up
+Porte##La porte est fermee a clef.
+Sorciere##Ah ! Te voila enfin reveille... Enfin ''reveille'' c'est un bien grand mot gnehihi... #Pourquoi me regardes-tu comme ca ? Ne t'en fais pas ! #Le meilleur moyen pour sortir de ce genre de reve, c'est une bonne frousse ! #Prend ca et va voir le vampire plus loin sur ce chemin, il t'aidera surement !
+Sorciere##Oh ! j'ai failli oublier ! Heureusement que tu as eu la presence d'esprit de revenir! Si jamais tu etait poursuivi par quelque chose et coince dans un endroit sombre, cherche une porte ouverte le plus vite possible, ou il se pourrais que tu reste ici pour toujours...
+Gevorg##Prrrivet ! Arrrrghh ! Vas t'en petit homme, va donc rrretourrrner pleurrrer dans jupes sorrrcierrre avant venirrr me voirrr ! Arrrrghh ! Ou je vais boirrre ton sang et je vais te kasser genoux! Arrrrghh !
+Gevorg##AAAAHHHHH, Enfin ma cherrre et tendrrre grrrenadine, ma kolerrre et ma trrristesse s'evanouissent alorrrs que elixirrr pourrrprrre et sucrrre koule dans mon gosier.
+T. Inky##Qu'est ce qu'il ne faut pas ouïr, ici tu risque le pire, d'abord tu dois parler au vampire !
+T. Inky{{Bataillon ! Tous a vos polochons ! Attaquons ces peons ! Sous nos coups ils periront!
+Zayna##J'Ai fAim MaNgEeERrR... MaAaaAnnNGEeeERrR
+Zoe##HeE CEtTE PaTaTE, Je L'AVais LaiSSe ToMBer PAr TErrE!
+Zara##UnE pOmME dE TeRre !!!!  CoMmE CeLLe qUe m'OfFrAis mOn toNtOn SteEve ! GeNiAl !
+Deni##Hey !! les arbres de cette foret sont magnifique n'est-ce pas ???
+Colere##RAAAAAAAAAAAAAHHH VAAAAAAS T'EEEEEEENNNNNN
+Machandage##Qu'est ce qu'on s'ennui devant ces autels... tu crois que je pourrais me reveiller a ta place ? tu auras ce que tu veux !
+Acceptation##J'aime bien ne plus avoir a dormir comme toi, c me laisse plus de temps pour observer les etoiles !
+Porte##Desole, je suis a la fete !
+Porte##Personne ne repond...
+Panneau##Quelle est la difference entre un fantôme ?
+Rick Astler##Never gonna give you up
