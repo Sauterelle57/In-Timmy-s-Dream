@@ -15,13 +15,12 @@ static void go_right(game_t *g)
         if (combat_collision(g->player.body, g->scene[g->curent_scene].elem[i],
         (sfVector2i){g->player.speed, 0}))
             return;
-
     for (int i = 3; i < g->scene[g->curent_scene].nb_interest; i++)
         if (combat_collision(g->player.body, g->scene[g->curent_scene].
-        interest[i].body, (sfVector2i){g->player.speed, 0}))
+        interest[i].body, (sfVector2i){g->player.speed, 0}) &&
+        g->scene[g->curent_scene].interest[i].pv > 0)
             return;
     g->player.body.pos.x += g->player.speed;
-    Set_Pos(g->player.body.sprite, g->player.body.pos.x, g->player.body.pos.y);
 }
 
 static void go_left(game_t *g)
@@ -31,13 +30,12 @@ static void go_left(game_t *g)
         if (combat_collision(g->player.body, g->scene[g->curent_scene].elem[i],
         (sfVector2i){-g->player.speed, 0}))
             return;
-
     for (int i = 3; i < g->scene[g->curent_scene].nb_interest; i++)
         if (combat_collision(g->player.body, g->scene[g->curent_scene].
-        interest[i].body, (sfVector2i){-g->player.speed, 0}))
+        interest[i].body, (sfVector2i){-g->player.speed, 0}) &&
+        g->scene[g->curent_scene].interest[i].pv > 0)
             return;
     g->player.body.pos.x -= g->player.speed;
-    Set_Pos(g->player.body.sprite, g->player.body.pos.x, g->player.body.pos.y);
 }
 
 static void go_up(game_t *g)
@@ -47,13 +45,12 @@ static void go_up(game_t *g)
         if (combat_collision(g->player.body, g->scene[g->curent_scene].elem[i],
         (sfVector2i){0, -g->player.speed}))
             return;
-
     for (int i = 3; i < g->scene[g->curent_scene].nb_interest; i++)
         if (combat_collision(g->player.body, g->scene[g->curent_scene].
-        interest[i].body, (sfVector2i){0, -g->player.speed}))
+        interest[i].body, (sfVector2i){0, -g->player.speed}) &&
+        g->scene[g->curent_scene].interest[i].pv > 0)
             return;
     g->player.body.pos.y -= g->player.speed;
-    Set_Pos(g->player.body.sprite, g->player.body.pos.x, g->player.body.pos.y);
 }
 
 static void go_down(game_t *g)
@@ -63,13 +60,12 @@ static void go_down(game_t *g)
         if (combat_collision(g->player.body, g->scene[g->curent_scene].elem[i],
         (sfVector2i){0, g->player.speed}))
             return;
-
     for (int i = 3; i < g->scene[g->curent_scene].nb_interest; i++)
         if (combat_collision(g->player.body, g->scene[g->curent_scene].
-        interest[i].body, (sfVector2i){0, g->player.speed}))
+        interest[i].body, (sfVector2i){0, g->player.speed}) &&
+        g->scene[g->curent_scene].interest[i].pv > 0)
             return;
     g->player.body.pos.y += g->player.speed;
-    Set_Pos(g->player.body.sprite, g->player.body.pos.x, g->player.body.pos.y);
 }
 
 void combat_movement(game_t *g)
@@ -86,4 +82,5 @@ void combat_movement(game_t *g)
     Set_Texture_Rect(g->scene[g->curent_scene].elem[0].sprite, g->scene[
     g->curent_scene].elem[0].rect);
     Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
+    Set_Pos(g->player.body.sprite, g->player.body.pos.x, g->player.body.pos.y);
 }

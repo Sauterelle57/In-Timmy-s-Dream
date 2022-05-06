@@ -15,8 +15,6 @@ static void check_action_fight(game_t *g)
     for (int i = 0; i < g->scene[g->curent_scene].nb_interest; i++)
         if (dist(g->player.body, g->scene[g->curent_scene].interest[i].body))
             g->scene[g->curent_scene].interest[i].on_click(g, i);
-        //if (Rect_Intersect(g->scene[g->curent_scene].interest[i].body,
-        //&player))
 }
 
 void event_combat(game_t *g)
@@ -26,7 +24,6 @@ void event_combat(game_t *g)
     if ((Key_Pressed(sfKeySpace) || Key_Pressed(sfKeyE)) &&
     g->t.sec - g->cooldown > 0.5) {
         check_action_fight(g);
-        my_printf("ATTAK !\n");
         g->cooldown = g->t.sec;
     }
     if (sfKeyboard_isKeyPressed(sfKeyP) && g->t.sec - g->t.pause > 0.3)
