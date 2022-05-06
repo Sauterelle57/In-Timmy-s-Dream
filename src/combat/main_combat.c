@@ -20,7 +20,7 @@ scene_t init_combat(game_t *g)
     scene_t combat = {0, buttons, nb_button, elem, nb_elem, interest,
     nb_interest, scene_music};
 
-    time = 0;
+    g->player.time = 0;
     combat.interest = interest;
     maze_generation(23, 15);
     combat.draw = &draw_combat;
