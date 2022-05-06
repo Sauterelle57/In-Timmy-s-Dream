@@ -8,11 +8,18 @@
 #include "includes.h"
 #include "game.h"
 #include "player.h"
-scene_t init_combat(game_t *g);
+scene_t re_init_combat(game_t *g);
 
-void example(game_t *g, int i)
+void load_game(game_t *g, int i)
 {
-    my_printf("Action !\n");
+    g->previous_scene = g->curent_scene;
+    sfMusic_pause(g->scene[g->previous_scene].scene_music);
+    if (i == 1)
+        g->save_file = "save.txt";
+    if (g->scene[0].charged == 1)
+        sfMusic_play(g->scene[0].scene_music);
+    charge_scene(g, 0);
+    g->curent_scene = 0;
 }
 
 void go_game(game_t *g, int i)
@@ -25,7 +32,18 @@ void go_game(game_t *g, int i)
     Set_Pos(g->player.body.sprite, 940, 540);
     if (g->scene[0].charged == 1)
         sfMusic_play(g->scene[0].scene_music);
+    charge_scene(g, 0);
     g->curent_scene = 0;
+}
+
+void go_menu(game_t *g, int i)
+{
+    g->previous_scene = g->curent_scene;
+    sfMusic_pause(g->scene[g->previous_scene].scene_music);
+    if (g->scene[1].charged == 1)
+        sfMusic_play(g->scene[1].scene_music);
+    charge_scene(g, 1);
+    g->curent_scene = 1;
 }
 
 void go_combat(game_t *g, int i)
@@ -39,7 +57,7 @@ void go_combat(game_t *g, int i)
     Set_Pos(g->player.body.sprite, 260, 140);
     if (g->scene[2].charged == 1)
         sfMusic_play(g->scene[2].scene_music);
-    g->scene[2] = init_combat(g);
+    g->scene[2] = re_init_combat(g);
     charge_scene(g, 2);
     g->curent_scene = 2;
 }
@@ -108,12 +126,65 @@ void go_cimetery(game_t *g, int i)
     g->curent_scene = 8;
 }
 
+void go_settings(game_t *g, int i)
+{
+    g->previous_scene = g->curent_scene;
+    sfMusic_pause(g->scene[g->previous_scene].scene_music);
+    if (g->scene[9].charged == 1)
+        sfMusic_play(g->scene[9].scene_music);
+    charge_scene(g, 9);
+    g->curent_scene = 9;
+}
+
+void quit_settings(game_t *g, int i)
+{
+    int scene_to_load = 1;
+
+    g->previous_scene = g->curent_scene;
+    sfMusic_pause(g->scene[g->previous_scene].scene_music);
+    if (g->scene[PAUSE].charged == 1)
+        scene_to_load = PAUSE;
+    if (g->scene[scene_to_load].charged == 1)
+        sfMusic_play(g->scene[scene_to_load].scene_music);
+    charge_scene(g, scene_to_load);
+    g->curent_scene = scene_to_load;
+}
+
+void go_menu_lose(game_t *g, int i)
+{
+    g->previous_scene = g->curent_scene;
+    sfMusic_pause(g->scene[g->previous_scene].scene_music);
+    if (g->scene[10].charged == 1)
+        sfMusic_play(g->scene[10].scene_music);
+    charge_scene(g, 10);
+    g->curent_scene = 10;
+}
+
+void go_menu_win(game_t *g, int i)
+{
+    g->previous_scene = g->curent_scene;
+    sfMusic_pause(g->scene[g->previous_scene].scene_music);
+    if (g->scene[11].charged == 1)
+        sfMusic_play(g->scene[11].scene_music);
+    charge_scene(g, 11);
+    g->curent_scene = 11;
+}
+
+void go_htp(game_t *g, int i)
+{
+    g->previous_scene = g->curent_scene;
+    sfMusic_pause(g->scene[g->previous_scene].scene_music);
+    if (g->scene[12].charged == 1)
+        sfMusic_play(g->scene[12].scene_music);
+    charge_scene(g, 12);
+    g->curent_scene = 12;
+}
+
 void go_back(game_t *g, int i)
 {
     int tmp = g->previous_scene;
 
     sfMusic_pause(g->scene[g->curent_scene].scene_music);
-    sfMusic_play(g->scene[g->previous_scene].scene_music);
     g->previous_scene = g->curent_scene;
     sfText_setPosition(g->player.name, (sfVector2f){200, 40});
     Set_Pos(g->player.pv_bar.sprite, 200, 110);
@@ -122,5 +193,18 @@ void go_back(game_t *g, int i)
     g->player.body.rect.top = 0;
     Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
     Set_Scale(g->player.body.sprite, 1, 1);
+    if (g->scene[tmp].charged == 1)
+        sfMusic_play(g->scene[g->previous_scene].scene_music);
+    charge_scene(g, tmp);
     g->curent_scene = tmp;
+}
+
+void go_pause(game_t *g, int i)
+{
+    g->previous_scene = g->curent_scene;
+    sfMusic_pause(g->scene[g->previous_scene].scene_music);
+    if (g->scene[PAUSE].charged == 1)
+        sfMusic_play(g->scene[PAUSE].scene_music);
+    charge_scene(g, PAUSE);
+    g->curent_scene = PAUSE;
 }

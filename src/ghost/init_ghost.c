@@ -24,7 +24,7 @@ scene_t init_ghost(game_t *g)
     ghost.event = &event_ghost;
     ghost.anim = &anim_ghost;
     sfMusic_setLoop(ghost.scene_music, sfTrue);
-    sfMusic_setVolume(ghost.scene_music, 100);
+    sfMusic_setVolume(ghost.scene_music, g->params[VOL]);
     return (ghost);
 }
 

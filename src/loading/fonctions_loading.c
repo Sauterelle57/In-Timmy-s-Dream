@@ -50,9 +50,10 @@ void event_loading(game_t *g)
     if (loading_game == 0) {
         loading_game = 1;
         charge_scene(g, 0);
-    }
-    if (g->scene[0].charged == 1 && g->t.sec - tmp >= 1) {
+        sfMusic_pause(g->scene[0].scene_music);
         charge_scene(g, 1);
+    }
+    if (g->scene[1].charged == 1 && g->t.sec - tmp >= 0.5) {
         draw_transition(g, 0);
         g->curent_scene = 1;
     }

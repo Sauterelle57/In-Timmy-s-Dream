@@ -9,16 +9,6 @@
 #include "main_menu.h"
 #include "settings.h"
 
-void go_settings(game_t *g, int i)
-{
-    g->previous_scene = g->curent_scene;
-    sfMusic_pause(g->scene[g->previous_scene].scene_music);
-    if (g->scene[9].charged == 1)
-        sfMusic_play(g->scene[9].scene_music);
-    charge_scene(g, 9);
-    g->curent_scene = 9;
-}
-
 scene_t init_settings(game_t *g)
 {
     int nb_button = 6;
@@ -37,5 +27,7 @@ scene_t init_settings(game_t *g)
     setting.draw = &draw_settings;
     setting.event = &event_settings;
     setting.anim = &anim_settings;
+    sfMusic_setLoop(setting.scene_music, sfTrue);
+    sfMusic_setVolume(setting.scene_music, g->params[VOL]);
     return (setting);
 }

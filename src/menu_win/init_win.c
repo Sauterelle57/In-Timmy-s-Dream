@@ -15,7 +15,6 @@ void anim_menu_win(game_t *g)
 
 interest_t *init_win_interest(sfRenderWindow *window, int nb)
 {
-    sfVector2u size = sfRenderWindow_getSize(window);
     interest_t *interest = malloc(sizeof(interest_t) * nb);
 
     return (interest);
@@ -37,6 +36,6 @@ scene_t init_menu_win(game_t *g)
     menu_lose.event = &event_menu_win;
     menu_lose.anim = &anim_menu_win;
     sfMusic_setLoop(menu_lose.scene_music, sfTrue);
-    sfMusic_setVolume(menu_lose.scene_music, 100);
+    sfMusic_setVolume(menu_lose.scene_music, g->params[VOL]);
     return (menu_lose);
 }

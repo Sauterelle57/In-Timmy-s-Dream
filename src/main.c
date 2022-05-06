@@ -20,13 +20,14 @@
 #include "menu_lose.h" //scene 10
 #include "menu_win.h" //scene 11
 #include "how_to_play.h" //scene 12
+#include "pause_menu.h" //scene 13
 
 void charge_scene(game_t *g, int next_scene)
 {
-    scene_t (*init_scene[13])(game_t *g) = {&init_game, &init_menu,
+    scene_t (*init_scene[14])(game_t *g) = {&init_game, &init_menu,
     &init_combat, &init_vampire, &init_ghost, &init_forest, &init_inventory,
     &init_loading, &init_cimetery, &init_settings, &init_menu_lose,
-    &init_menu_win, &init_htp};
+    &init_menu_win, &init_htp, &init_pause_menu};
 
     if (!g->scene[next_scene].charged) {
         g->scene[next_scene] = init_scene[next_scene](g);

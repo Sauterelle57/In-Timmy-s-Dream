@@ -27,6 +27,6 @@ scene_t init_htp(game_t *g)
     htp.event = &event_htp;
     htp.anim = &anim_htp;
     sfMusic_setLoop(htp.scene_music, sfTrue);
-    sfMusic_setVolume(htp.scene_music, g->params[VOLU]);
+    sfMusic_setVolume(htp.scene_music, g->params[VOL]);
     return (htp);
 }

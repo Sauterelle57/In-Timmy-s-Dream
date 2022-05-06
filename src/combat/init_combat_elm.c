@@ -35,7 +35,7 @@ interest_t *init_combat_interest(int nb_interest, body_t *elem)
     interest_t *interest = malloc(sizeof(interest_t) * nb_interest);
 
     interest[0] = create_interest("deco/Door_4 (open).png", (sfIntRect)
-    {0, 0, 70, 100}, (sfVector2f){215, 60}, &example);
+    {0, 0, 70, 100}, (sfVector2f){215, 60}, &nothing);
     Set_Scale(interest[0].body.sprite, 1.5, 1.5);
     interest[1] = create_interest("deco/Door_4.png", (sfIntRect)
     {0, 0, 70, 70}, (sfVector2f){1720, 960}, &go_game);

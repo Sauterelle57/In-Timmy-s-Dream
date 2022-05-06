@@ -7,17 +7,6 @@
 
 #include "includes.h"
 #include "main_menu.h"
-void add_pixel(sfVertexArray *pixels, sfVector2f pos, sfColor color);
-
-void go_menu(game_t *g, int i)
-{
-    g->previous_scene = g->curent_scene;
-    sfMusic_pause(g->scene[g->previous_scene].scene_music);
-    if (g->scene[1].charged == 1)
-        sfMusic_play(g->scene[1].scene_music);
-    charge_scene(g, 1);
-    g->curent_scene = 1;
-}
 
 scene_t init_menu(game_t *g)
 {
@@ -37,5 +26,7 @@ scene_t init_menu(game_t *g)
     menu.draw = &draw_menu;
     menu.event = &event_menu;
     menu.anim = &anim_menu;
+    sfMusic_setLoop(menu.scene_music, sfTrue);
+    sfMusic_setVolume(menu.scene_music, g->params[VOL]);
     return (menu);
 }

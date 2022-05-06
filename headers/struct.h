@@ -13,9 +13,6 @@
     #include <SFML/System.h>
     #include <SFML/Graphics.h>
     #include <SFML/Window/Export.h>
-    #define DIFF 0
-    #define FRAM 1
-    #define VOLU 2
 
 typedef struct particule_s {
     sfVertexArray *pixels;
@@ -121,7 +118,7 @@ typedef struct game_s {
     int pause;
     float cooldown;
     char *save_file;
-    scene_t scene[13];
+    scene_t scene[14];
     int previous_scene;
     int curent_scene;
 } game_t;
