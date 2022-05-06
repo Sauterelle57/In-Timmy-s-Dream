@@ -21,6 +21,4 @@ void draw_forest(game_t *g)
     Draw_Sprite(g->player.pv_bar.sprite);
     for (int i = 0; i < g->scene[5].nb_button; i++)
         Draw_Sprite(g->scene[5].button[i].body.sprite);
-    //for (int i = 2; i < g->scene[5].nb_elem; i++) //affichage box collisions
-    //    Draw_Sprite(g->scene[5].elem[i].sprite);
 }

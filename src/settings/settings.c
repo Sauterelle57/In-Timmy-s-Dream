@@ -8,7 +8,6 @@
 #include "includes.h"
 #include "main_menu.h"
 #include "settings.h"
-void add_pixel(sfVertexArray *pixels, sfVector2f pos, sfColor color);
 
 void go_settings(game_t *g, int i)
 {

@@ -27,25 +27,17 @@ static void anim_particules(sfVertexArray *array)
 
     for (int i = 0; i < len_array; i++) {
         sfVertex *pixel = sfVertexArray_getVertex(array, i);
-        if (pixel->position.x > 1920) {
-            pixel->position.x = rand() % 50;
-            pixel->position.y = rand() % 1080;
-        }
-        if (pixel->position.x < 0) {
-            pixel->position.x = rand() % 50 + 1870;
-            pixel->position.y = rand() % 1080;
-        }
-        if (pixel->position.y > 1080) {
-            pixel->position.x = rand() % 1920;
-            pixel->position.y = rand() % 50;
-        }
-        if (pixel->position.y < 0) {
-            pixel->position.x = rand() % 1920;
-            pixel->position.y = rand() % 50 + 1030;
-        } else {
+        if (pixel->position.x > 1920)
+            pixel->position = (sfVector2f){rand() % 50, rand() % 1080};
+        if (pixel->position.x < 0)
+            pixel->position = (sfVector2f){rand() % 50 + 1870, rand() % 1080};
+        if (pixel->position.y > 1080)
+            pixel->position = (sfVector2f){rand() % 1920, rand() % 50};
+        if (pixel->position.y < 0)
+            pixel->position = (sfVector2f){rand() % 1920, rand() % 50 + 1030};
+        else {
             int a = rand() % 2 == 0 ? -1 : 1;
-            pixel->position.x = a * 2;
-            pixel->position.y = a * 2;
+            pixel->position = (sfVector2f){a * 2, a * 2};
         }
     }
 }

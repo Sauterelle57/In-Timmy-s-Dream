@@ -16,6 +16,4 @@ void draw_game(game_t *g)
     draw_player(g);
     for (int i = 0; i < g->scene[0].nb_button; i++)
         Draw_Sprite(g->scene[0].button[i].body.sprite);
-    //for (int i = 2; i < g->scene[0].nb_elem; i++) //affichage box collisions
-        //Draw_Sprite(g->scene[0].elem[i].sprite);
 }
