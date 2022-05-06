@@ -13,7 +13,6 @@
 interest_t *init_ghost_interest(sfRenderWindow *window, int nb_interest)
 {
     interest_t *interest = malloc(sizeof(interest_t) * nb_interest);
-    //LinternOld
     interest[0] = create_interest(GHOST[(rand() % 3) * 3], (sfIntRect) //ghost
     {0, 0, 48, 70}, (sfVector2f){820, 300}, &nothing);
     interest[1] = create_interest(GHOST[(rand() % 3) * 3], (sfIntRect) //ghost couisine

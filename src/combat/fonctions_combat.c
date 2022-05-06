@@ -39,12 +39,12 @@ void anim_combat(game_t *g)
         g->player.body.rect.left += g->player.body.rect.left >= 144 ? -144 :
         48;
         Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
-        if (time == 600) {
+        if (g->player.time == 600) {
             life_hit(g);
             go_game(g, 0);
-            time = 0;
+            g->player.time = 0;
         } else {
-            time = time + 1;
+            g->player.time = g->player.time + 1;
         }
         tmp = g->t.sec;
     }
