@@ -47,6 +47,18 @@ void manage_pixels(game_t *g, sfVector2i pos)
         pos.y}, (sfColor){255, 255, 10, 255});
 }
 
+static void event_htp_2(game_t *g)
+{
+    if (Key_Pressed(sfKeyA) && g->t.sec - g->cooldown >= 0.15) {
+        g->player.speed = g->player.speed == SPEED ? SPEED + 5 : SPEED;
+        g->cooldown = g->t.sec;
+    }
+    if (!Key_Pressed(sfKeyUp) || !Key_Pressed(sfKeyDown) ||
+    !Key_Pressed(sfKeyRight) || !Key_Pressed(sfKeyLeft) || !Key_Pressed(sfKeyZ
+    ) || !Key_Pressed(sfKeyS) || !Key_Pressed(sfKeyD) || !Key_Pressed(sfKeyQ))
+        Set_Texture(g->scene[12].interest[1].body.sprite, NPC[16]);
+}
+
 void event_htp(game_t *g)
 {
     if (g->event.type == sfEvtClosed)
@@ -57,15 +69,12 @@ void event_htp(game_t *g)
     if (((Key_Pressed(sfKeySpace) || Key_Pressed(sfKeyE))) && g->t.sec -
     g->cooldown >= 0.15)
         tuto_interest(g);
-    if (Key_Pressed(sfKeyEnter) && g->t.sec - g->cooldown >= 0.15)
+    if (Key_Pressed(sfKeyEnter) && g->t.sec - g->cooldown >= 0.15) {
         g->scene[g->curent_scene].elem[13] = create_body("other/blank.png",
         (sfIntRect){0, 0, 200, 100}, (sfVector2f){1300, 300});
-    if (Key_Pressed(sfKeyA) && g->t.sec - g->cooldown >= 0.15) {
-        g->player.speed = g->player.speed == SPEED ? SPEED + 5 : SPEED;
-        g->cooldown = g->t.sec;
+        g->scene[g->curent_scene].elem[14] = create_body("other/blank.png",
+        (sfIntRect){0, 0, 1917, 1076}, (sfVector2f){550, 600});
+        Set_Scale(g->scene[g->curent_scene].elem[14].sprite, 0.5, 0.5);
     }
-    if (!Key_Pressed(sfKeyUp) || !Key_Pressed(sfKeyDown) ||
-    !Key_Pressed(sfKeyRight) || !Key_Pressed(sfKeyLeft) || !Key_Pressed(sfKeyZ
-    ) || !Key_Pressed(sfKeyS) || !Key_Pressed(sfKeyD) || !Key_Pressed(sfKeyQ))
-        Set_Texture(g->scene[12].interest[1].body.sprite, NPC[16]);
+    event_htp_2(g);
 }

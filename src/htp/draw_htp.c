@@ -18,4 +18,6 @@ void draw_htp(game_t *g)
     for (int i = 0; i < g->scene[g->curent_scene].nb_button; i++)
         Draw_Sprite(g->scene[g->curent_scene].button[i].body.sprite);
     sfRenderWindow_drawVertexArray(g->window, g->scene[12].array, 0);
+    Draw_Sprite(g->scene[g->curent_scene].elem[14].sprite);
+    Set_Scale(g->scene[g->curent_scene].elem[14].sprite, 0.5, 0.5);
 }

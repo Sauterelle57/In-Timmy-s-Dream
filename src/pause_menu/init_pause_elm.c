@@ -8,8 +8,7 @@
 #include "includes.h"
 #include "pause_menu.h"
 #include "settings.h"
-void go_settings(game_t *g, int i);
-void load_game(game_t *g, int i);
+#include "interest.h"
 
 button_t *init_pause_menu_button(sfRenderWindow *window, int nb)
 {
@@ -18,7 +17,7 @@ button_t *init_pause_menu_button(sfRenderWindow *window, int nb)
 
     buttons[0] = create_button(9, (sfVector2f){size.x * 0.40, size.y * 0.30},
     create_button_text(40, (sfVector2f){size.x * 0.40 + 120, size.y *
-    0.30 + 30}, "REPRENDRE"), &load_game);
+    0.30 + 30}, "REPRENDRE"), &go_back);
     buttons[1] = create_button(9, (sfVector2f){size.x * 0.40, size.y *
     0.50}, create_button_text(40, (sfVector2f){size.x * 0.40 + 140, size.y *
     0.50 + 30}, "OPTIONS"), &go_settings);

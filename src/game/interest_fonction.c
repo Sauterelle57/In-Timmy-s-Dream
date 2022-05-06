@@ -128,7 +128,6 @@ void go_cimetery(game_t *g, int i)
 
 void go_settings(game_t *g, int i)
 {
-    g->previous_scene = g->curent_scene;
     sfMusic_pause(g->scene[g->previous_scene].scene_music);
     if (g->scene[9].charged == 1)
         sfMusic_play(g->scene[9].scene_music);
@@ -140,7 +139,6 @@ void quit_settings(game_t *g, int i)
 {
     int scene_to_load = 1;
 
-    g->previous_scene = g->curent_scene;
     sfMusic_pause(g->scene[g->previous_scene].scene_music);
     if (g->scene[PAUSE].charged == 1)
         scene_to_load = PAUSE;
@@ -152,7 +150,6 @@ void quit_settings(game_t *g, int i)
 
 void go_menu_lose(game_t *g, int i)
 {
-    g->previous_scene = g->curent_scene;
     sfMusic_pause(g->scene[g->previous_scene].scene_music);
     if (g->scene[10].charged == 1)
         sfMusic_play(g->scene[10].scene_music);
@@ -162,7 +159,6 @@ void go_menu_lose(game_t *g, int i)
 
 void go_menu_win(game_t *g, int i)
 {
-    g->previous_scene = g->curent_scene;
     sfMusic_pause(g->scene[g->previous_scene].scene_music);
     if (g->scene[11].charged == 1)
         sfMusic_play(g->scene[11].scene_music);
@@ -172,7 +168,6 @@ void go_menu_win(game_t *g, int i)
 
 void go_htp(game_t *g, int i)
 {
-    g->previous_scene = g->curent_scene;
     sfMusic_pause(g->scene[g->previous_scene].scene_music);
     if (g->scene[12].charged == 1)
         sfMusic_play(g->scene[12].scene_music);
