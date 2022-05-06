@@ -13,7 +13,7 @@ void draw_black(game_t *g, body_t *elem)
 {
     Set_Pos(g->scene[2].elem[377].sprite, -1980 + g->player.body.pos.x,
     -1480 + g->player.body.pos.y);
-    if (g->player.inventory[4].own == 1)
+    if (g->player.inventory[4].own == 1 && g->player.inventory[5].own != 1)
         draw_torch(g);
     Draw_Sprite(g->scene[2].elem[377].sprite);
 }

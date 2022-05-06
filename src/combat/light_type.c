@@ -35,12 +35,12 @@ void draw_torch(game_t *g)
 
 void choose_light(body_t *elem, game_t *g)
 {
-    if (g->player.inventory[4].own == 1) {
+    if (g->player.inventory[4].own == 1 && g->player.inventory[5].own != 1) {
         elem[377] = create_body(CHOICE_LIGHTS[3],
         (sfIntRect){0, 0, 5032, 3774},
         (sfVector2f){-1700 - 0, -1300});
     }
-    if (g->player.inventory[5].own == 1 && g->player.inventory[4].own != 1) {
+    if (g->player.inventory[5].own == 1) {
         elem[377] = create_body(CHOICE_LIGHTS[0],
         (sfIntRect){0, 0, 5032, 3774},
         (sfVector2f){-1700 - 0, -1300});
