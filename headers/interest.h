@@ -20,7 +20,9 @@ void go_combat(game_t *g, int i);
 void go_vampire(game_t *g, int i);
 void go_settings(game_t *g, int i);
 void go_cimetery(game_t *g, int i);
+void go_menu_win(game_t *g, int i);
 void go_inventory(game_t *g, int i);
+void go_menu_lose(game_t *g, int i);
 void quit_settings(game_t *g, int i);
 void func_text(game_t *gt, int chose);
 

@@ -23,14 +23,13 @@ void reset_dialogue(game_t *gt)
     sfText_setCharacterSize(gt->dialogue.text, 25);
     sfText_setFillColor(gt->dialogue.text, sfBlack);
     sfText_setPosition(gt->dialogue.text, gt->dialogue.dialogue_pos);
+    gt->dialogue.speed = 0.05;
 }
 
 void check_dialogue(game_t *gt, int chose)
 {
-    if (chose == 0) {
+    if (chose == 0)
         gt->dialogue.chose = 0;
-        return;
-    }
     if (chose != 0) {
         gt->dialogue.chose = chose;
         func_text(gt, chose);
@@ -41,6 +40,8 @@ void check_dialogue(game_t *gt, int chose)
         gt->dialogue.chose = 0;
         return;
     }
+    if (chose != 0 && gt->dialogue.is_showing == 0 && (Key_Pressed(sfKeyEnter)))
+        gt->dialogue.speed = 0.01;
 }
 
 char* add_chr_to_str(char *str, char c)

@@ -8,7 +8,7 @@
 #ifndef INCLUDES_H_
     #define INCLUDES_H_
 
-    #define PAUSE 13
+    #define PAUSE 14
 
 // CSFML
     #include <SFML/Audio.h>
