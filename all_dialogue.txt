@@ -1,7 +1,8 @@
 
 Porte##La porte est fermee a clef.
 Sorciere##Ah ! Te voila enfin reveille... Enfin ''reveille'' c'est un bien grand mot gnehihi... #Pourquoi me regardes-tu comme ca ? Ne t'en fais pas ! #Le meilleur moyen pour sortir de ce genre de reve, c'est une bonne frousse ! #Prend ca et va voir le vampire plus loin sur ce chemin, il t'aidera surement !
-Sorciere##Oh ! j'ai failli oublier ! Heureusement que tu as eu la presence d'esprit de revenir! Si jamais tu etait poursuivi par quelque chose et coince dans un endroit sombre, cherche une porte ouverte le plus vite possible, ou il se pourrais que tu reste ici pour toujours...
+
+Sorciere##Oh ! j'ai failli oublier ! Heureusement que tu as eu la presence d'esprit de revenir! Si jamais tu etait poursuivi par quelque#chose et coince dans un endroit sombre, cherche une porte ouverte le plus vite possible,#ou il se pourrais que tu reste ici pour toujours...
 Gevorg##Prrrivet ! Arrrrghh ! Vas t'en petit homme, va donc rrretourrrner pleurrrer dans jupes sorrrcierrre avant venirrr me voirrr ! Arrrrghh ! Ou je vais boirrre ton sang et je vais te kasser genoux! Arrrrghh !
 Gevorg##AAAAHHHHH, Enfin ma cherrre et tendrrre grrrenadine, ma kolerrre et ma trrristesse s'evanouissent alorrrs que elixirrr pourrrprrre et sucrrre koule dans mon gosier.
 T. Inky##Qu'est ce qu'il ne faut pas ouïr, ici tu risque le pire, d'abord tu dois parler au vampire !
