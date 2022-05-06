@@ -7,6 +7,8 @@
 
 #include "includes.h"
 #include "game.h"
+#include "player.h"
+scene_t init_combat(game_t *g);
 
 void example(game_t *g, int i)
 {
@@ -18,10 +20,9 @@ void go_game(game_t *g, int i)
     g->previous_scene = g->curent_scene;
     sfMusic_pause(g->scene[g->previous_scene].scene_music);
     g->player.body.rect.top = 0;
-    g->player.body.pos.x = 940;
-    g->player.body.pos.y = 540;
-    Set_Pos(g->player.body.sprite, 940, 540);
     Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
+    g->player.body.pos = (sfVector2f){940, 540};
+    Set_Pos(g->player.body.sprite, 940, 540);
     if (g->scene[0].charged == 1)
         sfMusic_play(g->scene[0].scene_music);
     g->curent_scene = 0;
@@ -31,13 +32,14 @@ void go_combat(game_t *g, int i)
 {
     g->previous_scene = g->curent_scene;
     sfMusic_pause(g->scene[g->previous_scene].scene_music);
+    g->player.speed = SPEED;
     g->player.body.rect.top = 96;
-    g->player.body.pos.x = 260;
-    g->player.body.pos.y = 140;
-    Set_Pos(g->player.body.sprite, 260, 140);
     Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
+    g->player.body.pos = (sfVector2f){260, 140};
+    Set_Pos(g->player.body.sprite, 260, 140);
     if (g->scene[2].charged == 1)
         sfMusic_play(g->scene[2].scene_music);
+    g->scene[2] = init_combat(g);
     charge_scene(g, 2);
     g->curent_scene = 2;
 }
@@ -85,10 +87,9 @@ void go_inventory(game_t *g, int i)
     sfMusic_pause(g->scene[g->previous_scene].scene_music);
     g->player.body.rect.top = 0;
     Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
-    g->player.body.pos.x = 350;
-    g->player.body.pos.y = 350;
-    Set_Pos(g->player.body.sprite, 350, 350);
     Set_Scale(g->player.body.sprite, 6, 6);
+    g->player.body.pos = (sfVector2f){350, 350};
+    Set_Pos(g->player.body.sprite, 350, 350);
     if (g->scene[6].charged == 1)
         sfMusic_play(g->scene[6].scene_music);
     charge_scene(g, 6);
@@ -116,11 +117,10 @@ void go_back(game_t *g, int i)
     g->previous_scene = g->curent_scene;
     sfText_setPosition(g->player.name, (sfVector2f){200, 40});
     Set_Pos(g->player.pv_bar.sprite, 200, 110);
+    g->player.body.pos = (sfVector2f){940, 540};
+    Set_Pos(g->player.body.sprite, 940, 540);
     g->player.body.rect.top = 0;
     Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
-    g->player.body.pos.x = 960;
-    g->player.body.pos.y = 540;
-    Set_Pos(g->player.body.sprite, 960, 540);
     Set_Scale(g->player.body.sprite, 1, 1);
     g->curent_scene = tmp;
 }

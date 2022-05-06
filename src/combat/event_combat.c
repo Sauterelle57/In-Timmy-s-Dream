@@ -8,13 +8,12 @@
 #include "includes.h"
 #include "combat.h"
 
-void check_action_fight(game_t *g)
+static void check_action_fight(game_t *g)
 {
     sfFloatRect player = Get_bounds(g->player.body.sprite);
 
     for (int i = 0; i < g->scene[g->curent_scene].nb_interest; i++)
-        if (Rect_Intersect(g->scene[g->curent_scene].interest[i].body,
-        &player))
+        if (dist(g->player.body, g->scene[g->curent_scene].interest[i].body))
             g->scene[g->curent_scene].interest[i].on_click(g, i);
 }
 
@@ -22,7 +21,8 @@ void event_combat(game_t *g)
 {
     if (g->event.type == sfEvtClosed || Key_Pressed(sfKeyEscape))
         quit_game(g, 0);
-    if (Key_Pressed(sfKeySpace) && g->t.sec - g->cooldown > 0.5) {
+    if ((Key_Pressed(sfKeySpace) || Key_Pressed(sfKeyE)) &&
+    g->t.sec - g->cooldown > 0.5) {
         check_action_fight(g);
         g->cooldown = g->t.sec;
     }

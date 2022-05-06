@@ -24,17 +24,17 @@ button_t *init_menu_button(sfRenderWindow *window, int nb)
     button_t *buttons = malloc(sizeof(button_t) * nb);
 
     buttons[0] = create_button(9, (sfVector2f){size.x * 0.15, size.y * 0.50},
-    create_button_text(50, (sfVector2f){size.x * 0.15 + 100, size.y *
-    0.50 + 20}, "NEW GAME"), &load_game);
+    create_button_text(40, (sfVector2f){size.x * 0.15 + 100, size.y *
+    0.50 + 20}, "NOUVELLE PARTIE"), &load_game);
     buttons[1] = create_button(9, (sfVector2f){size.x * 0.15, size.y *
-    0.70}, create_button_text(50, (sfVector2f){size.x * 0.15 + 100, size.y *
-    0.70 + 20}, "CONTINUE"), &load_game);
+    0.70}, create_button_text(40, (sfVector2f){size.x * 0.15 + 100, size.y *
+    0.70 + 20}, "CONTINUER"), &load_game);
     buttons[2] = create_button(9, (sfVector2f){size.x * 0.60, size.y *
-    0.50}, create_button_text(50, (sfVector2f){size.x * 0.60 + 140, size.y *
-    0.50 + 20}, "OPTION"), &go_settings);
+    0.50}, create_button_text(40, (sfVector2f){size.x * 0.60 + 140, size.y *
+    0.50 + 20}, "OPTIONS"), &go_settings);
     buttons[3] = create_button(9, (sfVector2f){size.x * 0.60, size.y *
-    0.70}, create_button_text(50, (sfVector2f){size.x * 0.60 + 180, size.y *
-    0.70 + 20}, "QUIT"), &quit_game);
+    0.70}, create_button_text(40, (sfVector2f){size.x * 0.60 + 180, size.y *
+    0.70 + 20}, "QUITTER"), &quit_game);
     return (buttons);
 }
 

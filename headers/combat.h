@@ -35,6 +35,7 @@ void draw_combat(game_t *g, body_t *elem);
 void draw_black(game_t *g, body_t *elem);
 void choose_light(body_t *elem, game_t *g);
 void draw_torch(game_t *g);
+int dist(body_t player, body_t obs);
 void life_hit(game_t *g);
 void anim_combat(game_t *g);
 void anim_enemy(game_t *g);

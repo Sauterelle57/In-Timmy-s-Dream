@@ -26,20 +26,20 @@ button_t *init_settings_button(sfRenderWindow *window, int nb)
 
     buttons[0] = create_button(9, (sfVector2f){size.x * 0.15, size.y * 0.50},
     create_button_text(50, (sfVector2f){size.x * 0.15 + 130, size.y *
-    0.50 + 20}, "FPS: 60"), &manage_framerate);
+    0.50 + 20}, "FPS : 60"), &manage_framerate);
     buttons[1] = create_button(9, (sfVector2f){size.x * 0.60, size.y *
-    0.50}, create_button_text(50, (sfVector2f){size.x * 0.60 + 50, size.y *
-    0.50 + 20}, "Difficulté: 1"), &manage_difficulty);
+    0.50}, create_button_text(40, (sfVector2f){size.x * 0.60 + 50, size.y *
+    0.50 + 20}, "Difficulte : 1"), &manage_difficulty);
     buttons[2] = create_button(9, (sfVector2f){size.x * 0.60, size.y *
-    0.70}, create_button_text(50, (sfVector2f){size.x * 0.60 + 100, size.y *
+    0.70}, create_button_text(40, (sfVector2f){size.x * 0.60 + 100, size.y *
     0.70 + 20}, "MENU PRINCIPAL"), &go_menu);
     buttons[3] = create_square_button(12, (sfVector2f){size.x * 0.05, size.y *
-    0.8}, create_button_text(50, (sfVector2f){size.x * 0.60 + 180, size.y *
+    0.8}, create_button_text(40, (sfVector2f){size.x * 0.60 + 180, size.y *
     0.70 + 20}, " "), &manage_volume);
     buttons[4] = create_square_button(15, (sfVector2f){size.x * 0.45, size.y *
-    0.8}, create_button_text(50, (sfVector2f){100, 100}, ""), &manage_volume);
+    0.8}, create_button_text(40, (sfVector2f){100, 100}, ""), &manage_volume);
     buttons[5] = create_button(9, (sfVector2f){size.x * 0.60, size.y *
-    0.30}, create_button_text(50, (sfVector2f){size.x * 0.60 + 60, size.y *
+    0.30}, create_button_text(40, (sfVector2f){size.x * 0.60 + 60, size.y *
     0.30 + 20}, "COMMENT JOUER ?"), &go_htp);
     return (buttons);
 }
