@@ -14,7 +14,7 @@ scene_t init_ghost(game_t *g)
     button_t *buttons = init_ghost_button(g->window, nb_button);
     int nb_elem = 26;
     body_t *elem = init_ghost_elem(g->window, nb_elem);
-    int nb_interest = 4;
+    int nb_interest = 5;
     interest_t *interest = init_ghost_interest(g->window, nb_interest);
     sfMusic *scene_music = sfMusic_createFromFile("music/Stargazer.ogg");
     scene_t ghost = {0, buttons, nb_button, elem, nb_elem, interest,
