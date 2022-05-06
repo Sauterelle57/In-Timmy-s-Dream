@@ -88,6 +88,13 @@ SRC	=	src/main.c	\
         src/menu_win/init_button_win.c    \
         src/menu_win/init_elem_menu_win.c    \
 \
+		src/timmy_room/anim_timmy_room.c	\
+        src/timmy_room/init_timmy_room.c	\
+        src/timmy_room/draw_timmy_room.c	\
+        src/timmy_room/event_timmy_room.c	\
+        src/timmy_room/init_elem_timmy_room.c	\
+        src/timmy_room/init_button_timmy_room.c	\
+\
 		src/settings/fonctions_settings.c	\
 		src/settings/init_settings_elm.c	\
 		src/settings/settings.c				\
