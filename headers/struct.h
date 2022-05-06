@@ -13,9 +13,6 @@
     #include <SFML/System.h>
     #include <SFML/Graphics.h>
     #include <SFML/Window/Export.h>
-    #define DIFF 0
-    #define FRAM 1
-    #define VOLU 2
 
 typedef struct particule_s {
     sfVertexArray *pixels;

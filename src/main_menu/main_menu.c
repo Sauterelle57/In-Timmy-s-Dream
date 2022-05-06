@@ -7,7 +7,6 @@
 
 #include "includes.h"
 #include "main_menu.h"
-void add_pixel(sfVertexArray *pixels, sfVector2f pos, sfColor color);
 
 scene_t init_menu(game_t *g)
 {
@@ -27,5 +26,7 @@ scene_t init_menu(game_t *g)
     menu.draw = &draw_menu;
     menu.event = &event_menu;
     menu.anim = &anim_menu;
+    sfMusic_setLoop(menu.scene_music, sfTrue);
+    sfMusic_setVolume(menu.scene_music, g->params[VOL]);
     return (menu);
 }

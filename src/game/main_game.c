@@ -24,6 +24,6 @@ scene_t init_game(game_t *g)
     game.event = &event_game;
     game.anim = &anim_game;
     sfMusic_setLoop(game.scene_music, sfTrue);
-    sfMusic_setVolume(game.scene_music, 100);
+    sfMusic_setVolume(game.scene_music, g->params[VOL]);
     return (game);
 }

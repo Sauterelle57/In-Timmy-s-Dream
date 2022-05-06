@@ -29,6 +29,6 @@ scene_t init_forest(game_t *g)
     forest.event = &event_forest;
     forest.anim = &anim_forest;
     sfMusic_setLoop(forest.scene_music, sfTrue);
-    sfMusic_setVolume(forest.scene_music, 100);
+    sfMusic_setVolume(forest.scene_music, g->params[VOL]);
     return (forest);
 }

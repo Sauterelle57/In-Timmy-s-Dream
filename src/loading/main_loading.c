@@ -24,6 +24,7 @@ scene_t init_loading(game_t *g)
     loading.event = &event_loading;
     loading.anim = &anim_loading;
     sfMusic_setLoop(loading.scene_music, sfTrue);
-    sfMusic_setVolume(loading.scene_music, 100);
+    sfMusic_setVolume(loading.scene_music, 0);
+    sfMusic_setVolume(loading.scene_music, 0);
     return (loading);
 }

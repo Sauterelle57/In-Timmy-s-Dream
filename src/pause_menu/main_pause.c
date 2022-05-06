@@ -36,5 +36,7 @@ scene_t init_pause_menu(game_t *g)
     pause_menu.draw = &draw_pause_menu;
     pause_menu.event = &event_pause_menu;
     pause_menu.anim = &anim_pause_menu;
+    sfMusic_setLoop(pause_menu.scene_music, sfTrue);
+    sfMusic_setVolume(pause_menu.scene_music, g->params[VOL]);
     return (pause_menu);
 }

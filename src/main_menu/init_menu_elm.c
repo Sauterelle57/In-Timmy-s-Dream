@@ -9,14 +9,7 @@
 #include "main_menu.h"
 #include "settings.h"
 void go_settings(game_t *g, int i);
-
-void load_game(game_t *g, int i)
-{
-    if (i == 1)
-        g->save_file = "save.txt";
-    charge_scene(g, 0);
-    g->curent_scene = 0;
-}
+void load_game(game_t *g, int i);
 
 button_t *init_menu_button(sfRenderWindow *window, int nb)
 {
@@ -36,11 +29,6 @@ button_t *init_menu_button(sfRenderWindow *window, int nb)
     0.70}, create_button_text(40, (sfVector2f){size.x * 0.60 + 150, size.y *
     0.70 + 30}, "QUITTER"), &quit_game);
     return (buttons);
-}
-
-static void action(game_t *g, int i)
-{
-    my_printf("Go for combat/dialogue/entry !!\n");
 }
 
 interest_t *init_menu_interest(sfRenderWindow *window, int nb)

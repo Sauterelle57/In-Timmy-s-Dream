@@ -8,18 +8,7 @@
 #include "includes.h"
 #include "main_menu.h"
 #include "settings.h"
-void go_back(game_t *g, int i);
-void quit_settings(game_t *g, int i);
-
-void go_htp(game_t *g, int i)
-{
-    g->previous_scene = g->curent_scene;
-    sfMusic_pause(g->scene[g->previous_scene].scene_music);
-    if (g->scene[12].charged == 1)
-        sfMusic_play(g->scene[12].scene_music);
-    charge_scene(g, 12);
-    g->curent_scene = 12;
-}
+#include "interest.h"
 
 button_t *init_settings_button(sfRenderWindow *window, int nb)
 {

@@ -34,6 +34,9 @@
     #include <unistd.h>
 
     #define NB_PIXELS 16
+    #define DIFF 0
+    #define FPS 1
+    #define VOL 2
 
 void pause_game(game_t *g);
 void anim_pixels(game_t *g);
