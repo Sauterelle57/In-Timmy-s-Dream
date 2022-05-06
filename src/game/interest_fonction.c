@@ -124,3 +124,35 @@ void go_back(game_t *g, int i)
     Set_Scale(g->player.body.sprite, 1, 1);
     g->curent_scene = tmp;
 }
+
+void go_menu(game_t *g, int i)
+{
+    g->previous_scene = g->curent_scene;
+    sfMusic_pause(g->scene[g->previous_scene].scene_music);
+    if (g->scene[1].charged == 1)
+        sfMusic_play(g->scene[1].scene_music);
+    charge_scene(g, 1);
+    g->curent_scene = 1;
+}
+
+void go_pause(game_t *g, int i)
+{
+    g->previous_scene = g->curent_scene;
+    sfMusic_pause(g->scene[g->previous_scene].scene_music);
+    if (g->scene[PAUSE].charged == 1)
+        sfMusic_play(g->scene[PAUSE].scene_music);
+    charge_scene(g, PAUSE);
+    g->curent_scene = PAUSE;
+}
+
+void quit_settings(game_t *g, int i)
+{
+    int scene_to_load = 1;
+
+    if (g->scene[PAUSE].charged == 1)
+        scene_to_load = PAUSE;
+    if (g->scene[scene_to_load].charged == 1)
+        sfMusic_play(g->scene[scene_to_load].scene_music);
+    charge_scene(g, scene_to_load);
+    g->curent_scene = scene_to_load;
+}

@@ -36,5 +36,5 @@ void manage_difficulty(game_t *g, int nb)
 {
     g->params[DIFF] = g->params[DIFF] == 3 ? 1 : g->params[DIFF] + 1;
     sfText_setString(g->scene[g->curent_scene].button[1].text,
-    my_strcat("Difficulté: ", my_int_to_str(g->params[DIFF])));
+    my_strcat("Difficulte : ", my_int_to_str(g->params[DIFF])));
 }

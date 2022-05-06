@@ -120,7 +120,7 @@ typedef struct game_s {
     int pause;
     float cooldown;
     char *save_file;
-    scene_t scene[13];
+    scene_t scene[14];
     int previous_scene;
     int curent_scene;
 } game_t;

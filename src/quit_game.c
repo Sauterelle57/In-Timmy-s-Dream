@@ -30,7 +30,7 @@ void quit_game(game_t *g, int i)
     save_file(g);
     sfMusic_destroy(g->m.back);
     sfRenderWindow_close(g->window);
-    for (int i = 0; i < 13; i++)
+    for (int i = 0; i < 14; i++)
         if (g->scene[i].charged == 1)
             sfMusic_destroy(g->scene[i].scene_music);
 }

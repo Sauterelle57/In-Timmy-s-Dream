@@ -8,6 +8,8 @@
 #ifndef INCLUDES_H_
     #define INCLUDES_H_
 
+    #define PAUSE 13
+
 // CSFML
     #include <SFML/Audio.h>
     #include <SFML/Config.h>

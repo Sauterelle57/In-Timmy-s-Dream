@@ -150,6 +150,10 @@ SRC	=	src/main.c	\
 		src/htp/tuto_movements.c	\
 		src/htp/init_button_htp.c	\
 		src/htp/init_interest_htp.c	\
+\
+		src/pause_menu/main_pause.c	\
+		src/pause_menu/init_pause_elm.c	\
+		src/pause_menu/fonctions_pause.c
 
 OBJ =	$(SRC:.c=.o)
 
