@@ -31,11 +31,11 @@ sfText *create_text(int size, sfVector2f pos, char *string, char *font)
 
 dialogue_t create_dialogue(void)
 {
-    sfVector2f dialogue_pos = (sfVector2f){100, 850};
+    sfVector2f dialogue_pos = (sfVector2f){100, 774};
     sfFont *font = sfFont_createFromFile("other/Blokletters-Balpen.ttf");
     sfText *text = sfText_create();
     body_t box = create_body("other/bubble.png", (sfIntRect){0, 0, 1920, 250},
-    (sfVector2f){0, 800});
+    (sfVector2f){0, 760});
     char** tab_text = my_str_to_word_array(open_text(), '\n');
 
     Set_Scale(box.sprite, 1, 1);
