@@ -12,7 +12,6 @@
 void life_hit(game_t *g)
 {
     g->player.pv--;
-    printf("Life : %d\n", g->player.pv);
     g->player.pv_bar.rect.left = g->player.pv_bar.rect.left + 25;
     Set_Texture_Rect(g->player.pv_bar.sprite, g->player.pv_bar.rect);
 }

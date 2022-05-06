@@ -71,7 +71,6 @@ interest_t *spawn_enemy(int nb_interest, body_t *elem, interest_t *interest)
         int k = (rand() % 167) + 2;
         int a = rand() % 5;
         int again = search_for_number(tab, k);
-        printf("N : %d & %d and %d\n", k, a, again);
         tab[i - 3] = k;
         if (again == 0) {
             interest[i] = create_interest(CHOICE[a], (sfIntRect)
