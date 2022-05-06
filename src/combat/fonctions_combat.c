@@ -13,26 +13,10 @@ void draw_black(game_t *g, body_t *elem)
     Set_Pos(g->scene[2].elem[377].sprite, -1980 + g->player.body.pos.x,
     -1480 + g->player.body.pos.y);
 
-    if (g->player.body.rect.top == 96) {
-        sfSprite_setOrigin(g->scene[2].elem[377].sprite,
-        (sfVector2f){1000, 3900});
-        sfSprite_setRotation(g->scene[2].elem[377].sprite, 90.0);
+    if (g->player.inventory[4].own == 1) {
+        draw_torch(g);
     }
-    if (g->player.body.rect.top == 48) {
-        sfSprite_setOrigin(g->scene[2].elem[377].sprite,
-        (sfVector2f){4010, -100});
-        sfSprite_setRotation(g->scene[2].elem[377].sprite, -90.0);
-    }
-    if (g->player.body.rect.top == 144) {
-        sfSprite_setOrigin(g->scene[2].elem[377].sprite,
-        (sfVector2f){500, 390});
-        sfSprite_setRotation(g->scene[2].elem[377].sprite, 0.0);
-    }
-    if (g->player.body.rect.top == 0) {
-        sfSprite_setOrigin(g->scene[2].elem[377].sprite,
-        (sfVector2f){4510, 3400});
-        sfSprite_setRotation(g->scene[2].elem[377].sprite, 180.0);
-    }
+
     Draw_Sprite(g->scene[2].elem[377].sprite);
 }
 
@@ -53,10 +37,17 @@ void anim_combat(game_t *g)
     static float tmp = 0.0;
 
     g->t.sec = Get_Time(g->t.clock);
-    if (g->t.sec - tmp > 0.11) {
+    if (g->t.sec - tmp > 0.1) {
         g->player.body.rect.left += g->player.body.rect.left >= 144 ? -144 :
         48;
         Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
+        if (time == 600) {
+            life_hit(g);
+            go_game(g, 0);
+            time = 0;
+        } else {
+            time = time + 1;
+        }
         tmp = g->t.sec;
     }
     anim_enemy(g);

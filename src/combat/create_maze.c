@@ -45,9 +45,19 @@ static body_t *create_maze_wall(body_t *elem, char *buffer, int k)
 
 int create_view(body_t *elem, int k, game_t *g)
 {
-    elem[377] = create_body(CHOICE_LIGHTS[3],
-    (sfIntRect){0, 0, 5032, 3774},
-    (sfVector2f){-1700 - 0, -1300});
+    choose_light(elem, g);
+    if (g->player.inventory[3].own == 1 && g->player.inventory[4].own != 1
+    && g->player.inventory[5].own != 1) {
+        elem[377] = create_body(CHOICE_LIGHTS[1],
+        (sfIntRect){0, 0, 5032, 3774},
+        (sfVector2f){-1700 - 0, -1300});
+    }
+    if (g->player.inventory[3].own != 1 && g->player.inventory[4].own != 1
+    && g->player.inventory[5].own != 1) {
+        elem[377] = create_body(CHOICE_LIGHTS[2],
+        (sfIntRect){0, 0, 5032, 3774},
+        (sfVector2f){-1700 - 0, -1300});
+    }
     return (k);
 }
 

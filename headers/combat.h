@@ -8,13 +8,20 @@
 #ifndef COMBAT_H_
     #define COMBAT_H_
 
-    static int nb_inter = 10;
+    static int nb_inter = 80;
+    static int time = 0;
 
-     static char *CHOICE[4] = {
+     static char *CHOICE[10] = {
         "enemies/Clown_idle.png",
         "enemies/Witch_idle.png",
         "enemies/Vampire 01_idle.png",
-        "enemies/Zombie 01_idle.png"
+        "enemies/Zombie 01_idle.png",
+        "enemies/Ghost 01_idle.png",
+        "enemies/Clown_die.png",
+        "enemies/Witch_die.png",
+        "enemies/Vampire 01_die.png",
+        "enemies/Zombie 01_die.png",
+        "enemies/Ghost 01_die.png"
     };
 
     static char *CHOICE_LIGHTS[4] = {
@@ -26,6 +33,9 @@
 
 void draw_combat(game_t *g, body_t *elem);
 void draw_black(game_t *g, body_t *elem);
+void choose_light(body_t *elem, game_t *g);
+void draw_torch(game_t *g);
+void life_hit(game_t *g);
 void anim_combat(game_t *g);
 void anim_enemy(game_t *g);
 void event_combat(game_t *g);
