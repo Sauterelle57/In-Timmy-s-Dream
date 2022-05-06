@@ -7,8 +7,6 @@
 
 #include "includes.h"
 #include "main_menu.h"
-void anim_pixels(game_t *g);
-void manage_pixels(game_t *g, sfVector2i pos);
 
 void draw_settings(game_t *g)
 {

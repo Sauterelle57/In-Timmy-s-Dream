@@ -8,7 +8,7 @@
 #include "forest.h"
 #include "includes.h"
 
-char* open_text()
+char* open_text(void)
 {
     char *buffer;
     int fd = open("all_dialogue.txt", O_RDONLY);

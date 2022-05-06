@@ -16,13 +16,8 @@ static void fonction(game_t *g, int i)
 
 button_t *init_combat_button(sfRenderWindow *window)
 {
-    sfVector2u size = sfRenderWindow_getSize(window);
     button_t *buttons = malloc(sizeof(button_t) * 0);
 
-    //buttons[0] = create_button(0, (sfVector2f){size.x * 0.21, size.y * 0.42},
-    //create_text(50, (sfVector2f){100, 100}, "BUTTON"), fonction);
-    //buttons[1] = create_square_button(0, (sfVector2f){size.x * 0.84, size.y *
-    //0.66}, create_text(50, (sfVector2f){200, 200}, "BUTTON"), fonction);
     return (buttons);
 }
 
@@ -48,7 +43,7 @@ interest_t *spawn_enemy(int nb_interest, body_t *elem, interest_t *interest)
     for (int i = 3; i < nb_interest; i++) {
         int k = (rand() % 167) + 2;
         int a = rand() % 4;
-        printf("N : %d & %d\n", k, a);
+        my_printf("N : %d & %d\n", k, a);
         interest[i] = create_interest(CHOICE[a], (sfIntRect)
         {0, 0, 48, 70}, (sfVector2f){elem[k].pos.x + 8,
         elem[k].pos.y - 20}, &example);

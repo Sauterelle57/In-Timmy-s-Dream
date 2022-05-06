@@ -60,7 +60,8 @@ char* add_chr_to_str(char *str, char c)
 
 char* pass_dialogue(char** temp, game_t *gt, int chose)
 {
-    (*temp) = malloc(sizeof(char) * (my_strlen(gt->dialogue.tab_text[chose]) + 1));
+    (*temp) = malloc(sizeof(char) * (my_strlen(gt->dialogue.tab_text[chose]) +
+    1));
     for (int i = 0; i < my_strlen(gt->dialogue.tab_text[chose]); ++i)
         (*temp)[i] = '\0';
     (*temp)[my_strlen(gt->dialogue.tab_text[chose])] = '\0';
@@ -75,14 +76,15 @@ void func_text(game_t *gt, int chose)
     if (gt->dialogue.is_passed == 0)
         pass_dialogue(&gt->dialogue.temp, gt, chose);
     gt->t.sec = Get_Time(gt->t.clock);
-    while (gt->t.sec-time > gt->dialogue.speed && gt->dialogue.is_showing == 0) {
-       gt->dialogue.temp = add_chr_to_str(gt->dialogue.temp,
+    while (gt->t.sec-time > gt->dialogue.speed &&
+    gt->dialogue.is_showing == 0) {
+        gt->dialogue.temp = add_chr_to_str(gt->dialogue.temp,
         gt->dialogue.tab_text[chose][gt->dialogue.check]);
         gt->dialogue.check++;
         time = gt->t.sec;
-        if (my_strlen(gt->dialogue.temp) == my_strlen(gt->dialogue.tab_text[chose])) {
+        if (my_strlen(gt->dialogue.temp) ==
+        my_strlen(gt->dialogue.tab_text[chose]))
             gt->dialogue.is_showing = 1;
-        }
     }
     sfText_setString(gt->dialogue.text, gt->dialogue.temp);
     sfRenderWindow_drawSprite(gt ->window, gt->dialogue.box.sprite, 0);

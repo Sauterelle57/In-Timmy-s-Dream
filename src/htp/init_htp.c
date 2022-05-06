@@ -30,4 +30,3 @@ scene_t init_htp(game_t *g)
     sfMusic_setVolume(htp.scene_music, g->params[VOLU]);
     return (htp);
 }
-

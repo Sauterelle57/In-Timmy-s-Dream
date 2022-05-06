@@ -28,9 +28,8 @@ void print_map(maze_t *maze)
     int index = 0;
 
     for (int i = 0; i < maze->height; i++) {
-        for (int j = 0; j < maze->width; j++) {
+        for (int j = 0; j < maze->width; j++)
             all_map[index++] = maze->map[i][j];
-        }
         all_map[index++] = '\n';
     }
     all_map[index - 1] = '\0';
