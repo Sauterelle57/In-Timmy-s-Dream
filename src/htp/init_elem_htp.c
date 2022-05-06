@@ -46,7 +46,7 @@ body_t *init_htp_elem(sfRenderWindow *window, int nb_elem)
     elem[13] = create_body("other/blank.png", (sfIntRect){0, 0, 200, 100},
     (sfVector2f){1300, 300});
     elem[14] = create_body("other/blank.png", (sfIntRect){0, 0, 1917, 1076},
-    (sfVector2f){0, 0});
-    Set_Scale(elem[14].sprite, 0.5, 0.5);
+    (sfVector2f){650, 400});
+    Set_Scale(elem[14].sprite, 0.4, 0.4);
     return (elem);
 }
