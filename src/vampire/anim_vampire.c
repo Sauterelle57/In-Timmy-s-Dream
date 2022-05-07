@@ -34,14 +34,14 @@ void anim_vampire(game_t *g)
         tmp = g->t.sec;
     }
     if (g->t.sec - tmp2 >= delay_player) {
-        g->player.body.rect.left += g->player.body.rect.left >= 144 ? -144 :
-        48;
+        g->player.body.rect.left += g->player.body.rect.left >= 144 ? -144 : 48;
         Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
         tmp2 = g->t.sec;
     }
     if (g->player.lvl == 3) {
         g->scene[3].interest[0].line = 5;
         g->scene[3].interest[0].on_click = &check_dialogue;
+        g->player.inventory[0].own = 0;
     } else if (g->player.lvl == 2)
         g->scene[3].interest[0].on_click = &go_combat;
 }
