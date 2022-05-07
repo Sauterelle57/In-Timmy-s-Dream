@@ -20,14 +20,14 @@ void manage_volume(game_t *g, int i)
 {
     if (i == 4 && g->params[VOL] < 99) {
         g->params[VOL] += 11;
-        g->scene[g->curent_scene].elem[8].rect.left += 160;
+        g->scene[g->curent_scene].elem[8].rect.left += 174;
         sfSprite_setTextureRect(g->scene[g->curent_scene].elem[8].sprite, g->
         scene[g->curent_scene].elem[8].rect);
         set_volume(g);
     }
     if (i == 3 && g->params[VOL] > 0) {
         g->params[VOL] -= 11;
-        g->scene[g->curent_scene].elem[8].rect.left -= 160;
+        g->scene[g->curent_scene].elem[8].rect.left -= 174;
         sfSprite_setTextureRect(g->scene[g->curent_scene].elem[8].sprite, g->
         scene[g->curent_scene].elem[8].rect);
         set_volume(g);

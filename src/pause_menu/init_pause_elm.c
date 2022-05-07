@@ -34,7 +34,7 @@ interest_t *init_pause_menu_interest(sfRenderWindow *window, int nb)
     return (interest);
 }
 
-body_t *init_pause_menu_elem_2(body_t *elem, int nb)
+body_t *init_pause_menu_elem_2(body_t *elem, int nb, sfVector2u size)
 {
     elem[4] = create_body("parallax/cloud5.png", (sfIntRect){0, 0, 1920, 1080},
     (sfVector2f){0, 0});
@@ -68,6 +68,6 @@ body_t *init_pause_menu_elem(sfRenderWindow *window, int nb)
     (sfVector2f){0, 0});
     elem[3] = create_body("parallax/cloud4.png", (sfIntRect){0, 0, 1920, 1080},
     (sfVector2f){0, 0});
-    elem = init_pause_menu_elem_2(elem, nb);
+    elem = init_pause_menu_elem_2(elem, nb, size);
     return (elem);
 }
