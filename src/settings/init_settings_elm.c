@@ -26,7 +26,7 @@ button_t *init_settings_button(sfRenderWindow *window, int nb)
     0.80 + 30}, "Retour"), &quit_settings);
     buttons[3] = create_square_button(12, (sfVector2f){size.x * 0.10, size.y *
     0.45}, create_button_text(40, (sfVector2f){0, 0}, ""), &manage_volume);
-    buttons[4] = create_square_button(15, (sfVector2f){size.x * 0.41, size.y *
+    buttons[4] = create_square_button(15, (sfVector2f){size.x * 0.40, size.y *
     0.45}, create_button_text(40, (sfVector2f){0, 0}, ""), &manage_volume);
     buttons[5] = create_button(9, (sfVector2f){size.x * 0.60, size.y *
     0.40}, create_button_text(40, (sfVector2f){size.x * 0.60 + 30, size.y *
@@ -49,8 +49,8 @@ body_t *init_settings_elem2(sfVector2u size, body_t *elem, int nb)
     (sfVector2f){0, 0});
     elem[7] = create_body("parallax/cloud8.png", (sfIntRect){0, 0, 1920, 1080},
     (sfVector2f){0, 0});
-    elem[8] = create_body("other/sound.png", (sfIntRect){800, 0, 160, 18},
-    (sfVector2f){size.x * 0.15, size.y * 0.45});
+    elem[8] = create_body("other/sound.png", (sfIntRect){870, 0, 174, 20},
+    (sfVector2f){size.x * 0.13, size.y * 0.45});
     elem[9] = create_body("text/params.png", (sfIntRect){0, 0, 400, 112},
     (sfVector2f){size.x * 0.250, size.y * 0.02});
     elem[10] = create_body("text/son.png", (sfIntRect){0, 0, 90, 43},
