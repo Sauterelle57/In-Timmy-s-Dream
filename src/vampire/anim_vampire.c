@@ -20,11 +20,6 @@ static void anim_interest(game_t *g)
         Set_Texture_Rect(g->scene[3].interest[i].body.sprite,
         g->scene[3].interest[i].body.rect);
     }
-    if (g->player.lvl == 3) {
-        g->scene[3].interest[0].line = 6;
-        g->scene[3].interest[0].on_click = &check_dialogue;
-    } else if (g->player.lvl == 2)
-        g->scene[3].interest[0].on_click = &go_combat;
 }
 
 void anim_vampire(game_t *g)
@@ -44,4 +39,10 @@ void anim_vampire(game_t *g)
         Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
         tmp2 = g->t.sec;
     }
+    printf("%d\n", g->player.lvl);
+    if (g->player.lvl == 3) {
+        g->scene[3].interest[0].line = 5;
+        g->scene[3].interest[0].on_click = &check_dialogue;
+    } else if (g->player.lvl == 2)
+        g->scene[3].interest[0].on_click = &go_combat;
 }

@@ -15,9 +15,9 @@ interest_t *init_ghost_interest(sfRenderWindow *window, int nb_interest)
     interest_t *interest = malloc(sizeof(interest_t) * nb_interest);
     interest[0] = create_interest(GHOST[(rand() % 3) * 3], (sfIntRect) //ghost
     {0, 0, 48, 70}, (sfVector2f){820, 300}, &go_combat);
-    interest[0].line = 7;
     interest[1] = create_interest(GHOST[(rand() % 3) * 3], (sfIntRect) //ghost couisine
     {0, 0, 48, 70}, (sfVector2f){1120, -100}, &check_dialogue);
+    interest[1].line = 6;
     interest[2] = create_interest(GHOST[(rand() % 3) * 3], (sfIntRect) //ghost chambre
     {0, 0, 48, 70}, (sfVector2f){420, -500}, &go_combat);
     interest[3] = create_interest("other/blank.png", (sfIntRect){0, 0, 120, //entrée / sortie

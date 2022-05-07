@@ -44,10 +44,10 @@ static void check_button(game_t *g, sfVector2i pos, sfVector2u size)
 void event_vampire(game_t *g)
 {
     g->t.sec = Get_Time(g->t.clock);
-    if (g->event.type == sfEvtClosed || Key_Pressed(sfKeyEscape))
+    if (g->event.type == sfEvtClosed)
         quit_game(g, 0);
     if ((Key_Pressed(sfKeySpace) || Key_Pressed(sfKeyE)) && g->t.sec -
-    g->cooldown > 0.5) {
+    g->cooldown > 0.3) {
         check_action(g);
         g->cooldown = g->t.sec;
     }

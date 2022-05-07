@@ -15,7 +15,7 @@ interest_t *init_vampire_interest(sfRenderWindow *window, int nb_interest)
 
     interest[0] = create_interest(VAMPIRE[0], (sfIntRect) //vampire
     {0, 0, 48, 70}, (sfVector2f){820, 120}, &check_dialogue);
-    interest[0].line = 5;
+    interest[0].line = 4;
     interest[1] = create_interest(BAT[(rand() % 3) * 3], (sfIntRect){0, 0, 48, //chauve souris
     48}, (sfVector2f){770, -300}, &go_combat);
     interest[2] = create_interest(BAT[(rand() % 3) * 3], (sfIntRect){0, 0, 48, //chauve souris

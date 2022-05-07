@@ -9,6 +9,7 @@
     #define INTEREST_H_
 
 void go_htp(game_t *g, int i);
+void go_room(game_t *g, int i);
 void nothing(game_t *g, int i);
 void go_game(game_t *g, int i);
 void go_back(game_t *g, int i);
