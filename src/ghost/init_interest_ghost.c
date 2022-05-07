@@ -23,6 +23,7 @@ interest_t *init_ghost_interest(sfRenderWindow *window, int nb_interest)
     (sfVector2f){900, 560}, &go_game);
     interest[4] = create_interest("object/LinternOld.png", (sfIntRect){0, 0, 120, 40}, //entrée / sortie
     (sfVector2f){900, -170}, &catch_linternOld);
+    Set_Scale(interest[1].body.sprite, 2, 2);
     Set_Scale(interest[4].body.sprite, 2.5, 2.5);
     return (interest);
 }
