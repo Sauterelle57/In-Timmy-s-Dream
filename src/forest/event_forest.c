@@ -17,7 +17,7 @@ static void check_action(game_t *g)
     for (int i = 0; i < g->scene[5].nb_interest; i++)
         if (Rect_Intersect(g->scene[5].interest[i].body, &player)) {
             g->warning = i == 1 && g->player.lvl == 4 ? 1 : 0;
-            g->scene[5].interest[i].on_click(g, g->scene[5].interest->line);
+            g->scene[5].interest[i].on_click(g, g->scene[5].interest[i].line);
         }
 }
 
