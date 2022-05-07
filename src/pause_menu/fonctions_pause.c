@@ -17,7 +17,8 @@ void draw_pause_menu(game_t *g)
         Draw_Sprite(g->scene[PAUSE].interest[i].body.sprite);
     for (int i = 0; i < g->scene[PAUSE].nb_button; i++) {
         Draw_Sprite(g->scene[PAUSE].button[i].body.sprite);
-        sfRenderWindow_drawText(g->window, g->scene[PAUSE].button[i].text, NULL);
+        sfRenderWindow_drawText(g->window, g->scene[PAUSE].button[i].text,
+        NULL);
     }
     sfRenderWindow_drawVertexArray(g->window, g->scene[PAUSE].array, 0);
 }
@@ -41,7 +42,8 @@ static void check_button(game_t *g, sfVector2i pos, sfVector2u size)
         size.x), pos.y * (1080.0 / size.y))) {
             Set_Texture(button.body.sprite, BUTTON[button.png + 1]);
         } else
-            Set_Texture(g->scene[PAUSE].button[i].body.sprite, BUTTON[button.png]);
+            Set_Texture(g->scene[PAUSE].button[i].body.sprite,
+            BUTTON[button.png]);
     }
 }
 

@@ -6,7 +6,7 @@
 */
 
 #ifndef MENU_LOSE_H_
-#define MENU_LOSE_H_
+    #define MENU_LOSE_H_
 
 void anim_menu_lose(game_t *g);
 void draw_menu_lose(game_t *g);

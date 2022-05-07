@@ -38,19 +38,8 @@ interest_t *init_menu_interest(sfRenderWindow *window, int nb)
     return (interest);
 }
 
-body_t *init_menu_elem(sfRenderWindow *window, int nb)
+body_t *init_menu_elem_2(body_t *elem, int nb)
 {
-    sfVector2u size = sfRenderWindow_getSize(window);
-    body_t *elem = malloc(sizeof(body_t) * nb);
-
-    elem[0] = create_body("parallax/cloud1.png", (sfIntRect){0, 0, 1920, 1080},
-    (sfVector2f){size.x * 0, size.y * 0});
-    elem[1] = create_body("parallax/cloud2.png", (sfIntRect){0, 0, 1920, 1080},
-    (sfVector2f){0, 0});
-    elem[2] = create_body("parallax/cloud3.png", (sfIntRect){0, 0, 1920, 1080},
-    (sfVector2f){0, 0});
-    elem[3] = create_body("parallax/cloud4.png", (sfIntRect){0, 0, 1920, 1080},
-    (sfVector2f){0, 0});
     elem[4] = create_body("parallax/cloud5.png", (sfIntRect){0, 0, 1920, 1080},
     (sfVector2f){0, 0});
     elem[5] = create_body("parallax/cloud6.png", (sfIntRect){0, 0, 1920, 1080},
@@ -64,5 +53,22 @@ body_t *init_menu_elem(sfRenderWindow *window, int nb)
         sfSprite_setTexture(elem[i].sprite, elem[i].text, sfTrue);
         sfSprite_setTextureRect(elem[i].sprite, elem[i].rect);
     }
+    return (elem);
+}
+
+body_t *init_menu_elem(sfRenderWindow *window, int nb)
+{
+    sfVector2u size = sfRenderWindow_getSize(window);
+    body_t *elem = malloc(sizeof(body_t) * nb);
+
+    elem[0] = create_body("parallax/cloud1.png", (sfIntRect){0, 0, 1920, 1080},
+    (sfVector2f){size.x * 0, size.y * 0});
+    elem[1] = create_body("parallax/cloud2.png", (sfIntRect){0, 0, 1920, 1080},
+    (sfVector2f){0, 0});
+    elem[2] = create_body("parallax/cloud3.png", (sfIntRect){0, 0, 1920, 1080},
+    (sfVector2f){0, 0});
+    elem[3] = create_body("parallax/cloud4.png", (sfIntRect){0, 0, 1920, 1080},
+    (sfVector2f){0, 0});
+    elem = init_menu_elem_2(elem, nb);
     return (elem);
 }

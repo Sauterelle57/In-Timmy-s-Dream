@@ -8,9 +8,9 @@
 #ifndef COMBAT_H_
     #define COMBAT_H_
 
-    static int nb_inter = 15;
+    static const int nb_inter = 15;
 
-     static char *CHOICE[10] = {
+    static char *CHOICE[10] = {
         "enemies/Clown_idle.png",
         "enemies/Witch_idle.png",
         "enemies/Vampire 01_idle.png",

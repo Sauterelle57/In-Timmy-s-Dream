@@ -7,7 +7,6 @@
 
 #include "includes.h"
 #include "forest.h"
-void add_pixel(sfVertexArray *pixels, sfVector2f pos, sfColor color);
 
 scene_t init_forest(game_t *g)
 {

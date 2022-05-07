@@ -27,4 +27,3 @@ scene_t init_ghost(game_t *g)
     sfMusic_setVolume(ghost.scene_music, g->params[VOL]);
     return (ghost);
 }
-

@@ -40,7 +40,8 @@ void check_dialogue(game_t *gt, int chose)
         gt->dialogue.chose = 0;
         return;
     }
-    if (chose != 0 && gt->dialogue.is_showing == 0 && (Key_Pressed(sfKeyEnter)))
+    if (chose != 0 && gt->dialogue.is_showing == 0 &&
+    (Key_Pressed(sfKeyEnter)))
         gt->dialogue.speed = 0.01;
 }
 
