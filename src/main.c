@@ -32,7 +32,6 @@ void charge_scene(game_t *g, int next_scene)
 
     if (!g->scene[next_scene].charged) {
         g->scene[next_scene] = init_scene[next_scene](g);
-        sfMusic_pause(g->scene[g->previous_scene].scene_music);
         sfMusic_play(g->scene[next_scene].scene_music);
         g->scene[next_scene].charged = 1;
     }
