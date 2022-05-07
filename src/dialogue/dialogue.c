@@ -76,7 +76,7 @@ void func_text(game_t *gt, int chose)
 
     if (gt->dialogue.is_passed == 0) {
         pass_dialogue(&gt->dialogue.temp, gt, chose);
-        gt->player.lvl += chose == 2 ? 1 : 0;
+        gt->player.lvl += chose == 2 ? 1, gt->player.inventory[0].own = 1 : 0;
     }
     gt->t.sec = Get_Time(gt->t.clock);
     while (gt->t.sec-time > gt->dialogue.speed &&
