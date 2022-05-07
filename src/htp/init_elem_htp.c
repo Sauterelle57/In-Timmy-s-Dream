@@ -8,6 +8,18 @@
 #include "includes.h"
 #include "how_to_play.h"
 
+body_t *init_htp_elem_3(body_t *elem)
+{
+    elem[12] = create_body("other/green_block.png", (sfIntRect){0, 0, 10, 430},
+    (sfVector2f){550, 200});
+    elem[13] = create_body("other/blank.png", (sfIntRect){0, 0, 200, 100},
+    (sfVector2f){1300, 300});
+    elem[14] = create_body("other/blank.png", (sfIntRect){0, 0, 1917, 1076},
+    (sfVector2f){650, 400});
+    Set_Scale(elem[14].sprite, 0.4, 0.4);
+    return (elem);
+}
+
 body_t *init_htp_elem(sfRenderWindow *window, int nb_elem)
 {
     sfVector2u size = sfRenderWindow_getSize(window);

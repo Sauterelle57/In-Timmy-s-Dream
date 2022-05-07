@@ -8,6 +8,7 @@
 #include "includes.h"
 #include "game.h"
 #include "player.h"
+void go_menu_lose(game_t *g, int i);
 
 static void anim_interest(game_t *g)
 {
@@ -39,4 +40,6 @@ void anim_game(game_t *g)
         Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
         tmp2 = g->t.sec;
     }
+    if (g->player.pv <= 0)
+        go_menu_lose(g, 0);
 }

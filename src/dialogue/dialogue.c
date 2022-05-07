@@ -40,7 +40,8 @@ void check_dialogue(game_t *gt, int chose)
         gt->dialogue.chose = 0;
         return;
     }
-    if (chose != 0 && gt->dialogue.is_showing == 0 && (Key_Pressed(sfKeyEnter)))
+    if (chose != 0 && gt->dialogue.is_showing == 0 &&
+    (Key_Pressed(sfKeyEnter)))
         gt->dialogue.speed = 0.01;
 }
 
@@ -76,7 +77,7 @@ void func_text(game_t *gt, int chose)
 
     if (gt->dialogue.is_passed == 0) {
         pass_dialogue(&gt->dialogue.temp, gt, chose);
-        gt->player.lvl += chose == 2 ? 1 : 0;
+        gt->player.lvl += chose == 2 ? 1, gt->player.inventory[0].own = 1 : 0;
     }
     gt->t.sec = Get_Time(gt->t.clock);
     while (gt->t.sec-time > gt->dialogue.speed &&

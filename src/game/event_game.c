@@ -8,6 +8,7 @@
 #include "includes.h"
 #include "game.h"
 #include "player.h"
+#include "interest.h"
 void go_pause(game_t *g, int i);
 
 void check_action(game_t *g)
@@ -61,5 +62,7 @@ void event_game(game_t *g)
         go_pause(g, 0);
         g->cooldown = g->t.sec;
     }
+    if (g->player.lvl >= 5)
+        g->scene[0].interest[16].on_click = &go_cimetery;
     check_button(g, Get_Mouse_Pos(), Get_Window_size());
 }

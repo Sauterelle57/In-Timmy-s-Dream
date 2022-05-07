@@ -18,3 +18,5 @@ Porte##Personne ne repond...
 Panneau##Quelle est la difference entre un fantome ?
 Rick Astler##Never gonna give you up
 Timmy##Oh !#Mais c'est ma chambre !#Je reconnais mon doudou Dolly !
+Porte##Non Timmy tu dois affronter tes peurs et traverser ce labyrinth !
+Cerceuil##Tu ne peux pas encore acceder a cet endroit.

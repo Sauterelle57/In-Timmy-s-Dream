@@ -23,22 +23,13 @@ void hit(game_t *g, int i)
     }
 }
 
-button_t *init_combat_button(sfRenderWindow *window)
-{
-    sfVector2u size = sfRenderWindow_getSize(window);
-    button_t *buttons = malloc(sizeof(button_t) * 1);
-
-    buttons[0] = create_square_button(0, (sfVector2f){size.x * 0.95, size.y *
-    0.03}, create_button_text(50, (sfVector2f){100, 100}, ""), &go_pause);
-    return (buttons);
-}
-
 interest_t *init_combat_interest(int nb_interest, body_t *elem)
 {
     interest_t *interest = malloc(sizeof(interest_t) * nb_interest);
 
     interest[0] = create_interest("deco/Door_4 (open).png", (sfIntRect)
-    {0, 0, 70, 100}, (sfVector2f){215, 60}, &nothing);
+    {0, 0, 70, 100}, (sfVector2f){215, 60}, &check_dialogue);
+    interest[0].line = 20;
     Set_Scale(interest[0].body.sprite, 1.5, 1.5);
     interest[1] = create_interest("deco/Door_4.png", (sfIntRect)
     {0, 0, 70, 70}, (sfVector2f){1720, 960}, &go_back);

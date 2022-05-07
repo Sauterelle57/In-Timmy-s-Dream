@@ -10,7 +10,6 @@
 
 button_t *init_loading_button(sfRenderWindow *window, int nb_button)
 {
-    sfVector2u size = sfRenderWindow_getSize(window);
     button_t *buttons = malloc(sizeof(button_t) * nb_button);
 
     return (buttons);
@@ -18,7 +17,6 @@ button_t *init_loading_button(sfRenderWindow *window, int nb_button)
 
 interest_t *init_loading_interest(sfRenderWindow *window, int nb_interest)
 {
-    sfVector2u size = sfRenderWindow_getSize(window);
     interest_t *interest = malloc(sizeof(interest_t) * nb_interest);
 
     return (interest);
@@ -26,7 +24,6 @@ interest_t *init_loading_interest(sfRenderWindow *window, int nb_interest)
 
 body_t *init_loading_elem(sfRenderWindow *window, int nb_elem)
 {
-    sfVector2u size = sfRenderWindow_getSize(window);
     body_t *elem = malloc(sizeof(body_t) * nb_elem);
 
     elem[0] = create_body("other/E-game.png", (sfIntRect)

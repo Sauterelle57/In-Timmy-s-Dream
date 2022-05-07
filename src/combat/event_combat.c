@@ -23,13 +23,8 @@ void event_combat(game_t *g)
     if (g->event.type == sfEvtClosed)
         quit_game(g, 0);
     if ((Key_Pressed(sfKeySpace) || Key_Pressed(sfKeyE)) &&
-    g->t.sec - g->cooldown > 0.5) {
+    g->t.sec - g->cooldown > 0.3) {
         check_action_fight(g);
         g->cooldown = g->t.sec;
     }
-    if (Key_Pressed(sfKeyEscape) && g->t.sec - g->cooldown > 0.3) {
-        go_pause(g, 0);
-        g->cooldown = g->t.sec;
-    }
-    check_button(g, Get_Mouse_Pos(), Get_Window_size());
 }

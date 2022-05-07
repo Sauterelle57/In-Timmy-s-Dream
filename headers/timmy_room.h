@@ -6,7 +6,7 @@
 */
 
 #ifndef TIMMY_ROOM_H_
-#define TIMMY_ROOM_H_
+    #define TIMMY_ROOM_H_
 
 void anim_timmy_room(game_t *g);
 void draw_timmy_room(game_t *g);

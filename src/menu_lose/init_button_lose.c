@@ -14,11 +14,8 @@ button_t *init_lose_button(sfRenderWindow *window, int nb_button)
     sfVector2u size = sfRenderWindow_getSize(window);
     button_t *buttons = malloc(sizeof(button_t) * nb_button);
 
-    buttons[0] = create_button(9, (sfVector2f){size.x * 0.15, size.y * 0.50},
-    create_button_text(50, (sfVector2f){size.x * 0.15 + 80, size.y *
-    0.50 + 20}, "MENU PRINCIPAL"), &go_menu);
-    buttons[1] = create_button(9, (sfVector2f){size.x * 0.60, size.y *
-    0.50}, create_button_text(50, (sfVector2f){size.x * 0.60 + 180, size.y *
-    0.50 + 20}, "QUITTER"), &quit_game);
+    buttons[0] = create_button(9, (sfVector2f){size.x * 0.29, size.y * 0.88},
+    create_button_text(50, (sfVector2f){size.x * 0.29 + 190, size.y *
+    0.88 + 25}, "FIN."), &go_menu);
     return (buttons);
 }

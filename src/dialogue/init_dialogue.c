@@ -5,7 +5,7 @@
 ** init_dialogue
 */
 
-#include "forest.h"
+#include "dialogue.h"
 #include "includes.h"
 
 char *open_text(void)
@@ -13,7 +13,7 @@ char *open_text(void)
     char *buffer;
     int fd = open("all_dialogue.txt", O_RDONLY);
     int count = 0;
-    char* temp = malloc(sizeof(char) * 1);
+    char *temp = malloc(sizeof(char) * 1);
 
     for (; (read(fd, temp, 1) > 0); ++count);
     close(fd);
