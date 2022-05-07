@@ -11,8 +11,6 @@
 void draw_menu_win(game_t *g)
 {
     Draw_Sprite(g->scene[11].elem[0].sprite);
-    for (int i = 0; i < g->scene[11].nb_button; i++) {
-        Draw_Sprite(g->scene[11].button[i].body.sprite);
-        sfRenderWindow_drawText(g->window, g->scene[11].button[i].text, NULL);
-    }
+    Draw_Sprite(g->scene[11].button[0].body.sprite);
+    sfRenderWindow_drawText(g->window, g->scene[11].button[0].text, NULL);
 }

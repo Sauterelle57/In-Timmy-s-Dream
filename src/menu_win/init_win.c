@@ -22,7 +22,7 @@ interest_t *init_win_interest(sfRenderWindow *window, int nb)
 
 scene_t init_menu_win(game_t *g)
 {
-    int nb_button = 2;
+    int nb_button = 1;
     button_t *buttons = init_win_button(g->window, nb_button);
     int nb_elem = 1;
     body_t *elem = init_win_elem(g->window, nb_elem);

@@ -5,7 +5,7 @@
 ** init_dialogue
 */
 
-#include "forest.h"
+#include "dialogue.h"
 #include "includes.h"
 
 char *open_text(void)
