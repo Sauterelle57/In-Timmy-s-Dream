@@ -58,6 +58,7 @@ void go_combat(game_t *g, int i)
     if (g->scene[2].charged == 1)
         sfMusic_destroy(g->scene[2].scene_music);
     g->scene[2] = init_combat(g);
+    g->scene[2].charged = 1;
     sfMusic_play(g->scene[2].scene_music);
     g->curent_scene = 2;
 }
