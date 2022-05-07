@@ -24,9 +24,9 @@ void draw_combat(game_t *g, body_t *elem)
         Draw_Sprite(g->scene[2].elem[i].sprite);
     for (int i = 0; i < g->scene[2].nb_interest; i++)
         Draw_Sprite(g->scene[2].interest[i].body.sprite);
+    draw_black(g, elem);
     for (int i = 0; i < g->scene[2].nb_button; i++)
         Draw_Sprite(g->scene[2].button[i].body.sprite);
-    draw_black(g, elem);
     draw_player(g);
 }
 
