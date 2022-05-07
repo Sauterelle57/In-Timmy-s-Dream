@@ -42,6 +42,7 @@ void anim_combat(game_t *g)
         if (g->player.time == 600) {
             life_hit(g);
             go_back(g, 0);
+            g->warning = 0;
             g->player.time = 0;
         } else {
             g->player.time = g->player.time + 1;

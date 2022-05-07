@@ -15,8 +15,10 @@ static void check_action(game_t *g)
     sfFloatRect player = Get_bounds(g->player.body.sprite);
 
     for (int i = 0; i < g->scene[3].nb_interest; i++)
-        if (Rect_Intersect(g->scene[3].interest[i].body, &player))
+        if (Rect_Intersect(g->scene[3].interest[i].body, &player)) {
+            g->warning = i == 0 && g->player.lvl == 2 ? 1 : 0;
             g->scene[3].interest[i].on_click(g, g->scene[3].interest->line);
+        }
 }
 
 static void check_button(game_t *g, sfVector2i pos, sfVector2u size)

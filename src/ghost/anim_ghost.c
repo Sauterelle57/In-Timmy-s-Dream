@@ -20,11 +20,6 @@ static void anim_interest(game_t *g)
         Set_Texture_Rect(g->scene[4].interest[i].body.sprite,
         g->scene[4].interest[i].body.rect);
     }
-    if (g->player.lvl == 4) {
-        g->scene[4].interest[0].line = 7;
-        g->scene[4].interest[0].on_click = &check_dialogue;
-    } else if (g->player.lvl == 3)
-        g->scene[4].interest[0].on_click = &go_combat;
 }
 
 void anim_ghost(game_t *g)
@@ -44,4 +39,9 @@ void anim_ghost(game_t *g)
         Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
         tmp2 = g->t.sec;
     }
+    if (g->player.lvl == 4) {
+        g->scene[4].interest[1].line = 7;
+        g->scene[4].interest[1].on_click = &check_dialogue;
+    } else if (g->player.lvl == 3)
+        g->scene[4].interest[1].on_click = &go_combat;
 }
