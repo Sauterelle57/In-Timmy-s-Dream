@@ -24,5 +24,6 @@ interest_t *init_forest_interest(sfRenderWindow *window, int nb_interest)
     {0, 0, 48, 70}, (sfVector2f){380, -70}, &go_combat);
     interest[4] = create_interest("other/block.png", (sfIntRect){0, 0, 120,
     40}, (sfVector2f){900, 560}, &go_game);
+    Set_Scale(interest[1].body.sprite, 2, 2);
     return (interest);
 }
