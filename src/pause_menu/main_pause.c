@@ -22,7 +22,7 @@ scene_t init_pause_menu(game_t *g)
 {
     int nb_button = 3;
     button_t *buttons = init_pause_menu_button(g->window, nb_button);
-    int nb_elem = 8;
+    int nb_elem = 9;
     body_t *elem = init_pause_menu_elem(g->window, nb_elem);
     int nb_interest = 0;
     interest_t *interest = init_pause_menu_interest(g->window, nb_interest);

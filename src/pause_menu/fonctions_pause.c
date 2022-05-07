@@ -68,7 +68,7 @@ void anim_pause_menu(game_t *g)
 
     g->t.sec = Get_Time(g->t.clock);
     if (g->t.sec - tmp >= 0.04) {
-        for (int i = 0; i < g->scene[PAUSE].nb_elem; i++) {
+        for (int i = 0; i < 8; i++) {
             g->scene[PAUSE].elem[i].rect.left += i;
             Set_Texture_Rect(g->scene[PAUSE].elem[i].sprite,
             g->scene[PAUSE].elem[i].rect);
