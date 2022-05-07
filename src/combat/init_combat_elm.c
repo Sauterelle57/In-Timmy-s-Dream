@@ -23,13 +23,6 @@ void hit(game_t *g, int i)
     }
 }
 
-button_t *init_combat_button(sfRenderWindow *window)
-{
-    button_t *buttons = malloc(sizeof(button_t) * 0);
-
-    return (buttons);
-}
-
 interest_t *init_combat_interest(int nb_interest, body_t *elem)
 {
     interest_t *interest = malloc(sizeof(interest_t) * nb_interest);
