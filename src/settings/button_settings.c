@@ -11,7 +11,7 @@
 
 void set_volume(game_t *g)
 {
-    for (int i = 0; i < 14; i++)
+    for (int i = 0; i < 15; i++)
         if (g->scene[i].charged == 1 && i != 7)
             sfMusic_setVolume(g->scene[i].scene_music, g->params[VOL]);
 }

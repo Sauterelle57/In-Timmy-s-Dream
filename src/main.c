@@ -85,8 +85,15 @@ static int parse_save(game_t *g)
     fclose(file);
 }
 
-int main(void)
+int main(int ac, char **av)
 {
+    if (ac == 2 && my_strcmp(av[1], "-h")) {
+        flag_h();
+        return (0);
+    }
+    if (ac == 2 && my_strcmp(av[1], "-easy")) {
+        flag_h();
+    }
     srand(get_random());
     game_t game = create_game();
 

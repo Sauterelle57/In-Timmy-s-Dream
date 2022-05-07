@@ -19,6 +19,8 @@ static void anim_interest(game_t *g)
         Set_Texture_Rect(g->scene[0].interest[i].body.sprite,
         g->scene[0].interest[i].body.rect);
     }
+    if (g->player.lvl == 2)
+        g->scene[0].interest[1].line = 3;
 }
 
 void anim_game(game_t *g)

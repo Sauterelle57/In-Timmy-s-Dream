@@ -41,11 +41,11 @@ interest_t *init_combat_interest(int nb_interest, body_t *elem)
     {0, 0, 70, 100}, (sfVector2f){215, 60}, &nothing);
     Set_Scale(interest[0].body.sprite, 1.5, 1.5);
     interest[1] = create_interest("deco/Door_4.png", (sfIntRect)
-    {0, 0, 70, 70}, (sfVector2f){1720, 960}, &go_game);
+    {0, 0, 70, 70}, (sfVector2f){1720, 960}, &go_back);
     Set_Scale(interest[1].body.sprite, 1.5, -1.5);
     sfSprite_setRotation(interest[1].body.sprite, -90.0);
     interest[2] = create_interest("other/blank.png", (sfIntRect)
-    {0, 0, 50, 200}, (sfVector2f){1600, 860}, &go_game);
+    {0, 0, 50, 200}, (sfVector2f){1600, 860}, &go_back);
     spawn_enemy(nb_interest, elem, interest);
     return (interest);
 }

@@ -8,6 +8,7 @@
 #include "includes.h"
 #include "forest.h"
 #include "player.h"
+void go_pause(game_t *g, int i);
 
 static void check_action(game_t *g)
 {
@@ -15,7 +16,7 @@ static void check_action(game_t *g)
 
     for (int i = 0; i < g->scene[5].nb_interest; i++)
         if (Rect_Intersect(g->scene[5].interest[i].body, &player))
-            g->scene[5].interest[i].on_click(g);
+            g->scene[5].interest[i].on_click(g, g->scene[5].interest->line);
 }
 
 static void check_button(game_t *g, sfVector2i pos, sfVector2u size)
@@ -44,15 +45,17 @@ static void check_button(game_t *g, sfVector2i pos, sfVector2u size)
 void event_forest(game_t *g)
 {
     g->t.sec = Get_Time(g->t.clock);
-    if (g->event.type == sfEvtClosed || Key_Pressed(sfKeyEscape))
+    if (g->event.type == sfEvtClosed)
         quit_game(g, 0);
     if ((Key_Pressed(sfKeySpace) || Key_Pressed(sfKeyE)) && g->t.sec -
-    g->cooldown > 0.5) {
+    g->cooldown > 0.3) {
         check_action(g);
         g->cooldown = g->t.sec;
     }
-    if (sfKeyboard_isKeyPressed(sfKeyP) && g->t.sec - g->t.pause > 0.3)
-        pause_game(g);
+    if (Key_Pressed(sfKeyEscape) && g->t.sec - g->cooldown > 0.3) {
+        go_pause(g, 0);
+        g->cooldown = g->t.sec;
+    }
     check_button(g, Get_Mouse_Pos(), Get_Window_size());
     if (Key_Pressed(sfKeyA) && g->t.sec - g->cooldown >= 0.15) {
         g->player.speed = g->player.speed == SPEED ? SPEED + 5 : SPEED;

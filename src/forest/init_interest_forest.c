@@ -16,7 +16,8 @@ interest_t *init_forest_interest(sfRenderWindow *window, int nb_interest)
     interest[0] = create_interest(ZOMBIE[(rand() % 3) * 3], (sfIntRect)
     {0, 0, 48, 70}, (sfVector2f){40, 440}, &go_combat);
     interest[1] = create_interest(ZOMBIE[(rand() % 3) * 3], (sfIntRect)
-    {0, 0, 48, 70}, (sfVector2f){-220, -290}, &go_combat);
+    {0, 0, 48, 70}, (sfVector2f){-230, -260}, &check_dialogue); //main
+    interest[1].line = 8;
     interest[2] = create_interest(ZOMBIE[(rand() % 3) * 3], (sfIntRect)
     {0, 0, 48, 70}, (sfVector2f){-600, 60}, &go_combat);
     interest[3] = create_interest(ZOMBIE[(rand() % 3) * 3], (sfIntRect)

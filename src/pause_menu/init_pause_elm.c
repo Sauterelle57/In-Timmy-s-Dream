@@ -23,7 +23,7 @@ button_t *init_pause_menu_button(sfRenderWindow *window, int nb)
     0.50 + 30}, "OPTIONS"), &go_settings);
     buttons[2] = create_button(9, (sfVector2f){size.x * 0.40, size.y *
     0.70}, create_button_text(30, (sfVector2f){size.x * 0.40 + 120, size.y *
-    0.70 + 20}, "SAUVEGARDER\n ET QUITTER"), &quit_game);
+    0.70 + 20}, "SAUVEGARDER\n ET QUITTER"), &go_menu);
     return (buttons);
 }
 

@@ -44,7 +44,7 @@ void check_dialogue(game_t *gt, int chose)
         gt->dialogue.speed = 0.01;
 }
 
-char* add_chr_to_str(char *str, char c)
+char *add_chr_to_str(char *str, char c)
 {
     char *string = malloc(sizeof(char) * (my_strlen(str) + 2));
     int i = 0;
@@ -59,7 +59,7 @@ char* add_chr_to_str(char *str, char c)
     return (string);
 }
 
-char* pass_dialogue(char** temp, game_t *gt, int chose)
+char *pass_dialogue(char** temp, game_t *gt, int chose)
 {
     (*temp) = malloc(sizeof(char) * (my_strlen(gt->dialogue.tab_text[chose]) +
     1));
@@ -74,8 +74,10 @@ void func_text(game_t *gt, int chose)
 {
     static float time = 0;
 
-    if (gt->dialogue.is_passed == 0)
+    if (gt->dialogue.is_passed == 0) {
         pass_dialogue(&gt->dialogue.temp, gt, chose);
+        gt->player.lvl += chose == 2 ? 1 : 0;
+    }
     gt->t.sec = Get_Time(gt->t.clock);
     while (gt->t.sec-time > gt->dialogue.speed &&
     gt->dialogue.is_showing == 0) {
