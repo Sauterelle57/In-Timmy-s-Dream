@@ -10,7 +10,7 @@
 
 void draw_htp(game_t *g)
 {
-    for (int i = 0; i < 9; i++)
+    for (int i = 0; i < 16; i++)
         Draw_Sprite(g->scene[g->curent_scene].elem[i].sprite);
     Draw_Sprite(g->scene[g->curent_scene].elem[13].sprite);
     for (int i = 0; i < g->scene[g->curent_scene].nb_interest; i++)

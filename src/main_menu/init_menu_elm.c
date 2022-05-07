@@ -59,7 +59,10 @@ body_t *init_menu_elem(sfRenderWindow *window, int nb)
     (sfVector2f){0, 0});
     elem[7] = create_body("parallax/cloud8.png", (sfIntRect){0, 0, 1920, 1080},
     (sfVector2f){0, 0});
-    for (int i = 0; i < nb; i++) {
+    elem[8] = create_body("text/itd.png", (sfIntRect){0, 0, 300, 112},
+    (sfVector2f){size.x * 0.290, size.y * 0.1});
+    Set_Scale(elem[8].sprite, 3, 3)
+    for (int i = 0; i < 8; i++) {
         sfTexture_setRepeated(elem[i].text, sfTrue);
         sfSprite_setTexture(elem[i].sprite, elem[i].text, sfTrue);
         sfSprite_setTextureRect(elem[i].sprite, elem[i].rect);

@@ -55,6 +55,9 @@ body_t *init_pause_menu_elem(sfRenderWindow *window, int nb)
     (sfVector2f){0, 0});
     elem[7] = create_body("parallax/cloud8.png", (sfIntRect){0, 0, 1920, 1080},
     (sfVector2f){0, 0});
+    elem[8] = create_body("text/pause.png", (sfIntRect){0, 0, 152, 43},
+    (sfVector2f){size.x * 0.40, size.y * 0.10});
+    Set_Scale(elem[8].sprite, 3, 3);
     for (int i = 0; i < nb; i++) {
         sfTexture_setRepeated(elem[i].text, sfTrue);
         sfSprite_setTexture(elem[i].sprite, elem[i].text, sfTrue);

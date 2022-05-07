@@ -10,6 +10,7 @@
 
 body_t *init_htp_elem(sfRenderWindow *window, int nb_elem)
 {
+    sfVector2u size = sfRenderWindow_getSize(window);
     body_t *elem = malloc(sizeof(body_t) * nb_elem);
 
     elem[0] = create_body("parallax/cloud1.png", (sfIntRect){0, 0, 1920, 1080},
@@ -35,18 +36,21 @@ body_t *init_htp_elem(sfRenderWindow *window, int nb_elem)
     }
     elem[8] = create_body("other/tuto_bg.png", (sfIntRect){0, 0, 1920, 1080},
     (sfVector2f){0, 0});
-    elem[9] = create_body("other/block.png", (sfIntRect){0, 0, 430, 10},
+    elem[9] = create_body("other/blank.png", (sfIntRect){0, 0, 430, 10},
     (sfVector2f){200, 200});
-    elem[10] = create_body("other/blue_block.png", (sfIntRect){0, 0, 10, 430},
+    elem[10] = create_body("other/blank.png", (sfIntRect){0, 0, 10, 430},
     (sfVector2f){200, 200});
-    elem[11] = create_body("other/block.png", (sfIntRect){0, 0, 430, 10},
+    elem[11] = create_body("other/blank.png", (sfIntRect){0, 0, 430, 10},
     (sfVector2f){200, 550});
-    elem[12] = create_body("other/green_block.png", (sfIntRect){0, 0, 10, 430},
+    elem[12] = create_body("other/blank.png", (sfIntRect){0, 0, 10, 430},
     (sfVector2f){550, 200});
     elem[13] = create_body("other/blank.png", (sfIntRect){0, 0, 200, 100},
     (sfVector2f){1300, 300});
     elem[14] = create_body("other/blank.png", (sfIntRect){0, 0, 1917, 1076},
     (sfVector2f){650, 400});
+    elem[15] = create_body("text/tutoriel.png", (sfIntRect){0, 0, 469, 43},
+    (sfVector2f){size.x * 0.4, size.y * 0.10});
+    Set_Scale(elem[15].sprite, 2, 2)
     Set_Scale(elem[14].sprite, 0.4, 0.4);
     return (elem);
 }

@@ -13,7 +13,7 @@ scene_t init_settings(game_t *g)
 {
     int nb_button = 6;
     button_t *buttons = init_settings_button(g->window, nb_button);
-    int nb_elem = 9;
+    int nb_elem = 11;
     body_t *elem = init_settings_elem(g->window, nb_elem);
     int nb_interest = 0;
     interest_t *interest = init_settings_interest(g->window, nb_interest);

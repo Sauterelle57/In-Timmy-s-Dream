@@ -63,7 +63,7 @@ void anim_menu(game_t *g)
 
     g->t.sec = Get_Time(g->t.clock);
     if (g->t.sec - tmp >= 0.04) {
-        for (int i = 0; i < g->scene[1].nb_elem; i++) {
+        for (int i = 0; i < 8; i++) {
             g->scene[1].elem[i].rect.left += i;
             Set_Texture_Rect(g->scene[1].elem[i].sprite,
             g->scene[1].elem[i].rect);

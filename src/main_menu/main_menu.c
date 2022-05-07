@@ -12,7 +12,7 @@ scene_t init_menu(game_t *g)
 {
     int nb_button = 4;
     button_t *buttons = init_menu_button(g->window, nb_button);
-    int nb_elem = 8;
+    int nb_elem = 9;
     body_t *elem = init_menu_elem(g->window, nb_elem);
     int nb_interest = 0;
     interest_t *interest = init_menu_interest(g->window, nb_interest);
