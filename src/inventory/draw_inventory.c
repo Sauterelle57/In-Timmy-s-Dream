@@ -9,6 +9,14 @@
 #include "inventory.h"
 #include "player.h"
 
+static void draw_text_inventory(game_t *g)
+{
+    char* temp = my_strcat("niveau: ", my_int_to_str(g->player.lvl));
+    sfText *text = create_text(35, (sfVector2f){415, 260}, temp,
+    "other/Blokletters-Balpen.ttf");
+    sfRenderWindow_drawText(g->window, text, NULL);
+}
+
 object_t *init_object_inventory(object_t *inventory)
 {
     for (int i = 0, x = 990, y = 275; i < NB_OBJ; i++) {
@@ -44,5 +52,6 @@ void draw_inventory(game_t *g)
         if (g->player.inventory[i].own == 1)
             Draw_Sprite(g->player.inventory[i].body.sprite);
     draw_player_inventory(g);
+    draw_text_inventory(g);
     sfRenderWindow_drawVertexArray(g->window, g->scene[6].array, 0);
 }
