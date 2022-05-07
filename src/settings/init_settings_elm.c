@@ -36,7 +36,6 @@ button_t *init_settings_button(sfRenderWindow *window, int nb)
 
 interest_t *init_settings_interest(sfRenderWindow *window, int nb)
 {
-    sfVector2u size = sfRenderWindow_getSize(window);
     interest_t *interest = malloc(sizeof(interest_t) * nb);
 
     return (interest);

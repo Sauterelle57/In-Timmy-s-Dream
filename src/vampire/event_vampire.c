@@ -8,6 +8,7 @@
 #include "includes.h"
 #include "vampire.h"
 #include "player.h"
+void go_pause(game_t *g, int i);
 
 static void check_action(game_t *g)
 {
@@ -51,8 +52,10 @@ void event_vampire(game_t *g)
         check_action(g);
         g->cooldown = g->t.sec;
     }
-    if (sfKeyboard_isKeyPressed(sfKeyP) && g->t.sec - g->t.pause > 0.3)
-        pause_game(g);
+    if (Key_Pressed(sfKeyEscape) && g->t.sec - g->cooldown > 0.3) {
+        go_pause(g, 0);
+        g->cooldown = g->t.sec;
+    }
     check_button(g, Get_Mouse_Pos(), Get_Window_size());
     if (Key_Pressed(sfKeyA) && g->t.sec - g->cooldown >= 0.15) {
         g->player.speed = g->player.speed == SPEED ? SPEED + 5 : SPEED;
