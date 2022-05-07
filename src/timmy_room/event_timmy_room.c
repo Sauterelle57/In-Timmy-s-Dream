@@ -10,6 +10,16 @@
 #include "player.h"
 void go_pause(game_t *g, int i);
 
+static void check_action(game_t *g)
+{
+    sfFloatRect player = Get_bounds(g->player.body.sprite);
+
+    for (int i = 0; i < g->scene[13].nb_interest; i++)
+        if (Rect_Intersect(g->scene[13].interest[i].body, &player))
+            g->scene[13].interest[i].on_click(g, g->scene[13].interest[i].
+            line);
+}
+
 static void check_button(game_t *g, sfVector2i pos, sfVector2u size)
 {
     button_t button;

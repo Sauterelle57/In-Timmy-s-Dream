@@ -15,15 +15,12 @@ void check_action(game_t *g)
 {
     sfFloatRect player = Get_bounds(g->player.body.sprite);
 
-    for (int i = 0; i < g->scene[g->curent_scene].nb_interest; i++) {
-        if (Rect_Intersect(g->scene[g->curent_scene].interest[i].body,
-        &player))
-            g->scene[g->curent_scene].interest[i].on_click(g, g->scene
-            [g->curent_scene].interest[i].line);
-    }
+    for (int i = 0; i < g->scene[0].nb_interest; i++)
+        if (Rect_Intersect(g->scene[0].interest[i].body, &player))
+            g->scene[0].interest[i].on_click(g, g->scene[0].interest[i].line);
 }
 
-static void check_button(game_t *g, sfVector2i pos, sfVector2u size)
+void check_button(game_t *g, sfVector2i pos, sfVector2u size)
 {
     button_t button;
 
@@ -50,19 +47,18 @@ void event_game(game_t *g)
 {
     static float tmp = 0.0;
 
-    g->t.sec = Get_Time(g->t.clock);
     if (g->event.type == sfEvtClosed)
         quit_game(g, 0);
     if ((Key_Pressed(sfKeySpace) || Key_Pressed(sfKeyE)) && g->t.sec -
-    tmp >= 0.5) {
+    g->cooldown > 0.3) {
         check_action(g);
-        tmp = g->t.sec;
+        g->cooldown = g->t.sec;
     }
     if (Key_Pressed(sfKeyA) && g->t.sec - g->cooldown > 0.15) {
         g->player.speed = g->player.speed == SPEED ? SPEED + 5 : SPEED;
         g->cooldown = g->t.sec;
     }
-    if (Key_Pressed(sfKeyEscape) && g->t.sec - g->cooldown > 0.5) {
+    if (Key_Pressed(sfKeyEscape) && g->t.sec - g->cooldown > 0.3) {
         go_pause(g, 0);
         g->cooldown = g->t.sec;
     }

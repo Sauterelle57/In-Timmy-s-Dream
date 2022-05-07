@@ -45,7 +45,7 @@ static int absolute(int i)
 
 int dist(body_t player, body_t obs)
 {
-    if (absolute(player.pos.x - obs.pos.x) < 60 &&
+    if (absolute(player.pos.x - obs.pos.x) < 70 &&
         absolute(player.pos.y - obs.pos.y) < 100)
         return (1);
     return (0);

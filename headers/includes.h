@@ -42,7 +42,6 @@ void pause_game(game_t *g);
 void anim_pixels(game_t *g);
 void draw_cursor(game_t *g);
 void draw_player(game_t * g);
-void check_action(game_t *g);
 unsigned int get_random(void);
 void quit_game(game_t *g, int i);
 void charge_scene(game_t *g, int next_scene);

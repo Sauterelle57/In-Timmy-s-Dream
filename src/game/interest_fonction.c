@@ -46,9 +46,10 @@ void go_menu(game_t *g, int i)
     g->curent_scene = 1;
 }
 
-void go_combat(game_t *g, int i)
+void go_combat(game_t *g, int k)
 {
     sfMusic_pause(g->scene[g->curent_scene].scene_music);
+    g->previous_scene = g->curent_scene;
     g->player.speed = SPEED;
     g->player.body.rect.top = 96;
     Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
@@ -58,7 +59,6 @@ void go_combat(game_t *g, int i)
         sfMusic_destroy(g->scene[2].scene_music);
     g->scene[2] = init_combat(g);
     g->scene[2].charged = 1;
-    charge_scene(g, 2);
     sfMusic_play(g->scene[2].scene_music);
     g->curent_scene = 2;
 }
@@ -188,10 +188,14 @@ void go_room(game_t *g, int i)
     g->curent_scene = 13;
 }
 
-void go_back(game_t *g, int i)
+void go_back(game_t *g, int j)
 {
     int tmp = g->previous_scene;
 
+    if (g->warning == 1 && j > 0) {
+        g->player.lvl += 1;
+        g->warning = 0;
+    }
     sfMusic_pause(g->scene[g->curent_scene].scene_music);
     g->previous_scene = g->curent_scene;
     sfText_setPosition(g->player.name, (sfVector2f){200, 40});
@@ -203,11 +207,8 @@ void go_back(game_t *g, int i)
     Set_Scale(g->player.body.sprite, 1, 1);
     if (g->scene[tmp].charged == 1)
         sfMusic_play(g->scene[tmp].scene_music);
-    charge_scene(g, tmp);
-    if (g->warning == 1 && i > 0)
-        g->player.lvl += 1;
-    g->warning = 0;
     g->curent_scene = tmp;
+    charge_scene(g, g->curent_scene);
 }
 
 void go_pause(game_t *g, int i)
