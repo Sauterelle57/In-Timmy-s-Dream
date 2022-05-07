@@ -31,6 +31,7 @@ IWHITE  = $ \x1b[47m
 CFLAGS = -g -I./headers
 
 SRC	=	src/main.c	\
+		src/option.c	\
 		src/random.c	\
 		src/quit_game.c	\
 		src/pause_game.c	\
