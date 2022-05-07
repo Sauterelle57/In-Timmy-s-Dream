@@ -11,7 +11,7 @@
 scene_t init_combat(game_t *g)
 {
     static int i = 0;
-    button_t *buttons = init_combat_button(g->window);
+    button_t *buttons = NULL;
     int nb_button = 0;
     int nb_elem = 378;
     body_t *elem = create_maze(elem, g);
