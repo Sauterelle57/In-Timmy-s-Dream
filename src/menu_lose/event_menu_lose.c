@@ -8,15 +8,6 @@
 #include "includes.h"
 #include "menu_lose.h"
 
-static void check_action(game_t *g)
-{
-    sfFloatRect player = Get_bounds(g->player.body.sprite);
-
-    for (int i = 0; i < g->scene[10].nb_interest; i++)
-        if (Rect_Intersect(g->scene[10].interest[i].body, &player))
-            g->scene[10].interest[i].on_click(g);
-}
-
 static void check_button(game_t *g, sfVector2i pos, sfVector2u size)
 {
     button_t button;

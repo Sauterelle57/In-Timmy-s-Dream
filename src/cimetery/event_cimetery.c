@@ -17,31 +17,34 @@ static void check_skeleton(game_t *g, int i)
     static int tmp3 = 0;
     static int tmp4 = 0;
 
-    if (i == 6 && g->player.lvl < 9 && tmp1 == 0) {
+    if (i == 0 && g->player.lvl < 9 && tmp1 == 0) {
         g->warning = 1;
         tmp1 = 1;
-    } else if (i == 7 && g->player.lvl < 9 && tmp2 == 0) {
+    } else if (i == 1 && g->player.lvl < 9 && tmp2 == 0) {
         g->warning = 1;
         tmp2 = 1;
     }
-    if (i == 8 && g->player.lvl < 9 && tmp3 == 0) {
+    if (i == 4 && g->player.lvl < 9 && tmp3 == 0) {
         g->warning = 1;
         tmp3 = 1;
-    } else if (i == 9 && g->player.lvl < 9 && tmp4 == 0) {
+    } else if (i == 3 && g->player.lvl < 9 && tmp4 == 0) {
         g->warning = 1;
         tmp4 = 1;
     }
 }
 
-static void check_action(game_t *g)
+void check_action_cimetery(game_t *g)
 {
     sfFloatRect player = Get_bounds(g->player.body.sprite);
 
-    for (int i = 0; i < g->scene[8].nb_interest; i++)
-        if (Rect_Intersect(g->scene[8].interest[i].body, &player)) {
+    for (int i = 0; i < g->scene[g->curent_scene].nb_interest; i++) {
+        if (Rect_Intersect(g->scene[g->curent_scene].interest[i].body,
+        &player)) {
             check_skeleton(g, i);
-            g->scene[8].interest[i].on_click(g, g->scene[8].interest->line);
+            g->scene[g->curent_scene].interest[i].on_click(g, g->scene
+            [g->curent_scene].interest[i].line);
         }
+    }
 }
 
 static void check_button(game_t *g, sfVector2i pos, sfVector2u size)
@@ -69,13 +72,15 @@ static void check_button(game_t *g, sfVector2i pos, sfVector2u size)
 
 void event_cimetery(game_t *g)
 {
+    static float tmp = 0.0;
+
     g->t.sec = Get_Time(g->t.clock);
     if (g->event.type == sfEvtClosed)
         quit_game(g, 0);
     if ((Key_Pressed(sfKeySpace) || Key_Pressed(sfKeyE)) && g->t.sec -
-    g->cooldown > 0.3) {
-        check_action(g);
-        g->cooldown = g->t.sec;
+    tmp > 0.5) {
+        check_action_cimetery(g);
+        tmp = g->t.sec;
     }
     if (Key_Pressed(sfKeyEscape) && g->t.sec - g->cooldown > 0.3) {
         go_pause(g, 0);
