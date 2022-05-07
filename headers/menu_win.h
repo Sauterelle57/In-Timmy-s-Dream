@@ -6,7 +6,7 @@
 */
 
 #ifndef MENU_WIN_H_
-#define MENU_WIN_H_
+    #define MENU_WIN_H_
 
 void draw_menu_win(game_t *g);
 void anim_menu_win(game_t *g);

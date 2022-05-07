@@ -7,7 +7,6 @@
 
 #include "includes.h"
 #include "inventory.h"
-void add_pixel(sfVertexArray *pixels, sfVector2f pos, sfColor color);
 
 static void anim_interest(game_t *g)
 {
@@ -21,7 +20,7 @@ static void anim_interest(game_t *g)
     }
 }
 
-void anim_pixels(game_t *g)
+void anim_pixels(game_t *g, float *tmp3)
 {
     static int vector_x[8] = {0, 1, 2, 1, 0, -1, -2, -1};
     static int vector_y[8] = {-2, -1, 0, 1, 2, 1, 0, -1};
@@ -34,6 +33,7 @@ void anim_pixels(game_t *g)
         pixel->position.x += vector_x[i % 8];
         pixel->position.y += vector_y[i % 8];
     }
+    *tmp3 = g->t.sec;
 }
 
 void anim_inventory(game_t *g)
@@ -55,8 +55,6 @@ void anim_inventory(game_t *g)
         tmp2 = g->t.sec;
     }
     if (sfVertexArray_getVertex(g->scene[g->curent_scene].array, 0)->color.a >
-    7 && g->t.sec - tmp3 >= 0.03) {
-        anim_pixels(g);
-        tmp3 = g->t.sec;
-    }
+    7 && g->t.sec - tmp3 >= 0.03)
+        anim_pixels(g, &tmp3);
 }

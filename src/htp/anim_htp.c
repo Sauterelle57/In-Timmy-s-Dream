@@ -30,11 +30,9 @@ void anim_htp(game_t *g)
 
     g->t.sec = Get_Time(g->t.clock);
     if (g->t.sec - tmp >= 0.11) {
-        for (int i = 0; i < 8; i++) {
-            g->scene[g->curent_scene].elem[i].rect.left += i;
-            Set_Texture_Rect(g->scene[g->curent_scene].elem[i].sprite,
-            g->scene[g->curent_scene].elem[i].rect);
-        }
+        for (int i = 0; i < 8; i++, g->scene[g->curent_scene].elem[i].rect.left
+        += i, Set_Texture_Rect(g->scene[g->curent_scene].elem[i].sprite,
+        g->scene[g->curent_scene].elem[i].rect));
         anim_players(g);
         g->scene[12].interest[0].body.rect.left += g->scene[12].interest[0].
         body.rect.left >= 144 ? -144 : 48;

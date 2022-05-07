@@ -193,8 +193,8 @@ void go_back(game_t *g, int i)
     int tmp = g->previous_scene;
 
     if (g->warning == 1 && i > 0) {
-        g->warning = 0;
         g->player.lvl += 1;
+        g->warning = 0;
     }
     sfMusic_pause(g->scene[g->curent_scene].scene_music);
     g->previous_scene = g->curent_scene;

@@ -36,7 +36,8 @@ static void check_button(game_t *g, sfVector2i pos, sfVector2u size)
         size.x), pos.y * (1080.0 / size.y))) {
             Set_Texture(button.body.sprite, BUTTON[button.png + 1]);
         } else
-            Set_Texture(g->scene[11].button[i].body.sprite, BUTTON[button.png]);
+            Set_Texture(g->scene[11].button[i].body.sprite,
+            BUTTON[button.png]);
     }
 }
 
