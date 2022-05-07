@@ -11,12 +11,12 @@ Zara##HeE CEtTE PaTaTE, Je L'AVais LaiSSe ToMBer PAr TErrE!
 Zara##UnE pOmME dE TeRre !!!!  CoMmE CeLLe qUe m'OfFrAis mOn toNtOn SteEve ! GeNiAl !
 Deni##Hey !! Les arbres de cette foret sont magnifique n'est-ce pas ???
 Colere##RAAAAAAAAAAAAAHHH VAAAAAAS T'EEEEEEENNNNNN
-Marchandage##Qu'est ce qu'on s'ennui devant ces autels...#Tu crois que je pourrais me reveiller a ta place ?#Tu auras ce que tu veux !
+Machandage##Qu'est ce qu'on s'ennui devant ces autels...#Tu crois que je pourrais me reveiller a ta place ?#Tu auras ce que tu veux !
 Acceptation##J'aime bien ne plus avoir a dormir comme toi,#ca me laisse plus de temps pour observer les etoiles !
 Porte##Desole, je suis parti !
 Porte##Personne ne repond...
 Panneau##Quelle est la difference entre un fantome ?
-Rick Astle##Never gonna give you up
+Rick Astler##Never gonna give you up
 Timmy##Oh !#Mais c'est ma chambre !#Je reconnais mon doudou Dolly !
 Porte##Non Timmy tu dois affronter tes peurs et traverser ce labyrinth !
 Cerceuil##Tu ne peux pas encore acceder a cet endroit.

@@ -30,7 +30,6 @@ void charge_scene(game_t *g, int next_scene)
     &init_loading, &init_cimetery, &init_settings, &init_menu_lose,
     &init_menu_win, &init_htp, &init_timmy_room, &init_pause_menu};
 
-    my_printf("scene: %d\n", next_scene);
     if (!g->scene[next_scene].charged) {
         g->scene[next_scene] = init_scene[next_scene](g);
         sfMusic_play(g->scene[next_scene].scene_music);

@@ -32,7 +32,7 @@ interest_t *init_combat_interest(int nb_interest, body_t *elem)
     interest[0].line = 20;
     Set_Scale(interest[0].body.sprite, 1.5, 1.5);
     interest[1] = create_interest("deco/Door_4.png", (sfIntRect)
-    {0, 0, 70, 70}, (sfVector2f){1720, 960}, &nothing);
+    {0, 0, 70, 70}, (sfVector2f){1720, 960}, &go_back);
     Set_Scale(interest[1].body.sprite, 1.5, -1.5);
     sfSprite_setRotation(interest[1].body.sprite, -90.0);
     interest[2] = create_interest("other/blank.png", (sfIntRect)
@@ -48,7 +48,7 @@ int search_for_number(int *a, int search)
     for (int i = 0; i < nb_inter - 3; i++)
         if (a[i] == search)
             b = 1;
-    return (b);
+    return b;
 }
 
 interest_t *spawn_enemy(int nb_interest, body_t *elem, interest_t *interest)
