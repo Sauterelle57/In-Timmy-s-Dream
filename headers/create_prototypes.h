@@ -8,15 +8,14 @@
 #ifndef PROTOTYPES_H_
     #define PROTOTYPES_H_
 
-void check_dialogue(game_t *gt, int chose);
-char* open_text();
-
+char* open_text(void);
 game_t create_game(void);
 music_t create_music(void);
 timing_t create_timer(void);
 player_t create_player(void);
 dialogue_t create_dialogue(void);
 scene_t create_scene(game_t *g);
+void check_dialogue(game_t *gt, int chose);
 sfRenderWindow *create_window(int x, int y);
 object_t create_object(char *text, int pv, int pa, int type);
 body_t create_body(char *text, sfIntRect rect, sfVector2f pos);
