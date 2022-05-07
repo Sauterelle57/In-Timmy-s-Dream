@@ -25,8 +25,6 @@ void draw_combat(game_t *g, body_t *elem)
     for (int i = 0; i < g->scene[2].nb_interest; i++)
         Draw_Sprite(g->scene[2].interest[i].body.sprite);
     draw_black(g, elem);
-    for (int i = 0; i < g->scene[2].nb_button; i++)
-        Draw_Sprite(g->scene[2].button[i].body.sprite);
     draw_player(g);
 }
 
@@ -36,8 +34,7 @@ void anim_combat(game_t *g)
 
     g->t.sec = Get_Time(g->t.clock);
     if (g->t.sec - tmp > 0.1) {
-        g->player.body.rect.left += g->player.body.rect.left >= 144 ? -144 :
-        48;
+        g->player.body.rect.left += g->player.body.rect.left > 143 ? -144 : 48;
         Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
         if (g->player.time == 600) {
             life_hit(g);

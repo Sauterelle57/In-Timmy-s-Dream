@@ -28,15 +28,15 @@ static body_t *create_maze_wall(body_t *elem, char *buffer, int k)
 {
     for (int i = 0, x = 200, y = 80; buffer[i]; i++) {
         if (buffer[i] == 'X')
-            elem[k++] = create_body("other/wall.png", (sfIntRect){0, 0, 60, 60}
-            , (sfVector2f){(x += 60), y});
+            elem[k++] = create_body("other/wall.png", (sfIntRect){0, 0, 60, 60},
+            (sfVector2f){(x += 60), y});
         x += buffer[i] == '*' ? 60 : 0;
         x = buffer[i] == '\n' ? 200 : x;
         y += buffer[i] == '\n' ? 60 : 0;
     }
     for (int i = 0, x = 200, y = 20; i < 30; i++) {
-        elem[k++] = create_body("other/wall.png", (sfIntRect){0, 0, 60, 60}
-        , (sfVector2f){x, (y += 60)});
+        elem[k++] = create_body("other/wall.png", (sfIntRect){0, 0, 60, 60},
+        (sfVector2f){x, (y += 60)});
         x = i == 14 ? 1640 : x;
         y = i == 14 ? 20 : y;
     }
@@ -49,14 +49,12 @@ int create_view(body_t *elem, int k, game_t *g)
     if (g->player.inventory[3].own == 1 && g->player.inventory[4].own != 1
     && g->player.inventory[5].own != 1) {
         elem[377] = create_body(CHOICE_LIGHTS[1],
-        (sfIntRect){0, 0, 5032, 3774},
-        (sfVector2f){-1700 - 0, -1300});
+        (sfIntRect){0, 0, 5032, 3774}, (sfVector2f){-1700, -1300});
     }
     if (g->player.inventory[3].own != 1 && g->player.inventory[4].own != 1
     && g->player.inventory[5].own != 1) {
         elem[377] = create_body(CHOICE_LIGHTS[2],
-        (sfIntRect){0, 0, 5032, 3774},
-        (sfVector2f){-1700 - 0, -1300});
+        (sfIntRect){0, 0, 5032, 3774}, (sfVector2f){-1700, -1300});
     }
     return (k);
 }

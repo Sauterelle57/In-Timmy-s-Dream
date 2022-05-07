@@ -20,11 +20,14 @@ static void check_action_fight(game_t *g)
 
 void event_combat(game_t *g)
 {
+    static float tmp = 0.0;
+
+    g->t.sec = Get_Time(g->t.clock);
     if (g->event.type == sfEvtClosed)
         quit_game(g, 0);
     if ((Key_Pressed(sfKeySpace) || Key_Pressed(sfKeyE)) &&
-    g->t.sec - g->cooldown > 0.3) {
+    g->t.sec - tmp > 0.5) {
         check_action_fight(g);
-        g->cooldown = g->t.sec;
+        tmp = g->t.sec;
     }
 }
