@@ -27,16 +27,16 @@ interest_t *init_combat_interest(int nb_interest, body_t *elem)
 {
     interest_t *interest = malloc(sizeof(interest_t) * nb_interest);
 
-    interest[0] = create_interest("deco/Door_4 (open).png", (sfIntRect)
-    {0, 0, 70, 100}, (sfVector2f){215, 60}, &check_dialogue);
-    interest[0].line = 20;
-    Set_Scale(interest[0].body.sprite, 1.5, 1.5);
+    interest[0] = create_interest("other/blank.png", (sfIntRect)
+    {0, 0, 50, 200}, (sfVector2f){1600, 860}, &go_back);
     interest[1] = create_interest("deco/Door_4.png", (sfIntRect)
-    {0, 0, 70, 70}, (sfVector2f){1720, 960}, &go_back);
+    {0, 0, 70, 70}, (sfVector2f){1720, 960}, &nothing);
     Set_Scale(interest[1].body.sprite, 1.5, -1.5);
     sfSprite_setRotation(interest[1].body.sprite, -90.0);
-    interest[2] = create_interest("other/blank.png", (sfIntRect)
-    {0, 0, 50, 200}, (sfVector2f){1600, 860}, &go_back);
+    interest[2] = create_interest("deco/Door_4 (open).png", (sfIntRect)
+    {0, 0, 70, 100}, (sfVector2f){215, 60}, &check_dialogue);
+    interest[2].line = 20;
+    Set_Scale(interest[2].body.sprite, 1.5, 1.5);
     spawn_enemy(nb_interest, elem, interest);
     return (interest);
 }
