@@ -12,14 +12,16 @@ void flag_h(void)
 {
 	my_putstr("RPG by E-Game 2022\n");
 	my_putstr("\nUSAGE\n");
-	my_putstr("  ./my_rpg\n");
+	my_putstr("  ./my_rpg [-h, -easy]\n");
 	my_putstr("\nOPTIONS\n");
-	my_putstr("  -h write the helpers\n");
+	my_putstr("\t-h\twrite this helper\n");
+	my_putstr("\t-easy\tload game with difficulty null\n");
 	my_putstr("\nUSER INTERACTIONS\n");
-	my_putstr("LEFT_KEY OR Q go left.\n");
-	my_putstr("RIGHT_KEY OR R go right.\n");
-	my_putstr("UP_KEY OR Z go top.\n");
-	my_putstr("DOWN_KEY OR S go bottom.\n");
-	my_putstr("ESCAPE_KEY quit\n");
-	my_putstr("BAR_KEY OR E interact.\n");
+	my_putstr("\tLEFT_KEY or Q\t\tgo left\n");
+	my_putstr("\tRIGHT_KEY or R\t\tgo right\n");
+	my_putstr("\tUP_KEY or Z\t\tgo top\n");
+	my_putstr("\tDOWN_KEY or S\t\tgo bottom\n");
+	my_putstr("\tS\t\tsprint mode on/off\n");
+	my_putstr("\tESCAPE_KEY\t\tpause menu\n");
+	my_putstr("\tSPACE_KEY or E\t\tinteract\n");
 }

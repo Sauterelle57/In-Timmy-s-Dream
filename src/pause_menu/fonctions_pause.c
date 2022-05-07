@@ -7,8 +7,7 @@
 
 #include "includes.h"
 #include "pause_menu.h"
-void anim_pixels(game_t *g);
-void manage_pixels(game_t *g, sfVector2i pos);
+void go_back(game_t *g, int i);
 
 void draw_pause_menu(game_t *g)
 {
@@ -50,6 +49,10 @@ void event_pause_menu(game_t *g)
 {
     if (g->event.type == sfEvtClosed)
         quit_game(g, 0);
+    if (Key_Pressed(sfKeyEscape) && g->t.sec - g->cooldown > 0.3) {
+        go_back(g, 0);
+        g->cooldown = g->t.sec;
+    }
     if (Mouse_Pressed(sfMouseLeft))
         manage_pixels(g, Get_Mouse_Pos());
     check_button(g, Get_Mouse_Pos(), Get_Window_size());

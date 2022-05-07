@@ -8,6 +8,7 @@
 #include "includes.h"
 #include "game.h"
 #include "player.h"
+void go_pause(game_t *g, int i);
 
 void check_action(game_t *g)
 {
@@ -45,18 +46,20 @@ void event_game(game_t *g)
 {
     static float tmp = 0.0;
 
-    if (g->event.type == sfEvtClosed || Key_Pressed(sfKeyEscape))
+    if (g->event.type == sfEvtClosed)
         quit_game(g, 0);
     if ((Key_Pressed(sfKeySpace) || Key_Pressed(sfKeyE)) && g->t.sec -
-    g->cooldown > 0.5) {
+    g->cooldown > 0.3) {
         check_action(g);
         g->cooldown = g->t.sec;
     }
-    if (Key_Pressed(sfKeyA) && g->t.sec - g->cooldown >= 0.15) {
+    if (Key_Pressed(sfKeyA) && g->t.sec - g->cooldown > 0.15) {
         g->player.speed = g->player.speed == SPEED ? SPEED + 5 : SPEED;
         g->cooldown = g->t.sec;
     }
-    if (Key_Pressed(sfKeyP) && g->t.sec - g->t.pause > 0.3)
-        pause_game(g);
+    if (Key_Pressed(sfKeyEscape) && g->t.sec - g->cooldown > 0.3) {
+        go_pause(g, 0);
+        g->cooldown = g->t.sec;
+    }
     check_button(g, Get_Mouse_Pos(), Get_Window_size());
 }
