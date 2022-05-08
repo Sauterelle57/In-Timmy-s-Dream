@@ -16,7 +16,6 @@ static void check_action_ghost(game_t *g)
 
     for (int i = 0; i < g->scene[4].nb_interest; i++)
         if (Rect_Intersect(g->scene[4].interest[i].body, &player)) {
-            my_printf("scene %d -> %i\n", g->curent_scene, i);
             g->warning = i == 1 && g->player.lvl == 3 ? 1 : 0;
             g->scene[4].interest[i].on_click(g, g->scene[4].interest[i].line);
             return;

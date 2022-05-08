@@ -45,7 +45,6 @@ static void check_action_cimetery(game_t *g)
 
     for (int i = 0; i < g->scene[8].nb_interest; i++)
         if (Rect_Intersect(g->scene[8].interest[i].body, &player)) {
-            my_printf("scene %d -> %i\n", g->curent_scene, i);
             check_skeleton(g, i);
             g->scene[8].interest[i].on_click(g, g->scene[8].interest[i].line);
             return;

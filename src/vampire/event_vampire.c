@@ -16,7 +16,6 @@ static void check_action_vamp(game_t *g)
 
     for (int i = 0; i < g->scene[3].nb_interest; i++)
         if (Rect_Intersect(g->scene[3].interest[i].body, &player)) {
-            my_printf("scene %d -> %i\n", g->curent_scene, i);
             g->warning = i == 0 && g->player.lvl == 2 ? 1 : 0;
             g->scene[3].interest[i].on_click(g, g->scene[3].interest[i].line);
             return;

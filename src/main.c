@@ -90,15 +90,12 @@ int main(int ac, char **av)
         flag_h();
         return (0);
     }
-    if (ac == 2 && my_strcmp(av[1], "-easy")) {
-        flag_h();
-    }
     srand(get_random());
     game_t game = create_game();
 
     parse_save(&game);
-    game.previous_scene = 8;
-    game.curent_scene = 8;
-    charge_scene(&game, 8);
+    game.previous_scene = 7;
+    game.curent_scene = 7;
+    charge_scene(&game, 7);
     return (game_loop(&game));
 }
