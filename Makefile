@@ -71,6 +71,9 @@ SRC	=	src/main.c	\
 		src/game/player_movements.c \
 		src/game/player_collision.c	\
 		src/game/interest_fonction.c	\
+		src/game/interest_fonction_2.c	\
+		src/game/interest_fonction_3.c	\
+		src/game/interest_fonction_4.c	\
 		src/game/catch_object.c	\
 \
 		src/main_menu/main_menu.c	\
