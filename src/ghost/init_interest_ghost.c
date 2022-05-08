@@ -16,7 +16,7 @@ interest_t *init_ghost_interest(sfRenderWindow *window, int nb_interest)
     interest[0] = create_interest(GHOST[(rand() % 3) * 3], (sfIntRect)
     {0, 0, 48, 70}, (sfVector2f){820, 300}, &go_combat);
     interest[1] = create_interest(GHOST[(rand() % 3) * 3], (sfIntRect)
-    {0, 0, 48, 70}, (sfVector2f){1120, -100}, &check_dialogue);
+    {0, 0, 48, 70}, (sfVector2f){1120, -200}, &check_dialogue);
     interest[1].line = 6;
     Set_Scale(interest[1].body.sprite, 2, 2);
     interest[2] = create_interest(GHOST[(rand() % 3) * 3], (sfIntRect)
