@@ -17,7 +17,7 @@ static void fonction(game_t *g, int i)
 void hit(game_t *g, int i)
 {
     g->scene[g->curent_scene].interest[i].pv--;
-    sfSound_play(g->m.ya);
+    sfSound_play(g->m.paf);
     if (g->scene[g->curent_scene].interest[i].pv <= 0) {
         Set_Texture(g->scene[g->curent_scene].interest[i].body.sprite,
         CHOICE[g->scene[g->curent_scene].interest[i].random + 5]);
