@@ -73,7 +73,7 @@ typedef struct interest_s {
 
 typedef struct music_s {
     sfMusic *back;
-    sfSoundBuffer *soundbuffer;
+    sfSoundBuffer *clickbuffer;
     sfSound *click;
 } music_t;
 
