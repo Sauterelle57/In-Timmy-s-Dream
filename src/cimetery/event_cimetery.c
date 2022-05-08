@@ -12,11 +12,13 @@ void go_pause(game_t *g, int i);
 
 void set_mausoleum(game_t *g, int tmp, sfVector2f pos)
 {
+    int rect[2] = {159, 95};
     char *text[2] = {"map/mausoleum.png", "map/mausoleum3d.png"};
 
-    for (int i = 0; i < 2; i += 4) {
-        g->scene[8].elem[tmp + 31] = create_body(text[i],
-        (sfIntRect){0, 0, 96, 95}, pos);
+    for (int i = 0, j = 0; i < 2; i += 4, j++) {
+        g->scene[8].elem[tmp + 31].text = sfTexture_createFromFile(text[j], 0);
+        sfSprite_setTexture(g->scene[8].elem[tmp + 31].sprite,
+        g->scene[8].elem[tmp + 31].text, 0);
         Set_Scale(g->scene[8].elem[tmp + 31].sprite, 1.5, 1.5);
     }
 }

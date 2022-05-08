@@ -12,9 +12,9 @@
 
 interest_t *init_cimetery_interest_2(interest_t *interest)
 {
-    interest[5] = create_interest("object/Lintern.png", (sfIntRect){0, 0,
-    150, 140}, (sfVector2f){-200, 500}, &catch_lintern);
-    Set_Scale(interest[5].body.sprite, 2.5, 2.5);
+    interest[5] = create_interest(SKELETON[(rand() % 3) * 3], (sfIntRect)
+    {0, 0, 48, 48}, (sfVector2f){1600, -400}, &check_dialogue);
+    interest[5].line = 14;
     interest[6] = create_interest(SKELETON[(rand() % 3) * 3], (sfIntRect)
     {0, 0, 48, 48}, (sfVector2f){210, 350}, &check_dialogue);
     interest[6].line = 11;
@@ -24,9 +24,12 @@ interest_t *init_cimetery_interest_2(interest_t *interest)
     interest[8] = create_interest(SKELETON[(rand() % 3) * 3], (sfIntRect)
     {0, 0, 48, 48}, (sfVector2f){340, -620}, &check_dialogue);
     interest[8].line = 13;
-    interest[9] = create_interest(SKELETON[(rand() % 3) * 3], (sfIntRect)
-    {0, 0, 48, 48}, (sfVector2f){1600, -400}, &check_dialogue);
-    interest[9].line = 14;
+    interest[9] = create_interest(GRIM[0], (sfIntRect){0, 0,
+    96, 96}, (sfVector2f){870, -120}, &check_dialogue);
+    interest[9].line = 3;
+    interest[10] = create_interest("object/Lintern.png", (sfIntRect){0, 0,
+    150, 140}, (sfVector2f){-200, 500}, &catch_lintern);
+    Set_Scale(interest[10].body.sprite, 2.5, 2.5);
     return (interest);
 }
 

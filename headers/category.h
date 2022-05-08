@@ -117,4 +117,9 @@
         "enemies/Clown_die.png"
     };
 
+    static char *GRIM[3] = {
+        "enemies/Grim Reaper_idle.png", "enemies/Grim Reaper_move.png",
+        "enemies/Grim Reaper_die.png"
+    };
+
 #endif /* !CATEGORY_H_ */
