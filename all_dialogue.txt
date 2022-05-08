@@ -4,7 +4,7 @@ Sorciere##Ah ! Te voila enfin reveille... Enfin ''reveille'' c'est un bien grand
 Sorciere##Oh ! j'ai failli oublier ! Heureusement que tu as eu la presence d'esprit de revenir!#Si jamais tu etait poursuivi par quelque chose et coince dans un endroit sombre,#cherche une porte ouverte le plus vite possible, ou il se pourrait que tu reste ici pour toujours...
 Gevorg##Prrrivet ! Arrrrghh !#Vas t'en petit homme, va donc rrretourrrner pleurrrer dans jupes sorrrcierrre avant venirrr me voirrr !#Arrrrghh ! Ou je vais boirrre ton sang et je vais te kasser genoux! Arrrrghh !
 Gevorg##AAAAHHHHH, Enfin ma cherrre et tendrrre grrrenadine, ma kolerrre et ma trrristesse s'evanouissent alorrrs que elixirrr#pourrrprrre et sucrrre koule dans mon gosier.
-T. Inky##Qu'est ce qu'il ne faut pas ouïr, ici tu risque le pire, d'abord tu dois parler au vampire !
+T. Inky##Qu'est ce qu'il ne faut pas ouir, ici tu risque le pire, d'abord tu dois parler au vampire !
 T. Inky##Bataillon ! Tous a vos polochons ! Attaquons ces peons ! Sous nos coups ils periront!
 Zara##J'Ai fAim MaNgEeERrR... MaAaaAnnNGEeeERrR
 Zara##HeE CEtTE PaTaTE, Je L'AVais LaiSSe ToMBer PAr TErrE!
@@ -19,4 +19,5 @@ Panneau##Quelle est la difference entre un fantome ?
 Rick Astler##Never gonna give you up
 Timmy##Oh !#Mais c'est ma chambre !#Je reconnais mon doudou Dolly !
 Porte##Non Timmy tu dois affronter tes peurs et traverser ce labyrinth !
-Cerceuil##Tu ne peux pas encore acceder a cet endroit.
+Cerceuil##Le Royaume des morts est inacessible, enfin... tout le monde à son prix...
+Grim##Timmy ?! Qu'est-ce que tu fais la ? Ce n'est pas un endroit pour les enfants !#Attend Rosie va te raccompagner chez toi.tu vas voir c'est une tres gentille arai...
