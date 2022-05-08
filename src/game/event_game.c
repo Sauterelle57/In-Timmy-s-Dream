@@ -45,6 +45,14 @@ void check_button(game_t *g, sfVector2i pos, sfVector2u size)
     }
 }
 
+static void check_event_2(game_t *g)
+{
+    if (g->player.lvl >= 5) {
+        g->player.inventory[7].own = 0;
+        g->scene[0].interest[16].on_click = &go_cimetery;
+    }
+}
+
 void event_game(game_t *g)
 {
     static float tmp = 0.0;
@@ -64,7 +72,6 @@ void event_game(game_t *g)
         go_pause(g, 0);
         g->cooldown = g->t.sec;
     }
-    if (g->player.lvl >= 5)
-        g->scene[0].interest[16].on_click = &go_cimetery;
+    check_event_2(g);
     check_button(g, Get_Mouse_Pos(), Get_Window_size());
 }
