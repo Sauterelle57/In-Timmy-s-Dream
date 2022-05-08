@@ -21,6 +21,8 @@ static void anim_interest(game_t *g)
         g->scene[5].interest[i].body.rect);
     }
     if (g->player.lvl == 5) {
+        g->player.inventory[6].own = 0;
+        g->player.inventory[7].own = 1;
         g->scene[5].interest[1].line = rand() % 2 + 9;
         g->scene[5].interest[1].on_click = &check_dialogue;
     } else if (g->player.lvl == 4)
