@@ -17,7 +17,6 @@ void check_action(game_t *g)
 
     for (int i = 0; i < g->scene[0].nb_interest; i++)
         if (Rect_Intersect(g->scene[0].interest[i].body, &player)) {
-            my_printf("scene %d -> %i\n", g->curent_scene, i);
             g->scene[0].interest[i].on_click(g, g->scene[0].interest[i].line);
             return;
         }
