@@ -7,21 +7,21 @@
 
 #include "includes.h"
 #include "player.h"
-#include "game.h" //scene 0
-#include "main_menu.h" //scene 1
-#include "combat.h" //scene 2
-#include "vampire.h" //scene 3
-#include "ghost.h" //scene 4
-#include "forest.h" //scene 5
-#include "inventory.h" //scene 6
-#include "my_loading.h" //scene 7
-#include "cimetery.h" //scene 8
-#include "settings.h" //scene 9
-#include "menu_lose.h" //scene 10
-#include "menu_win.h" //scene 11
-#include "how_to_play.h" //scene 12
-#include "timmy_room.h" //scene 13
-#include "pause_menu.h" //scene 14
+#include "game.h"
+#include "main_menu.h"
+#include "combat.h"
+#include "vampire.h"
+#include "ghost.h"
+#include "forest.h"
+#include "inventory.h"
+#include "my_loading.h"
+#include "cimetery.h"
+#include "settings.h"
+#include "menu_lose.h"
+#include "menu_win.h"
+#include "how_to_play.h"
+#include "timmy_room.h"
+#include "pause_menu.h"
 
 void charge_scene(game_t *g, int next_scene)
 {

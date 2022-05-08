@@ -22,17 +22,6 @@ static void anim_interest(game_t *g)
     }
 }
 
-// static void check_player_ghost_lvl(game_t *g)
-// {
-//     if (g->player.lvl == 4) {
-//         g->scene[4].interest[1].line = 7;
-//         g->player.inventory[1].own = 0;
-//         g->player.inventory[6].own = 1;
-//         g->scene[4].interest[1].on_click = &check_dialogue;
-//     } else if (g->player.lvl == 3)
-//         g->scene[4].interest[1].on_click = &go_combat;
-// }
-
 void anim_ghost(game_t *g)
 {
     static float tmp = 0.0;
