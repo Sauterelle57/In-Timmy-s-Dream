@@ -51,8 +51,7 @@ void anim_cimetery(game_t *g)
     }
     anim_particules(g->scene[g->curent_scene].array);
     if (g->t.sec - tmp2 >= delay_player) {
-        g->player.body.rect.left += g->player.body.rect.left >= 144 ? -144 :
-        48;
+        g->player.body.rect.left += g->player.body.rect.left > 143 ? -144 : 48;
         Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
         tmp2 = g->t.sec;
     }
