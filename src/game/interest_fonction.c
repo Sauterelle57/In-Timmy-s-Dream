@@ -217,9 +217,8 @@ void go_back(game_t *g, int j)
 {
     int tmp = g->previous_scene;
 
-    if (g->warning == 1 && j == 0){
-        my_printf("Win\n");
-        check_cimetery_mausoleum(g);}
+    if (g->warning == 1 && j == 0)
+        check_cimetery_mausoleum(g);
     for (int i = 0; i < 4; i++)
         if (g->skeleton_win[i] > 0)
             g->skeleton_win[i] = 0;

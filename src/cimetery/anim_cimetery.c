@@ -55,4 +55,8 @@ void anim_cimetery(game_t *g)
         Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
         tmp2 = g->t.sec;
     }
+    if (g->player.lvl == 9) {
+        g->scene[8].interest[9].on_click = check_dialogue;
+        Set_Texture(g->scene[8].interest[9].body.sprite, GRIM[0]);
+    }
 }

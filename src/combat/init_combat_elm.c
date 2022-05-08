@@ -9,11 +9,6 @@
 #include "combat.h"
 #include "interest.h"
 
-static void fonction(game_t *g, int i)
-{
-    my_printf("Button clicked !!\n");
-}
-
 void hit(game_t *g, int i)
 {
     g->scene[g->curent_scene].interest[i].pv--;
