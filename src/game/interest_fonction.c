@@ -13,6 +13,9 @@ void set_mausoleum(game_t *g, int tmp, sfVector2f pos);
 
 void load_game(game_t *g, int i)
 {
+    g->player.pv = 5;
+    g->player.pv_bar.rect.left = 0;
+    sfSprite_setTextureRect(g->player.pv_bar.sprite, g->player.pv_bar.rect);
     sfMusic_pause(g->scene[g->curent_scene].scene_music);
     g->previous_scene = g->curent_scene;
     if (i == 1)
