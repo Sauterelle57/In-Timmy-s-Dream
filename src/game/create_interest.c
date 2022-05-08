@@ -58,7 +58,8 @@ interest_t *create_all_interests_2(interest_t *interest)
 interest_t *create_all_interests(interest_t *interest)
 {
     interest[0] = create_interest(BAT[(rand() % 3) * 3], (sfIntRect){0, 0, 48,
-    48}, (sfVector2f){940, 540}, &go_combat);
+    48}, (sfVector2f){880, 520}, &check_dialogue);
+    interest[0].line = 24;
     interest[1] = create_interest(NPC[0], (sfIntRect)
     {0, 0, 48, 70}, (sfVector2f){2000, 500}, &check_dialogue);
     interest[1].line = 2;
