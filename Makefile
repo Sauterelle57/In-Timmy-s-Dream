@@ -134,6 +134,7 @@ SRC	=	src/main.c	\
 		src/inventory/draw_inventory.c	\
 		src/inventory/event_inventory.c	\
 		src/inventory/init_inventory.c	\
+		src/inventory/event_inventory_re.c	\
 		src/inventory/init_elem_inventory.c	\
 		src/inventory/init_button_inventory.c	\
 		src/inventory/init_interest_inventory.c	\
@@ -158,6 +159,7 @@ SRC	=	src/main.c	\
 		src/htp/draw_htp.c	\
 		src/htp/event_htp.c	\
 		src/htp/init_htp.c	\
+		src/htp/event_htp_re.c	\
 		src/htp/init_elem_htp.c	\
 		src/htp/tuto_movements.c	\
 		src/htp/init_button_htp.c	\
