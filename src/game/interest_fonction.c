@@ -24,6 +24,7 @@ void load_game(game_t *g, int i)
 
 void go_game(game_t *g, int i)
 {
+    sfSound_play(g->m.door);
     sfMusic_pause(g->scene[g->curent_scene].scene_music);
     g->previous_scene = g->curent_scene;
     g->player.body.rect.top = 0;
@@ -65,6 +66,7 @@ void go_combat(game_t *g, int i)
 
 void go_vampire(game_t *g, int i)
 {
+    sfSound_play(g->m.door);
     sfMusic_pause(g->scene[g->curent_scene].scene_music);
     g->previous_scene = g->curent_scene;
     g->player.body.rect.top = 144;
@@ -77,6 +79,7 @@ void go_vampire(game_t *g, int i)
 
 void go_ghost(game_t *g, int i)
 {
+    sfSound_play(g->m.door);
     sfMusic_pause(g->scene[g->curent_scene].scene_music);
     g->previous_scene = g->curent_scene;
     g->player.body.rect.top = 144;
@@ -89,6 +92,7 @@ void go_ghost(game_t *g, int i)
 
 void go_forest(game_t *g, int i)
 {
+    sfSound_play(g->m.door);
     sfMusic_pause(g->scene[g->curent_scene].scene_music);
     g->previous_scene = g->curent_scene;
     g->player.body.rect.top = 144;
@@ -117,6 +121,7 @@ void go_inventory(game_t *g, int i)
 
 void go_cimetery(game_t *g, int i)
 {
+    sfSound_play(g->m.door);
     sfMusic_pause(g->scene[g->curent_scene].scene_music);
     g->previous_scene = g->curent_scene;
     g->player.body.rect.top = 144;
@@ -178,6 +183,7 @@ void go_htp(game_t *g, int i)
 
 void go_room(game_t *g, int i)
 {
+    sfSound_play(g->m.door);
     sfMusic_pause(g->scene[g->curent_scene].scene_music);
     g->previous_scene = g->curent_scene;
     g->player.body.rect.top = 144;

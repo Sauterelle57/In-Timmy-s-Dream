@@ -75,6 +75,10 @@ typedef struct music_s {
     sfMusic *back;
     sfSoundBuffer *clickbuffer;
     sfSound *click;
+    sfSoundBuffer *doorbuffer;
+    sfSound *door;
+    sfSoundBuffer *yabuffer;
+    sfSound *ya;
 } music_t;
 
 typedef struct button_s {
