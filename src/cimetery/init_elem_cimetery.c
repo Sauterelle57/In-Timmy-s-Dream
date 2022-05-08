@@ -8,7 +8,7 @@
 #include "includes.h"
 #include "cimetery.h"
 
-static body_t *init_cimetery_elem_4(body_t *elem)
+static body_t *init_cimetery_elem_5(body_t *elem)
 {
     elem[32] = create_body("other/blank.png", (sfIntRect){0, 0, 96,
     159}, (sfVector2f){-85, 275});
