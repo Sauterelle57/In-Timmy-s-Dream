@@ -10,37 +10,45 @@
 #include "player.h"
 void go_pause(game_t *g, int i);
 
-static void check_skeleton(game_t *g, int i)
+void set_mausoleum(game_t *g, int tmp, sfVector2f pos)
 {
-    static int tmp1 = 0;
-    static int tmp2 = 0;
-    static int tmp3 = 0;
-    static int tmp4 = 0;
+    char *text[2] = {"map/mausoleum.png", "map/mausoleum3d.png"};
 
-    if (i == 6 && g->player.lvl < 9 && tmp1 == 0) {
-        g->warning = 1;
-        tmp1 = 1;
-    } else if (i == 7 && g->player.lvl < 9 && tmp2 == 0) {
-        g->warning = 1;
-        tmp2 = 1;
-    }
-    if (i == 8 && g->player.lvl < 9 && tmp3 == 0) {
-        g->warning = 1;
-        tmp3 = 1;
-    } else if (i == 9 && g->player.lvl < 9 && tmp4 == 0) {
-        g->warning = 1;
-        tmp4 = 1;
+    for (int i = 0; i < 2; i += 4) {
+        g->scene[8].elem[tmp + 31] = create_body(text[i],
+        (sfIntRect){0, 0, 96, 95}, pos);
+        Set_Scale(g->scene[8].elem[tmp + 31].sprite, 1.5, 1.5);
     }
 }
 
-static void check_action(game_t *g)
+static void check_skeleton(game_t *g, int i)
+{
+    if (i == 0 && g->player.lvl < 9 && g->skeleton_win[0] == 0) {
+        g->warning = 1;
+        g->skeleton_win[0] = 1;
+    } else if (i == 1 && g->player.lvl < 9 && g->skeleton_win[1] == 0) {
+        g->warning = 1;
+        g->skeleton_win[1] = 2;
+    }
+    if (i == 2 && g->player.lvl < 9 && g->skeleton_win[2] == 0) {
+        g->warning = 1;
+        g->skeleton_win[2] = 3;
+    } else if (i == 3 && g->player.lvl < 9 && g->skeleton_win[3] == 0) {
+        g->warning = 1;
+        g->skeleton_win[3] = 4;
+    }
+}
+
+static void check_action_cimetery(game_t *g)
 {
     sfFloatRect player = Get_bounds(g->player.body.sprite);
 
     for (int i = 0; i < g->scene[8].nb_interest; i++)
         if (Rect_Intersect(g->scene[8].interest[i].body, &player)) {
+            my_printf("scene %d -> %i\n", g->curent_scene, i);
             check_skeleton(g, i);
-            g->scene[8].interest[i].on_click(g, g->scene[8].interest->line);
+            g->scene[8].interest[i].on_click(g, g->scene[8].interest[i].line);
+            return;
         }
 }
 
@@ -74,7 +82,7 @@ void event_cimetery(game_t *g)
         quit_game(g, 0);
     if ((Key_Pressed(sfKeySpace) || Key_Pressed(sfKeyE)) && g->t.sec -
     g->cooldown > 0.3) {
-        check_action(g);
+        check_action_cimetery(g);
         g->cooldown = g->t.sec;
     }
     if (Key_Pressed(sfKeyEscape) && g->t.sec - g->cooldown > 0.3) {

@@ -10,6 +10,8 @@
 
     #define NB_PARTICULES 70000
 
+    static int skeleton_win[4] = {0, 0, 0, 0};
+
 void draw_cimetery(game_t *g);
 void anim_cimetery(game_t *g);
 void event_cimetery(game_t *g);

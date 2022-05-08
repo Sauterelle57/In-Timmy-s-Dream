@@ -9,10 +9,10 @@
 #include "game.h"
 #include "player.h"
 
-static void go_right(game_t *g, int s)
+static void go_right(game_t *g, int s, int nb_elem)
 {
     g->player.body.rect.top = 96;
-    for (int i = 2; i < g->scene[s].nb_elem; i++)
+    for (int i = 2; i < nb_elem; i++)
         if (collision(g->player.body, g->scene[s].elem[i],
         (sfVector2i){g->player.speed, 0}))
             return;
@@ -30,10 +30,10 @@ static void go_right(game_t *g, int s)
     g->scene[s].elem[1].rect.left += g->player.speed;
 }
 
-static void go_left(game_t *g, int s)
+static void go_left(game_t *g, int s, int nb_elem)
 {
     g->player.body.rect.top = 48;
-    for (int i = 2; i < g->scene[s].nb_elem; i++)
+    for (int i = 2; i < nb_elem; i++)
         if (collision(g->player.body, g->scene[s].elem[i],
         (sfVector2i){-g->player.speed, 0}))
             return;
@@ -51,10 +51,10 @@ static void go_left(game_t *g, int s)
     g->scene[s].elem[1].rect.left -= g->player.speed;
 }
 
-static void go_up(game_t *g, int s)
+static void go_up(game_t *g, int s, int nb_elem)
 {
     g->player.body.rect.top = 144;
-    for (int i = 2; i < g->scene[s].nb_elem; i++)
+    for (int i = 2; i < nb_elem; i++)
         if (collision(g->player.body, g->scene[s].elem[i],
         (sfVector2i){0, -g->player.speed}))
             return;
@@ -72,10 +72,10 @@ static void go_up(game_t *g, int s)
     g->scene[s].elem[1].rect.top -= g->player.speed;
 }
 
-static void go_down(game_t *g, int s)
+static void go_down(game_t *g, int s, int nb_elem)
 {
     g->player.body.rect.top = 0;
-    for (int i = 2; i < g->scene[s].nb_elem; i++)
+    for (int i = 2; i < nb_elem; i++)
         if (collision(g->player.body, g->scene[s].elem[i],
         (sfVector2i){0, g->player.speed}))
             return;
@@ -96,15 +96,16 @@ static void go_down(game_t *g, int s)
 void movement(game_t *g)
 {
     int s = g->curent_scene;
+    int nb_elem = s == 8 ? 32 : g->scene[s].nb_elem;
 
     if (Key_Pressed(sfKeyRight) || Key_Pressed(sfKeyD))
-        go_right(g, s);
+        go_right(g, s, nb_elem);
     if (Key_Pressed(sfKeyLeft) || Key_Pressed(sfKeyQ))
-        go_left(g, s);
+        go_left(g, s, nb_elem);
     if (Key_Pressed(sfKeyUp) || Key_Pressed(sfKeyZ))
-        go_up(g, s);
+        go_up(g, s, nb_elem);
     if (Key_Pressed(sfKeyDown) || Key_Pressed(sfKeyS))
-        go_down(g, s);
+        go_down(g, s, nb_elem);
     Set_Texture(g->player.body.sprite, NPC[17]);
     Set_Texture_Rect(g->scene[s].elem[0].sprite, g->scene[s].elem[0].rect);
     Set_Texture_Rect(g->scene[s].elem[1].sprite, g->scene[s].elem[1].rect);

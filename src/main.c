@@ -30,7 +30,7 @@ void charge_scene(game_t *g, int next_scene)
     &init_loading, &init_cimetery, &init_settings, &init_menu_lose,
     &init_menu_win, &init_htp, &init_timmy_room, &init_pause_menu};
 
-    if (!g->scene[next_scene].charged) {
+    if (g->scene[next_scene].charged == 0) {
         g->scene[next_scene] = init_scene[next_scene](g);
         sfMusic_play(g->scene[next_scene].scene_music);
         g->scene[next_scene].charged = 1;
@@ -52,8 +52,8 @@ int game_loop(game_t *g)
         g->t.sec = Get_Time(g->t.clock);
         g->scene[g->curent_scene].anim(g);
         g->scene[g->curent_scene].draw(g);
-        draw_cursor(g);
         check_dialogue(g, g->dialogue.chose);
+        draw_cursor(g);
         if (sfRenderWindow_pollEvent(g->window, &g->event))
             g->scene[g->curent_scene].event(g);
         if ((Key_Pressed(sfKeyUp) || Key_Pressed(sfKeyDown) ||
@@ -97,8 +97,8 @@ int main(int ac, char **av)
     game_t game = create_game();
 
     parse_save(&game);
-    game.previous_scene = 7;
-    game.curent_scene = 7;
-    charge_scene(&game, 7);
+    game.previous_scene = 8;
+    game.curent_scene = 8;
+    charge_scene(&game, 8);
     return (game_loop(&game));
 }
