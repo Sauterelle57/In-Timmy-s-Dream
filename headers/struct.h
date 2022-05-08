@@ -119,6 +119,7 @@ typedef struct game_s {
     float cooldown;
     char *save_file;
     int warning;
+    int *skeleton_win;
     scene_t scene[15];
     int previous_scene;
     int curent_scene;

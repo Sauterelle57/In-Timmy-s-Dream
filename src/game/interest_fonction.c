@@ -9,6 +9,7 @@
 #include "game.h"
 #include "player.h"
 scene_t init_combat(game_t *g);
+void set_mausoleum(game_t *g, int tmp, sfVector2f pos);
 
 void load_game(game_t *g, int i)
 {
@@ -188,14 +189,32 @@ void go_room(game_t *g, int i)
     g->curent_scene = 13;
 }
 
+static void check_cimetery_mausoleum(game_t *g)
+{
+    static sfVector2f tab[4] = {{1840, 275}, {-85, 275}, {1810, -715},
+    {-75, -715}};
+
+    g->player.lvl += 1;
+    if (g->previous_scene != 8)
+        return;
+    for (int i = 0; i < 4; i++)
+        if (g->skeleton_win[i] > 0) {
+            my_printf("i: %d\n", i);
+            set_mausoleum(g, g->skeleton_win[i], tab[i]);
+            g->skeleton_win[i] = -1;
+        }
+}
+
 void go_back(game_t *g, int j)
 {
     int tmp = g->previous_scene;
 
-    if (g->warning == 1 && j > 0) {
-        g->player.lvl += 1;
-        g->warning = 0;
-    }
+    if (g->warning == 1 && j == 0)
+        check_cimetery_mausoleum(g);
+    for (int i = 0; i < 4; i++)
+        if (g->skeleton_win[i] > 0)
+            g->skeleton_win[i] = 0;
+    g->warning = 0;
     sfMusic_pause(g->scene[g->curent_scene].scene_music);
     g->previous_scene = g->curent_scene;
     sfText_setPosition(g->player.name, (sfVector2f){200, 40});
@@ -208,7 +227,6 @@ void go_back(game_t *g, int j)
     if (g->scene[tmp].charged == 1)
         sfMusic_play(g->scene[tmp].scene_music);
     g->curent_scene = tmp;
-    charge_scene(g, g->curent_scene);
 }
 
 void go_pause(game_t *g, int i)

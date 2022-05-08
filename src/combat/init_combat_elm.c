@@ -34,8 +34,7 @@ interest_t *init_combat_interest(int nb_interest, body_t *elem)
     Set_Scale(interest[1].body.sprite, 1.5, -1.5);
     sfSprite_setRotation(interest[1].body.sprite, -90.0);
     interest[2] = create_interest("deco/Door_4 (open).png", (sfIntRect)
-    {0, 0, 70, 100}, (sfVector2f){215, 60}, &check_dialogue);
-    interest[2].line = 20;
+    {0, 0, 70, 100}, (sfVector2f){215, 60}, &nothing);
     Set_Scale(interest[2].body.sprite, 1.5, 1.5);
     spawn_enemy(nb_interest, elem, interest);
     return (interest);
@@ -67,7 +66,7 @@ interest_t *spawn_enemy(int nb_interest, body_t *elem, interest_t *interest)
             interest[i].random = a;
         } else {
             interest[i] = create_interest(CHOICE[a], (sfIntRect)
-            {0, 0, 50, 70}, (sfVector2f){-100, -10}, &hit);
+            {0, 0, 0, 0}, (sfVector2f){-1000, -1000}, &nothing);
             interest[i].random = a;
         }
     }
