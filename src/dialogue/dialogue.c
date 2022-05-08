@@ -37,6 +37,12 @@ void check_dialogue(game_t *gt, int chose)
     if (chose != 0 && gt->dialogue.is_showing == 1 &&
     (Key_Pressed(sfKeyEnter))) {
         reset_dialogue(gt);
+        if (chose == 22) {
+            gt->player.body.rect.top = 0;
+            sfMusic_pause(gt->scene[gt->curent_scene].scene_music);
+            charge_scene(gt, 13);
+            gt->curent_scene = 13;
+        }
         gt->dialogue.chose = 0;
         return;
     }
@@ -78,6 +84,7 @@ void func_text(game_t *gt, int chose)
     if (gt->dialogue.is_passed == 0) {
         pass_dialogue(&gt->dialogue.temp, gt, chose);
         gt->player.lvl += chose == 2 ? 1, gt->player.inventory[0].own = 1 : 0;
+        gt->player.lvl += chose == 22 ? 1 : 0;
     }
     gt->t.sec = Get_Time(gt->t.clock);
     while (gt->t.sec-time > gt->dialogue.speed &&

@@ -25,8 +25,8 @@ interest_t *init_cimetery_interest_2(interest_t *interest)
     {0, 0, 48, 48}, (sfVector2f){340, -620}, &check_dialogue);
     interest[8].line = 13;
     interest[9] = create_interest("other/blank.png", (sfIntRect){0, 0,
-    96, 96}, (sfVector2f){870, -120}, &nothing);
-    interest[9].line = 3;
+    128, 128}, (sfVector2f){870, -120}, &nothing);
+    interest[9].line = 22;
     interest[10] = create_interest("object/Lintern.png", (sfIntRect){0, 0,
     150, 140}, (sfVector2f){-200, 500}, &catch_lintern);
     Set_Scale(interest[10].body.sprite, 2.5, 2.5);
