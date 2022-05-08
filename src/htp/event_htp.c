@@ -8,6 +8,8 @@
 #include "includes.h"
 #include "how_to_play.h"
 #include "player.h"
+button_t do_action_event(game_t *g, sfVector2i pos,
+sfVector2u size, button_t button);
 
 static void tuto_interest(game_t *g)
 {
@@ -26,10 +28,7 @@ static void check_button(game_t *g, sfVector2i pos, sfVector2u size)
         sfIntRect_contains(&(sfIntRect){button.body.pos.x, button.body.pos.y,
         button.size.x, button.size.y}, pos.x * (1920.0 / size.x), pos.y *
         (1080.0 / size.y))) {
-            sfSound_play(g->m.click);
-            Set_Texture(button.body.sprite, BUTTON[button.png + 2]);
-            button.on_click(g);
-            g->cooldown = g->t.sec;
+            button = do_action_event(g, pos, size, button);
         } else if (sfIntRect_contains(&(sfIntRect){button.body.pos.x,
         button.body.pos.y, button.size.x, button.size.y}, pos.x * (1920.0 /
         size.x), pos.y * (1080.0 / size.y))) {
