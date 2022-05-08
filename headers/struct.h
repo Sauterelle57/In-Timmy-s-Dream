@@ -118,7 +118,7 @@ typedef struct game_s {
     body_t cursor;
     player_t player;
     dialogue_t dialogue;
-    int *params; //0 = difficulty, 1 = framerate, 2 = volume
+    int *params;
     int pause;
     float cooldown;
     char *save_file;

@@ -18,16 +18,16 @@ interest_t *init_htp_interest(sfRenderWindow *window, int nb_interest)
 {
     interest_t *interest = malloc(sizeof(interest_t) * nb_interest);
 
-    interest[0] = create_interest(NPC[2], (sfIntRect) //interest point nothing
+    interest[0] = create_interest(NPC[2], (sfIntRect)
     {0, 0, 48, 70}, (sfVector2f){1400, 400}, &nothing);
     Set_Scale(interest[0].body.sprite, 3, 3);
-    interest[1] = create_interest(NPC[16], (sfIntRect) //player movement
+    interest[1] = create_interest(NPC[16], (sfIntRect)
     {0, 0, 48, 48}, (sfVector2f){350, 350}, &nothing);
     Set_Scale(interest[1].body.sprite, 3, 3);
-    interest[2] = create_interest(NPC[16], (sfIntRect) //player interest
+    interest[2] = create_interest(NPC[16], (sfIntRect)
     {0, 96, 48, 48}, (sfVector2f){1280, 500}, &nothing);
     Set_Scale(interest[2].body.sprite, 3, 3);
-    interest[3] = create_interest(NPC[16], (sfIntRect) //player sprint
+    interest[3] = create_interest(NPC[16], (sfIntRect)
     {0, 0, 48, 48}, (sfVector2f){800, 780}, &nothing);
     Set_Scale(interest[3].body.sprite, 3, 3);
     return (interest);
