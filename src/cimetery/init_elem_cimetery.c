@@ -28,22 +28,22 @@ static body_t *init_cimetery_elem_4(body_t *elem)
     50}, (sfVector2f){1855, 420});
 
     elem[32] = create_body("other/blank.png", (sfIntRect){0, 0, 96,
-    159}, (sfVector2f){1840, 275});
-    elem[33] = create_body("other/blank.png", (sfIntRect){0, 0, 96,
     159}, (sfVector2f){-85, 275});
+    elem[33] = create_body("other/blank.png", (sfIntRect){0, 0, 96,
+    159}, (sfVector2f){1840, 275});
     elem[34] = create_body("other/blank.png", (sfIntRect){0, 0, 96,
-    159}, (sfVector2f){1810, -715});
-    elem[35] = create_body("other/blank.png", (sfIntRect){0, 0, 96,
     159}, (sfVector2f){-75, -715});
+    elem[35] = create_body("other/blank.png", (sfIntRect){0, 0, 96,
+    159}, (sfVector2f){1810, -715});
 
     elem[36] = create_body("other/blank.png", (sfIntRect){0, 0, 96,
-    95}, (sfVector2f){1840, 275});
-    elem[37] = create_body("other/blank.png", (sfIntRect){0, 0, 96,
     95}, (sfVector2f){-85, 275});
+    elem[37] = create_body("other/blank.png", (sfIntRect){0, 0, 96,
+    95}, (sfVector2f){1840, 275});
     elem[38] = create_body("other/blank.png", (sfIntRect){0, 0, 96,
-    95}, (sfVector2f){1810, -715});
-    elem[39] = create_body("other/blank.png", (sfIntRect){0, 0, 96,
     95}, (sfVector2f){-75, -715});
+    elem[39] = create_body("other/blank.png", (sfIntRect){0, 0, 96,
+    95}, (sfVector2f){1810, -715});
     return (elem);
 }
 

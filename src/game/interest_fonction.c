@@ -191,16 +191,18 @@ void go_room(game_t *g, int i)
 
 static void check_cimetery_mausoleum(game_t *g)
 {
-    static sfVector2f tab[4] = {{1840, 275}, {-85, 275}, {1810, -715},
-    {-75, -715}};
+    sfVector2f *pos = malloc(sizeof(sfVector2f) * 4);
+    pos[0] = (sfVector2f){-85, 275};
+    pos[1] = (sfVector2f){1840, 275};
+    pos[2] = (sfVector2f){-75, -715};
+    pos[3] = (sfVector2f){1810, -715};
 
     g->player.lvl += 1;
     if (g->previous_scene != 8)
         return;
     for (int i = 0; i < 4; i++)
         if (g->skeleton_win[i] > 0) {
-            my_printf("i: %d\n", i);
-            set_mausoleum(g, g->skeleton_win[i], tab[i]);
+            set_mausoleum(g, g->skeleton_win[i], pos[i]);
             g->skeleton_win[i] = -1;
         }
 }
@@ -209,8 +211,9 @@ void go_back(game_t *g, int j)
 {
     int tmp = g->previous_scene;
 
-    if (g->warning == 1 && j == 0)
-        check_cimetery_mausoleum(g);
+    if (g->warning == 1 && j == 0){
+        my_printf("Win\n");
+        check_cimetery_mausoleum(g);}
     for (int i = 0; i < 4; i++)
         if (g->skeleton_win[i] > 0)
             g->skeleton_win[i] = 0;

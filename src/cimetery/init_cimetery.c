@@ -14,7 +14,7 @@ scene_t init_cimetery(game_t *g)
     button_t *buttons = init_cimetery_button(g->window, nb_button);
     int nb_elem = 40;
     body_t *elem = init_cimetery_elem(g->window, nb_elem);
-    int nb_interest = 10;
+    int nb_interest = 11;
     interest_t *interest = init_cimetery_interest(g->window, nb_interest);
     sfMusic *scene_music = sfMusic_createFromFile("music/Everlasting.ogg");
     sfVertexArray *array = sfVertexArray_create();

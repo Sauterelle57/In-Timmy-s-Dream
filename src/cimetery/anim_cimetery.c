@@ -11,11 +11,11 @@
 
 static void anim_interest(game_t *g)
 {
-    static int vector[18] = {144, 48, 144, 48, 144, 48, 144, 48,144, 48, 144,
-    48, 144, 48, 144, 48, 144, 48};
+    static int vector[20] = {144, 48, 144, 48, 144, 48, 144, 48, 144, 48, 144,
+    48, 144, 48, 144, 48, 144, 48, 288, 96};
 
-    for (int i = 0; i < 9; i++) {
-        i += i == 5 ? 1 :0;
+    for (int i = 0; i < 10; i++) {
+        i += i == 4 ? 1 : 0;
         g->scene[8].interest[i].body.rect.left += g->scene[8].interest[i].body.
         rect.left >= vector[i * 2] ? -vector[i * 2] : vector[i * 2 + 1];
         Set_Texture_Rect(g->scene[8].interest[i].body.sprite,

@@ -95,8 +95,8 @@ body_t *init_forest_elem(sfRenderWindow *window, int nb_elem)
 
     elem[0] = create_body("map/swamp.png", (sfIntRect){1010, 600, 2364, 1398},
     (sfVector2f){0, 0});
-    elem[1] = create_body("map/swamp3d.png", (sfIntRect){1010, 600, 2364, 1398},
-    (sfVector2f){0, 0});
+    elem[1] = create_body("map/swamp3d.png", (sfIntRect){1010, 600, 2364,
+    1398}, (sfVector2f){0, 0});
     elem[2] = create_body("other/blue_block.png", (sfIntRect){0, 0, 2500, 290},
     (sfVector2f){-670, 590});
     elem[3] = create_body("other/blue_block.png", (sfIntRect){0, 0, 750, 100},
