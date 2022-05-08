@@ -80,7 +80,6 @@ char *pass_dialogue(char** temp, game_t *gt, int chose)
 void func_text(game_t *gt, int chose)
 {
     static float time = 0;
-
     if (gt->dialogue.is_passed == 0) {
         pass_dialogue(&gt->dialogue.temp, gt, chose);
         gt->player.lvl += chose == 2 ? 1, gt->player.inventory[0].own = 1 : 0;

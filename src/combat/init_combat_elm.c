@@ -43,7 +43,7 @@ int search_for_number(int *a, int search)
     for (int i = 0; i < nb_inter - 3; i++)
         if (a[i] == search)
             b = 1;
-    return b;
+    return (b);
 }
 
 interest_t *spawn_enemy(int nb_interest, body_t *elem, interest_t *interest)
