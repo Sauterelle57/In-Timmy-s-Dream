@@ -8,6 +8,7 @@
 #include "includes.h"
 #include "timmy_room.h"
 #include "player.h"
+void go_menu_win(game_t *g, int i);
 
 void anim_timmy_room(game_t *g)
 {
@@ -20,5 +21,9 @@ void anim_timmy_room(game_t *g)
         48;
         Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
         tmp2 = g->t.sec;
+    }
+    if (g->player.lvl == 10) {
+        g->scene[13].interest[0].on_click = go_menu_win;
+        g->scene[13].interest[1].line = 23;
     }
 }

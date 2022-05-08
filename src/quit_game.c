@@ -33,4 +33,10 @@ void quit_game(game_t *g, int i)
     for (int i = 0; i < 15; i++)
         if (g->scene[i].charged == 1)
             sfMusic_destroy(g->scene[i].scene_music);
+    sfSound_destroy(g->m.click);
+    sfSound_destroy(g->m.door);
+    sfSound_destroy(g->m.paf);
+    sfSoundBuffer_destroy(g->m.clickbuffer);
+    sfSoundBuffer_destroy(g->m.doorbuffer);
+    sfSoundBuffer_destroy(g->m.pafbuffer);
 }

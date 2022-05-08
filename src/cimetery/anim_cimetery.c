@@ -8,11 +8,12 @@
 #include "includes.h"
 #include "cimetery.h"
 #include "player.h"
+void go_room(game_t *g, int i);
 
 static void anim_interest(game_t *g)
 {
     static int vector[20] = {144, 48, 144, 48, 144, 48, 144, 48, 144, 48, 144,
-    48, 144, 48, 144, 48, 144, 48, 288, 96};
+    48, 144, 48, 144, 48, 144, 48, 384, 128};
 
     for (int i = 0; i < 10; i++) {
         i += i == 4 ? 1 : 0;
@@ -55,4 +56,9 @@ void anim_cimetery(game_t *g)
         Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
         tmp2 = g->t.sec;
     }
+    if (g->player.lvl == 9) {
+        g->scene[8].interest[9].on_click = check_dialogue;
+        Set_Texture(g->scene[8].interest[9].body.sprite, GRIM[0]);
+    } else if (g->player.lvl == 10)
+        g->scene[8].interest[4].on_click = go_room;
 }

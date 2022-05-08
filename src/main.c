@@ -94,8 +94,8 @@ int main(int ac, char **av)
     game_t game = create_game();
 
     parse_save(&game);
-    game.previous_scene = 8;
-    game.curent_scene = 8;
-    charge_scene(&game, 8);
+    game.previous_scene = 7;
+    game.curent_scene = 7;
+    charge_scene(&game, 7);
     return (game_loop(&game));
 }
