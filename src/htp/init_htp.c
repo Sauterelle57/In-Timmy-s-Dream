@@ -10,13 +10,14 @@
 
 scene_t init_htp(game_t *g)
 {
+    char *music = g->troll == 1 ? "music/The_Abyss.ogg" : "music/rickroll.ogg";
     int nb_button = 2;
     button_t *buttons = init_htp_button(g->window, nb_button);
     int nb_elem = 16;
     body_t *elem = init_htp_elem(g->window, nb_elem);
     int nb_interest = 4;
     interest_t *interest = init_htp_interest(g->window, nb_interest);
-    sfMusic *scene_music = sfMusic_createFromFile("music/The_Abyss.ogg");
+    sfMusic *scene_music = sfMusic_createFromFile(music);
     sfVertexArray *array = sfVertexArray_create();
     scene_t htp = {0, buttons, nb_button, elem, nb_elem, interest,
     nb_interest, scene_music, array};

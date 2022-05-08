@@ -195,6 +195,20 @@ void go_room(game_t *g, int i)
     g->curent_scene = 13;
 }
 
+void rick_astley(game_t *g, int i)
+{
+    check_dialogue(g, 18);
+    for (int i = 0; i < 15; i++)
+        if (g->scene[i].charged == 1) {
+            sfMusic_destroy(g->scene[i].scene_music);
+            g->scene[i].scene_music = sfMusic_createFromFile
+            ("music/rickroll.ogg");
+            sfMusic_setLoop(g->scene[i].scene_music, sfTrue);
+            g->troll = 0;
+        }
+    sfMusic_play(g->scene[g->curent_scene].scene_music);
+}
+
 static void check_cimetery_mausoleum(game_t *g)
 {
     sfVector2f *pos = malloc(sizeof(sfVector2f) * 4);

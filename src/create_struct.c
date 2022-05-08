@@ -71,6 +71,6 @@ game_t create_game(void)
     for (int i = 0; i < 4; i++)
         skeleton_win[i] = 0;
     game_t game = {window, event, t, m, cursor, player, dialogue, params, 0,
-    0.0, "new.txt", 0, skeleton_win};
+    0.0, "new.txt", 0, skeleton_win, 1};
     return (game);
 }

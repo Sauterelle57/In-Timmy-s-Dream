@@ -10,15 +10,15 @@
 
 scene_t init_cimetery(game_t *g)
 {
-    int nb_button = 2;
-    button_t *buttons = init_cimetery_button(g->window, nb_button);
+    button_t *buttons = init_cimetery_button(g->window, 2);
     int nb_elem = 40;
     body_t *elem = init_cimetery_elem(g->window, nb_elem);
     int nb_interest = 11;
     interest_t *interest = init_cimetery_interest(g->window, nb_interest);
-    sfMusic *scene_music = sfMusic_createFromFile("music/Everlasting.ogg");
+    sfMusic *scene_music = sfMusic_createFromFile(g->troll == 1 ? "music/\
+    Everlasting.ogg" : "music/rickroll.ogg");
     sfVertexArray *array = sfVertexArray_create();
-    scene_t cimetery = {0, buttons, nb_button, elem, nb_elem, interest,
+    scene_t cimetery = {0, buttons, 2, elem, nb_elem, interest,
     nb_interest, scene_music, array};
 
     for (int i = 0; i < NB_PARTICULES; i++)

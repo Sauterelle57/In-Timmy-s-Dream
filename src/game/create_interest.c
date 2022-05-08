@@ -14,8 +14,7 @@ interest_t *create_all_interests_3(interest_t *interest)
     interest[12] = create_interest("other/blank.png", (sfIntRect)
     {0, 0, 60, 70}, (sfVector2f){7940, 125}, &go_ghost);
     interest[13] = create_interest("other/blank.png", (sfIntRect)
-    {0, 0, 40, 60}, (sfVector2f){7850, -2130}, &check_dialogue);
-    interest[13].line = 18;
+    {0, 0, 40, 60}, (sfVector2f){7850, -2130}, &rick_astley);
     interest[14] = create_interest("other/blank.png", (sfIntRect)
     {0, 0, 60, 70}, (sfVector2f){6600, -390}, &check_dialogue);
     interest[14].line = 16;

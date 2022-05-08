@@ -16,7 +16,7 @@ Acceptation##J'aime bien ne plus avoir a dormir comme toi,#ca me laisse plus de 
 Porte##Desole, je suis parti !
 Porte##Personne ne repond...
 Panneau##Quelle est la difference entre un fantome ?
-Rick Astler##Never gonna give you up
+Rick Astley##Never gonna give you up
 Timmy##Oh !#Mais c'est ma chambre !#Je reconnais mon doudou Dolly !
 Porte##Non Timmy tu dois affronter tes peurs et traverser ce labyrinth !
 Cerceuil##Le Royaume des morts est inacessible aux enfants, enfin... Tout le monde à son prix...

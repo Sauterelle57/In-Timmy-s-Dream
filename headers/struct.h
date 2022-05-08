@@ -124,6 +124,7 @@ typedef struct game_s {
     char *save_file;
     int warning;
     int *skeleton_win;
+    int troll;
     scene_t scene[15];
     int previous_scene;
     int curent_scene;

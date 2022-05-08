@@ -23,13 +23,14 @@ interest_t *init_timmy_room_interest(sfRenderWindow *window, int nb)
 
 scene_t init_timmy_room(game_t *g)
 {
+    char *music = g->troll == 1 ? "music/The_Abyss.ogg" : "music/rickroll.ogg";
     int nb_button = 2;
     button_t *buttons = init_timmy_room_button(g->window, nb_button);
     int nb_elem = 12;
     body_t *elem = init_timmy_room_elem(g->window, nb_elem);
     int nb_interest = 2;
     interest_t *interest = init_timmy_room_interest(g->window, nb_interest);
-    sfMusic *scene_music = sfMusic_createFromFile("music/The_Abyss.ogg");
+    sfMusic *scene_music = sfMusic_createFromFile(music);
     scene_t timmy_room = {0, buttons, nb_button, elem, nb_elem, interest,
     nb_interest, scene_music};
 
