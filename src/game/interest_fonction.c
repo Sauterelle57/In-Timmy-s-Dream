@@ -9,7 +9,6 @@
 #include "game.h"
 #include "player.h"
 scene_t init_combat(game_t *g);
-void set_mausoleum(game_t *g, int tmp, sfVector2f pos);
 
 void load_game(game_t *g, int i)
 {

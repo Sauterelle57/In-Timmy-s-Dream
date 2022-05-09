@@ -21,7 +21,6 @@ static void check_button(game_t *g, sfVector2i pos, sfVector2u size)
 {
     button_t button;
 
-    g->t.sec = Get_Time(g->t.clock);
     for (int i = 0; i < g->scene[10].nb_button; i++) {
         button = g->scene[10].button[i];
         if (Mouse_Pressed(sfMouseLeft) && g->t.sec - g->cooldown > 0.5 &&
