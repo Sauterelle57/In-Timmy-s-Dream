@@ -23,7 +23,7 @@ void anim_timmy_room(game_t *g)
         tmp2 = g->t.sec;
     }
     if (g->player.lvl == 10) {
-        g->scene[13].interest[0].on_click = go_menu_win;
+        g->scene[13].interest[0].on_click = &go_menu_win;
         g->scene[13].interest[1].line = 23;
     }
 }
