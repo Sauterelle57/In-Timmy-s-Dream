@@ -10,6 +10,7 @@
 #include "settings.h"
 void go_settings(game_t *g, int i);
 void load_game(game_t *g, int i);
+void load_new_game(game_t *g, int i);
 
 button_t *init_menu_button(sfRenderWindow *window, int nb)
 {
@@ -21,7 +22,7 @@ button_t *init_menu_button(sfRenderWindow *window, int nb)
     0.50 + 30}, "NOUVELLE PARTIE"), &load_game);
     buttons[1] = create_button(9, (sfVector2f){size.x * 0.15, size.y *
     0.70}, create_button_text(40, (sfVector2f){size.x * 0.15 + 110, size.y *
-    0.70 + 30}, "CONTINUER"), &load_game);
+    0.70 + 30}, "CONTINUER"), &load_new_game);
     buttons[2] = create_button(9, (sfVector2f){size.x * 0.60, size.y *
     0.50}, create_button_text(40, (sfVector2f){size.x * 0.60 + 140, size.y *
     0.50 + 30}, "OPTIONS"), &go_settings);

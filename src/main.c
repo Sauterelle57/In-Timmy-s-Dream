@@ -69,11 +69,12 @@ int game_loop(game_t *g)
     return (0);
 }
 
-static int parse_save(game_t *g)
+void parse_save(game_t *g)
 {
     int j = 2;
     size_t len = 0;
     char *buffer = NULL;
+    printf("%s\n", g->save_file);
     FILE *file = fopen(g->save_file, "r");
     int end_buffer = getline(&buffer, &len, file);
 
@@ -93,7 +94,6 @@ int main(int ac, char **av)
     srand(get_random());
     game_t game = create_game();
 
-    parse_save(&game);
     game.previous_scene = 7;
     game.curent_scene = 7;
     charge_scene(&game, 7);

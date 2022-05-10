@@ -17,10 +17,9 @@ void load_game(game_t *g, int i)
     sfSprite_setTextureRect(g->player.pv_bar.sprite, g->player.pv_bar.rect);
     sfMusic_pause(g->scene[g->curent_scene].scene_music);
     g->previous_scene = g->curent_scene;
-    if (i == 1)
-        g->save_file = "save.txt";
     if (g->scene[0].charged == 1)
         sfMusic_play(g->scene[0].scene_music);
+    parse_save(g);
     charge_scene(g, 0);
     g->curent_scene = 0;
 }
