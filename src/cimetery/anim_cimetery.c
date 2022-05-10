@@ -24,18 +24,24 @@ static void anim_interest(game_t *g)
     }
 }
 
-static void anim_particules(sfVertexArray *array)
+static sfVertexArray *anim_particules(sfVertexArray *array)
 {
     int len_array = sfVertexArray_getVertexCount(array);
 
     for (int i = 0; i < len_array; i++) {
         sfVertex *pixel = sfVertexArray_getVertex(array, i);
-        pixel->position = (sfVector2f){rand() % 2, rand() % 2};
-        if (pixel->position.x < 0)
-            pixel->position = (sfVector2f){rand() % 50 + 1870, rand() % 1080};
-        if (pixel->position.y > 1080)
-            pixel->position = (sfVector2f){rand() % 1920, rand() % 50};
+        pixel->position.x -= rand() % 2;
+        pixel->position.y += rand() % 2;
+        if (pixel->position.x < 0) {
+            pixel->position.x = rand() % 50 + 1870;
+            pixel->position.y = rand() % 1080;
+        }
+        if (pixel->position.y > 1080) {
+            pixel->position.x = rand() % 1920;
+            pixel->position.y = rand() % 50;
+        }
     }
+    return (array);
 }
 
 void anim_cimetery(game_t *g)
@@ -49,12 +55,12 @@ void anim_cimetery(game_t *g)
         anim_interest(g);
         tmp = g->t.sec;
     }
-    anim_particules(g->scene[g->curent_scene].array);
     if (g->t.sec - tmp2 >= delay_player) {
         g->player.body.rect.left += g->player.body.rect.left > 143 ? -144 : 48;
         Set_Texture_Rect(g->player.body.sprite, g->player.body.rect);
         tmp2 = g->t.sec;
     }
+    g->scene[8].array = anim_particules(g->scene[8].array);
     if (g->player.lvl == 9) {
         g->scene[8].interest[9].on_click = check_dialogue;
         Set_Texture(g->scene[8].interest[9].body.sprite, GRIM[0]);
