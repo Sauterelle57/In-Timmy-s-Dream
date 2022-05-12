@@ -13,12 +13,12 @@ body_t *elem, sfVector2u size)
 {
     elem[13] = create_body("other/blank.png", (sfIntRect){0, 0, 200, 100},
     (sfVector2f){1300, 300});
-    elem[14] = create_body("other/blank.png", (sfIntRect){0, 0, 1917, 1076},
+    elem[14] = create_body("other/blank.png", (sfIntRect){0, 0, 1520, 1002},
     (sfVector2f){650, 400});
     elem[15] = create_body("text/tutoriel.png", (sfIntRect){0, 0, 469, 43},
     (sfVector2f){size.x * 0.4, size.y * 0.10});
-    Set_Scale(elem[15].sprite, 2, 2)
     Set_Scale(elem[14].sprite, 0.4, 0.4);
+    Set_Scale(elem[15].sprite, 2, 2);
     return (elem);
 }
 

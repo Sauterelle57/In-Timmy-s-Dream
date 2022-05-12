@@ -10,6 +10,21 @@
 #include "player.h"
 void set_mausoleum(game_t *g, int tmp, sfVector2f pos);
 
+void load_new_game(game_t *g, int i)
+{
+    g->save_file = "save.txt";
+    g->player.pv = 5;
+    g->player.pv_bar.rect.left = 0;
+    sfSprite_setTextureRect(g->player.pv_bar.sprite, g->player.pv_bar.rect);
+    sfMusic_pause(g->scene[g->curent_scene].scene_music);
+    g->previous_scene = g->curent_scene;
+    if (g->scene[0].charged == 1)
+        sfMusic_play(g->scene[0].scene_music);
+    parse_save(g);
+    charge_scene(g, 0);
+    g->curent_scene = 0;
+}
+
 void rick_astley(game_t *g, int i)
 {
     check_dialogue(g, 18);

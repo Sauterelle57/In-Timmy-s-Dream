@@ -73,7 +73,7 @@ void event_htp(game_t *g)
         g->scene[g->curent_scene].elem[13] = create_body("other/blank.png",
         (sfIntRect){0, 0, 200, 100}, (sfVector2f){1300, 300});
         g->scene[g->curent_scene].elem[14] = create_body("other/blank.png",
-        (sfIntRect){0, 0, 1917, 1076}, (sfVector2f){650, 400});
+        (sfIntRect){0, 0, 1521, 1003}, (sfVector2f){650, 400});
         Set_Scale(g->scene[g->curent_scene].elem[14].sprite, 0.4, 0.4);
     }
     event_htp_2(g);

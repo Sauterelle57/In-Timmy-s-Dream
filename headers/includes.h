@@ -38,6 +38,7 @@
     #define FPS 1
     #define VOL 2
 
+void parse_save(game_t *g);
 void pause_game(game_t *g);
 void anim_pixels(game_t *g);
 void draw_cursor(game_t *g);
