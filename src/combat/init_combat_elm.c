@@ -51,7 +51,7 @@ interest_t *spawn_enemy(int nb_interest, body_t *elem, interest_t *interest)
     int tab[nb_inter - 3];
 
     for (int i = 3; i < nb_interest; i++) {
-        int k = (rand() % 167) + 2;
+        int k = (rand() % 160) + 9;
         int a = rand() % 5;
         int again = search_for_number(tab, k);
         tab[i - 3] = k;

@@ -15,7 +15,7 @@ static void check_action_fight(game_t *g)
 
     for (int i = 0; i < g->scene[2].nb_interest; i++)
         if (dist(g->player.body, g->scene[2].interest[i].body) &&
-        g->scene[2].interest[i].pv > 0) {
+        g->scene[2].interest[i].pv > 0 && i != 1) {
             g->scene[2].interest[i].on_click(g, i);
             return;
         }
