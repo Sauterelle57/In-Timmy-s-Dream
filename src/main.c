@@ -74,7 +74,6 @@ void parse_save(game_t *g)
     int j = 2;
     size_t len = 0;
     char *buffer = NULL;
-    printf("%s\n", g->save_file);
     FILE *file = fopen(g->save_file, "r");
     int end_buffer = getline(&buffer, &len, file);
 
