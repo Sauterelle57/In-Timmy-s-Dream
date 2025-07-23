@@ -25,7 +25,6 @@ De nombreux objets sont cachés et pourraient l’aider à se repérer dans les 
 
 https://github.com/user-attachments/assets/c9d75445-b817-4ca6-a39e-51a76984f138
 
----
 
 ## 🎮 Fonctionnalités principales
 
@@ -36,30 +35,26 @@ https://github.com/user-attachments/assets/c9d75445-b817-4ca6-a39e-51a76984f138
 - Menus animés et interface intégrée (HUD)
 - Musiques et bruitages angoissants créant une **ambiance immersive**
 
----
 
 ## 🛠️ Technologies utilisées
 
-- **Langage :** C (C99)
+- **Langage :** C
 - **Librairie multimédia :** [CSFML](https://www.sfml-dev.org/download/csfml/) (binding SFML pour C)
 - **Système de build :** `Makefile` (fourni)
 - **IDE recommandé :** VS Code / CLion
 
 > 
 
----
 
 ## 🎨 Direction artistique
 
-Le jeu adopte une esthétique sombre et enfantine, mêlant le thème d'Haloween à l’imaginaire d’un cauchemar d’enfant.
+Le jeu adopte une esthétique sombre et enfantine, mêlant le thème d'Halloween à l’imaginaire d’un cauchemar d’enfant.
 Chaque zone est colorée, étrange, mais inquiétante.
 
----
 
 ## 👥 Équipe projet
 
-Projet réalisé dans le cadre du module " de développement en C.
-Développé par :
+Projet développé par :
 
 • `Marie Giacomel` [@Sauterelle57] – **Architecture projet, Programmation gameplay, Team leader**
 
@@ -68,3 +63,12 @@ Développé par :
 • `Xavier Huber` [@Reivax4012] – **Système de dialogue des PNJ**
 
 • `Tristan Baldazzi` [@TristanBaldazzi] – **Système de combat**
+
+
+## ❗ Limitations actuelles
+
+> Ce projet est un projet scolaire, réalisé dans une contrainte de temps par des étudiants encore assez peu expérimenté (promis depuis on s'est amélioré) c'est pourquoi il présente quelques limitation et bug. 
+
+Optimisation, fluidité et leak de mémoire </br>
+Système de sauvegarde uniquement de l'inventaire </br>
+Les collisions peuvent être parfois imprécises dans certains niveaux </br>
